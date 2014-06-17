@@ -37,3 +37,11 @@ func layout(v1: UIView, v2: UIView, v3: UIView, block: (LayoutProxy, LayoutProxy
     v1.layoutIfNeeded()
     v2.layoutIfNeeded()
 }
+
+func layout(views: UIView[], block:(LayoutProxy[]) -> ()) {
+    block(views.map({ LayoutProxy($0) }))
+
+    for view in views {
+        view.layoutIfNeeded()
+    }
+}
