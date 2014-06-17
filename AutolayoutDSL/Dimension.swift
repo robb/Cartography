@@ -27,16 +27,6 @@ enum Dimension : Property {
     }
 }
 
-struct Expression {
-    let dimension: Dimension
-    var coefficients: Coefficients
-
-    init(_ dimension: Dimension, _ coefficients: Coefficients) {
-        self.dimension = dimension
-        self.coefficients = coefficients
-    }
-}
-
 // Equality
 
 @infix func ==(lhs: Dimension, rhs: Float) {
@@ -111,14 +101,6 @@ struct Expression {
     return rhs + lhs
 }
 
-@infix func +(c: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension, rhs.coefficients + c)
-}
-
-@infix func +(lhs: Expression, rhs: Float) -> Expression {
-    return rhs + lhs
-}
-
 // Multiplication
 
 @infix func *(m: Float, rhs: Dimension) -> Expression {
@@ -126,13 +108,5 @@ struct Expression {
 }
 
 @infix func *(lhs: Dimension, rhs: Float) -> Expression {
-    return rhs * lhs
-}
-
-@infix func *(m: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension, rhs.coefficients * m)
-}
-
-@infix func *(lhs: Expression, rhs: Float) -> Expression {
     return rhs * lhs
 }
