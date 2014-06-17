@@ -1,5 +1,5 @@
 //
-//  AutolayoutDSLTests.swift
+//  DimensionTests.swift
 //  AutolayoutDSLTests
 //
 //  Created by Robert Böhnke on 17/06/14.
@@ -10,10 +10,10 @@ import AutolayoutDSL
 import UIKit
 import XCTest
 
-var superview: UIView!
-var view: UIView!
-
 class AutolayoutDSLTests: XCTestCase {
+    var superview: UIView!
+    var view: UIView!
+
     override func setUp() {
         superview = UIView(frame: CGRectMake(0, 0, 100, 100))
         view = UIView(frame: CGRectZero)
@@ -21,7 +21,7 @@ class AutolayoutDSLTests: XCTestCase {
         superview.addSubview(view)
     }
 
-    func testExample() {
+    func testCommutativity() {
         view.defineLayout { view in
             view.width == 200
             200 == view.height
