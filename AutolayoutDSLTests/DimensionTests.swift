@@ -38,4 +38,13 @@ class AutolayoutDSLTests: XCTestCase {
 
         XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")
     }
+
+    func testInequalities() {
+        view.defineLayout { view in
+            200 <= view.width; view.width <= 300
+            300 >= view.height; view.height >= 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")
+    }
 }

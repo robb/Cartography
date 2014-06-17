@@ -41,3 +41,35 @@ enum Dimension : Property {
 @infix func ==(lhs: Dimension, rhs: Dimension) {
     apply(Predicate(), lhs, rhs)
 }
+
+@infix func <=(lhs: Dimension, rhs: Float) {
+    var predicate = Predicate()
+    predicate.constant = rhs
+    predicate.relation = NSLayoutRelation.LessThanOrEqual
+
+    apply(predicate, lhs, nil)
+}
+
+@infix func <=(lhs: Float, rhs: Dimension) {
+    var predicate = Predicate()
+    predicate.constant = lhs
+    predicate.relation = NSLayoutRelation.GreaterThanOrEqual
+
+    apply(predicate, rhs, nil)
+}
+
+@infix func >=(lhs: Dimension, rhs: Float) {
+    var predicate = Predicate()
+    predicate.constant = rhs
+    predicate.relation = NSLayoutRelation.GreaterThanOrEqual
+
+    apply(predicate, lhs, nil)
+}
+
+@infix func >=(lhs: Float, rhs: Dimension) {
+    var predicate = Predicate()
+    predicate.constant = lhs
+    predicate.relation = NSLayoutRelation.LessThanOrEqual
+
+    apply(predicate, rhs, nil)
+}
