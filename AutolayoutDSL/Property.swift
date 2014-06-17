@@ -17,9 +17,27 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
         return a;
     } else if (a.superview == b!.superview) {
         return a.superview;
-    }
+    } else {
+        let superviews = NSMutableSet()
 
-    return nil;
+        var view: UIView? = a
+        while let superview = view?.superview {
+            superviews.addObject(superview)
+
+            view = superview
+        }
+
+        view = b
+        while let superview = view?.superview {
+            if superviews.containsObject(superview) {
+                return superview
+            }
+
+            view = superview
+        }
+
+        return nil
+    }
 }
 
 func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal, priority: Float? = nil) -> NSLayoutConstraint {
