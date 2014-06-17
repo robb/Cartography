@@ -36,6 +36,7 @@ func layout(v1: UIView, v2: UIView, v3: UIView, block: (LayoutProxy, LayoutProxy
 
     v1.layoutIfNeeded()
     v2.layoutIfNeeded()
+    v3.layoutIfNeeded()
 }
 
 func layout(views: UIView[], block:(LayoutProxy[]) -> ()) {
