@@ -13,16 +13,20 @@ import XCTest
 class AutolayoutDSLTests: XCTestCase {
     var superview: UIView!
     var view: UIView!
+    var view2: UIView!
 
     override func setUp() {
         superview = UIView(frame: CGRectMake(0, 0, 100, 100))
-        view = UIView(frame: CGRectZero)
 
+        view = UIView(frame: CGRectZero)
         superview.addSubview(view)
+
+        view2 = UIView(frame: CGRectZero)
+        superview.addSubview(view2)
     }
 
     func testConstantEquality() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.width == 200
             200 == view.height
         }
@@ -31,7 +35,7 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testAttributeEquality() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.width == 200
             view.width == view.height
         }
@@ -40,7 +44,7 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testInequalities() {
-        view.defineLayout { view in
+        layout(view) { view in
             200 <= view.width; view.width <= 300
             view.height >= view.width
         }
@@ -49,7 +53,7 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testAddition() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.height == (50 + view.width + 100)
             view.width == 200
         }
@@ -58,7 +62,7 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testMultiplication() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.height == 2 * view.width
             view.width == 200
         }
@@ -67,7 +71,7 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testPrecedence() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.height == 2 * view.width + 50
             view.width == 200
         }
@@ -76,11 +80,23 @@ class AutolayoutDSLTests: XCTestCase {
     }
 
     func testParenthesis() {
-        view.defineLayout { view in
+        layout(view) { view in
             view.height == 2 * (view.width + 50) + 5
             view.width == 200
         }
 
         XCTAssertEqual(view.frame.size, CGSizeMake(200, 505), "should layout stuff")
+    }
+
+    func testMultipleViews() {
+        layout(view, view2) { view, view2 in
+            2 * view2.height == view.height
+            view.width == view2.width + 200
+
+            view2.width  == 200
+            view2.height == 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(400, 400), "should layout stuff")
     }
 }

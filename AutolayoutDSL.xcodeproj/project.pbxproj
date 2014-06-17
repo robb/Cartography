@@ -13,7 +13,6 @@
 		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */; };
 		54C96A24195063CD000CDD27 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionTests.swift */; };
-		54C96A2E195063DC000CDD27 /* UIView+AutolayoutDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2D195063DC000CDD27 /* UIView+AutolayoutDSL.swift */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		54C96A1C195063CD000CDD27 /* AutolayoutDSLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolayoutDSLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A22195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
-		54C96A2D195063DC000CDD27 /* UIView+AutolayoutDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutolayoutDSL.swift"; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +91,6 @@
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
 				546E9E881950A29300B16707 /* Layout.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
-				54C96A2D195063DC000CDD27 /* UIView+AutolayoutDSL.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
 			);
 			path = AutolayoutDSL;
@@ -233,7 +230,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C96A2E195063DC000CDD27 /* UIView+AutolayoutDSL.swift in Sources */,
 				54C96A30195064A6000CDD27 /* Property.swift in Sources */,
 				546E9E891950A29300B16707 /* Layout.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
