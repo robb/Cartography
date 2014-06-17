@@ -45,7 +45,7 @@ struct Expression {
     var predicate = Predicate()
     predicate.constant = rhs
 
-    apply(predicate, lhs, nil)
+    apply(predicate, lhs)
 }
 
 @infix func ==(lhs: Float, rhs: Dimension) {
@@ -57,7 +57,7 @@ struct Expression {
     predicate.constant = rhs.constant
     predicate.multiplier = rhs.multiplier
 
-    apply(predicate, lhs, rhs.dimension)
+    apply(predicate, lhs, to: rhs.dimension)
 }
 
 @infix func ==(lhs: Expression, rhs: Dimension) {
@@ -65,7 +65,7 @@ struct Expression {
 }
 
 @infix func ==(lhs: Dimension, rhs: Dimension) {
-    apply(Predicate(), lhs, rhs)
+    apply(Predicate(), lhs, to: rhs)
 }
 
 // Inequality
@@ -73,51 +73,45 @@ struct Expression {
 @infix func <=(lhs: Dimension, rhs: Float) {
     var predicate = Predicate()
     predicate.constant = rhs
-    predicate.relation = NSLayoutRelation.LessThanOrEqual
 
-    apply(predicate, lhs, nil)
+    apply(predicate, lhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Float, rhs: Dimension) {
     var predicate = Predicate()
     predicate.constant = lhs
-    predicate.relation = NSLayoutRelation.GreaterThanOrEqual
 
-    apply(predicate, rhs, nil)
+    apply(predicate, rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Dimension, rhs: Float) {
     var predicate = Predicate()
     predicate.constant = rhs
-    predicate.relation = NSLayoutRelation.GreaterThanOrEqual
 
-    apply(predicate, lhs, nil)
+    apply(predicate, lhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Float, rhs: Dimension) {
     var predicate = Predicate()
     predicate.constant = lhs
-    predicate.relation = NSLayoutRelation.LessThanOrEqual
 
-    apply(predicate, rhs, nil)
+    apply(predicate, rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Dimension, rhs: Expression) {
     var predicate = Predicate()
     predicate.multiplier = rhs.multiplier
     predicate.constant = rhs.constant
-    predicate.relation = NSLayoutRelation.LessThanOrEqual
 
-    apply(predicate, lhs, nil)
+    apply(predicate, lhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Expression, rhs: Dimension) {
     var predicate = Predicate()
     predicate.multiplier = lhs.multiplier
     predicate.constant = lhs.constant
-    predicate.relation = NSLayoutRelation.GreaterThanOrEqual
 
-    apply(predicate, rhs, nil)
+    apply(predicate, rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Dimension, rhs: Expression) {

@@ -9,8 +9,6 @@
 import Foundation
 
 struct Predicate {
-    var relation: NSLayoutRelation = NSLayoutRelation.Equal
     var multiplier: Float = 1
     var constant: Float = 0
-    var priority: UILayoutPriority? = nil
 }
