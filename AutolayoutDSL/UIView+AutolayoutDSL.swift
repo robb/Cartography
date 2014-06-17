@@ -9,11 +9,9 @@
 import UIKit
 
 extension UIView {
-    func width() -> Constrainable {
-        return Constrainable.Width(self)
-    }
+    func defineLayout(block: Layout -> ()) {
+        block(Layout(view: self))
 
-    func height() -> Constrainable {
-        return Constrainable.Height(self)
+        self.layoutIfNeeded()
     }
 }

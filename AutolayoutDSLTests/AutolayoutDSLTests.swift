@@ -10,23 +10,23 @@ import AutolayoutDSL
 import UIKit
 import XCTest
 
-var superview: UIView?
-var view: UIView?
+var superview: UIView!
+var view: UIView!
 
 class AutolayoutDSLTests: XCTestCase {
     override func setUp() {
         superview = UIView(frame: CGRectMake(0, 0, 100, 100))
         view = UIView(frame: CGRectZero)
 
-        superview!.addSubview(view)
+        superview.addSubview(view)
     }
 
     func testExample() {
-        view!.width() == 200
-        view!.height() == 200
+        view.defineLayout { view in
+            view.width == 200
+            view.height == 200
+        }
 
-        view!.layoutIfNeeded()
-
-        XCTAssertEqual(view!.frame.size, CGSizeMake(200, 200), "should layout stuff")
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")
     }
 }

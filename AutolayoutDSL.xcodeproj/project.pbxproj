@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		546E9E891950A29300B16707 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* Layout.swift */; };
 		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */; };
 		54C96A24195063CD000CDD27 /* AutolayoutDSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* AutolayoutDSLTests.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		546E9E881950A29300B16707 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutolayoutDSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A16195063CD000CDD27 /* AutolayoutDSL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutolayoutDSL.h; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				54C96A16195063CD000CDD27 /* AutolayoutDSL.h */,
 				54C96A2D195063DC000CDD27 /* UIView+AutolayoutDSL.swift */,
 				54C96A2F195064A6000CDD27 /* Constrainable.swift */,
+				546E9E881950A29300B16707 /* Layout.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
 			);
 			path = AutolayoutDSL;
@@ -226,6 +229,7 @@
 			files = (
 				54C96A2E195063DC000CDD27 /* UIView+AutolayoutDSL.swift in Sources */,
 				54C96A30195064A6000CDD27 /* Constrainable.swift in Sources */,
+				546E9E891950A29300B16707 /* Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
