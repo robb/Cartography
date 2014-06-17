@@ -10,10 +10,11 @@
 		546E9E891950A29300B16707 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* LayoutProxy.swift */; };
 		546E9E8D1950A31100B16707 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8C1950A31100B16707 /* Dimension.swift */; };
 		546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
+		546E9E911950A76C00B16707 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E901950A76C00B16707 /* Edge.swift */; };
+		546E9E931950A87600B16707 /* EdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E921950A87600B16707 /* EdgeTests.swift */; };
 		546E9E951950A97F00B16707 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E941950A97F00B16707 /* Expression.swift */; };
 		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */; };
-		54C96A24195063CD000CDD27 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionTests.swift */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		546E9E881950A29300B16707 /* LayoutProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 		546E9E8C1950A31100B16707 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		546E9E8E1950A33700B16707 /* Coefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
+		546E9E901950A76C00B16707 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		546E9E921950A87600B16707 /* EdgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTests.swift; sourceTree = "<group>"; };
 		546E9E941950A97F00B16707 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutolayoutDSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 				54C96A16195063CD000CDD27 /* AutolayoutDSL.h */,
 				546E9E8E1950A33700B16707 /* Coefficients.swift */,
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
+				546E9E901950A76C00B16707 /* Edge.swift */,
 				546E9E941950A97F00B16707 /* Expression.swift */,
 				546E9E881950A29300B16707 /* LayoutProxy.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				54C96A23195063CD000CDD27 /* DimensionTests.swift */,
+				546E9E921950A87600B16707 /* EdgeTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
 			path = AutolayoutDSLTests;
@@ -236,6 +241,7 @@
 				54C96A30195064A6000CDD27 /* Property.swift in Sources */,
 				546E9E891950A29300B16707 /* LayoutProxy.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
+				546E9E911950A76C00B16707 /* Edge.swift in Sources */,
 				546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */,
 				546E9E951950A97F00B16707 /* Expression.swift in Sources */,
 			);
@@ -245,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C96A24195063CD000CDD27 /* DimensionTests.swift in Sources */,
+				546E9E931950A87600B16707 /* EdgeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

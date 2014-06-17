@@ -12,9 +12,25 @@ class LayoutProxy {
     let width: Dimension
     let height: Dimension
 
+    let top: Edge
+    let right: Edge
+    let bottom: Edge
+    let left: Edge
+
+    let leading: Edge
+    let trailing: Edge
+
     init(_ view: UIView) {
         self.width = Dimension.Width(view)
         self.height = Dimension.Height(view)
+
+        self.top = Edge.Top(view)
+        self.right = Edge.Right(view)
+        self.bottom = Edge.Bottom(view)
+        self.left = Edge.Left(view)
+
+        self.leading = Edge.Leading(view)
+        self.trailing = Edge.Trailing(view)
     }
 }
 

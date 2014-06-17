@@ -9,11 +9,11 @@
 import Foundation
 
 struct Expression {
-    let dimension: Dimension
+    let property: Property
     var coefficients: Coefficients
 
-    init(_ dimension: Dimension, _ coefficients: Coefficients) {
-        self.dimension = dimension
+    init(_ property: Property, _ coefficients: Coefficients) {
+        self.property = property
         self.coefficients = coefficients
     }
 }
@@ -21,7 +21,7 @@ struct Expression {
 // Addition
 
 @infix func +(c: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension, rhs.coefficients + c)
+    return Expression(rhs.property, rhs.coefficients + c)
 }
 
 @infix func +(lhs: Expression, rhs: Float) -> Expression {
@@ -31,7 +31,7 @@ struct Expression {
 // Multiplication
 
 @infix func *(m: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension, rhs.coefficients * m)
+    return Expression(rhs.property, rhs.coefficients * m)
 }
 
 @infix func *(lhs: Expression, rhs: Float) -> Expression {

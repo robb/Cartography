@@ -38,7 +38,7 @@ enum Dimension : Property {
 }
 
 @infix func ==(lhs: Dimension, rhs: Expression) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
 }
 
 @infix func ==(lhs: Expression, rhs: Dimension) {
@@ -76,7 +76,7 @@ enum Dimension : Property {
 }
 
 @infix func <=(lhs: Dimension, rhs: Expression) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension, relation: NSLayoutRelation.LessThanOrEqual)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Expression, rhs: Dimension) {
@@ -84,7 +84,7 @@ enum Dimension : Property {
 }
 
 @infix func >=(lhs: Dimension, rhs: Expression) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension, relation: NSLayoutRelation.GreaterThanOrEqual)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Expression, rhs: Dimension) {
