@@ -31,9 +31,13 @@ enum Dimension : Property {
     var predicate = Predicate()
     predicate.constant = rhs
 
-    apply(predicate, lhs, nil, NSLayoutAttribute.NotAnAttribute)
+    apply(predicate, lhs, nil)
 }
 
 @infix func ==(lhs: Float, rhs: Dimension) {
     rhs == lhs
+}
+
+@infix func ==(lhs: Dimension, rhs: Dimension) {
+    apply(Predicate(), lhs, rhs)
 }

@@ -22,10 +22,14 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     return nil;
 }
 
-func apply(predicate: Predicate, from: Property, to: Property?, toAttribute: NSLayoutAttribute) -> NSLayoutConstraint {
+func apply(predicate: Predicate, from: Property, to: Property?) -> NSLayoutConstraint {
     from.view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
     let superview = commonSuperview(from.view, to?.view)
+
+    var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
+
+    if to != nil { toAttribute = to!.attribute }
 
     let constraint = NSLayoutConstraint(item: from.view,
                                         attribute: from.attribute,
