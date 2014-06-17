@@ -77,6 +77,14 @@ struct Expression {
     return rhs <= lhs
 }
 
+@infix func <=(lhs: Dimension, rhs: Dimension) {
+    apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func >=(lhs: Dimension, rhs: Dimension) {
+    apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
 @infix func <=(lhs: Dimension, rhs: Expression) {
     apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension, relation: NSLayoutRelation.LessThanOrEqual)
 }
