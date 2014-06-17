@@ -24,7 +24,7 @@ class AutolayoutDSLTests: XCTestCase {
     func testExample() {
         view.defineLayout { view in
             view.width == 200
-            view.height == 200
+            200 == view.height
         }
 
         XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")

@@ -74,3 +74,7 @@ enum Dimension : Property {
 
     apply(predicate, lhs, nil, NSLayoutAttribute.NotAnAttribute)
 }
+
+@infix func ==(lhs: Float, rhs: Dimension) {
+    rhs == lhs
+}
