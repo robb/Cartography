@@ -66,7 +66,7 @@ struct Expression {
 }
 
 @infix func <=(lhs: Float, rhs: Dimension) {
-    apply(rhs, coefficients: Coefficients(1, lhs), relation: NSLayoutRelation.GreaterThanOrEqual)
+    return rhs >= lhs
 }
 
 @infix func >=(lhs: Dimension, rhs: Float) {
@@ -74,7 +74,7 @@ struct Expression {
 }
 
 @infix func >=(lhs: Float, rhs: Dimension) {
-    apply(rhs, coefficients: Coefficients(1, lhs), relation: NSLayoutRelation.LessThanOrEqual)
+    return rhs <= lhs
 }
 
 @infix func <=(lhs: Dimension, rhs: Expression) {
@@ -82,15 +82,16 @@ struct Expression {
 }
 
 @infix func <=(lhs: Expression, rhs: Dimension) {
-    apply(rhs, coefficients: lhs.coefficients, to: lhs.dimension, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return rhs >= lhs
 }
 
 @infix func >=(lhs: Dimension, rhs: Expression) {
-    return rhs <= lhs
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Expression, rhs: Dimension) {
-    return rhs <= lhs}
+    return rhs <= lhs
+}
 
 // Addition
 
