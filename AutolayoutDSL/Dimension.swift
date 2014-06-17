@@ -37,11 +37,11 @@ enum Dimension : Property {
     rhs == lhs
 }
 
-@infix func ==(lhs: Dimension, rhs: Expression) {
+@infix func ==(lhs: Dimension, rhs: Expression<Dimension>) {
     apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
 }
 
-@infix func ==(lhs: Expression, rhs: Dimension) {
+@infix func ==(lhs: Expression<Dimension>, rhs: Dimension) {
     rhs == lhs
 }
 
@@ -75,38 +75,38 @@ enum Dimension : Property {
     apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func <=(lhs: Dimension, rhs: Expression) {
+@infix func <=(lhs: Dimension, rhs: Expression<Dimension>) {
     apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func <=(lhs: Expression, rhs: Dimension) {
+@infix func <=(lhs: Expression<Dimension>, rhs: Dimension) {
     return rhs >= lhs
 }
 
-@infix func >=(lhs: Dimension, rhs: Expression) {
+@infix func >=(lhs: Dimension, rhs: Expression<Dimension>) {
     apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func >=(lhs: Expression, rhs: Dimension) {
+@infix func >=(lhs: Expression<Dimension>, rhs: Dimension) {
     return rhs <= lhs
 }
 
 // Addition
 
-@infix func +(c: Float, rhs: Dimension) -> Expression {
+@infix func +(c: Float, rhs: Dimension) -> Expression<Dimension> {
     return Expression(rhs, Coefficients(1, c))
 }
 
-@infix func +(lhs: Dimension, rhs: Float) -> Expression {
+@infix func +(lhs: Dimension, rhs: Float) -> Expression<Dimension> {
     return rhs + lhs
 }
 
 // Multiplication
 
-@infix func *(m: Float, rhs: Dimension) -> Expression {
+@infix func *(m: Float, rhs: Dimension) -> Expression<Dimension> {
     return Expression(rhs, Coefficients(m, 0))
 }
 
-@infix func *(lhs: Dimension, rhs: Float) -> Expression {
+@infix func *(lhs: Dimension, rhs: Float) -> Expression<Dimension> {
     return rhs * lhs
 }

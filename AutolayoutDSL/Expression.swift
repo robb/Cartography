@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Expression {
-    let property: Property
+struct Expression<P: Property> {
+    let property: P
     var coefficients: Coefficients
 
-    init(_ property: Property, _ coefficients: Coefficients) {
+    init(_ property: P, _ coefficients: Coefficients) {
         self.property = property
         self.coefficients = coefficients
     }
@@ -20,20 +20,20 @@ struct Expression {
 
 // Addition
 
-@infix func +(c: Float, rhs: Expression) -> Expression {
+@infix func +<P: Property>(c: Float, rhs: Expression<P>) -> Expression<P> {
     return Expression(rhs.property, rhs.coefficients + c)
 }
 
-@infix func +(lhs: Expression, rhs: Float) -> Expression {
+@infix func +<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
     return rhs + lhs
 }
 
 // Multiplication
 
-@infix func *(m: Float, rhs: Expression) -> Expression {
+@infix func *<P: Property>(m: Float, rhs: Expression<P>) -> Expression<P> {
     return Expression(rhs.property, rhs.coefficients * m)
 }
 
-@infix func *(lhs: Expression, rhs: Float) -> Expression {
+@infix func *<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
     return rhs * lhs
 }
