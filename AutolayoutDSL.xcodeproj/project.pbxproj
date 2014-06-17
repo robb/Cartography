@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		546E9E891950A29300B16707 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* Layout.swift */; };
+		546E9E891950A29300B16707 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* LayoutProxy.swift */; };
 		546E9E8D1950A31100B16707 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8C1950A31100B16707 /* Dimension.swift */; };
 		546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
 		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		546E9E881950A29300B16707 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		546E9E881950A29300B16707 /* LayoutProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 		546E9E8C1950A31100B16707 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		546E9E8E1950A33700B16707 /* Coefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutolayoutDSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +89,7 @@
 				54C96A16195063CD000CDD27 /* AutolayoutDSL.h */,
 				546E9E8E1950A33700B16707 /* Coefficients.swift */,
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
-				546E9E881950A29300B16707 /* Layout.swift */,
+				546E9E881950A29300B16707 /* LayoutProxy.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
 			);
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C96A30195064A6000CDD27 /* Property.swift in Sources */,
-				546E9E891950A29300B16707 /* Layout.swift in Sources */,
+				546E9E891950A29300B16707 /* LayoutProxy.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
 				546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */,
 			);
