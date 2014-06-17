@@ -9,11 +9,11 @@
 import UIKit
 
 class Layout {
-    let width: Property
-    let height: Property
+    let width: Dimension
+    let height: Dimension
 
     init(view: UIView) {
-        self.width = Property.Width(view)
-        self.height = Property.Height(view)
+        self.width = Dimension.Width(view)
+        self.height = Dimension.Height(view)
     }
 }
