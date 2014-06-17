@@ -13,16 +13,16 @@ enum Dimension : Property {
     case Height(UIView)
 
     var view: UIView {
-    switch (self) {
-    case let .Width(view): return view
-    case let .Height(view): return view
+        switch (self) {
+            case let .Width(view): return view
+            case let .Height(view): return view
         }
     }
 
     var attribute: NSLayoutAttribute {
-    switch (self) {
-    case .Width(_): return NSLayoutAttribute.Width
-    case .Height(_): return NSLayoutAttribute.Height
+        switch (self) {
+            case .Width(_): return NSLayoutAttribute.Width
+            case .Height(_): return NSLayoutAttribute.Height
         }
     }
 }
