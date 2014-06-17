@@ -1,16 +1,16 @@
 //
 //  DimensionTests.swift
-//  AutolayoutDSLTests
+//  CartographyTests
 //
 //  Created by Robert Böhnke on 17/06/14.
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import AutolayoutDSL
+import Cartography
 import UIKit
 import XCTest
 
-class AutolayoutDSLTests: XCTestCase {
+class CartographyTests: XCTestCase {
     var superview: UIView!
     var view: UIView!
     var view2: UIView!

@@ -14,8 +14,8 @@
 		546E9E931950A87600B16707 /* EdgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E921950A87600B16707 /* EdgeTests.swift */; };
 		546E9E951950A97F00B16707 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E941950A97F00B16707 /* Expression.swift */; };
 		546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionTests.swift */; };
-		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */; };
+		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,14 +25,14 @@
 			containerPortal = 54C96A08195063CD000CDD27 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 54C96A10195063CD000CDD27;
-			remoteInfo = AutolayoutDSL;
+			remoteInfo = Cartography;
 		};
 		54C96A33195067C1000CDD27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 54C96A08195063CD000CDD27 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 54C96A10195063CD000CDD27;
-			remoteInfo = AutolayoutDSL;
+			remoteInfo = Cartography;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,10 +43,10 @@
 		546E9E901950A76C00B16707 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		546E9E921950A87600B16707 /* EdgeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeTests.swift; sourceTree = "<group>"; };
 		546E9E941950A97F00B16707 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
-		54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutolayoutDSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C96A11195063CD000CDD27 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54C96A16195063CD000CDD27 /* AutolayoutDSL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutolayoutDSL.h; sourceTree = "<group>"; };
-		54C96A1C195063CD000CDD27 /* AutolayoutDSLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolayoutDSLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C96A16195063CD000CDD27 /* Cartography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cartography.h; sourceTree = "<group>"; };
+		54C96A1C195063CD000CDD27 /* CartographyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartographyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A22195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */,
+				54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,8 +74,8 @@
 		54C96A07195063CD000CDD27 = {
 			isa = PBXGroup;
 			children = (
-				54C96A13195063CD000CDD27 /* AutolayoutDSL */,
-				54C96A20195063CD000CDD27 /* AutolayoutDSLTests */,
+				54C96A13195063CD000CDD27 /* Cartography */,
+				54C96A20195063CD000CDD27 /* CartographyTests */,
 				54C96A12195063CD000CDD27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,16 +83,16 @@
 		54C96A12195063CD000CDD27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */,
-				54C96A1C195063CD000CDD27 /* AutolayoutDSLTests.xctest */,
+				54C96A11195063CD000CDD27 /* Cartography.framework */,
+				54C96A1C195063CD000CDD27 /* CartographyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54C96A13195063CD000CDD27 /* AutolayoutDSL */ = {
+		54C96A13195063CD000CDD27 /* Cartography */ = {
 			isa = PBXGroup;
 			children = (
-				54C96A16195063CD000CDD27 /* AutolayoutDSL.h */,
+				54C96A16195063CD000CDD27 /* Cartography.h */,
 				546E9E8E1950A33700B16707 /* Coefficients.swift */,
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
 				546E9E901950A76C00B16707 /* Edge.swift */,
@@ -101,7 +101,7 @@
 				54C96A2F195064A6000CDD27 /* Property.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
 			);
-			path = AutolayoutDSL;
+			path = Cartography;
 			sourceTree = "<group>";
 		};
 		54C96A14195063CD000CDD27 /* Supporting Files */ = {
@@ -112,14 +112,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		54C96A20195063CD000CDD27 /* AutolayoutDSLTests */ = {
+		54C96A20195063CD000CDD27 /* CartographyTests */ = {
 			isa = PBXGroup;
 			children = (
 				54C96A23195063CD000CDD27 /* DimensionTests.swift */,
 				546E9E921950A87600B16707 /* EdgeTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
-			path = AutolayoutDSLTests;
+			path = CartographyTests;
 			sourceTree = "<group>";
 		};
 		54C96A21195063CD000CDD27 /* Supporting Files */ = {
@@ -137,16 +137,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */,
+				54C96A17195063CD000CDD27 /* Cartography.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		54C96A10195063CD000CDD27 /* AutolayoutDSL */ = {
+		54C96A10195063CD000CDD27 /* Cartography */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54C96A27195063CD000CDD27 /* Build configuration list for PBXNativeTarget "AutolayoutDSL" */;
+			buildConfigurationList = 54C96A27195063CD000CDD27 /* Build configuration list for PBXNativeTarget "Cartography" */;
 			buildPhases = (
 				54C96A0C195063CD000CDD27 /* Sources */,
 				54C96A0D195063CD000CDD27 /* Frameworks */,
@@ -157,14 +157,14 @@
 			);
 			dependencies = (
 			);
-			name = AutolayoutDSL;
-			productName = AutolayoutDSL;
-			productReference = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */;
+			name = Cartography;
+			productName = Cartography;
+			productReference = 54C96A11195063CD000CDD27 /* Cartography.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		54C96A1B195063CD000CDD27 /* AutolayoutDSLTests */ = {
+		54C96A1B195063CD000CDD27 /* CartographyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "AutolayoutDSLTests" */;
+			buildConfigurationList = 54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "CartographyTests" */;
 			buildPhases = (
 				54C96A18195063CD000CDD27 /* Sources */,
 				54C96A19195063CD000CDD27 /* Frameworks */,
@@ -176,9 +176,9 @@
 				54C96A1F195063CD000CDD27 /* PBXTargetDependency */,
 				54C96A34195067C1000CDD27 /* PBXTargetDependency */,
 			);
-			name = AutolayoutDSLTests;
-			productName = AutolayoutDSLTests;
-			productReference = 54C96A1C195063CD000CDD27 /* AutolayoutDSLTests.xctest */;
+			name = CartographyTests;
+			productName = CartographyTests;
+			productReference = 54C96A1C195063CD000CDD27 /* CartographyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 54C96A0B195063CD000CDD27 /* Build configuration list for PBXProject "AutolayoutDSL" */;
+			buildConfigurationList = 54C96A0B195063CD000CDD27 /* Build configuration list for PBXProject "Cartography" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -211,8 +211,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				54C96A10195063CD000CDD27 /* AutolayoutDSL */,
-				54C96A1B195063CD000CDD27 /* AutolayoutDSLTests */,
+				54C96A10195063CD000CDD27 /* Cartography */,
+				54C96A1B195063CD000CDD27 /* CartographyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,12 +262,12 @@
 /* Begin PBXTargetDependency section */
 		54C96A1F195063CD000CDD27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 54C96A10195063CD000CDD27 /* AutolayoutDSL */;
+			target = 54C96A10195063CD000CDD27 /* Cartography */;
 			targetProxy = 54C96A1E195063CD000CDD27 /* PBXContainerItemProxy */;
 		};
 		54C96A34195067C1000CDD27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 54C96A10195063CD000CDD27 /* AutolayoutDSL */;
+			target = 54C96A10195063CD000CDD27 /* Cartography */;
 			targetProxy = 54C96A33195067C1000CDD27 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -366,7 +366,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AutolayoutDSL/Info.plist;
+				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,7 +383,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AutolayoutDSL/Info.plist;
+				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,7 +402,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = AutolayoutDSLTests/Info.plist;
+				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,7 +416,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = AutolayoutDSLTests/Info.plist;
+				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		54C96A0B195063CD000CDD27 /* Build configuration list for PBXProject "AutolayoutDSL" */ = {
+		54C96A0B195063CD000CDD27 /* Build configuration list for PBXProject "Cartography" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54C96A25195063CD000CDD27 /* Debug */,
@@ -435,7 +435,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54C96A27195063CD000CDD27 /* Build configuration list for PBXNativeTarget "AutolayoutDSL" */ = {
+		54C96A27195063CD000CDD27 /* Build configuration list for PBXNativeTarget "Cartography" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54C96A28195063CD000CDD27 /* Debug */,
@@ -444,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "AutolayoutDSLTests" */ = {
+		54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "CartographyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				54C96A2B195063CD000CDD27 /* Debug */,
