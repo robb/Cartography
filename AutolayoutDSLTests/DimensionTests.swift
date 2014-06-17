@@ -91,7 +91,7 @@ class AutolayoutDSLTests: XCTestCase {
     func testMultipleViews() {
         layout(view, view2) { view, view2 in
             2 * view2.height == view.height
-            view.width == view2.width + 200
+            view.width == ((view2.width + 200) + 100) - 100
 
             view2.width  == 200
             view2.height == 200

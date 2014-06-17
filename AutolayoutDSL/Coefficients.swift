@@ -30,6 +30,16 @@ struct Coefficients {
     return rhs + lhs
 }
 
+// Subtraction
+
+@infix func -(c: Float, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier, rhs.constant - c)
+}
+
+@infix func -(lhs: Coefficients, rhs: Float) -> Coefficients {
+    return rhs - lhs
+}
+
 // Multiplication
 
 @infix func *(m: Float, rhs: Coefficients) -> Coefficients {

@@ -36,6 +36,24 @@ struct Expression<P: Property> {
     return rhs + lhs
 }
 
+// Subtraction
+
+@infix func -<P: Property>(c: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, Coefficients(1, -c))
+}
+
+@infix func -<P: Property>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}
+
+@infix func -<P: Property>(c: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.property, rhs.coefficients - c)
+}
+
+@infix func -<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}
+
 // Multiplication
 
 @infix func *<P: Property>(m: Float, rhs: Expression<P>) -> Expression<P> {
