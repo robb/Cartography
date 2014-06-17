@@ -17,6 +17,9 @@ enum Edge : Property {
     case Leading(UIView)
     case Trailing(UIView)
 
+    case CenterX(UIView)
+    case CenterY(UIView)
+
     var view: UIView {
         switch (self) {
             case let .Top(view): return view
@@ -26,6 +29,9 @@ enum Edge : Property {
 
             case let .Leading(view): return view
             case let .Trailing(view): return view
+
+            case let .CenterX(view): return view
+            case let .CenterY(view): return view
         }
     }
 
@@ -38,6 +44,9 @@ enum Edge : Property {
 
             case let .Leading(view): return NSLayoutAttribute.Leading
             case let .Trailing(view): return NSLayoutAttribute.Trailing
+
+            case let .CenterX(view): return NSLayoutAttribute.CenterX
+            case let .CenterY(view): return NSLayoutAttribute.CenterY
         }
     }
 }
