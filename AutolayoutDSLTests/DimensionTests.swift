@@ -47,4 +47,40 @@ class AutolayoutDSLTests: XCTestCase {
 
         XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")
     }
+
+    func testAddition() {
+        view.defineLayout { view in
+            view.height == (50 + view.width + 100)
+            view.width == 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 350), "should layout stuff")
+    }
+
+    func testMultiplication() {
+        view.defineLayout { view in
+            view.height == 2 * view.width
+            view.width == 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 400), "should layout stuff")
+    }
+
+    func testPrecedence() {
+        view.defineLayout { view in
+            view.height == 2 * view.width + 50
+            view.width == 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 450), "should layout stuff")
+    }
+
+    func testParenthesis() {
+        view.defineLayout { view in
+            view.height == 2 * (view.width + 50) + 5
+            view.width == 200
+        }
+
+        XCTAssertEqual(view.frame.size, CGSizeMake(200, 505), "should layout stuff")
+    }
 }
