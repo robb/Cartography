@@ -37,7 +37,7 @@ class CartographyTests: XCTestCase {
     func testAttributeEquality() {
         layout(view) { view in
             view.width == 200
-            view.width == view.height
+            view.width == view.height ~ 100
         }
 
         XCTAssertEqual(view.frame.size, CGSizeMake(200, 200), "should layout stuff")

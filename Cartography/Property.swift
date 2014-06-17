@@ -73,16 +73,16 @@ protocol Property {
 
 // Equality
 
-@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
+@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
 }
 
-@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) {
-    rhs == lhs
+@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs == lhs
 }
 
-@infix func ==<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs)
+@infix func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs)
 }
 
 // Inequality
