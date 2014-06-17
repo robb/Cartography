@@ -1,5 +1,5 @@
 //
-//  Constrainable.swift
+//  Property.swift
 //  AutolayoutDSL
 //
 //  Created by Robert Böhnke on 17/06/14.
@@ -7,13 +7,6 @@
 //
 
 import Foundation
-
-struct Predicate {
-    var relation: NSLayoutRelation = NSLayoutRelation.Equal
-    var multiplier: Float = 1
-    var constant: Float = 0
-    var priority: UILayoutPriority? = nil
-}
 
 func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     if (b == nil) {
@@ -29,7 +22,7 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     return nil;
 }
 
-enum Constrainable {
+enum Property {
     case Width(UIView)
     case Height(UIView)
 
@@ -47,7 +40,7 @@ enum Constrainable {
         }
     }
 
-    func apply(predicate: Predicate, to: Constrainable?, toAttribute: NSLayoutAttribute) -> NSLayoutConstraint {
+    func apply(predicate: Predicate, to: Property?, toAttribute: NSLayoutAttribute) -> NSLayoutConstraint {
         self.view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         let superview = commonSuperview(self.view, to?.view)
@@ -70,7 +63,7 @@ enum Constrainable {
     }
 }
 
-@infix func ==(lhs: Constrainable, rhs: Float) {
+@infix func ==(lhs: Property, rhs: Float) {
     var predicate = Predicate()
     predicate.constant = rhs
 
