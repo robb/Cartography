@@ -29,23 +29,18 @@ enum Dimension : Property {
 
 struct Expression {
     let dimension: Dimension
-    var constant: Float
-    var multiplier: Float
+    var coefficients: Coefficients
 
-    init(_ dimension: Dimension, multiplier: Float = 1, constant: Float = 0) {
+    init(_ dimension: Dimension, _ coefficients: Coefficients) {
         self.dimension = dimension
-        self.multiplier = multiplier
-        self.constant = constant
+        self.coefficients = coefficients
     }
 }
 
 // Equality
 
 @infix func ==(lhs: Dimension, rhs: Float) {
-    var predicate = Predicate()
-    predicate.constant = rhs
-
-    apply(predicate, lhs)
+    apply(lhs, coefficients: Coefficients(1, rhs))
 }
 
 @infix func ==(lhs: Float, rhs: Dimension) {
@@ -53,11 +48,7 @@ struct Expression {
 }
 
 @infix func ==(lhs: Dimension, rhs: Expression) {
-    var predicate = Predicate()
-    predicate.constant = rhs.constant
-    predicate.multiplier = rhs.multiplier
-
-    apply(predicate, lhs, to: rhs.dimension)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension)
 }
 
 @infix func ==(lhs: Expression, rhs: Dimension) {
@@ -65,53 +56,33 @@ struct Expression {
 }
 
 @infix func ==(lhs: Dimension, rhs: Dimension) {
-    apply(Predicate(), lhs, to: rhs)
+    apply(lhs, to: rhs)
 }
 
 // Inequality
 
 @infix func <=(lhs: Dimension, rhs: Float) {
-    var predicate = Predicate()
-    predicate.constant = rhs
-
-    apply(predicate, lhs, relation: NSLayoutRelation.LessThanOrEqual)
+    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Float, rhs: Dimension) {
-    var predicate = Predicate()
-    predicate.constant = lhs
-
-    apply(predicate, rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    apply(rhs, coefficients: Coefficients(1, lhs), relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Dimension, rhs: Float) {
-    var predicate = Predicate()
-    predicate.constant = rhs
-
-    apply(predicate, lhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Float, rhs: Dimension) {
-    var predicate = Predicate()
-    predicate.constant = lhs
-
-    apply(predicate, rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    apply(rhs, coefficients: Coefficients(1, lhs), relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Dimension, rhs: Expression) {
-    var predicate = Predicate()
-    predicate.multiplier = rhs.multiplier
-    predicate.constant = rhs.constant
-
-    apply(predicate, lhs, relation: NSLayoutRelation.LessThanOrEqual)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.dimension, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=(lhs: Expression, rhs: Dimension) {
-    var predicate = Predicate()
-    predicate.multiplier = lhs.multiplier
-    predicate.constant = lhs.constant
-
-    apply(predicate, rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    apply(rhs, coefficients: lhs.coefficients, to: lhs.dimension, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=(lhs: Dimension, rhs: Expression) {
@@ -123,18 +94,16 @@ struct Expression {
 
 // Addition
 
-@infix func +(lhs: Float, rhs: Dimension) -> Expression {
-    return Expression(rhs, constant: lhs)
+@infix func +(c: Float, rhs: Dimension) -> Expression {
+    return Expression(rhs, Coefficients(1, c))
 }
 
 @infix func +(lhs: Dimension, rhs: Float) -> Expression {
     return rhs + lhs
 }
 
-@infix func +(lhs: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension,
-                      multiplier: rhs.multiplier,
-                      constant: rhs.constant + lhs)
+@infix func +(c: Float, rhs: Expression) -> Expression {
+    return Expression(rhs.dimension, rhs.coefficients + c)
 }
 
 @infix func +(lhs: Expression, rhs: Float) -> Expression {
@@ -143,18 +112,16 @@ struct Expression {
 
 // Multiplication
 
-@infix func *(lhs: Float, rhs: Dimension) -> Expression {
-    return Expression(rhs, multiplier: lhs)
+@infix func *(m: Float, rhs: Dimension) -> Expression {
+    return Expression(rhs, Coefficients(m, 0))
 }
 
 @infix func *(lhs: Dimension, rhs: Float) -> Expression {
     return rhs * lhs
 }
 
-@infix func *(lhs: Float, rhs: Expression) -> Expression {
-    return Expression(rhs.dimension,
-                      multiplier: rhs.multiplier * lhs,
-                      constant: rhs.constant * lhs)
+@infix func *(m: Float, rhs: Expression) -> Expression {
+    return Expression(rhs.dimension, rhs.coefficients * m)
 }
 
 @infix func *(lhs: Expression, rhs: Float) -> Expression {

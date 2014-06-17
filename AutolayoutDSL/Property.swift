@@ -22,7 +22,7 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     return nil;
 }
 
-func apply(predicate: Predicate, from: Property, to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal, priority: Float? = nil) -> NSLayoutConstraint {
+func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal, priority: Float? = nil) -> NSLayoutConstraint {
     from.view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
     let superview = commonSuperview(from.view, to?.view)
@@ -36,8 +36,8 @@ func apply(predicate: Predicate, from: Property, to: Property? = nil, relation: 
                                         relatedBy: relation,
                                         toItem: to?.view,
                                         attribute: toAttribute,
-                                        multiplier: predicate.multiplier,
-                                        constant: predicate.constant)
+                                        multiplier: coefficients.multiplier,
+                                        constant: coefficients.constant)
 
     if let priority = priority {
         constraint.priority = priority

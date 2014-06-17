@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		546E9E891950A29300B16707 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* Layout.swift */; };
-		546E9E8B1950A2DA00B16707 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8A1950A2DA00B16707 /* Predicate.swift */; };
 		546E9E8D1950A31100B16707 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8C1950A31100B16707 /* Dimension.swift */; };
+		546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
 		54C96A17195063CD000CDD27 /* AutolayoutDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* AutolayoutDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* AutolayoutDSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */; };
 		54C96A24195063CD000CDD27 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionTests.swift */; };
@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		546E9E881950A29300B16707 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		546E9E8A1950A2DA00B16707 /* Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
 		546E9E8C1950A31100B16707 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		546E9E8E1950A33700B16707 /* Coefficients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* AutolayoutDSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutolayoutDSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A16195063CD000CDD27 /* AutolayoutDSL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutolayoutDSL.h; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				54C96A16195063CD000CDD27 /* AutolayoutDSL.h */,
+				546E9E8E1950A33700B16707 /* Coefficients.swift */,
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
 				546E9E881950A29300B16707 /* Layout.swift */,
-				546E9E8A1950A2DA00B16707 /* Predicate.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
 				54C96A2D195063DC000CDD27 /* UIView+AutolayoutDSL.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
@@ -237,7 +237,7 @@
 				54C96A30195064A6000CDD27 /* Property.swift in Sources */,
 				546E9E891950A29300B16707 /* Layout.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
-				546E9E8B1950A2DA00B16707 /* Predicate.swift in Sources */,
+				546E9E8F1950A33700B16707 /* Coefficients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
