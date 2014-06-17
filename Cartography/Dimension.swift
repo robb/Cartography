@@ -26,3 +26,13 @@ enum Dimension : Property {
         }
     }
 }
+
+// Equality
+
+@infix func ==(lhs: Dimension, rhs: Float) {
+    apply(lhs, coefficients: Coefficients(1, rhs))
+}
+
+@infix func ==(lhs: Float, rhs: Dimension) {
+    rhs == lhs
+}

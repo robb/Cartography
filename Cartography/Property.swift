@@ -73,14 +73,6 @@ protocol Property {
 
 // Equality
 
-@infix func ==<P: Property>(lhs: P, rhs: Float) {
-    apply(lhs, coefficients: Coefficients(1, rhs))
-}
-
-@infix func ==<P: Property>(lhs: Float, rhs: P) {
-    rhs == lhs
-}
-
 @infix func ==<P: Property>(lhs: P, rhs: Expression<P>) {
     apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
 }
