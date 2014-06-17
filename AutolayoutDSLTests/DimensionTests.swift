@@ -21,7 +21,7 @@ class AutolayoutDSLTests: XCTestCase {
         superview.addSubview(view)
     }
 
-    func testCommutativity() {
+    func testConstantEquality() {
         view.defineLayout { view in
             view.width == 200
             200 == view.height
