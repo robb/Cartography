@@ -35,14 +35,14 @@ class EdgeTests: XCTestCase {
 
     func testAlign() {
         layout(superview, view1, view2) { superview, view1, view2 in
-            view1.top  == superview.top
-            view2.top  == superview.top
+            view1.top  == superview.top + 20
+            view2.top  == superview.top + 20
 
-            view1.left  == superview.left
-            view1.right == view2.left
+            view1.left == superview.left + 20
+            view2.left == view1.right + 20
         }
 
-        XCTAssertEqual(view1.frame, CGRectMake(  0, 0, 200, 200), "should layout stuff")
-        XCTAssertEqual(view2.frame, CGRectMake(200, 0, 200, 200), "should layout stuff")
+        XCTAssertEqual(view1.frame, CGRectMake( 20, 20, 200, 200), "should layout stuff")
+        XCTAssertEqual(view2.frame, CGRectMake(240, 20, 200, 200), "should layout stuff")
     }
 }

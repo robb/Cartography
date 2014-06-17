@@ -52,3 +52,67 @@ protocol Property {
     var view: UIView { get }
     var attribute: NSLayoutAttribute { get }
 }
+
+// Equality
+
+@infix func ==<P: Property>(lhs: P, rhs: Float) {
+    apply(lhs, coefficients: Coefficients(1, rhs))
+}
+
+@infix func ==<P: Property>(lhs: Float, rhs: P) {
+    rhs == lhs
+}
+
+@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) {
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
+}
+
+@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) {
+    rhs == lhs
+}
+
+@infix func ==<P: Property>(lhs: P, rhs: P) {
+    apply(lhs, to: rhs)
+}
+
+// Inequality
+
+@infix func <=<P: Property>(lhs: P, rhs: Float) {
+    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func <=<P: Property>(lhs: Float, rhs: P) {
+    return rhs >= lhs
+}
+
+@infix func >=<P: Property>(lhs: P, rhs: Float) {
+    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func >=<P: Property>(lhs: Float, rhs: P) {
+    return rhs <= lhs
+}
+
+@infix func <=<P: Property>(lhs: P, rhs: P) {
+    apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func >=<P: Property>(lhs: P, rhs: P) {
+    apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) {
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) {
+    return rhs >= lhs
+}
+
+@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) {
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) {
+    return rhs <= lhs
+}

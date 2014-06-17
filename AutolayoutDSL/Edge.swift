@@ -41,9 +41,3 @@ enum Edge : Property {
         }
     }
 }
-
-// Equality
-
-@infix func ==(lhs: Edge, rhs: Edge) {
-    apply(lhs, to: rhs)
-}
