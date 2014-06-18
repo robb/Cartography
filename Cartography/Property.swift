@@ -40,7 +40,7 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     }
 }
 
-func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal, priority: Float? = nil) -> NSLayoutConstraint {
+func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {
     from.view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
     let superview = commonSuperview(from.view, to?.view)
@@ -57,10 +57,6 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
                                         multiplier: coefficients.multiplier,
                                         constant: coefficients.constant)
 
-    if let priority = priority {
-        constraint.priority = priority
-    }
-
     superview?.addConstraint(constraint)
 
     return constraint
@@ -73,16 +69,16 @@ protocol Property {
 
 // Equality
 
-@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
+@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
 }
 
-@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) {
-    rhs == lhs
+@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs == lhs
 }
 
-@infix func ==<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs)
+@infix func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs)
 }
 
 // Inequality
