@@ -10,6 +10,8 @@ import Foundation
 
 operator infix ~ { }
 
-@infix func ~(lhs: NSLayoutConstraint, rhs: Float) {
+@infix func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
     lhs.priority = rhs
+
+    return lhs
 }

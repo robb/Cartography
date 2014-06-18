@@ -22,12 +22,12 @@ class PriorityTests: XCTestCase {
     }
 
     func testPriority() {
+        var width: NSLayoutConstraint?
+
         layout(view1) { view in
-            view.width == 200 ~ 100
+            width = (view.width == 200 ~ 100)
         }
 
-        let constraints: NSLayoutConstraint[] = view1.constraints() as NSLayoutConstraint[]
-
-        XCTAssertEqual(constraints[0].priority, 100, "should set priority")
+        XCTAssertEqual(width!.priority, 100, "should set priority")
     }
 }
