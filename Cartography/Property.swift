@@ -40,6 +40,11 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     }
 }
 
+protocol Property {
+    var view: UIView { get }
+    var attribute: NSLayoutAttribute { get }
+}
+
 func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {
     from.view.setTranslatesAutoresizingMaskIntoConstraints(false)
 
@@ -60,11 +65,6 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
     superview?.addConstraint(constraint)
 
     return constraint
-}
-
-protocol Property {
-    var view: UIView { get }
-    var attribute: NSLayoutAttribute { get }
 }
 
 // Equality
