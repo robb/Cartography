@@ -85,7 +85,7 @@ struct Expression<T> {
 }
 
 @infix func /<P: Property>(m: Float, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
+    return Expression(rhs, [ Coefficients(1 / m, 0) ])
 }
 
 @infix func /<P: Property>(lhs: P, rhs: Float) -> Expression<P> {
