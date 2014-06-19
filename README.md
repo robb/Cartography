@@ -25,7 +25,7 @@ layout(view1, view2, superview) { view1, view2, superview in
 
 Cartography currently supports the following operators `==`, `>=`, `<=`, `*`,
 `+`, `-` as well as the following attributes: `width`, `height`, `top`, `right`
-`bottom`, `left`, `leading`, `trailing`, `centerX` and `centerY`.
+`bottom`, `left`, `leading`, `trailing`, `centerX`, `centerY` and `baseline`.
 
 ## Setting priorities
 
