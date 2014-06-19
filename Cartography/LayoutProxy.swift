@@ -19,6 +19,8 @@ class LayoutProxy {
     let bottom: Edge
     let left: Edge
 
+    let edges: Edges
+
     let leading: Edge
     let trailing: Edge
 
@@ -38,6 +40,8 @@ class LayoutProxy {
         self.right = Edge.Right(view)
         self.bottom = Edge.Bottom(view)
         self.left = Edge.Left(view)
+
+        self.edges = Edges.Edges(view)
 
         self.leading = Edge.Leading(view)
         self.trailing = Edge.Trailing(view)
