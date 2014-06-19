@@ -83,26 +83,26 @@ protocol Property {
 
 // Inequality
 
-@infix func <=<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+@infix func <=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func >=<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+@infix func >=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
+@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) {
+@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
+@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) {
+@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs <= lhs
 }
