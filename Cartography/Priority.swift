@@ -15,3 +15,11 @@ operator infix ~ { }
 
     return lhs
 }
+
+@infix func ~(lhs: NSLayoutConstraint[], rhs: Float) -> NSLayoutConstraint[] {
+    for constraint in lhs {
+        constraint ~ rhs
+    }
+
+    return lhs
+}

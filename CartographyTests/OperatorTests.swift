@@ -82,4 +82,15 @@ class OperatorTests: XCTestCase {
 
         XCTAssertEqual(constraint.priority, 100, "It should set the priority")
     }
+
+    func testPriorities() {
+        var constraints: NSLayoutConstraint[]!
+
+        layout(view, superview) { view, superview in
+            constraints = (view.size <= superview.size ~ 100)
+        }
+
+        XCTAssertEqual(constraints[0].priority, 100, "It should set the priority")
+        XCTAssertEqual(constraints[1].priority, 100, "It should set the priority")
+    }
 }
