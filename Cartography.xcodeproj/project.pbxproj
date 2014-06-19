@@ -18,7 +18,7 @@
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
 		54FA3A361950FD320094B82A /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A351950FD320094B82A /* Priority.swift */; };
-		54FA3A381950FD8E0094B82A /* PriorityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PriorityTests.swift */; };
+		54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* OperatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		54FA3A351950FD320094B82A /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
-		54FA3A371950FD8E0094B82A /* PriorityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityTests.swift; sourceTree = "<group>"; };
+		54FA3A371950FD8E0094B82A /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			children = (
 				54C96A23195063CD000CDD27 /* DimensionTests.swift */,
 				546E9E921950A87600B16707 /* EdgeTests.swift */,
-				54FA3A371950FD8E0094B82A /* PriorityTests.swift */,
+				54FA3A371950FD8E0094B82A /* OperatorTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
 			path = CartographyTests;
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54FA3A381950FD8E0094B82A /* PriorityTests.swift in Sources */,
+				54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeTests.swift in Sources */,
 			);
