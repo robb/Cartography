@@ -52,6 +52,17 @@ class OperatorTests: XCTestCase {
         XCTAssertEqual(constraint.constant, 205, "It should multiply the constant")
     }
 
+    func testDivision() {
+        var constraint: NSLayoutConstraint!
+
+        layout(view, superview) { view, superview in
+            constraint = view.width == (superview.width + 100) / 2 + 5
+        }
+
+        XCTAssertEqual(constraint.multiplier, 0.5, "It should set the constant")
+        XCTAssertEqual(constraint.constant, 55, "It should divide the constant")
+    }
+
     func testPriority() {
         var constraint: NSLayoutConstraint!
 
