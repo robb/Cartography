@@ -18,3 +18,39 @@ enum Size : Compound {
         }
     }
 }
+
+// Multiplication
+
+@infix func *(m: Float, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+@infix func *(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+    return rhs * lhs
+}
+
+@infix func *(m: Float, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(m, 0), Coefficients(m, 0) ])
+}
+
+@infix func *(lhs: Size, rhs: Float) -> Expression<Size> {
+    return rhs * lhs
+}
+
+// Division
+
+@infix func /(m: Float, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+}
+
+@infix func /(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+    return rhs / lhs
+}
+
+@infix func /(m: Float, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(1 / m, 0), Coefficients(1 / m, 0) ])
+}
+
+@infix func /(lhs: Size, rhs: Float) -> Expression<Size> {
+    return rhs / lhs
+}

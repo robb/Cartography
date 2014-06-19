@@ -19,18 +19,38 @@ class SizeTests: XCTestCase {
 
         view = UIView(frame: CGRectZero)
         superview.addSubview(view)
-
-        layout(view) { view in
-            view.width  >= 200
-            view.height >= 200
-        }
     }
 
-    func testSize() {
+    func testEquality() {
         layout(view, superview) { view, superview in
             view.size == superview.size; return
         }
 
-        XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "should layout stuff")
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the size")
+    }
+
+    func testInequality() {
+        layout(view, superview) { view, superview in
+            view.size >= superview.size
+            view.size <= superview.size
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the size")
+    }
+
+    func testMultiplication() {
+        layout(view, superview) { view, superview in
+            view.size == superview.size * 1.5; return
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 600, 600), "It should affect width and height")
+    }
+
+    func testDivision() {
+        layout(view, superview) { view, superview in
+            view.size == superview.size / 2; return
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 200, 200), "It should affect width and height")
     }
 }
