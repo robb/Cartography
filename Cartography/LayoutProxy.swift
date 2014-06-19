@@ -12,16 +12,21 @@ class LayoutProxy {
     let width: Dimension
     let height: Dimension
 
+    let size: Size
+
     let top: Edge
     let right: Edge
     let bottom: Edge
     let left: Edge
+
+    let edges: Edges
 
     let leading: Edge
     let trailing: Edge
 
     let centerX: Edge
     let centerY: Edge
+    let center: Point
 
     let baseline: Edge
 
@@ -29,16 +34,21 @@ class LayoutProxy {
         self.width = Dimension.Width(view)
         self.height = Dimension.Height(view)
 
+        self.size = Size.Size(view)
+
         self.top = Edge.Top(view)
         self.right = Edge.Right(view)
         self.bottom = Edge.Bottom(view)
         self.left = Edge.Left(view)
+
+        self.edges = Edges.Edges(view)
 
         self.leading = Edge.Leading(view)
         self.trailing = Edge.Trailing(view)
 
         self.centerX = Edge.CenterX(view)
         self.centerY = Edge.CenterY(view)
+        self.center = Point.Center(view)
 
         self.baseline = Edge.Baseline(view)
     }
