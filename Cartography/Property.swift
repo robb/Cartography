@@ -83,22 +83,6 @@ protocol Property {
 
 // Inequality
 
-@infix func <=<P: Property>(lhs: P, rhs: Float) {
-    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix func <=<P: Property>(lhs: Float, rhs: P) {
-    return rhs >= lhs
-}
-
-@infix func >=<P: Property>(lhs: P, rhs: Float) {
-    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix func >=<P: Property>(lhs: Float, rhs: P) {
-    return rhs <= lhs
-}
-
 @infix func <=<P: Property>(lhs: P, rhs: P) {
     apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
