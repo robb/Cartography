@@ -12,11 +12,18 @@ protocol Compound {
     var properties: Property[] { get }
 }
 
-func apply(from: Compound, coefficients: Coefficients = Coefficients(), to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint[] {
+func apply(from: Compound, coefficients: Coefficients[]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint[] {
     var results: NSLayoutConstraint[] = []
 
     for i in 0..from.properties.count {
-        results += apply(from.properties[i], coefficients: coefficients, to: to?.properties[i], relation: relation)
+        var n: Coefficients
+        if coefficients == nil {
+            n = Coefficients()
+        } else {
+            n = coefficients![i]
+        }
+
+        results += apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation)
     }
 
     return results
