@@ -20,6 +20,9 @@ enum Edge : Property {
     case CenterX(UIView)
     case CenterY(UIView)
 
+    case Baseline(UIView)
+    case FirstBaseline(UIView)
+
     var view: UIView {
         switch (self) {
             case let .Top(view): return view
@@ -32,6 +35,9 @@ enum Edge : Property {
 
             case let .CenterX(view): return view
             case let .CenterY(view): return view
+
+            case let .Baseline(view): return view
+            case let .FirstBaseline(view): return view
         }
     }
 
@@ -47,6 +53,9 @@ enum Edge : Property {
 
             case let .CenterX(view): return NSLayoutAttribute.CenterX
             case let .CenterY(view): return NSLayoutAttribute.CenterY
+
+            case let .Baseline(view): return NSLayoutAttribute.Baseline
+            case let .FirstBaseline(view): return NSLayoutAttribute.FirstBaseline
         }
     }
 }

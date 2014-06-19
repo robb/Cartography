@@ -23,6 +23,9 @@ class LayoutProxy {
     let centerX: Edge
     let centerY: Edge
 
+    let baseline: Edge
+    let firstBaseline: Edge
+
     init(_ view: UIView) {
         self.width = Dimension.Width(view)
         self.height = Dimension.Height(view)
@@ -37,6 +40,9 @@ class LayoutProxy {
 
         self.centerX = Edge.CenterX(view)
         self.centerY = Edge.CenterY(view)
+
+        self.baseline = Edge.Baseline(view)
+        self.firstBaseline = Edge.FirstBaseline(view)
     }
 }
 
