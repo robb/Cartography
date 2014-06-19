@@ -83,42 +83,26 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 
 // Inequality
 
-@infix func <=<P: Property>(lhs: P, rhs: Float) {
-    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
+@infix func <=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func <=<P: Property>(lhs: Float, rhs: P) {
+@infix func >=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-@infix func >=<P: Property>(lhs: P, rhs: Float) {
-    apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
+@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func >=<P: Property>(lhs: Float, rhs: P) {
-    return rhs <= lhs
-}
-
-@infix func <=<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix func >=<P: Property>(lhs: P, rhs: P) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) {
-    return rhs >= lhs
-}
-
-@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) {
+@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs <= lhs
 }

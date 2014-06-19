@@ -36,3 +36,21 @@ enum Dimension : Property {
 @infix func ==(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
     return rhs == lhs
 }
+
+// Inequality
+
+@infix func <=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func <=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
+    return rhs >= lhs
+}
+
+@infix func >=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func >=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
+    return rhs <= lhs
+}
