@@ -12,37 +12,65 @@ import XCTest
 
 class EdgeTests: XCTestCase {
     var superview: UIView!
-    var view1: UIView!
-    var view2: UIView!
+    var view: UIView!
 
     override func setUp() {
-        superview = UIView(frame: CGRectMake(0, 0, 100, 100))
+        superview = UIView(frame: CGRectMake(0, 0, 400, 400))
 
-        view1 = UIView(frame: CGRectZero)
-        superview.addSubview(view1)
+        view = UIView(frame: CGRectZero)
+        superview.addSubview(view)
 
-        view2 = UIView(frame: CGRectZero)
-        superview.addSubview(view2)
-
-        layout(view1, view2) { view1, view2 in
-            view1.height == view2.height
-            view1.width == view2.width
-
-            view2.width  == 200
-            view2.height == 200
+        layout(view) { view in
+            view.height == 200
+            view.width == 200
         }
     }
 
-    func testAlign() {
-        layout(superview, view1, view2) { superview, view1, view2 in
-            view1.top  == superview.top + 20
-            view2.top  == superview.top + 20
-
-            view1.left == superview.left + 20
-            view2.left == view1.right + 20
+    func testTop() {
+        layout(view, superview) { view, superview in
+            view.top == superview.top + 100; return
         }
 
-        XCTAssertEqual(view1.frame, CGRectMake( 20, 20, 200, 200), "should layout stuff")
-        XCTAssertEqual(view2.frame, CGRectMake(240, 20, 200, 200), "should layout stuff")
+        XCTAssertEqual(CGRectGetMinY(view.frame), 100, "It should layout the top edge")
+    }
+
+    func testRight() {
+        layout(view, superview) { view, superview in
+            view.right == superview.right - 100; return
+        }
+
+        XCTAssertEqual(CGRectGetMaxX(view.frame), 300, "It should layout the right edge")
+    }
+
+    func testBottom() {
+        layout(view, superview) { view, superview in
+            view.bottom == superview.bottom - 100; return
+        }
+
+        XCTAssertEqual(CGRectGetMaxY(view.frame), 300, "It should layout the bottom edge")
+    }
+
+    func testLeft() {
+        layout(view, superview) { view, superview in
+            view.left == superview.left + 100; return
+        }
+
+        XCTAssertEqual(CGRectGetMinX(view.frame), 100, "It should layout the left edge")
+    }
+
+    func testCenterX() {
+        layout(view, superview) { view, superview in
+            view.centerX == superview.centerX; return
+        }
+
+        XCTAssertEqual(CGRectGetMidX(view.frame), 200, "It should layout the center x \'edge\'")
+    }
+
+    func testCenterY() {
+        layout(view, superview) { view, superview in
+            view.centerY == superview.centerY; return
+        }
+
+        XCTAssertEqual(CGRectGetMidY(view.frame), 200, "It should layout the center y \'edge\'")
     }
 }

@@ -49,3 +49,13 @@ struct Coefficients {
 @infix func *(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs * lhs
 }
+
+// Division
+
+@infix func /(m: Float, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier / m, rhs.constant / m)
+}
+
+@infix func /(lhs: Coefficients, rhs: Float) -> Coefficients {
+    return rhs / lhs
+}
