@@ -23,10 +23,27 @@ layout(view1, view2, superview) { view1, view2, superview in
 }
 ```
 
-Cartography currently supports the following operators `==`, `>=`, `<=`, `*`,
-`/`, `+`, `-` as well as the following attributes: `width`, `height`, `top`,
-`right` `bottom`, `left`, `leading`, `trailing`, `centerX`, `centerY` and
-`baseline`.
+## Supported attributes
+
+Cartography all built-in attributes as of iOS 7, those are: `width`, `height`,
+`top`, `right` `bottom`, `left`, `leading`, `trailing`, `centerX`, `centerY` and
+`baseline`. These can be further refined using the following operators: `*`,
+`/`, `+` and `-`.
+
+Additionally, it supports convenient compound attibutes allow you to assign multiple attibutes at once:
+
+```swift
+layout(view, superview) { view, superview in
+    view.size   == superview.size / 2
+    view.center == superview.center
+}
+```
+
+```swift
+layout(view, superview) { view, superview in
+    view.edges == inset(superview.edges, 20, 20, 40, 20)
+}
+```
 
 ## Setting priorities
 
