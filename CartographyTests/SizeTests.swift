@@ -28,7 +28,7 @@ class SizeTests: XCTestCase {
 
     func testSize() {
         layout(view, superview) { view, superview in
-            view.size == superview.size
+            view.size == superview.size; return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "should layout stuff")

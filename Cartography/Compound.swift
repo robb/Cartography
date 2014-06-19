@@ -31,16 +31,16 @@ func apply(from: Compound, coefficients: Coefficients[]? = nil, to: Compound? = 
 
 // Equality
 
-@infix func ==<C: Compound>(lhs: C, rhs: C) {
-    apply(lhs, to: rhs)
+@infix func ==<C: Compound>(lhs: C, rhs: C) -> NSLayoutConstraint[] {
+    return apply(lhs, to: rhs)
 }
 
 // Inequality
 
-@infix func <=<C: Compound>(lhs: C, rhs: C) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+@infix func <=<C: Compound>(lhs: C, rhs: C) -> NSLayoutConstraint[] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func >=<C: Compound>(lhs: C, rhs: C) {
-    apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+@infix func >=<C: Compound>(lhs: C, rhs: C) -> NSLayoutConstraint[] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }

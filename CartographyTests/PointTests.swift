@@ -28,7 +28,7 @@ class PointTests: XCTestCase {
 
     func testPoint() {
         layout(view, superview) { view, superview in
-            view.center == superview.center
+            view.center == superview.center; return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(100, 100, 200, 200), "should layout stuff")
