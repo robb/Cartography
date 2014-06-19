@@ -70,6 +70,16 @@ layout(view) { view in
 }
 ```
 
+Note that declaring compound attibutes returns multiple constraints at once:
+
+```swift
+var constraints: NSLayoutConstraint[]?
+
+layout(view, superview) { view, superview in
+    constraints = (view.size == superview.size ~ 100)
+}
+```
+
 ## About Cartography
 
 Cartography is written in Swift so it's pretty much beta by definition.
