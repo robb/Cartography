@@ -27,48 +27,48 @@ class EdgeTests: XCTestCase {
     }
 
     func testTop() {
-        layout(view, superview) { view, superview in
-            view.top == superview.top + 100; return
+        layout(view) { view in
+            view.top == view.superview!.top + 100; return
         }
 
         XCTAssertEqual(CGRectGetMinY(view.frame), 100, "It should layout the top edge")
     }
 
     func testRight() {
-        layout(view, superview) { view, superview in
-            view.right == superview.right - 100; return
+        layout(view) { view in
+            view.right == view.superview!.right - 100; return
         }
 
         XCTAssertEqual(CGRectGetMaxX(view.frame), 300, "It should layout the right edge")
     }
 
     func testBottom() {
-        layout(view, superview) { view, superview in
-            view.bottom == superview.bottom - 100; return
+        layout(view) { view in
+            view.bottom == view.superview!.bottom - 100; return
         }
 
         XCTAssertEqual(CGRectGetMaxY(view.frame), 300, "It should layout the bottom edge")
     }
 
     func testLeft() {
-        layout(view, superview) { view, superview in
-            view.left == superview.left + 100; return
+        layout(view) { view in
+            view.left == view.superview!.left + 100; return
         }
 
         XCTAssertEqual(CGRectGetMinX(view.frame), 100, "It should layout the left edge")
     }
 
     func testCenterX() {
-        layout(view, superview) { view, superview in
-            view.centerX == superview.centerX; return
+        layout(view) { view in
+            view.centerX == view.superview!.centerX; return
         }
 
         XCTAssertEqual(CGRectGetMidX(view.frame), 200, "It should layout the center x \'edge\'")
     }
 
     func testCenterY() {
-        layout(view, superview) { view, superview in
-            view.centerY == superview.centerY; return
+        layout(view) { view in
+            view.centerY == view.superview!.centerY; return
         }
 
         XCTAssertEqual(CGRectGetMidY(view.frame), 200, "It should layout the center y \'edge\'")

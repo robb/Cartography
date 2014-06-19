@@ -24,8 +24,8 @@ class OperatorTests: XCTestCase {
     func testAddition() {
         var constraint: NSLayoutConstraint!
 
-        layout(view, superview) { view, superview in
-            constraint = view.width == superview.width + 100
+        layout(view) { view in
+            constraint = view.width == view.superview!.width + 100
         }
 
         XCTAssertEqual(constraint.constant, 100, "It should set the constant")
@@ -34,8 +34,8 @@ class OperatorTests: XCTestCase {
     func testSubtraction() {
         var constraint: NSLayoutConstraint!
 
-        layout(view, superview) { view, superview in
-            constraint = view.width == superview.width - 100
+        layout(view) { view in
+            constraint = view.width == view.superview!.width - 100
         }
 
         XCTAssertEqual(constraint.constant, -100, "It should set the constant")
@@ -44,8 +44,8 @@ class OperatorTests: XCTestCase {
     func testMultiplication() {
         var constraint: NSLayoutConstraint!
 
-        layout(view, superview) { view, superview in
-            constraint = view.width == (superview.width + 100) * 2 + 5
+        layout(view) { view in
+            constraint = view.width == (view.superview!.width + 100) * 2 + 5
         }
 
         XCTAssertEqual(constraint.multiplier, 2, "It should set the constant")
@@ -55,8 +55,8 @@ class OperatorTests: XCTestCase {
     func testDivision() {
         var constraint: NSLayoutConstraint!
 
-        layout(view, superview) { view, superview in
-            constraint = view.width == (superview.width + 100) / 2 + 5
+        layout(view) { view in
+            constraint = view.width == (view.superview!.width + 100) / 2 + 5
         }
 
         XCTAssertEqual(constraint.multiplier, 0.5, "It should set the constant")
@@ -66,8 +66,8 @@ class OperatorTests: XCTestCase {
     func testDivision2() {
         var constraint: NSLayoutConstraint!
 
-        layout(view, superview) { view, superview in
-            constraint = view.width == superview.width / 2
+        layout(view) { view in
+            constraint = view.width == view.superview!.width / 2
         }
 
         XCTAssertEqual(constraint.multiplier, 0.5, "It should set the constant")
@@ -86,8 +86,8 @@ class OperatorTests: XCTestCase {
     func testPriorities() {
         var constraints: NSLayoutConstraint[]!
 
-        layout(view, superview) { view, superview in
-            constraints = (view.size <= superview.size ~ 100)
+        layout(view) { view in
+            constraints = (view.size <= view.superview!.size ~ 100)
         }
 
         XCTAssertEqual(constraints[0].priority, 100, "It should set the priority")
