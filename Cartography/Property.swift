@@ -70,7 +70,7 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 // Equality
 
 @infix func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.property)
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
 @infix func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
@@ -108,7 +108,7 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 }
 
 @infix func <=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.LessThanOrEqual)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 @infix func <=<P: Property>(lhs: Expression<P>, rhs: P) {
@@ -116,7 +116,7 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 }
 
 @infix func >=<P: Property>(lhs: P, rhs: Expression<P>) {
-    apply(lhs, coefficients: rhs.coefficients, to: rhs.property, relation: NSLayoutRelation.GreaterThanOrEqual)
+    apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 @infix func >=<P: Property>(lhs: Expression<P>, rhs: P) {

@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Expression<P: Property> {
-    let property: P
+struct Expression<T> {
+    let value: T
     var coefficients: Coefficients
 
-    init(_ property: P, _ coefficients: Coefficients) {
-        self.property = property
+    init(_ value: T, _ coefficients: Coefficients) {
+        self.value = value
         self.coefficients = coefficients
     }
 }
@@ -29,7 +29,7 @@ struct Expression<P: Property> {
 }
 
 @infix func +<P: Property>(c: Float, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.property, rhs.coefficients + c)
+    return Expression(rhs.value, rhs.coefficients + c)
 }
 
 @infix func +<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
@@ -47,7 +47,7 @@ struct Expression<P: Property> {
 }
 
 @infix func -<P: Property>(c: Float, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.property, rhs.coefficients - c)
+    return Expression(rhs.value, rhs.coefficients - c)
 }
 
 @infix func -<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
@@ -57,7 +57,7 @@ struct Expression<P: Property> {
 // Multiplication
 
 @infix func *<P: Property>(m: Float, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.property, rhs.coefficients * m)
+    return Expression(rhs.value, rhs.coefficients * m)
 }
 
 @infix func *<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
@@ -75,7 +75,7 @@ struct Expression<P: Property> {
 // Division
 
 @infix func /<P: Property>(m: Float, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.property, rhs.coefficients / m)
+    return Expression(rhs.value, rhs.coefficients / m)
 }
 
 @infix func /<P: Property>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
