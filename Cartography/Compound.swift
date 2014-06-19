@@ -31,6 +31,14 @@ func apply(from: Compound, coefficients: Coefficients[]? = nil, to: Compound? = 
 
 // Equality
 
+@infix func ==<C: Compound>(lhs: C, rhs: Expression<C>) -> NSLayoutConstraint[] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+}
+
+@infix func ==<C: Compound>(lhs: Expression<C>, rhs: C) -> NSLayoutConstraint[] {
+    return rhs == lhs
+}
+
 @infix func ==<C: Compound>(lhs: C, rhs: C) -> NSLayoutConstraint[] {
     return apply(lhs, to: rhs)
 }
@@ -43,4 +51,20 @@ func apply(from: Compound, coefficients: Coefficients[]? = nil, to: Compound? = 
 
 @infix func >=<C: Compound>(lhs: C, rhs: C) -> NSLayoutConstraint[] {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func <=<C: Compound>(lhs: C, rhs: Expression<C>) -> NSLayoutConstraint[] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix func <=<C: Compound>(lhs: Expression<C>, rhs: C) -> NSLayoutConstraint[] {
+    return rhs >= lhs
+}
+
+@infix func >=<C: Compound>(lhs: C, rhs: Expression<C>) -> NSLayoutConstraint[] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix func >=<C: Compound>(lhs: Expression<C>, rhs: C) -> NSLayoutConstraint[] {
+    return rhs <= lhs
 }
