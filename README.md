@@ -10,15 +10,15 @@ which you declare the constraints between the different attributes of your
 views:
 
 ```swift
-layout(view1, view2, superview) { view1, view2, superview in
-    view1.width   == (superview.width - 50) * 0.5
+layout(view1, view2) { view1, view2 in
+    view1.width   == (view.superview!.width - 50) * 0.5
     view2.width   == view1.width - 50
     view1.height  == 40
     view2.height  == view1.height
-    view1.centerX == superview.centerX
+    view1.centerX == view.superview!.centerX
     view2.centerX == view1.centerX
  
-    view1.top >= superview.top + 20
+    view1.top >= view.superview!.top + 20
     view2.top == view1.bottom + 20
 }
 ```
@@ -33,15 +33,15 @@ Cartography all built-in attributes as of iOS 7, those are: `width`, `height`,
 Additionally, it supports convenient compound attibutes allow you to assign multiple attibutes at once:
 
 ```swift
-layout(view, superview) { view, superview in
-    view.size   == superview.size / 2
-    view.center == superview.center
+layout(view) { view in
+    view.size   == view.superview!.size / 2
+    view.center == view.superview!.center
 }
 ```
 
 ```swift
-layout(view, superview) { view, superview in
-    view.edges == inset(superview.edges, 20, 20, 40, 20)
+layout(view) { view in
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
 }
 ```
 
@@ -75,8 +75,8 @@ Note that declaring compound attibutes returns multiple constraints at once:
 ```swift
 var constraints: NSLayoutConstraint[]?
 
-layout(view, superview) { view, superview in
-    constraints = (view.size == superview.size ~ 100)
+layout(view) { view in
+    constraints = (view.size == view.superview!.size ~ 100)
 }
 ```
 

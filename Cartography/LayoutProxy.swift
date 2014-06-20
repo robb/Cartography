@@ -30,7 +30,19 @@ class LayoutProxy {
 
     let baseline: Edge
 
+    let view: UIView
+
+    var superview: LayoutProxy? {
+        if let superview = view.superview {
+            return LayoutProxy(view.superview)
+        } else {
+            return nil
+        }
+    }
+
     init(_ view: UIView) {
+        self.view = view
+
         self.width = Dimension.Width(view)
         self.height = Dimension.Height(view)
 

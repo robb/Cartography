@@ -22,41 +22,41 @@ class EdgesTests: XCTestCase {
     }
 
     func testEquality() {
-        layout(view, superview) { view, superview in
-            view.edges == superview.edges; return
+        layout(view) { view in
+            view.edges == view.superview!.edges; return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the edges")
     }
 
     func testInequality() {
-        layout(view, superview) { view, superview in
-            view.edges >= superview.edges
-            view.edges <= superview.edges
+        layout(view) { view in
+            view.edges >= view.superview!.edges
+            view.edges <= view.superview!.edges
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the edges")
     }
 
     func testInsetsAll() {
-        layout(view, superview) { view, superview in
-            view.edges == inset(superview.edges, 20); return
+        layout(view) { view in
+            view.edges == inset(view.superview!.edges, 20); return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(20, 20, 360, 360), "It should layout the edges")
     }
 
     func testInsetsHorizontalVertical() {
-        layout(view, superview) { view, superview in
-            view.edges == inset(superview.edges, 20, 30); return
+        layout(view) { view in
+            view.edges == inset(view.superview!.edges, 20, 30); return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(20, 30, 360, 340), "It should layout the edges")
     }
 
     func testInsetsIndividual() {
-        layout(view, superview) { view, superview in
-            view.edges == inset(superview.edges, 10, 20, 30, 40); return
+        layout(view) { view in
+            view.edges == inset(view.superview!.edges, 10, 20, 30, 40); return
         }
 
         XCTAssertEqual(view.frame, CGRectMake(20, 10, 340, 360), "It should layout the edges")

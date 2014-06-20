@@ -22,15 +22,15 @@ class CartographyTests: XCTestCase {
     }
 
     func testWidth() {
-        layout(view, superview) { view, superview in
-            view.width == superview.width - 200; return
+        layout(view) { view in
+            view.width == view.superview!.width - 200; return
         }
 
         XCTAssertEqual(CGRectGetWidth(view.frame), 200, "It should layout the width")
     }
 
     func testWidthConstants() {
-        layout(view, superview) { view, superview in
+        layout(view) { view in
             view.width == 200; return
         }
 
@@ -38,15 +38,15 @@ class CartographyTests: XCTestCase {
     }
 
     func testHeight() {
-        layout(view, superview) { view, superview in
-            view.height == superview.height - 200; return
+        layout(view) { view in
+            view.height == view.superview!.height - 200; return
         }
 
         XCTAssertEqual(CGRectGetHeight(view.frame), 200, "It should layout the height")
     }
 
     func testHeightConstants() {
-        layout(view, superview) { view, superview in
+        layout(view) { view in
             view.height == 200; return
         }
 
