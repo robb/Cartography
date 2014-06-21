@@ -25,10 +25,10 @@ layout(view1, view2) { view1, view2 in
 
 ## Supported attributes
 
-Cartography all built-in attributes as of iOS 7, those are: `width`, `height`,
-`top`, `right` `bottom`, `left`, `leading`, `trailing`, `centerX`, `centerY` and
-`baseline`. These can be further refined using the following operators: `*`,
-`/`, `+` and `-`.
+Cartography supports all built-in attributes as of iOS 7, those are: `width`,
+`height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`, `centerX`,
+`centerY` and `baseline`. These can be further refined using the following
+operators: `*`, `/`, `+` and `-`.
 
 Additionally, it supports convenient compound attibutes allow you to assign multiple attibutes at once:
 
