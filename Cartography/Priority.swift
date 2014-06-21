@@ -11,9 +11,17 @@ import Foundation
 operator infix ~ { }
 
 @infix func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
-    lhs.priority = rhs
+    let constraint = NSLayoutConstraint(item: lhs.firstItem,
+                                        attribute: lhs.firstAttribute,
+                                        relatedBy: lhs.relation,
+                                        toItem: lhs.secondItem,
+                                        attribute: lhs.secondAttribute,
+                                        multiplier: lhs.multiplier,
+                                        constant: lhs.constant)
 
-    return lhs
+    constraint.priority = rhs
+
+    return constraint;
 }
 
 @infix func ~(lhs: NSLayoutConstraint[], rhs: Float) -> NSLayoutConstraint[] {
