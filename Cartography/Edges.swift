@@ -9,7 +9,7 @@
 import Foundation
 
 enum Edges : Compound {
-    case Edges(UIView)
+    case Edges(View)
 
     var properties: Property[] {
     switch (self) {

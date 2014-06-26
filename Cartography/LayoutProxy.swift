@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class LayoutProxy {
     let width: Dimension
@@ -30,7 +30,7 @@ class LayoutProxy {
 
     let baseline: Edge
 
-    let view: UIView
+    let view: View
 
     var superview: LayoutProxy? {
         if let superview = view.superview {
@@ -40,7 +40,7 @@ class LayoutProxy {
         }
     }
 
-    init(_ view: UIView) {
+    init(_ view: View) {
         self.view = view
 
         self.width = Dimension.Width(view)
@@ -66,31 +66,31 @@ class LayoutProxy {
     }
 }
 
-func layout(view: UIView, block: LayoutProxy -> ()) {
+func layout(view: View, block: LayoutProxy -> ()) {
     block(LayoutProxy(view))
 
-    view.layoutIfNeeded()
+    view.car_updateAutoLayoutConstraints()
 }
 
-func layout(v1: UIView, v2: UIView, block: (LayoutProxy, LayoutProxy) -> ()) {
+func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
     block(LayoutProxy(v1), LayoutProxy(v2))
 
-    v1.layoutIfNeeded()
-    v2.layoutIfNeeded()
+    v1.car_updateAutoLayoutConstraints()
+    v2.car_updateAutoLayoutConstraints()
 }
 
-func layout(v1: UIView, v2: UIView, v3: UIView, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
+func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
     block(LayoutProxy(v1), LayoutProxy(v2), LayoutProxy(v3))
 
-    v1.layoutIfNeeded()
-    v2.layoutIfNeeded()
-    v3.layoutIfNeeded()
+    v1.car_updateAutoLayoutConstraints()
+    v2.car_updateAutoLayoutConstraints()
+    v3.car_updateAutoLayoutConstraints()
 }
 
-func layout(views: UIView[], block:(LayoutProxy[]) -> ()) {
+func layout(views: View[], block:(LayoutProxy[]) -> ()) {
     block(views.map({ LayoutProxy($0) }))
 
     for view in views {
-        view.layoutIfNeeded()
+        view.car_updateAutoLayoutConstraints()
     }
 }

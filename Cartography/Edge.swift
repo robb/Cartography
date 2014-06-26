@@ -9,20 +9,20 @@
 import Foundation
 
 enum Edge : Property {
-    case Top(UIView)
-    case Right(UIView)
-    case Bottom(UIView)
-    case Left(UIView)
+    case Top(View)
+    case Right(View)
+    case Bottom(View)
+    case Left(View)
 
-    case Leading(UIView)
-    case Trailing(UIView)
+    case Leading(View)
+    case Trailing(View)
 
-    case CenterX(UIView)
-    case CenterY(UIView)
+    case CenterX(View)
+    case CenterY(View)
 
-    case Baseline(UIView)
+    case Baseline(View)
 
-    var view: UIView {
+    var view: View {
         switch (self) {
             case let .Top(view): return view
             case let .Right(view): return view

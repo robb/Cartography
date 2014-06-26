@@ -7,17 +7,16 @@
 //
 
 import Cartography
-import UIKit
 import XCTest
 
 class EdgeTests: XCTestCase {
-    var superview: UIView!
-    var view: UIView!
+    var superview: View!
+    var view: View!
 
     override func setUp() {
-        superview = UIView(frame: CGRectMake(0, 0, 400, 400))
+        superview = View(frame: CGRectMake(0, 0, 400, 400))
 
-        view = UIView(frame: CGRectZero)
+        view = View(frame: CGRectZero)
         superview.addSubview(view)
 
         layout(view) { view in
