@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+    #import <UIKit/UIKit.h>
+#else
+    #import <AppKit/AppKit.h>
+#endif
 
 //! Project version number for Cartography.
 FOUNDATION_EXPORT double CartographyVersionNumber;

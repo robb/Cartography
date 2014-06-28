@@ -9,7 +9,7 @@
 import Foundation
 
 enum Size : Compound {
-    case Size(UIView)
+    case Size(View)
 
     var properties: Property[] {
         switch (self) {

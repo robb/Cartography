@@ -5,9 +5,9 @@ typing!
 
 ## How to use
 
-Call the `layout` function with your `UIView` instances as well as a closure in
-which you declare the constraints between the different attributes of your
-views:
+Call the `layout` function with your `UIView` or `NSView` instances as well as a
+closure in which you declare the constraints between the different attributes of
+your views:
 
 ```swift
 layout(view1, view2) { view1, view2 in
@@ -25,10 +25,10 @@ layout(view1, view2) { view1, view2 in
 
 ## Supported attributes
 
-Cartography supports all built-in attributes as of iOS 7, those are: `width`,
-`height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`, `centerX`,
-`centerY` and `baseline`. These can be further refined using the following
-operators: `*`, `/`, `+` and `-`.
+Cartography supports all built-in attributes as of iOS 7 and OS X 10.9, those
+are: `width`, `height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`,
+`centerX`, `centerY` and `baseline`. These can be further refined using the
+following operators: `*`, `/`, `+` and `-`.
 
 Additionally, it supports convenient compound attibutes allow you to assign multiple attibutes at once:
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-func commonSuperview(a: UIView, b: UIView?) -> UIView? {
+func commonSuperview(a: View, b: View?) -> View? {
     if (b == nil) {
         return a;
     } else if (a.superview == b) {
@@ -20,7 +20,7 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
     } else {
         let superviews = NSMutableSet()
 
-        var view: UIView? = a
+        var view: View? = a
         while let superview = view?.superview {
             superviews.addObject(superview)
 
@@ -41,12 +41,12 @@ func commonSuperview(a: UIView, b: UIView?) -> UIView? {
 }
 
 protocol Property {
-    var view: UIView { get }
+    var view: View { get }
     var attribute: NSLayoutAttribute { get }
 }
 
 func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {
-    from.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+    from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
 
     let superview = commonSuperview(from.view, to?.view)
 
@@ -59,8 +59,8 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
                                         relatedBy: relation,
                                         toItem: to?.view,
                                         attribute: toAttribute,
-                                        multiplier: coefficients.multiplier,
-                                        constant: coefficients.constant)
+                                        multiplier: CGFloat(coefficients.multiplier),
+                                        constant: CGFloat(coefficients.constant))
 
     superview?.addConstraint(constraint)
 

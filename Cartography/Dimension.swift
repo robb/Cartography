@@ -9,10 +9,10 @@
 import Foundation
 
 enum Dimension : Property {
-    case Width(UIView)
-    case Height(UIView)
+    case Width(View)
+    case Height(View)
 
-    var view: UIView {
+    var view: View {
         switch (self) {
             case let .Width(view): return view
             case let .Height(view): return view

@@ -9,7 +9,7 @@
 import Foundation
 
 enum Point : Compound {
-    case Center(UIView)
+    case Center(View)
 
     var properties: Property[] {
         switch (self) {
