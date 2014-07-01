@@ -30,7 +30,8 @@ are: `width`, `height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`,
 `centerX`, `centerY` and `baseline`. These can be further refined using the
 following operators: `*`, `/`, `+` and `-`.
 
-Additionally, it supports convenient compound attibutes allow you to assign multiple attibutes at once:
+Additionally, it supports convenient compound attibutes that allow you to assign
+multiple attibutes at once:
 
 ```swift
 layout(view) { view in
