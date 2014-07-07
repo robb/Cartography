@@ -19,7 +19,3 @@ FOUNDATION_EXPORT double CartographyVersionNumber;
 
 //! Project version string for Cartography.
 FOUNDATION_EXPORT const unsigned char CartographyVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Cartography/PublicHeader.h>
-
-
