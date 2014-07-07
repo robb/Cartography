@@ -52,7 +52,11 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 
     var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
 
-    if to != nil { toAttribute = to!.attribute }
+    if to {
+        toAttribute = to!.attribute
+    } else {
+        toAttribute = NSLayoutAttribute.NotAnAttribute
+    }
 
     let constraint = NSLayoutConstraint(item: from.view,
                                         attribute: from.attribute,

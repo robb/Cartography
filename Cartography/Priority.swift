@@ -16,7 +16,7 @@ operator infix ~ { }
     return lhs
 }
 
-@infix func ~(lhs: NSLayoutConstraint[], rhs: Float) -> NSLayoutConstraint[] {
+@infix func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }

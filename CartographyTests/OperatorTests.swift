@@ -83,7 +83,7 @@ class OperatorTests: XCTestCase {
     }
 
     func testPriorities() {
-        var constraints: NSLayoutConstraint[]!
+        var constraints: [NSLayoutConstraint]!
 
         layout(view) { view in
             constraints = (view.size <= view.superview!.size ~ 100)

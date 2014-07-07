@@ -87,7 +87,7 @@ func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, Layo
     v3.car_updateAutoLayoutConstraints()
 }
 
-func layout(views: View[], block:(LayoutProxy[]) -> ()) {
+func layout(views: [View], block:([LayoutProxy]) -> ()) {
     block(views.map({ LayoutProxy($0) }))
 
     for view in views {

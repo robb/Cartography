@@ -11,7 +11,7 @@ import Foundation
 enum Size : Compound {
     case Size(View)
 
-    var properties: Property[] {
+    var properties: [Property] {
         switch (self) {
             case let .Size(view):
                 return [ Dimension.Width(view), Dimension.Height(view) ]

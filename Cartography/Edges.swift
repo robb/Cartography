@@ -11,7 +11,7 @@ import Foundation
 enum Edges : Compound {
     case Edges(View)
 
-    var properties: Property[] {
+    var properties: [Property] {
     switch (self) {
         case let .Edges(view):
             return [

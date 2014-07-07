@@ -86,7 +86,7 @@
 		54C96A11195063CD000CDD27 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A16195063CD000CDD27 /* Cartography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cartography.h; sourceTree = "<group>"; };
-		54C96A1C195063CD000CDD27 /* CartographyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartographyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54C96A1C195063CD000CDD27 /* Cartography-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A22195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				54C96A11195063CD000CDD27 /* Cartography.framework */,
-				54C96A1C195063CD000CDD27 /* CartographyTests.xctest */,
+				54C96A1C195063CD000CDD27 /* Cartography-iOS-Tests.xctest */,
 				54F6A838195C20C100313D24 /* Cartography.framework */,
 				54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */,
 			);
@@ -265,7 +265,7 @@
 			);
 			name = "Cartography-iOS-Tests";
 			productName = CartographyTests;
-			productReference = 54C96A1C195063CD000CDD27 /* CartographyTests.xctest */;
+			productReference = 54C96A1C195063CD000CDD27 /* Cartography-iOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		54F6A837195C20C100313D24 /* Cartography-Mac */ = {
@@ -738,6 +738,7 @@
 				54F6A84D195C20C200313D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54F6A84E195C20C200313D24 /* Build configuration list for PBXNativeTarget "Cartography-Mac-Tests" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +747,7 @@
 				54F6A850195C20C200313D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
