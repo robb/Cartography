@@ -8,39 +8,7 @@
 
 import Foundation
 
-func commonSuperview(a: View, b: View?) -> View? {
-    if (b == nil) {
-        return a;
-    } else if (a.superview == b) {
-        return b;
-    } else if (a == b!.superview) {
-        return a;
-    } else if (a.superview == b!.superview) {
-        return a.superview;
-    } else {
-        let superviews = NSMutableSet()
-
-        var view: View? = a
-        while let superview = view?.superview {
-            superviews.addObject(superview)
-
-            view = superview
-        }
-
-        view = b
-        while let superview = view?.superview {
-            if superviews.containsObject(superview) {
-                return superview
-            }
-
-            view = superview
-        }
-
-        return nil
-    }
-}
-
-public protocol Property {
+protocol Property {
     var view: View { get }
     var attribute: NSLayoutAttribute { get }
 }
@@ -71,42 +39,34 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
     return constraint
 }
 
-// Equality
+func commonSuperview(a: View, b: View?) -> View? {
+    if (b == nil) {
+        return a;
+    } else if (a.superview == b) {
+        return b;
+    } else if (a == b!.superview) {
+        return a;
+    } else if (a.superview == b!.superview) {
+        return a.superview;
+    } else {
+        let superviews = NSMutableSet()
 
-@infix public func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
-}
+        var view: View? = a
+        while let superview = view?.superview {
+            superviews.addObject(superview)
 
-@infix public func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
-    return rhs == lhs
-}
+            view = superview
+        }
 
-@infix public func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs)
-}
+        view = b
+        while let superview = view?.superview {
+            if superviews.containsObject(superview) {
+                return superview
+            }
 
-// Inequality
+            view = superview
+        }
 
-@infix public func <=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix public func >=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix public func <=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix public func <=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
-    return rhs >= lhs
-}
-
-@infix public func >=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix public func >=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
-    return rhs <= lhs
+        return nil
+    }
 }

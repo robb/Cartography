@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Compound {
+protocol Compound {
     var properties: [Property] { get }
 }
 
@@ -27,44 +27,4 @@ func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = 
     }
 
     return results
-}
-
-// Equality
-
-@infix public func ==<C: Compound>(lhs: C, rhs: Expression<C>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
-}
-
-@infix public func ==<C: Compound>(lhs: Expression<C>, rhs: C) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
-@infix public func ==<C: Compound>(lhs: C, rhs: C) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs)
-}
-
-// Inequality
-
-@infix public func <=<C: Compound>(lhs: C, rhs: C) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix public func >=<C: Compound>(lhs: C, rhs: C) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix public func <=<C: Compound>(lhs: C, rhs: Expression<C>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-@infix public func <=<C: Compound>(lhs: Expression<C>, rhs: C) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
-@infix public func >=<C: Compound>(lhs: C, rhs: Expression<C>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-@infix public func >=<C: Compound>(lhs: Expression<C>, rhs: C) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }

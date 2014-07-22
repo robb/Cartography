@@ -11,12 +11,52 @@ import Foundation
 public enum Size : Compound {
     case Size(View)
 
-    public var properties: [Property] {
+    var properties: [Property] {
         switch (self) {
             case let .Size(view):
                 return [ Dimension.Width(view), Dimension.Height(view) ]
         }
     }
+}
+
+// Equality
+
+@infix public func ==(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+}
+
+@infix public func ==(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
+    return rhs == lhs
+}
+
+@infix public func ==(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs)
+}
+
+// Inequality
+
+@infix public func <=(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func >=(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func <=(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func <=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
+    return rhs >= lhs
+}
+
+@infix public func >=(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func >=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
+    return rhs <= lhs
 }
 
 // Multiplication

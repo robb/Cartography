@@ -11,7 +11,7 @@ import Foundation
 public enum Edges : Compound {
     case Edges(View)
 
-    public var properties: [Property] {
+    var properties: [Property] {
         switch (self) {
             case let .Edges(view):
                 return [
@@ -34,4 +34,44 @@ public func inset(edges: Edges, horizontal: Float, vertical: Float) -> Expressio
 
 public func inset(edges: Edges, top: Float, leading: Float, bottom: Float, trailing: Float) -> Expression<Edges> {
     return Expression(edges, [ Coefficients(1, top), Coefficients(1, leading), Coefficients(1, -bottom), Coefficients(1, -trailing) ])
+}
+
+// Equality
+
+@infix public func ==(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+}
+
+@infix public func ==(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
+    return rhs == lhs
+}
+
+@infix public func ==(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs)
+}
+
+// Inequality
+
+@infix public func <=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func >=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func <=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func <=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
+    return rhs >= lhs
+}
+
+@infix public func >=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
+    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func >=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
+    return rhs <= lhs
 }

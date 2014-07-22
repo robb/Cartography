@@ -23,7 +23,7 @@ import Foundation
     }
 #else
     import AppKit
-    typealias View = NSView
+    public typealias View = NSView
 
     extension View {
         func car_updateAutoLayoutConstraints() {
