@@ -132,3 +132,39 @@ public enum Edge : Property {
 @infix public func -(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
     return rhs - lhs
 }
+
+// Multiplication
+
+@infix public func *(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+@infix public func *(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs * lhs
+}
+
+@infix public func *(m: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(m, 0) ])
+}
+
+@infix public func *(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs * lhs
+}
+
+// Division
+
+@infix public func /(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+}
+
+@infix public func /(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs / lhs
+}
+
+@infix public func /(m: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(1 / m, 0) ])
+}
+
+@infix public func /(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs / lhs
+}
