@@ -30,6 +30,9 @@ class SizeTests: XCTestCase {
 
     func testInequality() {
         layout(view) { view in
+            let sizeA = view.size
+            let sizeB = view.superview!.size
+
             view.size >= view.superview!.size
             view.size <= view.superview!.size
         }

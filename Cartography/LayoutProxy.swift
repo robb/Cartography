@@ -8,31 +8,31 @@
 
 import Foundation
 
-class LayoutProxy {
-    let width: Dimension
-    let height: Dimension
+public class LayoutProxy {
+    public let width: Dimension
+    public let height: Dimension
 
-    let size: Size
+    public let size: Size
 
-    let top: Edge
-    let right: Edge
-    let bottom: Edge
-    let left: Edge
+    public let top: Edge
+    public let right: Edge
+    public let bottom: Edge
+    public let left: Edge
 
-    let edges: Edges
+    public let edges: Edges
 
-    let leading: Edge
-    let trailing: Edge
+    public let leading: Edge
+    public let trailing: Edge
 
-    let centerX: Edge
-    let centerY: Edge
-    let center: Point
+    public let centerX: Edge
+    public let centerY: Edge
+    public let center: Point
 
-    let baseline: Edge
+    public let baseline: Edge
 
     let view: View
 
-    var superview: LayoutProxy? {
+    public var superview: LayoutProxy? {
         if let superview = view.superview {
             return LayoutProxy(view.superview)
         } else {
@@ -66,20 +66,20 @@ class LayoutProxy {
     }
 }
 
-func layout(view: View, block: LayoutProxy -> ()) {
+public func layout(view: View, block: LayoutProxy -> ()) {
     block(LayoutProxy(view))
 
     view.car_updateAutoLayoutConstraints()
 }
 
-func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
+public func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
     block(LayoutProxy(v1), LayoutProxy(v2))
 
     v1.car_updateAutoLayoutConstraints()
     v2.car_updateAutoLayoutConstraints()
 }
 
-func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
+public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
     block(LayoutProxy(v1), LayoutProxy(v2), LayoutProxy(v3))
 
     v1.car_updateAutoLayoutConstraints()
@@ -87,7 +87,7 @@ func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, Layo
     v3.car_updateAutoLayoutConstraints()
 }
 
-func layout(views: [View], block:([LayoutProxy]) -> ()) {
+public func layout(views: [View], block:([LayoutProxy]) -> ()) {
     block(views.map({ LayoutProxy($0) }))
 
     for view in views {

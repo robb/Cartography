@@ -10,7 +10,7 @@ import Foundation
 
 #if os(iOS)
     import UIKit
-    typealias View = UIView
+    public typealias View = UIView
 
     extension View {
         func car_updateAutoLayoutConstraints() {

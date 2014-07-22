@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum Dimension : Property {
+public enum Dimension : Property {
     case Width(View)
     case Height(View)
 
-    var view: View {
+    public var view: View {
         switch (self) {
             case let .Width(view): return view
             case let .Height(view): return view
         }
     }
 
-    var attribute: NSLayoutAttribute {
+    public var attribute: NSLayoutAttribute {
         switch (self) {
             case .Width(_): return NSLayoutAttribute.Width
             case .Height(_): return NSLayoutAttribute.Height
@@ -29,28 +29,28 @@ enum Dimension : Property {
 
 // Equality
 
-@infix func ==(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
+@infix public func ==(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
     return apply(lhs, coefficients: Coefficients(1, rhs))
 }
 
-@infix func ==(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
+@infix public func ==(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
     return rhs == lhs
 }
 
 // Inequality
 
-@infix func <=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
+@infix public func <=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
     return apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func <=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
+@infix public func <=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-@infix func >=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
+@infix public func >=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
     return apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func >=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
+@infix public func >=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
     return rhs <= lhs
 }

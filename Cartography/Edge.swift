@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Edge : Property {
+public enum Edge : Property {
     case Top(View)
     case Right(View)
     case Bottom(View)
@@ -22,7 +22,7 @@ enum Edge : Property {
 
     case Baseline(View)
 
-    var view: View {
+    public var view: View {
         switch (self) {
             case let .Top(view): return view
             case let .Right(view): return view
@@ -39,7 +39,7 @@ enum Edge : Property {
         }
     }
 
-    var attribute: NSLayoutAttribute {
+    public var attribute: NSLayoutAttribute {
         switch (self) {
             case let .Top(view): return NSLayoutAttribute.Top
             case let .Right(view): return NSLayoutAttribute.Right

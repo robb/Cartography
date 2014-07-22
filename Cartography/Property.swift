@@ -40,7 +40,7 @@ func commonSuperview(a: View, b: View?) -> View? {
     }
 }
 
-protocol Property {
+public protocol Property {
     var view: View { get }
     var attribute: NSLayoutAttribute { get }
 }
@@ -73,40 +73,40 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 
 // Equality
 
-@infix func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+@infix public func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
 }
 
-@infix func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+@infix public func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs == lhs
 }
 
-@infix func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+@infix public func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return apply(lhs, to: rhs)
 }
 
 // Inequality
 
-@infix func <=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+@infix public func <=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func >=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+@infix public func >=<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func <=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+@infix public func <=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix func <=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+@infix public func <=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-@infix func >=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+@infix public func >=<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix func >=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+@infix public func >=<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs <= lhs
 }
