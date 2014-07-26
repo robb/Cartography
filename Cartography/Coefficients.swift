@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Coefficients {
+public struct Coefficients {
     var multiplier: Float = 1
     var constant: Float = 0
 
@@ -22,40 +22,40 @@ struct Coefficients {
 
 // Addition
 
-@infix func +(c: Float, rhs: Coefficients) -> Coefficients {
+@infix public func +(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant + c)
 }
 
-@infix func +(lhs: Coefficients, rhs: Float) -> Coefficients {
+@infix public func +(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs + lhs
 }
 
 // Subtraction
 
-@infix func -(c: Float, rhs: Coefficients) -> Coefficients {
+@infix public func -(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant - c)
 }
 
-@infix func -(lhs: Coefficients, rhs: Float) -> Coefficients {
+@infix public func -(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs - lhs
 }
 
 // Multiplication
 
-@infix func *(m: Float, rhs: Coefficients) -> Coefficients {
+@infix public func *(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier * m, rhs.constant * m)
 }
 
-@infix func *(lhs: Coefficients, rhs: Float) -> Coefficients {
+@infix public func *(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs * lhs
 }
 
 // Division
 
-@infix func /(m: Float, rhs: Coefficients) -> Coefficients {
+@infix public func /(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier / m, rhs.constant / m)
 }
 
-@infix func /(lhs: Coefficients, rhs: Float) -> Coefficients {
+@infix public func /(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs / lhs
 }

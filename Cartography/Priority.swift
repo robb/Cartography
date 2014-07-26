@@ -8,15 +8,15 @@
 
 import Foundation
 
-operator infix ~ { }
+public operator infix ~ { }
 
-@infix func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
+@infix public func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
     lhs.priority = rhs
 
     return lhs
 }
 
-@infix func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
+@infix public func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }

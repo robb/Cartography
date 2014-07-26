@@ -10,7 +10,7 @@ import Foundation
 
 #if os(iOS)
     import UIKit
-    typealias View = UIView
+    public typealias View = UIView
 
     extension View {
         func car_updateAutoLayoutConstraints() {
@@ -23,7 +23,7 @@ import Foundation
     }
 #else
     import AppKit
-    typealias View = NSView
+    public typealias View = NSView
 
     extension View {
         func car_updateAutoLayoutConstraints() {

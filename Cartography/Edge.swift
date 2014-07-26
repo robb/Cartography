@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Edge : Property {
+public enum Edge : Property {
     case Top(View)
     case Right(View)
     case Bottom(View)
@@ -55,4 +55,116 @@ enum Edge : Property {
             case let .Baseline(view): return NSLayoutAttribute.Baseline
         }
     }
+}
+
+// Equality
+
+@infix public func ==(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
+}
+
+@infix public func ==(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
+    return rhs == lhs
+}
+
+@infix public func ==(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs)
+}
+
+// Inequality
+
+@infix public func <=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func >=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
+    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func <=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+@infix public func <=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
+    return rhs >= lhs
+}
+
+@infix public func >=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
+    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+@infix public func >=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
+    return rhs <= lhs
+}
+
+// Addition
+
+@infix public func +(c: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(1, c) ])
+}
+
+@infix public func +(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs + lhs
+}
+
+@infix public func +(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
+}
+
+@infix public func +(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs + lhs
+}
+
+// Subtraction
+
+@infix public func -(c: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(1, -c) ])
+}
+
+@infix public func -(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs - lhs
+}
+
+@infix public func -(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
+}
+
+@infix public func -(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs - lhs
+}
+
+// Multiplication
+
+@infix public func *(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+@infix public func *(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs * lhs
+}
+
+@infix public func *(m: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(m, 0) ])
+}
+
+@infix public func *(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs * lhs
+}
+
+// Division
+
+@infix public func /(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+}
+
+@infix public func /(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
+    return rhs / lhs
+}
+
+@infix public func /(m: Float, rhs: Edge) -> Expression<Edge> {
+    return Expression(rhs, [ Coefficients(1 / m, 0) ])
+}
+
+@infix public func /(lhs: Edge, rhs: Float) -> Expression<Edge> {
+    return rhs / lhs
 }
