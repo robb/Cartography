@@ -22,40 +22,40 @@ public struct Coefficients {
 
 // Addition
 
-@infix public func +(c: Float, rhs: Coefficients) -> Coefficients {
+public func +(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant + c)
 }
 
-@infix public func +(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func +(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs + lhs
 }
 
 // Subtraction
 
-@infix public func -(c: Float, rhs: Coefficients) -> Coefficients {
+public func -(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant - c)
 }
 
-@infix public func -(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func -(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs - lhs
 }
 
 // Multiplication
 
-@infix public func *(m: Float, rhs: Coefficients) -> Coefficients {
+public func *(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier * m, rhs.constant * m)
 }
 
-@infix public func *(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func *(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs * lhs
 }
 
 // Division
 
-@infix public func /(m: Float, rhs: Coefficients) -> Coefficients {
+public func /(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier / m, rhs.constant / m)
 }
 
-@infix public func /(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func /(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs / lhs
 }

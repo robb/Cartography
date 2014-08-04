@@ -27,7 +27,7 @@ import Foundation
 
     extension View {
         func car_updateAutoLayoutConstraints() {
-            self.superview.layoutSubtreeIfNeeded()
+            self.superview?.layoutSubtreeIfNeeded()
         }
 
         func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {

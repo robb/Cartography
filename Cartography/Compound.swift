@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 protocol Compound {
     var properties: [Property] { get }
@@ -17,13 +21,13 @@ func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = 
 
     for i in 0..<from.properties.count {
         var n: Coefficients
-        if coefficients {
-            n = coefficients![i]
+        if let coefficients = coefficients {
+            n = coefficients[i]
         } else {
             n = Coefficients()
         }
 
-        results += apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation)
+        results.append(apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
     }
 
     return results

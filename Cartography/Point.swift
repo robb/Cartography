@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 public enum Point : Compound {
     case Center(View)
@@ -21,40 +25,40 @@ public enum Point : Compound {
 
 // Equality
 
-@infix public func ==(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
+public func ==(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
-@infix public func ==(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
+public func ==(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
     return rhs == lhs
 }
 
-@infix public func ==(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
+public func ==(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs)
 }
 
 // Inequality
 
-@infix public func <=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
+public func <=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix public func >=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
+public func >=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix public func <=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
+public func <=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-@infix public func <=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
+public func <=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
     return rhs >= lhs
 }
 
-@infix public func >=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
+public func >=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-@infix public func >=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
+public func >=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
     return rhs <= lhs
 }

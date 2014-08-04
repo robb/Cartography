@@ -6,17 +6,21 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
-public operator infix ~ { }
+infix operator  ~ { }
 
-@infix public func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
+public func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
     lhs.priority = rhs
 
     return lhs
 }
 
-@infix public func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
+public func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }

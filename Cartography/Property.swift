@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 protocol Property {
     var view: View { get }
@@ -20,10 +24,10 @@ func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Prop
 
     var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
 
-    if to {
-        toAttribute = to!.attribute
-    } else {
+    if to == nil {
         toAttribute = NSLayoutAttribute.NotAnAttribute
+    } else {
+        toAttribute = to!.attribute
     }
 
     let constraint = NSLayoutConstraint(item: from.view,

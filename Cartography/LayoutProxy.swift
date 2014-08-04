@@ -34,7 +34,7 @@ public class LayoutProxy {
 
     public var superview: LayoutProxy? {
         if let superview = view.superview {
-            return LayoutProxy(view.superview)
+            return LayoutProxy(superview)
         } else {
             return nil
         }
