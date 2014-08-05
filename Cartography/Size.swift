@@ -63,6 +63,43 @@ public func >=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
     return rhs <= lhs
 }
 
+// Addition
+
+public func +(m: Float, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 + m })
+}
+
+public func +(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+    return rhs + lhs
+}
+
+public func +(m: Float, rhs: Size) -> Expression<Size> {
+
+    return Expression(rhs, [ Coefficients(1, m), Coefficients(1, m) ])
+}
+
+public func +(lhs: Size, rhs: Float) -> Expression<Size> {
+    return rhs + lhs
+}
+
+// Subtraction
+
+public func -(m: Float, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 - m })
+}
+
+public func -(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+    return rhs - lhs
+}
+
+public func -(m: Float, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(1, -m), Coefficients(1, -m) ])
+}
+
+public func -(lhs: Size, rhs: Float) -> Expression<Size> {
+    return rhs - lhs
+}
+
 // Multiplication
 
 public func *(m: Float, rhs: Expression<Size>) -> Expression<Size> {

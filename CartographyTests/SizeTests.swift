@@ -37,6 +37,22 @@ class SizeTests: XCTestCase {
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the size")
     }
 
+    func testAddition() {
+        layout(view) { view in
+            view.size == view.superview!.size + 20; return
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 420, 420), "It should affect width and height")
+    }
+
+    func testSubtraction() {
+        layout(view) { view in
+            view.size == view.superview!.size - 20; return
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(0, 0, 380, 380), "It should affect width and height")
+    }
+
     func testMultiplication() {
         layout(view) { view in
             view.size == view.superview!.size * 1.5; return
