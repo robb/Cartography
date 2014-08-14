@@ -20,12 +20,7 @@ func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = 
     var results: [NSLayoutConstraint] = []
 
     for i in 0..<from.properties.count {
-        var n: Coefficients
-        if let coefficients = coefficients {
-            n = coefficients[i]
-        } else {
-            n = Coefficients()
-        }
+        let n: Coefficients = coefficients?[i] ?? Coefficients()
 
         results.append(apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
     }
