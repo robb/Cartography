@@ -23,7 +23,7 @@ public enum Point : Compound {
     }
 }
 
-// Equality
+// MARK: Equality
 
 public func ==(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
@@ -37,7 +37,7 @@ public func ==(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs)
 }
 
-// Inequality
+// MARK: Inequality
 
 public func <=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)

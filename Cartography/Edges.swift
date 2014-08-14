@@ -40,7 +40,7 @@ public func inset(edges: Edges, top: Float, leading: Float, bottom: Float, trail
     return Expression(edges, [ Coefficients(1, top), Coefficients(1, leading), Coefficients(1, -bottom), Coefficients(1, -trailing) ])
 }
 
-// Equality
+// MARK: Equality
 
 public func ==(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
     return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
@@ -54,7 +54,7 @@ public func ==(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs)
 }
 
-// Inequality
+// MARK: Inequality
 
 public func <=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)

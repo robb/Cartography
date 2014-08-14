@@ -31,7 +31,7 @@ public enum Dimension : Property {
     }
 }
 
-// Equality
+// MARK: Equality
 
 public func ==(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
     return apply(lhs, coefficients: Coefficients(1, rhs))
@@ -53,7 +53,7 @@ public func ==(lhs: Dimension, rhs: Dimension) -> NSLayoutConstraint {
     return apply(lhs, to: rhs)
 }
 
-// Inequality
+// MARK: Inequality
 
 public func <=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
     return apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
@@ -95,7 +95,7 @@ public func >=(lhs: Expression<Dimension>, rhs: Dimension) -> NSLayoutConstraint
     return rhs <= lhs
 }
 
-// Addition
+// MARK: Addition
 
 public func +(c: Float, rhs: Dimension) -> Expression<Dimension> {
     return Expression(rhs, [ Coefficients(1, c) ])
@@ -113,7 +113,7 @@ public func +(lhs: Expression<Dimension>, rhs: Float) -> Expression<Dimension> {
     return rhs + lhs
 }
 
-// Subtraction
+// MARK: Subtraction
 
 public func -(c: Float, rhs: Dimension) -> Expression<Dimension> {
     return Expression(rhs, [ Coefficients(1, -c) ])
@@ -131,7 +131,7 @@ public func -(lhs: Expression<Dimension>, rhs: Float) -> Expression<Dimension> {
     return rhs - lhs
 }
 
-// Multiplication
+// MARK: Multiplication
 
 public func *(m: Float, rhs: Expression<Dimension>) -> Expression<Dimension> {
     return Expression(rhs.value, rhs.coefficients.map { $0 * m })
@@ -149,7 +149,7 @@ public func *(lhs: Dimension, rhs: Float) -> Expression<Dimension> {
     return rhs * lhs
 }
 
-// Division
+// MARK: Division
 
 public func /(m: Float, rhs: Expression<Dimension>) -> Expression<Dimension> {
     return Expression(rhs.value, rhs.coefficients.map { $0 / m })

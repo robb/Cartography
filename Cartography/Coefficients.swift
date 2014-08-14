@@ -20,7 +20,7 @@ public struct Coefficients {
     }
 }
 
-// Addition
+// MARK: Addition
 
 public func +(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant + c)
@@ -30,7 +30,7 @@ public func +(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs + lhs
 }
 
-// Subtraction
+// MARK: Subtraction
 
 public func -(c: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier, rhs.constant - c)
@@ -40,7 +40,7 @@ public func -(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs - lhs
 }
 
-// Multiplication
+// MARK: Multiplication
 
 public func *(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier * m, rhs.constant * m)
@@ -50,7 +50,7 @@ public func *(lhs: Coefficients, rhs: Float) -> Coefficients {
     return rhs * lhs
 }
 
-// Division
+// MARK: Division
 
 public func /(m: Float, rhs: Coefficients) -> Coefficients {
     return Coefficients(rhs.multiplier / m, rhs.constant / m)

@@ -61,7 +61,7 @@ public enum Edge : Property {
     }
 }
 
-// Equality
+// MARK: Equality
 
 public func ==(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
     return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
@@ -75,7 +75,7 @@ public func ==(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
     return apply(lhs, to: rhs)
 }
 
-// Inequality
+// MARK: Inequality
 
 public func <=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
     return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
@@ -101,7 +101,7 @@ public func >=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
     return rhs <= lhs
 }
 
-// Addition
+// MARK: Addition
 
 public func +(c: Float, rhs: Edge) -> Expression<Edge> {
     return Expression(rhs, [ Coefficients(1, c) ])
@@ -119,7 +119,7 @@ public func +(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
     return rhs + lhs
 }
 
-// Subtraction
+// MARK: Subtraction
 
 public func -(c: Float, rhs: Edge) -> Expression<Edge> {
     return Expression(rhs, [ Coefficients(1, -c) ])
@@ -137,7 +137,7 @@ public func -(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
     return rhs - lhs
 }
 
-// Multiplication
+// MARK: Multiplication
 
 public func *(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
     return Expression(rhs.value, rhs.coefficients.map { $0 * m })
@@ -155,7 +155,7 @@ public func *(lhs: Edge, rhs: Float) -> Expression<Edge> {
     return rhs * lhs
 }
 
-// Division
+// MARK: Division
 
 public func /(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
     return Expression(rhs.value, rhs.coefficients.map { $0 / m })
