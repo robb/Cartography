@@ -14,11 +14,11 @@ import Foundation
 
     extension View {
         func car_updateAutoLayoutConstraints() {
-            self.layoutIfNeeded()
+            layoutIfNeeded()
         }
 
         func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            self.setTranslatesAutoresizingMaskIntoConstraints(flag)
+            setTranslatesAutoresizingMaskIntoConstraints(flag)
         }
     }
 #else
@@ -27,11 +27,11 @@ import Foundation
 
     extension View {
         func car_updateAutoLayoutConstraints() {
-            self.superview?.layoutSubtreeIfNeeded()
+            superview?.layoutSubtreeIfNeeded()
         }
 
         func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            self.translatesAutoresizingMaskIntoConstraints = flag
+            translatesAutoresizingMaskIntoConstraints = flag
         }
     }
 #endif

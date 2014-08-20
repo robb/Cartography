@@ -43,26 +43,26 @@ public class LayoutProxy {
     init(_ view: View) {
         self.view = view
 
-        self.width = Dimension.Width(view)
-        self.height = Dimension.Height(view)
+        width = Dimension.Width(view)
+        height = Dimension.Height(view)
 
-        self.size = Size.Size(view)
+        size = Size.Size(view)
 
-        self.top = Edge.Top(view)
-        self.right = Edge.Right(view)
-        self.bottom = Edge.Bottom(view)
-        self.left = Edge.Left(view)
+        top = Edge.Top(view)
+        right = Edge.Right(view)
+        bottom = Edge.Bottom(view)
+        left = Edge.Left(view)
 
-        self.edges = Edges.Edges(view)
+        edges = Edges.Edges(view)
 
-        self.leading = Edge.Leading(view)
-        self.trailing = Edge.Trailing(view)
+        leading = Edge.Leading(view)
+        trailing = Edge.Trailing(view)
 
-        self.centerX = Edge.CenterX(view)
-        self.centerY = Edge.CenterY(view)
-        self.center = Point.Center(view)
+        centerX = Edge.CenterX(view)
+        centerY = Edge.CenterY(view)
+        center = Point.Center(view)
 
-        self.baseline = Edge.Baseline(view)
+        baseline = Edge.Baseline(view)
     }
 }
 
