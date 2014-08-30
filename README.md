@@ -30,8 +30,8 @@ are: `width`, `height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`,
 `centerX`, `centerY` and `baseline`. These can be further refined using the
 following operators: `*`, `/`, `+` and `-`.
 
-Additionally, it supports convenient compound attibutes that allow you to assign
-multiple attibutes at once:
+Additionally, it supports convenient compound attributes that allow you to
+assign multiple attributes at once:
 
 ```swift
 layout(view) { view in
@@ -71,7 +71,7 @@ layout(view) { view in
 }
 ```
 
-Note that declaring compound attibutes returns multiple constraints at once:
+Note that declaring compound attributes returns multiple constraints at once:
 
 ```swift
 var constraints: NSLayoutConstraint[]?
