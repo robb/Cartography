@@ -19,6 +19,8 @@
 		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
+		54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
+		54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
 		54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F6A838195C20C100313D24 /* Cartography.framework */; };
 		54F6A851195C213A00313D24 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54F6A852195C213A00313D24 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
@@ -90,6 +92,7 @@
 		54C96A22195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		54DF9F3219DAD8DA00EE3609 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		54F6A838195C20C100313D24 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A863195C217800313D24 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -167,9 +170,10 @@
 				546E9E901950A76C00B16707 /* Edge.swift */,
 				545F858C195322EA00791F75 /* Edges.swift */,
 				546E9E941950A97F00B16707 /* Expression.swift */,
+				54DF9F3219DAD8DA00EE3609 /* Layout.swift */,
 				546E9E881950A29300B16707 /* LayoutProxy.swift */,
-				54FA3A351950FD320094B82A /* Priority.swift */,
 				54FA3A3B1951A2B60094B82A /* Point.swift */,
+				54FA3A351950FD320094B82A /* Priority.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
 				54FA3A411951A8070094B82A /* Size.swift */,
 				54F6A863195C217800313D24 /* View.swift */,
@@ -390,6 +394,7 @@
 				54FA3A361950FD320094B82A /* Priority.swift in Sources */,
 				545F858D195322EA00791F75 /* Edges.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
+				54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */,
 				546E9E911950A76C00B16707 /* Edge.swift in Sources */,
 				54FA3A421951A8070094B82A /* Size.swift in Sources */,
 				54FA3A3C1951A2B60094B82A /* Point.swift in Sources */,
@@ -428,6 +433,7 @@
 				54F6A85A195C213A00313D24 /* Point.swift in Sources */,
 				54F6A865195C226700313D24 /* View.swift in Sources */,
 				54F6A855195C213A00313D24 /* Edge.swift in Sources */,
+				54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */,
 				54F6A854195C213A00313D24 /* Dimension.swift in Sources */,
 				54F6A857195C213A00313D24 /* Expression.swift in Sources */,
 			);
