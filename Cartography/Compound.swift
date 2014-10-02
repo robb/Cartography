@@ -14,6 +14,7 @@ import AppKit
 
 protocol Compound {
     var properties: [Property] { get }
+    var proxy: LayoutProxy { get }
 }
 
 func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> [NSLayoutConstraint] {

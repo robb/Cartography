@@ -13,17 +13,24 @@ import AppKit
 #endif
 
 public enum Edges : Compound {
-    case Edges(View)
+    case Edges(LayoutProxy)
 
     var properties: [Property] {
         switch (self) {
-            case let .Edges(view):
+            case let .Edges(proxy):
                 return [
-                    Edge.Top(view),
-                    Edge.Leading(view),
-                    Edge.Bottom(view),
-                    Edge.Trailing(view)
+                    Edge.Top(proxy),
+                    Edge.Leading(proxy),
+                    Edge.Bottom(proxy),
+                    Edge.Trailing(proxy)
                 ]
+        }
+    }
+
+    var proxy: LayoutProxy {
+        switch (self) {
+            case let .Edges(proxy):
+                return proxy
         }
     }
 }

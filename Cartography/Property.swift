@@ -13,8 +13,9 @@ import AppKit
 #endif
 
 protocol Property {
-    var view: View { get }
     var attribute: NSLayoutAttribute { get }
+    var proxy: LayoutProxy { get }
+    var view: View { get }
 }
 
 func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {

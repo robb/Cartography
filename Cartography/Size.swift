@@ -13,12 +13,19 @@ import AppKit
 #endif
 
 public enum Size : Compound {
-    case Size(View)
+    case Size(LayoutProxy)
 
     var properties: [Property] {
         switch (self) {
-            case let .Size(view):
-                return [ Dimension.Width(view), Dimension.Height(view) ]
+            case let .Size(proxy):
+                return [ Dimension.Width(proxy), Dimension.Height(proxy) ]
+        }
+    }
+
+    var proxy: LayoutProxy {
+        switch (self) {
+            case let .Size(proxy):
+                return proxy
         }
     }
 }

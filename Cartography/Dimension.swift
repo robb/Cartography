@@ -13,21 +13,25 @@ import AppKit
 #endif
 
 public enum Dimension : Property {
-    case Width(View)
-    case Height(View)
-
-    var view: View {
-        switch (self) {
-            case let .Width(view): return view
-            case let .Height(view): return view
-        }
-    }
+    case Width(LayoutProxy)
+    case Height(LayoutProxy)
 
     var attribute: NSLayoutAttribute {
         switch (self) {
             case .Width(_): return NSLayoutAttribute.Width
             case .Height(_): return NSLayoutAttribute.Height
         }
+    }
+
+    var proxy: LayoutProxy {
+        switch (self) {
+            case let .Width(proxy): return proxy
+            case let .Height(proxy): return proxy
+        }
+    }
+
+    var view: View {
+        return proxy.view
     }
 }
 

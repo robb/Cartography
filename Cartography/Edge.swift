@@ -13,35 +13,18 @@ import AppKit
 #endif
 
 public enum Edge : Property {
-    case Top(View)
-    case Right(View)
-    case Bottom(View)
-    case Left(View)
+    case Top(LayoutProxy)
+    case Right(LayoutProxy)
+    case Bottom(LayoutProxy)
+    case Left(LayoutProxy)
 
-    case Leading(View)
-    case Trailing(View)
+    case Leading(LayoutProxy)
+    case Trailing(LayoutProxy)
 
-    case CenterX(View)
-    case CenterY(View)
+    case CenterX(LayoutProxy)
+    case CenterY(LayoutProxy)
 
-    case Baseline(View)
-
-    var view: View {
-        switch (self) {
-            case let .Top(view): return view
-            case let .Right(view): return view
-            case let .Bottom(view): return view
-            case let .Left(view): return view
-
-            case let .Leading(view): return view
-            case let .Trailing(view): return view
-
-            case let .CenterX(view): return view
-            case let .CenterY(view): return view
-
-            case let .Baseline(view): return view
-        }
-    }
+    case Baseline(LayoutProxy)
 
     var attribute: NSLayoutAttribute {
         switch (self) {
@@ -58,6 +41,27 @@ public enum Edge : Property {
 
             case let .Baseline(view): return NSLayoutAttribute.Baseline
         }
+    }
+
+    var proxy: LayoutProxy {
+        switch (self) {
+            case let .Top(proxy): return proxy
+            case let .Right(proxy): return proxy
+            case let .Bottom(proxy): return proxy
+            case let .Left(proxy): return proxy
+
+            case let .Leading(proxy): return proxy
+            case let .Trailing(proxy): return proxy
+
+            case let .CenterX(proxy): return proxy
+            case let .CenterY(proxy): return proxy
+
+            case let .Baseline(proxy): return proxy
+        }
+    }
+
+    var view: View {
+        return proxy.view
     }
 }
 

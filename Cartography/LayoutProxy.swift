@@ -9,26 +9,26 @@
 import Foundation
 
 public class LayoutProxy {
-    public let width: Dimension
-    public let height: Dimension
+    public var width: Dimension { return Dimension.Width(self) }
+    public var height: Dimension { return Dimension.Height(self) }
 
-    public let size: Size
+    public var size: Size { return Size.Size(self) }
 
-    public let top: Edge
-    public let right: Edge
-    public let bottom: Edge
-    public let left: Edge
+    public var top: Edge { return Edge.Top(self) }
+    public var right: Edge { return Edge.Right(self) }
+    public var bottom: Edge { return Edge.Bottom(self) }
+    public var left: Edge { return Edge.Left(self) }
 
-    public let edges: Edges
+    public var edges: Edges { return Edges.Edges(self) }
 
-    public let leading: Edge
-    public let trailing: Edge
+    public var leading: Edge { return Edge.Leading(self) }
+    public var trailing: Edge { return Edge.Trailing(self) }
 
-    public let centerX: Edge
-    public let centerY: Edge
-    public let center: Point
+    public var centerX: Edge { return Edge.CenterX(self) }
+    public var centerY: Edge { return Edge.CenterY(self) }
+    public var center: Point { return Point.Center(self) }
 
-    public let baseline: Edge
+    public var baseline: Edge { return Edge.Baseline(self) }
 
     let view: View
 
@@ -42,26 +42,5 @@ public class LayoutProxy {
 
     init(_ view: View) {
         self.view = view
-
-        width = Dimension.Width(view)
-        height = Dimension.Height(view)
-
-        size = Size.Size(view)
-
-        top = Edge.Top(view)
-        right = Edge.Right(view)
-        bottom = Edge.Bottom(view)
-        left = Edge.Left(view)
-
-        edges = Edges.Edges(view)
-
-        leading = Edge.Leading(view)
-        trailing = Edge.Trailing(view)
-
-        centerX = Edge.CenterX(view)
-        centerY = Edge.CenterY(view)
-        center = Point.Center(view)
-
-        baseline = Edge.Baseline(view)
     }
 }

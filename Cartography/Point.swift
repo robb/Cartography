@@ -13,12 +13,19 @@ import AppKit
 #endif
 
 public enum Point : Compound {
-    case Center(View)
+    case Center(LayoutProxy)
 
     var properties: [Property] {
         switch (self) {
-            case let .Center(view):
-                return [ Edge.CenterX(view), Edge.CenterY(view) ]
+            case let .Center(proxy):
+                return [ Edge.CenterX(proxy), Edge.CenterY(proxy) ]
+        }
+    }
+
+    var proxy: LayoutProxy {
+        switch (self) {
+            case let .Center(proxy):
+                return proxy
         }
     }
 }
