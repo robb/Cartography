@@ -23,7 +23,7 @@ func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = 
     for i in 0..<from.properties.count {
         let n: Coefficients = coefficients?[i] ?? Coefficients()
 
-        results.append(apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
+        results.append(from.proxy.apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
     }
 
     return results

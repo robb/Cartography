@@ -68,7 +68,7 @@ public enum Edge : Property {
 // MARK: Equality
 
 public func ==(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
 }
 
 public func ==(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
@@ -76,21 +76,21 @@ public func ==(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
 }
 
 public func ==(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs)
+    return lhs.proxy.apply(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
 public func <=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func >=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func <=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func <=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
@@ -98,7 +98,7 @@ public func <=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
 }
 
 public func >=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func >=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
