@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-public enum Dimension : Property {
+public enum Dimension : Property, Equality, Inequality {
     case Width(LayoutProxy)
     case Height(LayoutProxy)
 
@@ -33,48 +33,6 @@ public enum Dimension : Property {
     public var view: View {
         return proxy.view
     }
-}
-
-// MARK: Inequality
-
-public func <=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func <=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs >= lhs
-}
-
-public func >=(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >=(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs <= lhs
-}
-
-public func <=(lhs: Dimension, rhs: Dimension) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func >=(lhs: Dimension, rhs: Dimension) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func <=(lhs: Dimension, rhs: Expression<Dimension>) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func <=(lhs: Expression<Dimension>, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs >= lhs
-}
-
-public func >=(lhs: Dimension, rhs: Expression<Dimension>) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >=(lhs: Expression<Dimension>, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs <= lhs
 }
 
 // MARK: Addition
