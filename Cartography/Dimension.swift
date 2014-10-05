@@ -16,45 +16,23 @@ public enum Dimension : Property {
     case Width(LayoutProxy)
     case Height(LayoutProxy)
 
-    var attribute: NSLayoutAttribute {
+    public var attribute: NSLayoutAttribute {
         switch (self) {
             case .Width(_): return NSLayoutAttribute.Width
             case .Height(_): return NSLayoutAttribute.Height
         }
     }
 
-    var proxy: LayoutProxy {
+    public var proxy: LayoutProxy {
         switch (self) {
             case let .Width(proxy): return proxy
             case let .Height(proxy): return proxy
         }
     }
 
-    var view: View {
+    public var view: View {
         return proxy.view
     }
-}
-
-// MARK: Equality
-
-public func ==(lhs: Dimension, rhs: Float) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: Coefficients(1, rhs))
-}
-
-public func ==(lhs: Float, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs == lhs
-}
-
-public func ==(lhs: Dimension, rhs: Expression<Dimension>) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
-}
-
-public func ==(lhs: Expression<Dimension>, rhs: Dimension) -> NSLayoutConstraint {
-    return rhs == lhs
-}
-
-public func ==(lhs: Dimension, rhs: Dimension) -> NSLayoutConstraint {
-    return lhs.proxy.apply(lhs, to: rhs)
 }
 
 // MARK: Inequality

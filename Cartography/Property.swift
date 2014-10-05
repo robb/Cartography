@@ -12,9 +12,30 @@ import UIKit
 import AppKit
 #endif
 
-protocol Property {
+public protocol Property {
     var attribute: NSLayoutAttribute { get }
     var proxy: LayoutProxy { get }
     var view: View { get }
 }
 
+// MARK: Equality
+
+public func ==(lhs: Property, rhs: Float) -> NSLayoutConstraint {
+    return lhs.proxy.apply(lhs, coefficients: Coefficients(1, rhs))
+}
+
+public func ==(lhs: Float, rhs: Property) -> NSLayoutConstraint {
+    return rhs == lhs
+}
+
+public func ==<P: Property>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
+}
+
+public func ==<P: Property>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs == lhs
+}
+
+public func ==<P: Property>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.proxy.apply(lhs, to: rhs)
+}
