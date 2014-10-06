@@ -121,3 +121,39 @@ public func -<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
 public func -<P: Addition>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
     return rhs - lhs
 }
+
+// MARK: Multiplication
+
+public protocol Multiplication : Property { }
+
+public func *<P: Multiplication>(m: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+public func *<P: Multiplication>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func *<P: Multiplication>(m: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(m, 0) ])
+}
+
+public func *<P: Multiplication>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func /<P: Multiplication>(m: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+}
+
+public func /<P: Multiplication>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs / lhs
+}
+
+public func /<P: Multiplication>(m: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1 / m, 0) ])
+}
+
+public func /<P: Multiplication>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs / lhs
+}

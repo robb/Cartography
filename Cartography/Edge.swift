@@ -64,39 +64,3 @@ public enum Edge : Property, Equality, Inequality, Addition {
         return proxy.view
     }
 }
-
-// MARK: Multiplication
-
-public func *(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
-}
-
-public func *(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs * lhs
-}
-
-public func *(m: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
-}
-
-public func *(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs * lhs
-}
-
-// MARK: Division
-
-public func /(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
-}
-
-public func /(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs / lhs
-}
-
-public func /(m: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1 / m, 0) ])
-}
-
-public func /(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs / lhs
-}

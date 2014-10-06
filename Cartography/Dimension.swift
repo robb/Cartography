@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-public enum Dimension : Property, Equality, Inequality, Addition {
+public enum Dimension : Property, Equality, Inequality, Addition, Multiplication {
     case Width(LayoutProxy)
     case Height(LayoutProxy)
 
@@ -33,40 +33,4 @@ public enum Dimension : Property, Equality, Inequality, Addition {
     public var view: View {
         return proxy.view
     }
-}
-
-// MARK: Multiplication
-
-public func *(m: Float, rhs: Expression<Dimension>) -> Expression<Dimension> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
-}
-
-public func *(lhs: Expression<Dimension>, rhs: Float) -> Expression<Dimension> {
-    return rhs * lhs
-}
-
-public func *(m: Float, rhs: Dimension) -> Expression<Dimension> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
-}
-
-public func *(lhs: Dimension, rhs: Float) -> Expression<Dimension> {
-    return rhs * lhs
-}
-
-// MARK: Division
-
-public func /(m: Float, rhs: Expression<Dimension>) -> Expression<Dimension> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
-}
-
-public func /(lhs: Expression<Dimension>, rhs: Float) -> Expression<Dimension> {
-    return rhs / lhs
-}
-
-public func /(m: Float, rhs: Dimension) -> Expression<Dimension> {
-    return Expression(rhs, [ Coefficients(1 / m, 0) ])
-}
-
-public func /(lhs: Dimension, rhs: Float) -> Expression<Dimension> {
-    return rhs / lhs
 }
