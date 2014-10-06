@@ -50,7 +50,7 @@ public func inset(edges: Edges, top: Float, leading: Float, bottom: Float, trail
 // MARK: Equality
 
 public func ==(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
 public func ==(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
@@ -58,21 +58,21 @@ public func ==(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
 }
 
 public func ==(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs)
+    return lhs.proxy.apply(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
 public func <=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func >=(lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func <=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func <=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
@@ -80,7 +80,7 @@ public func <=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
 }
 
 public func >=(lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func >=(lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {

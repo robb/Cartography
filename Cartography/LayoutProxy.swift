@@ -69,6 +69,18 @@ public class LayoutProxy {
 
         return constraint
     }
+
+    func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> [NSLayoutConstraint] {
+        var results: [NSLayoutConstraint] = []
+
+        for i in 0..<from.properties.count {
+            let n: Coefficients = coefficients?[i] ?? Coefficients()
+
+            results.append(from.proxy.apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
+        }
+
+        return results
+    }
 }
 
 private func commonSuperview(a: View, b: View?) -> View? {

@@ -33,7 +33,7 @@ public enum Size : Compound {
 // MARK: Equality
 
 public func ==(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
 public func ==(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
@@ -41,21 +41,21 @@ public func ==(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
 }
 
 public func ==(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs)
+    return lhs.proxy.apply(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
 public func <=(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func >=(lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func <=(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func <=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
@@ -63,7 +63,7 @@ public func <=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
 }
 
 public func >=(lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.proxy.apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func >=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
