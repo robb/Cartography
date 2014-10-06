@@ -85,3 +85,39 @@ public func >=<P: Inequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint 
 public func >=<P: Inequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs <= lhs
 }
+
+// Mark: Addition
+
+public protocol Addition : Property { }
+
+public func +<P: Addition>(c: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, c) ])
+}
+
+public func +<P: Addition>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func +<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
+}
+
+public func +<P: Addition>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func -<P: Addition>(c: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, -c) ])
+}
+
+public func -<P: Addition>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}
+
+public func -<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
+}
+
+public func -<P: Addition>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}

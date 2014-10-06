@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edge : Property, Equality, Inequality {
+public enum Edge : Property, Equality, Inequality, Addition {
     case Top(LayoutProxy)
     case Right(LayoutProxy)
     case Bottom(LayoutProxy)
@@ -63,42 +63,6 @@ public enum Edge : Property, Equality, Inequality {
     public var view: View {
         return proxy.view
     }
-}
-
-// MARK: Addition
-
-public func +(c: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1, c) ])
-}
-
-public func +(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs + lhs
-}
-
-public func +(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
-}
-
-public func +(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs + lhs
-}
-
-// MARK: Subtraction
-
-public func -(c: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1, -c) ])
-}
-
-public func -(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs - lhs
-}
-
-public func -(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
-}
-
-public func -(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs - lhs
 }
 
 // MARK: Multiplication
