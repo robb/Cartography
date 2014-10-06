@@ -13,18 +13,18 @@ import AppKit
 #endif
 
 public enum Edge : Property, Equality, Inequality, Addition {
-    case Top(LayoutProxy)
-    case Right(LayoutProxy)
-    case Bottom(LayoutProxy)
-    case Left(LayoutProxy)
+    case Top(Context, View)
+    case Right(Context, View)
+    case Bottom(Context, View)
+    case Left(Context, View)
 
-    case Leading(LayoutProxy)
-    case Trailing(LayoutProxy)
+    case Leading(Context, View)
+    case Trailing(Context, View)
 
-    case CenterX(LayoutProxy)
-    case CenterY(LayoutProxy)
+    case CenterX(Context, View)
+    case CenterY(Context, View)
 
-    case Baseline(LayoutProxy)
+    case Baseline(Context, View)
 
     public var attribute: NSLayoutAttribute {
         switch (self) {
@@ -43,24 +43,37 @@ public enum Edge : Property, Equality, Inequality, Addition {
         }
     }
 
-    public var proxy: LayoutProxy {
+    public var context: Context {
         switch (self) {
-            case let .Top(proxy): return proxy
-            case let .Right(proxy): return proxy
-            case let .Bottom(proxy): return proxy
-            case let .Left(proxy): return proxy
+            case let .Top(context, _): return context
+            case let .Right(context, _): return context
+            case let .Bottom(context, _): return context
+            case let .Left(context, _): return context
 
-            case let .Leading(proxy): return proxy
-            case let .Trailing(proxy): return proxy
+            case let .Leading(context, _): return context
+            case let .Trailing(context, _): return context
 
-            case let .CenterX(proxy): return proxy
-            case let .CenterY(proxy): return proxy
+            case let .CenterX(context, _): return context
+            case let .CenterY(context, _): return context
 
-            case let .Baseline(proxy): return proxy
+            case let .Baseline(context, _): return context
         }
     }
 
     public var view: View {
-        return proxy.view
+        switch (self) {
+            case let .Top(_, view): return view
+            case let .Right(_, view): return view
+            case let .Bottom(_, view): return view
+            case let .Left(_, view): return view
+
+            case let .Leading(_, view): return view
+            case let .Trailing(_, view): return view
+
+            case let .CenterX(_, view): return view
+            case let .CenterY(_, view): return view
+
+            case let .Baseline(_, view): return view
+        }
     }
 }

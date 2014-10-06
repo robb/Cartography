@@ -9,108 +9,62 @@
 import Foundation
 
 public class LayoutProxy {
-    public var width: Dimension { return Dimension.Width(self) }
-    public var height: Dimension { return Dimension.Height(self) }
+    public let width: Dimension
+    public let height: Dimension
 
-    public var size: Size { return Size.Size(self) }
+    public let size: Size
 
-    public var top: Edge { return Edge.Top(self) }
-    public var right: Edge { return Edge.Right(self) }
-    public var bottom: Edge { return Edge.Bottom(self) }
-    public var left: Edge { return Edge.Left(self) }
+    public let top: Edge
+    public let right: Edge
+    public let bottom: Edge
+    public let left: Edge
 
-    public var edges: Edges { return Edges.Edges(self) }
+    public let edges: Edges
 
-    public var leading: Edge { return Edge.Leading(self) }
-    public var trailing: Edge { return Edge.Trailing(self) }
+    public let leading: Edge
+    public let trailing: Edge
 
-    public var centerX: Edge { return Edge.CenterX(self) }
-    public var centerY: Edge { return Edge.CenterY(self) }
-    public var center: Point { return Point.Center(self) }
+    public let centerX: Edge
+    public let centerY: Edge
+    public let center: Point
 
-    public var baseline: Edge { return Edge.Baseline(self) }
+    public let baseline: Edge
 
+    let context: Context
     let view: View
 
     public var superview: LayoutProxy? {
         if let superview = view.superview {
-            return LayoutProxy(superview)
+            return LayoutProxy(context, superview)
         } else {
             return nil
         }
     }
 
-    init(_ view: View) {
+    init(_ context: Context, _ view: View) {
+        self.context = context
         self.view = view
-    }
 
-    func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {
-        from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
+        width  = Dimension.Width(context, view)
+        height = Dimension.Height(context, view)
 
-        let superview = commonSuperview(from.view, to?.view)
+        size = Size.Size(context, view)
 
-        var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
+        top    = Edge.Top(context, view)
+        right  = Edge.Right(context, view)
+        bottom = Edge.Bottom(context, view)
+        left   = Edge.Left(context, view)
 
-        if to == nil {
-            toAttribute = NSLayoutAttribute.NotAnAttribute
-        } else {
-            toAttribute = to!.attribute
-        }
+        edges = Edges.Edges(context, view)
 
-        let constraint = NSLayoutConstraint(item: from.view,
-            attribute: from.attribute,
-            relatedBy: relation,
-            toItem: to?.view,
-            attribute: toAttribute,
-            multiplier: CGFloat(coefficients.multiplier),
-            constant: CGFloat(coefficients.constant))
+        leading = Edge.Leading(context, view)
+        trailing = Edge.Trailing(context, view)
 
-        superview?.addConstraint(constraint)
+        centerX = Edge.CenterX(context, view)
+        centerY = Edge.CenterY(context, view)
 
-        return constraint
-    }
+        center = Point.Center(context, view)
 
-    func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> [NSLayoutConstraint] {
-        var results: [NSLayoutConstraint] = []
-
-        for i in 0..<from.properties.count {
-            let n: Coefficients = coefficients?[i] ?? Coefficients()
-
-            results.append(from.proxy.apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
-        }
-
-        return results
-    }
-}
-
-private func commonSuperview(a: View, b: View?) -> View? {
-    if (b == nil) {
-        return a;
-    } else if (a.superview == b) {
-        return b;
-    } else if (a == b!.superview) {
-        return a;
-    } else if (a.superview == b!.superview) {
-        return a.superview;
-    } else {
-        let superviews = NSMutableSet()
-
-        var view: View? = a
-        while let superview = view?.superview {
-            superviews.addObject(superview)
-
-            view = superview
-        }
-
-        view = b
-        while let superview = view?.superview {
-            if superviews.containsObject(superview) {
-                return superview
-            }
-
-            view = superview
-        }
-
-        return nil
+        baseline = Edge.Baseline(context, view)
     }
 }

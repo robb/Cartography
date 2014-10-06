@@ -9,20 +9,26 @@
 import Foundation
 
 public func layout(view: View, block: LayoutProxy -> ()) {
-    block(LayoutProxy(view))
+    let context = Context()
+
+    block(LayoutProxy(context, view))
 
     view.car_updateAutoLayoutConstraints()
 }
 
 public func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    block(LayoutProxy(v1), LayoutProxy(v2))
+    let context = Context()
+
+    block(LayoutProxy(context, v1), LayoutProxy(context, v2))
 
     v1.car_updateAutoLayoutConstraints()
     v2.car_updateAutoLayoutConstraints()
 }
 
 public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    block(LayoutProxy(v1), LayoutProxy(v2), LayoutProxy(v3))
+    let context = Context()
+
+    block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
 
     v1.car_updateAutoLayoutConstraints()
     v2.car_updateAutoLayoutConstraints()
@@ -30,7 +36,9 @@ public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProx
 }
 
 public func layout(views: [View], block:([LayoutProxy]) -> ()) {
-    block(views.map({ LayoutProxy($0) }))
+    let context = Context()
+
+    block(views.map({ LayoutProxy(context, $0) }))
 
     for view in views {
         view.car_updateAutoLayoutConstraints()

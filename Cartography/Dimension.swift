@@ -13,8 +13,8 @@ import AppKit
 #endif
 
 public enum Dimension : Property, Equality, Inequality, Addition, Multiplication {
-    case Width(LayoutProxy)
-    case Height(LayoutProxy)
+    case Width(Context, View)
+    case Height(Context, View)
 
     public var attribute: NSLayoutAttribute {
         switch (self) {
@@ -23,14 +23,17 @@ public enum Dimension : Property, Equality, Inequality, Addition, Multiplication
         }
     }
 
-    public var proxy: LayoutProxy {
+    public var context: Context {
         switch (self) {
-            case let .Width(proxy): return proxy
-            case let .Height(proxy): return proxy
+            case let .Width(context, _): return context
+            case let .Height(context, _): return context
         }
     }
 
     public var view: View {
-        return proxy.view
+        switch (self) {
+            case let .Width(_, view): return view
+            case let .Height(_, view): return view
+        }
     }
 }

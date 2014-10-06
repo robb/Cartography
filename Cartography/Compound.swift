@@ -13,6 +13,6 @@ import AppKit
 #endif
 
 protocol Compound {
+    var context: Context { get }
     var properties: [Property] { get }
-    var proxy: LayoutProxy { get }
 }
