@@ -35,3 +35,16 @@ import Foundation
         }
     }
 #endif
+
+private var key: UInt8 = 0
+
+extension View {
+    var car_installedLayoutConstraints: [Constraint]? {
+        get {
+            return objc_getAssociatedObject(self, &key) as? [Constraint]
+        }
+        set {
+            objc_setAssociatedObject(self, &key, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
+        }
+    }
+}

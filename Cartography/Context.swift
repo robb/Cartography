@@ -13,10 +13,10 @@ import AppKit
 #endif
 
 public class Context {
+    internal var constraints: [Constraint] = []
+
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
-
-        let superview = commonSuperview(from.view, to?.view)
 
         var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
 
@@ -26,7 +26,9 @@ public class Context {
             toAttribute = to!.attribute
         }
 
-        let constraint = NSLayoutConstraint(item: from.view,
+        let superview = commonSuperview(from.view, to?.view)
+
+        let layoutConstraint = NSLayoutConstraint(item: from.view,
             attribute: from.attribute,
             relatedBy: relation,
             toItem: to?.view,
@@ -34,9 +36,9 @@ public class Context {
             multiplier: CGFloat(coefficients.multiplier),
             constant: CGFloat(coefficients.constant))
 
-        superview?.addConstraint(constraint)
+        constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
 
-        return constraint
+        return layoutConstraint
     }
 
     internal func addConstraint(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> [NSLayoutConstraint] {
@@ -49,6 +51,26 @@ public class Context {
         }
 
         return results
+    }
+
+    internal func installConstraints(removeExisting: Bool = false) {
+        if removeExisting {
+            let views = constraints.map({ $0.view })
+
+            for view in views {
+                for constraint in view.car_installedLayoutConstraints ?? [] {
+                    constraint.uninstall()
+                }
+            }
+        }
+
+        for constraint in constraints {
+            constraint.install()
+
+            let existing = constraint.view.car_installedLayoutConstraints ?? []
+
+            constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
+        }
     }
 }
 
