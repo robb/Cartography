@@ -30,8 +30,8 @@ public class LayoutProxy {
 
     public let baseline: Edge
 
-    let context: Context
-    let view: View
+    internal let context: Context
+    internal let view: View
 
     public var superview: LayoutProxy? {
         if let superview = view.superview {
