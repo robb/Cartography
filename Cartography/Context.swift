@@ -14,6 +14,13 @@ import AppKit
 
 public class Context {
     internal var constraints: [Constraint] = []
+    internal let removeExisting: Bool
+    internal let performLayout: Bool
+
+    init(removeExisting: Bool, performLayout: Bool){
+        self.removeExisting = removeExisting
+        self.performLayout = performLayout
+    }
 
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -53,10 +60,10 @@ public class Context {
         return results
     }
 
-    internal func installConstraints(removeExisting: Bool = false) {
-        if removeExisting {
-            let views = constraints.map({ $0.view })
+    internal func installConstraints() {
+        let views = constraints.map({ $0.view })
 
+        if removeExisting {
             for view in views {
                 for constraint in view.car_installedLayoutConstraints ?? [] {
                     constraint.uninstall()
@@ -70,6 +77,12 @@ public class Context {
             let existing = constraint.view.car_installedLayoutConstraints ?? []
 
             constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
+        }
+
+        if performLayout {
+            for view in views {
+                view.car_updateAutoLayoutConstraints()
+            }
         }
     }
 }

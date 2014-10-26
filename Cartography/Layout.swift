@@ -9,136 +9,97 @@
 import Foundation
 
 public func layout(view: View, block: LayoutProxy -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, view))
 
     context.installConstraints()
-
-    view.car_updateAutoLayoutConstraints()
 }
 
 public func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2))
 
     context.installConstraints()
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
 }
 
 public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
 
     context.installConstraints()
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
-    v3.car_updateAutoLayoutConstraints()
 }
 
 public func layout(views: [View], block:([LayoutProxy]) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(views.map({ LayoutProxy(context, $0) }))
 
     context.installConstraints()
-
-    for view in views {
-        view.car_updateAutoLayoutConstraints()
-    }
 }
 
 public func addConstraints(view: View, block: LayoutProxy -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, view))
 
     context.installConstraints()
-
-    view.car_updateAutoLayoutConstraints()
 }
 
 public func addConstraints(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2))
 
     context.installConstraints()
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
 }
 
 public func addConstraints(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
 
     context.installConstraints()
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
-    v3.car_updateAutoLayoutConstraints()
 }
 
 public func addConstraints(views: [View], block:([LayoutProxy]) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: false, performLayout: true)
 
     block(views.map({ LayoutProxy(context, $0) }))
 
     context.installConstraints()
-
-    for view in views {
-        view.car_updateAutoLayoutConstraints()
-    }
 }
 
 public func replaceConstraints(view: View, block: LayoutProxy -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: true, performLayout: true)
 
     block(LayoutProxy(context, view))
 
-    context.installConstraints(removeExisting: true)
-
-    view.car_updateAutoLayoutConstraints()
+    context.installConstraints()
 }
 
 public func replaceConstraints(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: true, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2))
 
-    context.installConstraints(removeExisting: true)
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
+    context.installConstraints()
 }
 
 public func replaceConstraints(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: true, performLayout: true)
 
     block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
 
-    context.installConstraints(removeExisting: true)
-
-    v1.car_updateAutoLayoutConstraints()
-    v2.car_updateAutoLayoutConstraints()
-    v3.car_updateAutoLayoutConstraints()
+    context.installConstraints()
 }
 
 public func replaceConstraints(views: [View], block:([LayoutProxy]) -> ()) {
-    let context = Context()
+    let context = Context(removeExisting: true, performLayout: true)
 
     block(views.map({ LayoutProxy(context, $0) }))
 
-    context.installConstraints(removeExisting: true)
-
-    for view in views {
-        view.car_updateAutoLayoutConstraints()
-    }
+    context.installConstraints()
 }
