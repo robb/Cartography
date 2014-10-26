@@ -25,7 +25,7 @@ class CartographyTests: XCTestCase {
             view.width == view.superview!.width - 200; return
         }
 
-        XCTAssertEqual(CGRectGetWidth(view.frame), 200, "It should layout the width")
+        XCTAssert(CGRectGetWidth(view.frame) == 200, "It should layout the width")
     }
 
     func testWidthConstants() {
@@ -33,7 +33,7 @@ class CartographyTests: XCTestCase {
             view.width == 200; return
         }
 
-        XCTAssertEqual(CGRectGetWidth(view.frame), 200, "It should layout the width")
+        XCTAssert(CGRectGetWidth(view.frame) == 200, "It should layout the width")
     }
 
     func testHeight() {
@@ -41,7 +41,7 @@ class CartographyTests: XCTestCase {
             view.height == view.superview!.height - 200; return
         }
 
-        XCTAssertEqual(CGRectGetHeight(view.frame), 200, "It should layout the height")
+        XCTAssert(CGRectGetHeight(view.frame) == 200, "It should layout the height")
     }
 
     func testHeightConstants() {
@@ -49,6 +49,6 @@ class CartographyTests: XCTestCase {
             view.height == 200; return
         }
 
-        XCTAssertEqual(CGRectGetHeight(view.frame), 200, "It should layout the height")
+        XCTAssert(CGRectGetHeight(view.frame) == 200, "It should layout the height")
     }
 }

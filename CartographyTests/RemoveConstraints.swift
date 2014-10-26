@@ -31,8 +31,8 @@ class RemoveConstraints: XCTestCase {
             view.width == 400
         }
 
-        XCTAssertEqual(CGRectGetWidth(view.frame), 400, "It should update the constraints")
-        XCTAssertEqual(CGRectGetHeight(view.frame), 400, "It should update the constraints")
+        XCTAssert(CGRectGetWidth(view.frame) == 400, "It should update the constraints")
+        XCTAssert(CGRectGetHeight(view.frame) == 400, "It should update the constraints")
     }
 
 }
