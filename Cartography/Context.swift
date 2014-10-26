@@ -81,7 +81,7 @@ public class Context {
 
         if performLayout {
             for view in views {
-                view.car_updateAutoLayoutConstraints()
+                view.car_updateLayout()
             }
         }
     }
