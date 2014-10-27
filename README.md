@@ -11,14 +11,14 @@ your views:
 
 ```swift
 layout(view1, view2) { view1, view2 in
-    view1.width   == (view.superview!.width - 50) * 0.5
+    view1.width   == (view1.superview!.width - 50) * 0.5
     view2.width   == view1.width - 50
     view1.height  == 40
     view2.height  == view1.height
-    view1.centerX == view.superview!.centerX
+    view1.centerX == view1.superview!.centerX
     view2.centerX == view1.centerX
- 
-    view1.top >= view.superview!.top + 20
+
+    view1.top >= view1.superview!.top + 20
     view2.top == view1.bottom + 20
 }
 ```
