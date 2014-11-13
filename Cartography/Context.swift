@@ -14,11 +14,9 @@ import AppKit
 
 public class Context {
     internal var constraints: [Constraint] = []
-    internal let removeExisting: Bool
     internal let performLayout: Bool
 
-    init(removeExisting: Bool, performLayout: Bool){
-        self.removeExisting = removeExisting
+    init(performLayout: Bool){
         self.performLayout = performLayout
     }
 
@@ -62,14 +60,6 @@ public class Context {
 
     internal func installConstraints() {
         let views = constraints.map({ $0.view })
-
-        if removeExisting {
-            for view in views {
-                for constraint in view.car_installedLayoutConstraints ?? [] {
-                    constraint.uninstall()
-                }
-            }
-        }
 
         for constraint in constraints {
             constraint.install()

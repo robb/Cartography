@@ -18,7 +18,6 @@
 		546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionTests.swift */; };
 		547BC85519E2DD06007BEE9E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC85419E2DD06007BEE9E /* Context.swift */; };
 		547BC85719E2EB9B007BEE9E /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC85619E2EB9B007BEE9E /* Constraint.swift */; };
-		547BC85919E2ED62007BEE9E /* RemoveConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC85819E2ED62007BEE9E /* RemoveConstraints.swift */; };
 		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
@@ -90,7 +89,6 @@
 		546E9E941950A97F00B16707 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
 		547BC85419E2DD06007BEE9E /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		547BC85619E2EB9B007BEE9E /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		547BC85819E2ED62007BEE9E /* RemoveConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveConstraints.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A16195063CD000CDD27 /* Cartography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cartography.h; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				546E9E921950A87600B16707 /* EdgeTests.swift */,
 				54FA3A371950FD8E0094B82A /* OperatorTests.swift */,
 				54FA3A3D1951A3750094B82A /* PointTests.swift */,
-				547BC85819E2ED62007BEE9E /* RemoveConstraints.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
@@ -423,7 +420,6 @@
 				54FA3A441951A9730094B82A /* SizeTests.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesTests.swift in Sources */,
-				547BC85919E2ED62007BEE9E /* RemoveConstraints.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeTests.swift in Sources */,
