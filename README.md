@@ -11,14 +11,14 @@ your views:
 
 ```swift
 layout(view1, view2) { view1, view2 in
-    view1.width   == (view.superview!.width - 50) * 0.5
+    view1.width   == (view1.superview!.width - 50) * 0.5
     view2.width   == view1.width - 50
     view1.height  == 40
     view2.height  == view1.height
-    view1.centerX == view.superview!.centerX
+    view1.centerX == view1.superview!.centerX
     view2.centerX == view1.centerX
- 
-    view1.top >= view.superview!.top + 20
+
+    view1.top >= view1.superview!.top + 20
     view2.top == view1.bottom + 20
 }
 ```
@@ -42,9 +42,13 @@ layout(view) { view in
 
 ```swift
 layout(view) { view in
-    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20); return
 }
 ```
+
+(We need to return explicitly here to work around [a bug in
+Swift](https://github.com/robb/Cartography/issues/9), this only affects single
+line blocks, however.)
 
 ## Setting priorities
 
@@ -67,7 +71,7 @@ time:
 var width: NSLayoutConstraint?
 
 layout(view) { view in
-    width = (view.width == 200 ~ 100)
+    width = (view.width == 200 ~ 100); return
 }
 ```
 
@@ -77,7 +81,7 @@ Note that declaring compound attributes returns multiple constraints at once:
 var constraints: NSLayoutConstraint[]?
 
 layout(view) { view in
-    constraints = (view.size == view.superview!.size ~ 100)
+    constraints = (view.size == view.superview!.size ~ 100); return
 }
 ```
 
