@@ -33,7 +33,7 @@ public class Context {
             toAttribute = to!.attribute
         }
 
-        let superview = commonSuperview(from.view, to?.view)
+        let superview = closestCommonAncestor(from.view, to?.view)
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
             attribute: from.attribute,
@@ -87,34 +87,35 @@ public class Context {
     }
 }
 
-private func commonSuperview(a: View, b: View?) -> View? {
-    if (b == nil) {
-        return a;
-    } else if (a.superview == b) {
-        return b;
-    } else if (a == b!.superview) {
-        return a;
-    } else if (a.superview == b!.superview) {
-        return a.superview;
-    } else {
-        let superviews = NSMutableSet()
-
-        var view: View? = a
-        while let superview = view?.superview {
-            superviews.addObject(superview)
-
-            view = superview
-        }
-
-        view = b
-        while let superview = view?.superview {
-            if superviews.containsObject(superview) {
-                return superview
+private func closestCommonAncestor(a: View, b: View?) -> View? {
+    
+    if let b = b {
+        
+        // Quick-check the most likely possibilities
+        let (aSuper, bSuper) = (a.superview, b.superview)
+        if a == bSuper { return a }
+        if b == aSuper { return b }
+        if aSuper == bSuper { return aSuper }
+        
+        // None of those; run the general algorithm
+        var ancestorsOfA = NSSet(array: Array(ancestors(a)))
+        for ancestor in ancestors(b) {
+            if ancestorsOfA.containsObject(ancestor) {
+                return ancestor
             }
-
-            view = superview
         }
+        return nil // No ancestors in common
+    }
+    return a // b is nil
+}
 
-        return nil
+private func ancestors(v: View) -> SequenceOf<View> {
+    return SequenceOf<View> { () -> GeneratorOf<View> in
+        var view: View? = v
+        return GeneratorOf {
+            let current = view
+            view = view?.superview
+            return current
+        }
     }
 }
