@@ -65,3 +65,9 @@ public class LayoutProxy {
         baseline = Edge.Baseline(view)
     }
 }
+
+postfix operator ^ {}
+
+postfix func ^ (inout proxy: LayoutProxy) -> LayoutProxy? {
+    return proxy.superview
+}
