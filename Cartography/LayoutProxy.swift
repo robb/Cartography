@@ -68,6 +68,6 @@ public class LayoutProxy {
 
 postfix operator ^ {}
 
-postfix func ^ (inout proxy: LayoutProxy) -> LayoutProxy? {
-    return proxy.superview
+postfix func ^ (inout proxy: LayoutProxy) -> LayoutProxy {
+    return proxy.superview!
 }
