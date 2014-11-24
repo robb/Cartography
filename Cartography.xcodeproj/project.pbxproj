@@ -53,6 +53,12 @@
 		54FA3A401951A41B0094B82A /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3F1951A41B0094B82A /* Compound.swift */; };
 		54FA3A421951A8070094B82A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A411951A8070094B82A /* Size.swift */; };
 		54FA3A441951A9730094B82A /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeTests.swift */; };
+		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
+		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
+		BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
+		BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
+		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */; };
+		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +116,8 @@
 		54FA3A3F1951A41B0094B82A /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		54FA3A411951A8070094B82A /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		54FA3A431951A9730094B82A /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
+		BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchyTests.swift; sourceTree = "<group>"; };
+		BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +193,7 @@
 				54C96A2F195064A6000CDD27 /* Property.swift */,
 				54FA3A411951A8070094B82A /* Size.swift */,
 				54F6A863195C217800313D24 /* View.swift */,
+				BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
 			);
 			path = Cartography;
@@ -208,6 +217,7 @@
 				54FA3A3D1951A3750094B82A /* PointTests.swift */,
 				547BC85819E2ED62007BEE9E /* RemoveConstraints.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
+				BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
 			path = CartographyTests;
@@ -404,6 +414,7 @@
 				547BC85719E2EB9B007BEE9E /* Constraint.swift in Sources */,
 				547BC85519E2DD06007BEE9E /* Context.swift in Sources */,
 				545F858D195322EA00791F75 /* Edges.swift in Sources */,
+				BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
 				54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */,
 				546E9E911950A76C00B16707 /* Edge.swift in Sources */,
@@ -426,7 +437,9 @@
 				547BC85919E2ED62007BEE9E /* RemoveConstraints.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */,
+				BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeTests.swift in Sources */,
+				BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +458,7 @@
 				54F6A85A195C213A00313D24 /* Point.swift in Sources */,
 				54F6A865195C226700313D24 /* View.swift in Sources */,
 				54F6A855195C213A00313D24 /* Edge.swift in Sources */,
+				BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */,
 				54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */,
 				54F6A854195C213A00313D24 /* Dimension.swift in Sources */,
 				54F6A857195C213A00313D24 /* Expression.swift in Sources */,
@@ -455,6 +469,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
+				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
 				54F6A860195C213F00313D24 /* PointTests.swift in Sources */,
 				54F6A862195C213F00313D24 /* OperatorTests.swift in Sources */,
 				54F6A85E195C213F00313D24 /* EdgeTests.swift in Sources */,
@@ -617,6 +633,7 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -631,6 +648,7 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -696,6 +714,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -714,6 +733,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
