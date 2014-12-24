@@ -40,6 +40,15 @@ public func layout(views: [View], block:([LayoutProxy]) -> ()) {
     context.installConstraints()
 }
 
+public func layout(views: [String : View], block:([String : LayoutProxy] -> ())) {
+    let context = Context(performLayout: true)
+    let result = map(views) { ($0, LayoutProxy(context, $1)) }
+    
+    block(Dictionary(result))
+    
+    context.installConstraints()
+}
+
 public func constrain(view: View, block: LayoutProxy -> ()) {
     let context = Context(performLayout: false)
 
@@ -70,4 +79,23 @@ public func constrain(views: [View], block:([LayoutProxy]) -> ()) {
     block(views.map({ LayoutProxy(context, $0) }))
 
     context.installConstraints()
+}
+
+public func constrain(views: [String : View], block:([String : LayoutProxy] -> ())) {
+    let context = Context(performLayout: true)
+    let result = map(views) { ($0, LayoutProxy(context, $1)) }
+    
+    block(Dictionary(result))
+    
+    context.installConstraints()
+}
+
+// MARK: Dictionary
+private extension Dictionary {
+    init (_ pairs: [Element]) {
+        self.init()
+        for (key,value) in pairs {
+            self[key] = value
+        }
+    }
 }
