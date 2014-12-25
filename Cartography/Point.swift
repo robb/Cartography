@@ -13,12 +13,19 @@ import AppKit
 #endif
 
 public enum Point : Compound {
-    case Center(View)
+    case Center(Context, View)
+
+    var context: Context {
+        switch (self) {
+            case let .Center(context, _):
+                return context
+        }
+    }
 
     var properties: [Property] {
         switch (self) {
-            case let .Center(view):
-                return [ Edge.CenterX(view), Edge.CenterY(view) ]
+            case let .Center(context, view):
+                return [ Edge.CenterX(context, view), Edge.CenterY(context, view) ]
         }
     }
 }
@@ -26,7 +33,7 @@ public enum Point : Compound {
 // MARK: Equality
 
 public func ==(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
 public func ==(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
@@ -34,21 +41,21 @@ public func ==(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
 }
 
 public func ==(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs)
+    return lhs.context.addConstraint(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
 public func <=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func >=(lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func <=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
 public func <=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
@@ -56,7 +63,7 @@ public func <=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
 }
 
 public func >=(lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
-    return apply(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
 public func >=(lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {

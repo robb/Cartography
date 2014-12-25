@@ -12,65 +12,148 @@ import UIKit
 import AppKit
 #endif
 
-protocol Property {
-    var view: View { get }
+public protocol Property {
     var attribute: NSLayoutAttribute { get }
+    var context: Context { get }
+    var view: View { get }
 }
 
-func apply(from: Property, coefficients: Coefficients = Coefficients(), to: Property? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> NSLayoutConstraint {
-    from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
+// MARK: Equality
 
-    let superview = commonSuperview(from.view, to?.view)
+public protocol Equality : Property { }
 
-    var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
-
-    if to == nil {
-        toAttribute = NSLayoutAttribute.NotAnAttribute
-    } else {
-        toAttribute = to!.attribute
-    }
-
-    let constraint = NSLayoutConstraint(item: from.view,
-                                        attribute: from.attribute,
-                                        relatedBy: relation,
-                                        toItem: to?.view,
-                                        attribute: toAttribute,
-                                        multiplier: CGFloat(coefficients.multiplier),
-                                        constant: CGFloat(coefficients.constant))
-
-    superview?.addConstraint(constraint)
-
-    return constraint
+public func ==(lhs: Equality, rhs: Float) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
 }
 
-func commonSuperview(a: View, b: View?) -> View? {
-    if (b == nil) {
-        return a;
-    } else if (a.superview == b) {
-        return b;
-    } else if (a == b!.superview) {
-        return a;
-    } else if (a.superview == b!.superview) {
-        return a.superview;
-    } else {
-        let superviews = NSMutableSet()
+public func ==(lhs: Float, rhs: Equality) -> NSLayoutConstraint {
+    return rhs == lhs
+}
 
-        var view: View? = a
-        while let superview = view?.superview {
-            superviews.addObject(superview)
+public func ==<P: Equality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
+}
 
-            view = superview
-        }
+public func ==<P: Equality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs == lhs
+}
 
-        view = b
-        while let superview = view?.superview {
-            if superviews.containsObject(superview) {
-                return superview
-            }
+public func ==<P: Equality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs)
+}
 
-            view = superview
-        }
+// MARK: Inequality
 
-        return nil
-    }
+public protocol Inequality : Property { }
+
+public func <=(lhs: Inequality, rhs: Float) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+public func <=(lhs: Float, rhs: Inequality) -> NSLayoutConstraint {
+    return rhs >= lhs
+}
+
+public func >=(lhs: Inequality, rhs: Float) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+public func >=(lhs: Float, rhs: Inequality) -> NSLayoutConstraint {
+    return rhs <= lhs
+}
+
+public func <=<P: Inequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+public func >=<P: Inequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+public func <=<P: Inequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
+public func <=<P: Inequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs >= lhs
+}
+
+public func >=<P: Inequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+public func >=<P: Inequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+    return rhs <= lhs
+}
+
+// Mark: Addition
+
+public protocol Addition : Property { }
+
+public func +<P: Addition>(c: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, c) ])
+}
+
+public func +<P: Addition>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func +<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
+}
+
+public func +<P: Addition>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func -<P: Addition>(c: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, -c) ])
+}
+
+public func -<P: Addition>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}
+
+public func -<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
+}
+
+public func -<P: Addition>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs - lhs
+}
+
+// MARK: Multiplication
+
+public protocol Multiplication : Property { }
+
+public func *<P: Multiplication>(m: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+public func *<P: Multiplication>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func *<P: Multiplication>(m: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(m, 0) ])
+}
+
+public func *<P: Multiplication>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func /<P: Multiplication>(m: Float, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+}
+
+public func /<P: Multiplication>(lhs: Expression<P>, rhs: Float) -> Expression<P> {
+    return rhs / lhs
+}
+
+public func /<P: Multiplication>(m: Float, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1 / m, 0) ])
+}
+
+public func /<P: Multiplication>(lhs: P, rhs: Float) -> Expression<P> {
+    return rhs / lhs
 }

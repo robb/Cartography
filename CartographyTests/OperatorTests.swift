@@ -27,7 +27,7 @@ class OperatorTests: XCTestCase {
             constraint = view.width == view.superview!.width + 100
         }
 
-        XCTAssertEqual(constraint.constant, CGFloat(100), "It should set the constant")
+        XCTAssert(constraint.constant == 100, "It should set the constant")
     }
 
     func testSubtraction() {
@@ -37,7 +37,7 @@ class OperatorTests: XCTestCase {
             constraint = view.width == view.superview!.width - 100
         }
 
-        XCTAssertEqual(constraint.constant, CGFloat(-100), "It should set the constant")
+        XCTAssert(constraint.constant == -100, "It should set the constant")
     }
 
     func testMultiplication() {
@@ -47,8 +47,8 @@ class OperatorTests: XCTestCase {
             constraint = view.width == (view.superview!.width + 100) * 2 + 5
         }
 
-        XCTAssertEqual(constraint.multiplier, CGFloat(2), "It should set the constant")
-        XCTAssertEqual(constraint.constant, CGFloat(205), "It should multiply the constant")
+        XCTAssert(constraint.multiplier == 2, "It should set the constant")
+        XCTAssert(constraint.constant == 205, "It should multiply the constant")
     }
 
     func testDivision() {
@@ -58,8 +58,8 @@ class OperatorTests: XCTestCase {
             constraint = view.width == (view.superview!.width + 100) / 2 + 5
         }
 
-        XCTAssertEqual(constraint.multiplier, CGFloat(0.5), "It should set the constant")
-        XCTAssertEqual(constraint.constant, CGFloat(55), "It should divide the constant")
+        XCTAssert(constraint.multiplier == 0.5, "It should set the constant")
+        XCTAssert(constraint.constant == 55, "It should divide the constant")
     }
 
     func testDivision2() {
@@ -69,7 +69,7 @@ class OperatorTests: XCTestCase {
             constraint = view.width == view.superview!.width / 2
         }
 
-        XCTAssertEqual(constraint.multiplier, CGFloat(0.5), "It should set the constant")
+        XCTAssert(constraint.multiplier == 0.5, "It should set the constant")
     }
 
     func testPriority() {
@@ -79,7 +79,7 @@ class OperatorTests: XCTestCase {
             constraint = (view.width == 200 ~ 100)
         }
 
-        XCTAssertEqual(constraint.priority, UILayoutPriority(100), "It should set the priority")
+        XCTAssert(constraint.priority == 100, "It should set the priority")
     }
 
     func testPriorities() {
@@ -89,7 +89,7 @@ class OperatorTests: XCTestCase {
             constraints = (view.size <= view.superview!.size ~ 100)
         }
 
-        XCTAssertEqual(constraints[0].priority, UILayoutPriority(100), "It should set the priority")
-        XCTAssertEqual(constraints[1].priority, UILayoutPriority(100), "It should set the priority")
+        XCTAssert(constraints[0].priority == 100, "It should set the priority")
+        XCTAssert(constraints[1].priority == 100, "It should set the priority")
     }
 }

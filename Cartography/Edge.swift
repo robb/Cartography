@@ -12,38 +12,21 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edge : Property {
-    case Top(View)
-    case Right(View)
-    case Bottom(View)
-    case Left(View)
+public enum Edge : Property, Equality, Inequality, Addition, Multiplication {
+    case Top(Context, View)
+    case Right(Context, View)
+    case Bottom(Context, View)
+    case Left(Context, View)
 
-    case Leading(View)
-    case Trailing(View)
+    case Leading(Context, View)
+    case Trailing(Context, View)
 
-    case CenterX(View)
-    case CenterY(View)
+    case CenterX(Context, View)
+    case CenterY(Context, View)
 
-    case Baseline(View)
+    case Baseline(Context, View)
 
-    var view: View {
-        switch (self) {
-            case let .Top(view): return view
-            case let .Right(view): return view
-            case let .Bottom(view): return view
-            case let .Left(view): return view
-
-            case let .Leading(view): return view
-            case let .Trailing(view): return view
-
-            case let .CenterX(view): return view
-            case let .CenterY(view): return view
-
-            case let .Baseline(view): return view
-        }
-    }
-
-    var attribute: NSLayoutAttribute {
+    public var attribute: NSLayoutAttribute {
         switch (self) {
             case let .Top(view): return NSLayoutAttribute.Top
             case let .Right(view): return NSLayoutAttribute.Right
@@ -59,116 +42,38 @@ public enum Edge : Property {
             case let .Baseline(view): return NSLayoutAttribute.Baseline
         }
     }
-}
 
-// MARK: Equality
+    public var context: Context {
+        switch (self) {
+            case let .Top(context, _): return context
+            case let .Right(context, _): return context
+            case let .Bottom(context, _): return context
+            case let .Left(context, _): return context
 
-public func ==(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
-}
+            case let .Leading(context, _): return context
+            case let .Trailing(context, _): return context
 
-public func ==(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
-    return rhs == lhs
-}
+            case let .CenterX(context, _): return context
+            case let .CenterY(context, _): return context
 
-public func ==(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs)
-}
+            case let .Baseline(context, _): return context
+        }
+    }
 
-// MARK: Inequality
+    public var view: View {
+        switch (self) {
+            case let .Top(_, view): return view
+            case let .Right(_, view): return view
+            case let .Bottom(_, view): return view
+            case let .Left(_, view): return view
 
-public func <=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
+            case let .Leading(_, view): return view
+            case let .Trailing(_, view): return view
 
-public func >=(lhs: Edge, rhs: Edge) -> NSLayoutConstraint {
-    return apply(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
+            case let .CenterX(_, view): return view
+            case let .CenterY(_, view): return view
 
-public func <=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-public func <=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
-    return rhs >= lhs
-}
-
-public func >=(lhs: Edge, rhs: Expression<Edge>) -> NSLayoutConstraint {
-    return apply(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >=(lhs: Expression<Edge>, rhs: Edge) -> NSLayoutConstraint {
-    return rhs <= lhs
-}
-
-// MARK: Addition
-
-public func +(c: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1, c) ])
-}
-
-public func +(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs + lhs
-}
-
-public func +(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
-}
-
-public func +(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs + lhs
-}
-
-// MARK: Subtraction
-
-public func -(c: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1, -c) ])
-}
-
-public func -(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs - lhs
-}
-
-public func -(c: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
-}
-
-public func -(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs - lhs
-}
-
-// MARK: Multiplication
-
-public func *(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
-}
-
-public func *(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs * lhs
-}
-
-public func *(m: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
-}
-
-public func *(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs * lhs
-}
-
-// MARK: Division
-
-public func /(m: Float, rhs: Expression<Edge>) -> Expression<Edge> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
-}
-
-public func /(lhs: Expression<Edge>, rhs: Float) -> Expression<Edge> {
-    return rhs / lhs
-}
-
-public func /(m: Float, rhs: Edge) -> Expression<Edge> {
-    return Expression(rhs, [ Coefficients(1 / m, 0) ])
-}
-
-public func /(lhs: Edge, rhs: Float) -> Expression<Edge> {
-    return rhs / lhs
+            case let .Baseline(_, view): return view
+        }
+    }
 }

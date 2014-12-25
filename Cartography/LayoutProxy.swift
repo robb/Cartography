@@ -30,38 +30,41 @@ public class LayoutProxy {
 
     public let baseline: Edge
 
-    let view: View
+    internal let context: Context
+    internal let view: View
 
     public var superview: LayoutProxy? {
         if let superview = view.superview {
-            return LayoutProxy(superview)
+            return LayoutProxy(context, superview)
         } else {
             return nil
         }
     }
 
-    init(_ view: View) {
+    init(_ context: Context, _ view: View) {
+        self.context = context
         self.view = view
 
-        width = Dimension.Width(view)
-        height = Dimension.Height(view)
+        width  = Dimension.Width(context, view)
+        height = Dimension.Height(context, view)
 
-        size = Size.Size(view)
+        size = Size.Size(context, view)
 
-        top = Edge.Top(view)
-        right = Edge.Right(view)
-        bottom = Edge.Bottom(view)
-        left = Edge.Left(view)
+        top    = Edge.Top(context, view)
+        right  = Edge.Right(context, view)
+        bottom = Edge.Bottom(context, view)
+        left   = Edge.Left(context, view)
 
-        edges = Edges.Edges(view)
+        edges = Edges.Edges(context, view)
 
-        leading = Edge.Leading(view)
-        trailing = Edge.Trailing(view)
+        leading = Edge.Leading(context, view)
+        trailing = Edge.Trailing(context, view)
 
-        centerX = Edge.CenterX(view)
-        centerY = Edge.CenterY(view)
-        center = Point.Center(view)
+        centerX = Edge.CenterX(context, view)
+        centerY = Edge.CenterY(context, view)
 
-        baseline = Edge.Baseline(view)
+        center = Point.Center(context, view)
+
+        baseline = Edge.Baseline(context, view)
     }
 }

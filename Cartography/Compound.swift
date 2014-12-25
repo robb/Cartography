@@ -13,17 +13,6 @@ import AppKit
 #endif
 
 protocol Compound {
+    var context: Context { get }
     var properties: [Property] { get }
-}
-
-func apply(from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.Equal) -> [NSLayoutConstraint] {
-    var results: [NSLayoutConstraint] = []
-
-    for i in 0..<from.properties.count {
-        let n: Coefficients = coefficients?[i] ?? Coefficients()
-
-        results.append(apply(from.properties[i], coefficients: n, to: to?.properties[i], relation: relation))
-    }
-
-    return results
 }

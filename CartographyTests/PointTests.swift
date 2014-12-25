@@ -19,7 +19,7 @@ class PointTests: XCTestCase {
         view = View(frame: CGRectZero)
         superview.addSubview(view)
 
-        layout(view) { view in
+        constrain(view) { view in
             view.width  == 200
             view.height == 200
         }
