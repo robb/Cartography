@@ -40,7 +40,7 @@ public func layout(views: [View], block:([LayoutProxy]) -> ()) {
     context.installConstraints()
 }
 
-public func layout(views: [String : View], block:([String : LayoutProxy] -> ())) {
+public func layout<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
     let context = Context(performLayout: true)
     let result = map(views) { ($0, LayoutProxy(context, $1)) }
     
@@ -81,7 +81,7 @@ public func constrain(views: [View], block:([LayoutProxy]) -> ()) {
     context.installConstraints()
 }
 
-public func constrain(views: [String : View], block:([String : LayoutProxy] -> ())) {
+public func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
     let context = Context(performLayout: true)
     let result = map(views) { ($0, LayoutProxy(context, $1)) }
     
