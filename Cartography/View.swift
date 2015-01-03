@@ -36,15 +36,15 @@ import Foundation
     }
 #endif
 
-private var key: UInt8 = 0
+private var InstalledLayoutConstraintsKey: StaticString = "InstalledLayoutConstraintsKey"
 
 extension View {
     var car_installedLayoutConstraints: [Constraint]? {
         get {
-            return objc_getAssociatedObject(self, &key) as? [Constraint]
+            return objc_getAssociatedObject(self, &InstalledLayoutConstraintsKey) as? [Constraint]
         }
         set {
-            objc_setAssociatedObject(self, &key, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
+            objc_setAssociatedObject(self, &InstalledLayoutConstraintsKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
         }
     }
 }
