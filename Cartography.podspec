@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author       = { "Robert Böhnke" => "robb@robb.is" }
   s.ios.deployment_target = "8.0"
 
-  s.source = { :git => "https://github.com/robb/Cartography.git", :commit => "2a85b80ad0f7abc80ab520a6b665be9f88603b2c" }
+  s.source = { :git => "https://github.com/robb/Cartography.git", :tag => "#{s.version}" }
   s.source_files  = "Cartography/*.swift"
 
   s.requires_arc = true
