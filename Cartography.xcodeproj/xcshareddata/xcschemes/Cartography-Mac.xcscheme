@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54EE5425195212160005DF21"
-               BuildableName = "CartographyTests-Mac.xctest"
-               BlueprintName = "CartographyTests-Mac"
-               ReferencedContainer = "container:Cartography.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "54F6A841195C20C200313D24"
                BuildableName = "Cartography-Mac-Tests.xctest"
                BlueprintName = "Cartography-Mac-Tests"
