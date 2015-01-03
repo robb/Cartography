@@ -1,5 +1,9 @@
 # Cartography
 
+<a href="https://travis-ci.org/robb/Cartography?branch=master">
+    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" align="right" vspace="2px">
+</a>
+
 Set up your Auto Layout constraints declaratively and without any stringly
 typing!
 
