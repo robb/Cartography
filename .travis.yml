@@ -1,0 +1,4 @@
+language: objective-c
+osx_image: xcode611
+before_install: true
+script: xctool -scheme 'Cartography-Mac' test
