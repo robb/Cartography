@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+import UIKit
+#else
+import AppKit
+#endif
 
 @objc
 internal class Constraint {
