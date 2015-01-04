@@ -1,7 +1,10 @@
 # Cartography
 
+<a href="https://github.com/Carthage/Carthage/issues/179">
+    <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
+</a>
 <a href="https://travis-ci.org/robb/Cartography?branch=master">
-    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" align="right" vspace="2px">
+    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" align="right" vspace="2px" hspace="5px">
 </a>
 
 Set up your Auto Layout constraints declaratively and without any stringly
