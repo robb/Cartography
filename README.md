@@ -94,8 +94,7 @@ layout(view) { view in
 
 ## About Cartography
 
-Cartography is written in Swift so it's pretty much beta by definition.
-It was inspired by the excellent [FLKAutoLayout] by [Florian Kugler][florian].
+Cartography was inspired by the excellent [FLKAutoLayout] by [Florian Kugler][florian].
 
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
 [florian]: https://github.com/floriankugler
