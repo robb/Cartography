@@ -9,7 +9,7 @@
 import Cartography
 import XCTest
 
-class CartographyTests: XCTestCase {
+class DimensionTests: XCTestCase {
     var superview: View!
     var view: View!
 
