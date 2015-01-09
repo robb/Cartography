@@ -12,6 +12,8 @@
 #elseif TEST
     import AppKit
     typealias View = NSView
+#else
+    import Foundation
 #endif
 
 func closestCommonAncestor(a: View, b: View?) -> View? {
