@@ -49,6 +49,9 @@ internal class Constraint {
             return false
         }
 
+        // store view who has set `firstView`'s constarint
+        (layoutConstraint.firstItem as View).car_increaseReferenceCountForView(view)
+
         view.addConstraint(layoutConstraint)
         return true
     }
@@ -64,6 +67,7 @@ internal class Constraint {
                 }
             }
         }
+        (layoutConstraint.firstItem as View).car_decreaseReferenceCountForView(view)
     }
 
     init(view: View, layoutConstraint: NSLayoutConstraint) {
@@ -72,16 +76,18 @@ internal class Constraint {
     }
 
     func layoutConstraintsSimilarTo(layoutConstraint: NSLayoutConstraint) -> Constraint? {
-        view
-        if let existings = view.car_installedLayoutConstraints {
-            for existing in existings {
-                if (existing.layoutConstraint.firstItem === layoutConstraint.firstItem &&
-                    existing.layoutConstraint.firstAttribute == layoutConstraint.firstAttribute &&
-                    existing.layoutConstraint.relation == layoutConstraint.relation) {
-                    return existing
-                }
+        var existings = view.car_installedLayoutConstraints ?? []
+        for referredView in (layoutConstraint.firstItem as View).car_referredViews {
+            existings += referredView.car_installedLayoutConstraints ?? []
+        }
+        for existing in existings {
+            if (existing.layoutConstraint.firstItem === layoutConstraint.firstItem &&
+                existing.layoutConstraint.firstAttribute == layoutConstraint.firstAttribute &&
+                existing.layoutConstraint.relation == layoutConstraint.relation) {
+                return existing
             }
         }
+
         return nil
     }
 }
