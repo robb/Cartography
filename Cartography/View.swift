@@ -13,6 +13,10 @@ import Foundation
     public typealias View = UIView
 
     extension View {
+        func car_setNeedsLayout() {
+            setNeedsLayout()
+        }
+
         func car_updateLayout() {
             layoutIfNeeded()
         }
@@ -26,6 +30,10 @@ import Foundation
     public typealias View = NSView
 
     extension View {
+        func car_setNeedsLayout() {
+            needsLayout = true
+        }
+
         func car_updateLayout() {
             (superview ?? self).layoutSubtreeIfNeeded()
         }
