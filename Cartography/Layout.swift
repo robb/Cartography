@@ -84,9 +84,9 @@ public func constrain(views: [View], block:([LayoutProxy]) -> ()) {
 public func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
     let context = Context(performLayout: true)
     let result = map(views) { ($0, LayoutProxy(context, $1)) }
-    
+
     block(Dictionary(result))
-    
+
     context.installConstraints()
 }
 
