@@ -22,13 +22,13 @@ public protocol Property {
 
 /// Properties conforming to this protocol can use the `==` operator with
 /// numerical constants.
-public protocol ConstantEquality : Property { }
+public protocol NumericalEquality : Property { }
 
-public func ==(lhs: ConstantEquality, rhs: Float) -> NSLayoutConstraint {
+public func ==(lhs: NumericalEquality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
 }
 
-public func ==(lhs: Float, rhs: ConstantEquality) -> NSLayoutConstraint {
+public func ==(lhs: Float, rhs: NumericalEquality) -> NSLayoutConstraint {
     return rhs == lhs
 }
 
@@ -52,21 +52,21 @@ public func ==<P: RelativeEquality>(lhs: P, rhs: P) -> NSLayoutConstraint {
 
 /// Properties conforming to this protocol can use the `<=` and `>=` operators
 /// with numerical constants.
-public protocol ConstantInequality : Property { }
+public protocol NumericalInequality : Property { }
 
-public func <=(lhs: ConstantInequality, rhs: Float) -> NSLayoutConstraint {
+public func <=(lhs: NumericalInequality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <=(lhs: Float, rhs: ConstantInequality) -> NSLayoutConstraint {
+public func <=(lhs: Float, rhs: NumericalInequality) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-public func >=(lhs: ConstantInequality, rhs: Float) -> NSLayoutConstraint {
+public func >=(lhs: NumericalInequality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-public func >=(lhs: Float, rhs: ConstantInequality) -> NSLayoutConstraint {
+public func >=(lhs: Float, rhs: NumericalInequality) -> NSLayoutConstraint {
     return rhs <= lhs
 }
 
@@ -108,6 +108,7 @@ public func +<P: Addition>(c: Float, rhs: P) -> Expression<P> {
 
 public func +<P: Addition>(lhs: P, rhs: Float) -> Expression<P> {
     return rhs + lhs
+
 }
 
 public func +<P: Addition>(c: Float, rhs: Expression<P>) -> Expression<P> {
