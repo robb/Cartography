@@ -20,69 +20,81 @@ public protocol Property {
 
 // MARK: Equality
 
-public protocol Equality : Property { }
+/// Properties conforming to this protocol can use the `==` operator with
+/// numerical constants.
+public protocol ConstantEquality : Property { }
 
-public func ==(lhs: Equality, rhs: Float) -> NSLayoutConstraint {
+public func ==(lhs: ConstantEquality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
 }
 
-public func ==(lhs: Float, rhs: Equality) -> NSLayoutConstraint {
+public func ==(lhs: Float, rhs: ConstantEquality) -> NSLayoutConstraint {
     return rhs == lhs
 }
 
-public func ==<P: Equality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+/// Properties conforming to this protocol can use the `==` operator with other
+/// properties of the same type.
+public protocol RelativeEquality : Property { }
+
+public func ==<P: RelativeEquality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value)
 }
 
-public func ==<P: Equality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+public func ==<P: RelativeEquality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs == lhs
 }
 
-public func ==<P: Equality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+public func ==<P: RelativeEquality>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
-public protocol Inequality : Property { }
+/// Properties conforming to this protocol can use the `<=` and `>=` operators
+/// with numerical constants.
+public protocol ConstantInequality : Property { }
 
-public func <=(lhs: Inequality, rhs: Float) -> NSLayoutConstraint {
+public func <=(lhs: ConstantInequality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <=(lhs: Float, rhs: Inequality) -> NSLayoutConstraint {
+public func <=(lhs: Float, rhs: ConstantInequality) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-public func >=(lhs: Inequality, rhs: Float) -> NSLayoutConstraint {
+public func >=(lhs: ConstantInequality, rhs: Float) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-public func >=(lhs: Float, rhs: Inequality) -> NSLayoutConstraint {
+public func >=(lhs: Float, rhs: ConstantInequality) -> NSLayoutConstraint {
     return rhs <= lhs
 }
 
-public func <=<P: Inequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+/// Properties conforming to this protocol can use the `<=` and `>=` operators
+/// with other properties of the same type.
+public protocol RelativeInequality : Property { }
+
+public func <=<P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func >=<P: Inequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+public func >=<P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-public func <=<P: Inequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+public func <=<P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <=<P: Inequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+public func <=<P: RelativeInequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs >= lhs
 }
 
-public func >=<P: Inequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+public func >=<P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-public func >=<P: Inequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
+public func >=<P: RelativeInequality>(lhs: Expression<P>, rhs: P) -> NSLayoutConstraint {
     return rhs <= lhs
 }
 
