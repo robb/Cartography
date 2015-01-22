@@ -14,11 +14,6 @@ import AppKit
 
 public class Context {
     internal var constraints: [Constraint] = []
-    internal let performLayout: Bool
-
-    init(performLayout: Bool){
-        self.performLayout = performLayout
-    }
 
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -58,7 +53,7 @@ public class Context {
         return results
     }
 
-    internal func installConstraints() {
+    internal func installConstraints(# performLayout: Bool) {
         let views = constraints.map({ $0.view })
 
         for constraint in constraints {
