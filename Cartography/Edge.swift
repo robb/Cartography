@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edge : Property, Equality, Inequality, Addition, Multiplication {
+public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
     case Top(Context, View)
     case Right(Context, View)
     case Bottom(Context, View)

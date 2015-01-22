@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-public enum Dimension : Property, Equality, Inequality, Addition, Multiplication {
+public enum Dimension : Property, NumericalEquality, RelativeEquality, NumericalInequality, RelativeInequality, Addition, Multiplication {
     case Width(Context, View)
     case Height(Context, View)
 
