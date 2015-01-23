@@ -52,22 +52,4 @@ public class Context {
 
         return results
     }
-
-    internal func installConstraints(# performLayout: Bool) {
-        let views = constraints.map({ $0.view })
-
-        for constraint in constraints {
-            constraint.install()
-
-            let existing = constraint.view.car_installedLayoutConstraints ?? []
-
-            constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
-        }
-
-        if performLayout {
-            for view in views {
-                view.car_updateLayout()
-            }
-        }
-    }
 }

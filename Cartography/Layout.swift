@@ -8,94 +8,82 @@
 
 import Foundation
 
-public func layout(view: View, block: LayoutProxy -> ()) {
-    let context = Context()
+public func layout(view: View, block: LayoutProxy -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, view))
+    group.layout(view, block)
 
-    context.installConstraints(performLayout: true)
+    return group
 }
 
-public func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+public func layout(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2))
+    group.layout(v1, v2, block)
 
-    context.installConstraints(performLayout: true)
+    return group
 }
 
-public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+public func layout(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
+    group.layout(v1, v2, v3, block)
 
-    context.installConstraints(performLayout: true)
+    return group
 }
 
-public func layout(views: [View], block:([LayoutProxy]) -> ()) {
-    let context = Context()
+public func layout(views: [View], block:([LayoutProxy]) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(views.map({ LayoutProxy(context, $0) }))
+    group.layout(views, block)
 
-    context.installConstraints(performLayout: true)
+    return group
 }
 
-public func layout<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
-    let context = Context()
-    let result = map(views) { ($0, LayoutProxy(context, $1)) }
+public func layout<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(Dictionary(result))
+    group.layout(views, block)
 
-    context.installConstraints(performLayout: true)
+    return group
 }
 
-public func constrain(view: View, block: LayoutProxy -> ()) {
-    let context = Context()
+public func constrain(view: View, block: LayoutProxy -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, view))
+    group.constrain(view, block)
 
-    context.installConstraints(performLayout: false)
+    return group
 }
 
-public func constrain(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+public func constrain(v1: View, v2: View, block: (LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2))
+    group.constrain(v1, v2, block)
 
-    context.installConstraints(performLayout: false)
+    return group
 }
 
-public func constrain(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
-    let context = Context()
+public func constrain(v1: View, v2: View, v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
+    group.constrain(v1, v2, v3, block)
 
-    context.installConstraints(performLayout: false)
+    return group
 }
 
-public func constrain(views: [View], block:([LayoutProxy]) -> ()) {
-    let context = Context()
+public func constrain(views: [View], block:([LayoutProxy]) -> ()) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(views.map({ LayoutProxy(context, $0) }))
+    group.constrain(views, block)
 
-    context.installConstraints(performLayout: false)
+    return group
 }
 
-public func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
-    let context = Context()
-    let result = map(views) { ($0, LayoutProxy(context, $1)) }
+public func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) -> ConstraintGroup {
+    var group = ConstraintGroup()
 
-    block(Dictionary(result))
+    group.constrain(views, block)
 
-    context.installConstraints(performLayout: false)
-}
-
-// MARK: Dictionary
-private extension Dictionary {
-    init (_ pairs: [Element]) {
-        self.init()
-        for (key,value) in pairs {
-            self[key] = value
-        }
-    }
+    return group
 }
