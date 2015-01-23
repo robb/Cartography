@@ -29,12 +29,12 @@ public class Context {
         let superview = closestCommonAncestor(from.view, to?.view)
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
-            attribute: from.attribute,
-            relatedBy: relation,
-            toItem: to?.view,
-            attribute: toAttribute,
-            multiplier: CGFloat(coefficients.multiplier),
-            constant: CGFloat(coefficients.constant))
+                                                  attribute: from.attribute,
+                                                  relatedBy: relation,
+                                                  toItem: to?.view,
+                                                  attribute: toAttribute,
+                                                  multiplier: CGFloat(coefficients.multiplier),
+                                                  constant: CGFloat(coefficients.constant))
 
         constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
 
