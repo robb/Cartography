@@ -30,6 +30,60 @@ layout(view1, view2) { view1, view2 in
 }
 ```
 
+Note that `layout` will automatically relayout the views as necessary. If you
+instead want to trigger the layouting step yourself, you can instead use the
+`constrain` function:
+
+```swift
+constrain(view1) { view1 in
+    view1.width  == 100
+    view1.height == 100
+    view1.center == view.superview!.center
+}
+
+UIView.animateWithDuration(0.5, animations: view1.layoutIfNeeded)
+```
+
+## Replacing constraints
+
+You can capture multiple constraints in a group to then replace them with new
+constraints at a later point.
+
+```swift
+constrain(view) { view in
+    view.width  == 100
+    view.height == 100
+}
+
+let group = ConstraintGroup()
+
+// Attach `view` to the top left corner of its superview
+group.constrain(view) { view in
+    view.top  == view.superview!.top
+    view.left == view.superview!.left
+}
+
+/* Later */
+
+// Move the view to the bottom right corner of its superview
+group.constrain(view) { view in
+    view.bottom == view.superview!.bottom
+    view.right  == view.superview!.right
+}
+
+UIView.animateWithDuration(0.5, animations: view.layoutIfNeeded)
+```
+
+For convenience, the free `layout` and `constrain` functions also return
+`ConstraintGroup` instances:
+
+```swift
+let group = layout(button) { button in
+    button.width  == 100
+    button.height == 400
+}
+```
+
 ## Supported attributes
 
 Cartography supports all built-in attributes as of iOS 7 and OS X 10.9, those
