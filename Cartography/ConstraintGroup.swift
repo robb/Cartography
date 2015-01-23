@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct ConstraintGroup {
+public class ConstraintGroup {
     private var constraints: [Constraint] = []
 
     public init() {
 
     }
 
-    internal mutating func replaceConstraints(constraints: [Constraint], performLayout: Bool) {
+    internal func replaceConstraints(constraints: [Constraint], performLayout: Bool) {
         for constraint in self.constraints {
             constraint.uninstall()
 
@@ -49,7 +49,7 @@ public struct ConstraintGroup {
 }
 
 public extension ConstraintGroup {
-    mutating func layout(view: View, block: LayoutProxy -> ()) {
+    func layout(view: View, block: LayoutProxy -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, view))
@@ -57,7 +57,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: true)
     }
 
-    mutating func layout(v1: View, _ v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
+    func layout(v1: View, _ v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, v1), LayoutProxy(context, v2))
@@ -65,7 +65,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: true)
     }
 
-    mutating func layout(v1: View, _ v2: View, _ v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
+    func layout(v1: View, _ v2: View, _ v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
@@ -73,7 +73,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: true)
     }
 
-    mutating func layout(views: [View], block:([LayoutProxy]) -> ()) {
+    func layout(views: [View], block:([LayoutProxy]) -> ()) {
         let context = Context()
 
         block(views.map({ LayoutProxy(context, $0) }))
@@ -81,7 +81,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: true)
     }
 
-    mutating func layout<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
+    func layout<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
         let context = Context()
         let result = map(views) { ($0, LayoutProxy(context, $1)) }
 
@@ -92,7 +92,7 @@ public extension ConstraintGroup {
 }
 
 public extension ConstraintGroup {
-    mutating func constrain(view: View, block: LayoutProxy -> ()) {
+    func constrain(view: View, block: LayoutProxy -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, view))
@@ -100,7 +100,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: false)
     }
 
-    mutating func constrain(v1: View, _ v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
+    func constrain(v1: View, _ v2: View, block: (LayoutProxy, LayoutProxy) -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, v1), LayoutProxy(context, v2))
@@ -108,7 +108,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: false)
     }
 
-    mutating func constrain(v1: View, _ v2: View, _ v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
+    func constrain(v1: View, _ v2: View, _ v3: View, block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) {
         let context = Context()
 
         block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
@@ -116,7 +116,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: false)
     }
 
-    mutating func constrain(views: [View], block:([LayoutProxy]) -> ()) {
+    func constrain(views: [View], block:([LayoutProxy]) -> ()) {
         let context = Context()
 
         block(views.map({ LayoutProxy(context, $0) }))
@@ -124,7 +124,7 @@ public extension ConstraintGroup {
         replaceConstraints(context.constraints, performLayout: false)
     }
 
-    mutating func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
+    func constrain<T: Hashable>(views: [T: View], block:([T : LayoutProxy] -> ())) {
         let context = Context()
         let result = map(views) { ($0, LayoutProxy(context, $1)) }
 
