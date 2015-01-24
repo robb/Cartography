@@ -58,7 +58,7 @@ constrain(view) { view in
 let group = ConstraintGroup()
 
 // Attach `view` to the top left corner of its superview
-group.constrain(view) { view in
+constrain(view, replace: group) { view in
     view.top  == view.superview!.top
     view.left == view.superview!.left
 }
@@ -66,7 +66,7 @@ group.constrain(view) { view in
 /* Later */
 
 // Move the view to the bottom right corner of its superview
-group.constrain(view) { view in
+group.constrain(view, replace: group) { view in
     view.bottom == view.superview!.bottom
     view.right  == view.superview!.right
 }
@@ -74,7 +74,7 @@ group.constrain(view) { view in
 UIView.animateWithDuration(0.5, animations: view.layoutIfNeeded)
 ```
 
-For convenience, the free `layout` and `constrain` functions also return
+For convenience, the `layout` and `constrain` functions also return
 `ConstraintGroup` instances:
 
 ```swift
