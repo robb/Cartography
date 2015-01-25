@@ -66,7 +66,7 @@ constrain(view, replace: group) { view in
 /* Later */
 
 // Move the view to the bottom right corner of its superview
-group.constrain(view, replace: group) { view in
+constrain(view, replace: group) { view in
     view.bottom == view.superview!.bottom
     view.right  == view.superview!.right
 }
