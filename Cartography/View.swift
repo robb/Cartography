@@ -13,6 +13,10 @@ import Foundation
     public typealias View = UIView
 
     extension View {
+        func car_setNeedsLayout() {
+            setNeedsLayout()
+        }
+
         func car_updateLayout() {
             layoutIfNeeded()
         }
@@ -26,6 +30,10 @@ import Foundation
     public typealias View = NSView
 
     extension View {
+        func car_setNeedsLayout() {
+            needsLayout = true
+        }
+
         func car_updateLayout() {
             (superview ?? self).layoutSubtreeIfNeeded()
         }
@@ -37,6 +45,7 @@ import Foundation
 #endif
 
 private var InstalledLayoutConstraintsKey: StaticString = "InstalledLayoutConstraintsKey"
+private var ReferenceCountForViewsKey: StaticString = "ReferenceCountForViewsKey"
 
 extension View {
     var car_installedLayoutConstraints: [Constraint]? {
@@ -46,5 +55,38 @@ extension View {
         set {
             objc_setAssociatedObject(self, &InstalledLayoutConstraintsKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
         }
+    }
+
+    private var car_referenceCountsForViews: [View: Int] {
+        get {
+            return objc_getAssociatedObject(self, &ReferenceCountForViewsKey) as? [View: Int] ?? Dictionary()
+        }
+        set {
+            objc_setAssociatedObject(self, &ReferenceCountForViewsKey, newValue, objc_AssociationPolicy(OBJC_ASSOCIATION_COPY_NONATOMIC))
+        }
+    }
+
+    var car_referredViews: [View] {
+        return car_referenceCountsForViews.keys.array
+    }
+
+    func car_increaseReferenceCountForView(view: View) {
+        var countsForViews = car_referenceCountsForViews
+        var count = countsForViews[view] ?? 0
+        count += 1
+        countsForViews[view] = count
+        car_referenceCountsForViews = countsForViews
+    }
+
+    func car_decreaseReferenceCountForView(view: View) {
+        var countsForViews = car_referenceCountsForViews
+        var count = countsForViews[view] ?? 0
+        count -= 1
+        if count > 0 {
+            countsForViews[view] = count
+        } else {
+            countsForViews.removeValueForKey(view)
+        }
+        car_referenceCountsForViews = countsForViews
     }
 }

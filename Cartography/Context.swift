@@ -62,11 +62,11 @@ public class Context {
         let views = constraints.map({ $0.view })
 
         for constraint in constraints {
-            constraint.install()
-
-            let existing = constraint.view.car_installedLayoutConstraints ?? []
-
-            constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
+            let installed = constraint.install()
+            if installed {
+                let existing = constraint.view.car_installedLayoutConstraints ?? []
+                constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
+            }
         }
 
         if performLayout {
