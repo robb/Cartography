@@ -27,7 +27,6 @@
 		54B093981A716A2A008A1102 /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B093941A715E52008A1102 /* ConstraintGroup.swift */; };
 		54B093991A716A2E008A1102 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B093961A7165F2008A1102 /* Extensions.swift */; };
 		54B0939C1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */; };
-		54B0939D1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */; };
 		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
@@ -498,7 +497,6 @@
 				54F6A85E195C213F00313D24 /* EdgeTests.swift in Sources */,
 				54F6A85D195C213F00313D24 /* DimensionTests.swift in Sources */,
 				54F6A861195C213F00313D24 /* SizeTests.swift in Sources */,
-				54B0939D1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */,
 				54A3889B1A7663BF003945B7 /* ConstraintGroupTests.swift in Sources */,
 				54F6A85F195C213F00313D24 /* EdgesTests.swift in Sources */,
 			);
