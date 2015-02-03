@@ -347,7 +347,7 @@
 		54C96A08195063CD000CDD27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Robert Böhnke";
 				TargetAttributes = {
 					54C96A10195063CD000CDD27 = {
@@ -738,7 +738,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -757,7 +757,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.10;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
