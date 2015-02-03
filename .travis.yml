@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode611
+osx_image: xcode61
 before_install: true
 script:
     - xcodebuild -scheme 'Cartography-Mac' test

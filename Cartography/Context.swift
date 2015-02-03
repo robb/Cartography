@@ -14,11 +14,6 @@ import AppKit
 
 public class Context {
     internal var constraints: [Constraint] = []
-    internal let performLayout: Bool
-
-    init(performLayout: Bool){
-        self.performLayout = performLayout
-    }
 
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -34,12 +29,12 @@ public class Context {
         let superview = closestCommonAncestor(from.view, to?.view)
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
-            attribute: from.attribute,
-            relatedBy: relation,
-            toItem: to?.view,
-            attribute: toAttribute,
-            multiplier: CGFloat(coefficients.multiplier),
-            constant: CGFloat(coefficients.constant))
+                                                  attribute: from.attribute,
+                                                  relatedBy: relation,
+                                                  toItem: to?.view,
+                                                  attribute: toAttribute,
+                                                  multiplier: CGFloat(coefficients.multiplier),
+                                                  constant: CGFloat(coefficients.constant))
 
         constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
 
@@ -56,23 +51,5 @@ public class Context {
         }
 
         return results
-    }
-
-    internal func installConstraints() {
-        let views = constraints.map({ $0.view })
-
-        for constraint in constraints {
-            constraint.install()
-
-            let existing = constraint.view.car_installedLayoutConstraints ?? []
-
-            constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
-        }
-
-        if performLayout {
-            for view in views {
-                view.car_updateLayout()
-            }
-        }
     }
 }
