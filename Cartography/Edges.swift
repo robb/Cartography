@@ -35,16 +35,21 @@ public enum Edges : Compound {
     }
 }
 
-public func inset(edges: Edges, all: Float) -> Expression<Edges> {
+public func inset(edges: Edges, all: Number) -> Expression<Edges> {
     return inset(edges, all, all, all, all)
 }
 
-public func inset(edges: Edges, horizontal: Float, vertical: Float) -> Expression<Edges> {
+public func inset(edges: Edges, horizontal: Number, vertical: Number) -> Expression<Edges> {
     return inset(edges, vertical, horizontal, vertical, horizontal)
 }
 
-public func inset(edges: Edges, top: Float, leading: Float, bottom: Float, trailing: Float) -> Expression<Edges> {
-    return Expression(edges, [ Coefficients(1, top), Coefficients(1, leading), Coefficients(1, -bottom), Coefficients(1, -trailing) ])
+public func inset(edges: Edges, top: Number, leading: Number, bottom: Number, trailing: Number) -> Expression<Edges> {
+    return Expression(edges, [
+        Coefficients(1, top.doubleValue),
+        Coefficients(1, leading.doubleValue),
+        Coefficients(1, -bottom.doubleValue),
+        Coefficients(1, -trailing.doubleValue)
+    ])
 }
 
 // MARK: Equality

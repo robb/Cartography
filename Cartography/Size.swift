@@ -72,36 +72,36 @@ public func >=(lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
 
 // MARK: Multiplication
 
-public func *(m: Float, rhs: Expression<Size>) -> Expression<Size> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+public func *(m: Number, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m.doubleValue })
 }
 
-public func *(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+public func *(lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
     return rhs * lhs
 }
 
-public func *(m: Float, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(m, 0), Coefficients(m, 0) ])
+public func *(m: Number, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(m.doubleValue, 0), Coefficients(m.doubleValue, 0) ])
 }
 
-public func *(lhs: Size, rhs: Float) -> Expression<Size> {
+public func *(lhs: Size, rhs: Number) -> Expression<Size> {
     return rhs * lhs
 }
 
 // MARK: Division
 
-public func /(m: Float, rhs: Expression<Size>) -> Expression<Size> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
+public func /(m: Number, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 / m.doubleValue })
 }
 
-public func /(lhs: Expression<Size>, rhs: Float) -> Expression<Size> {
+public func /(lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
     return rhs / lhs
 }
 
-public func /(m: Float, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(1 / m, 0), Coefficients(1 / m, 0) ])
+public func /(m: Number, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(1 / m.doubleValue, 0), Coefficients(1 / m.doubleValue, 0) ])
 }
 
-public func /(lhs: Size, rhs: Float) -> Expression<Size> {
+public func /(lhs: Size, rhs: Number) -> Expression<Size> {
     return rhs / lhs
 }
