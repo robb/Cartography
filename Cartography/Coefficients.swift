@@ -9,53 +9,58 @@
 import Foundation
 
 public struct Coefficients {
-    var multiplier: Float = 1
-    var constant: Float = 0
+    var multiplier: Double = 1
+    var constant: Double = 0
 
     init() { }
 
-    init(_ multiplier: Float, _ constant: Float) {
-        self.multiplier = multiplier
+    init(_ multiplier: Double, _ constant: Double) {
         self.constant = constant
+        self.multiplier = multiplier
+    }
+
+    init(_ multiplier: Number, _ constant: Number) {
+        self.constant = constant.doubleValue
+        self.multiplier = multiplier.doubleValue
     }
 }
 
 // MARK: Addition
 
-public func +(c: Float, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier, rhs.constant + c)
+public func +(c: Number, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier, rhs.constant + c.doubleValue)
 }
 
-public func +(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func +(lhs: Coefficients, rhs: Number) -> Coefficients {
     return rhs + lhs
 }
 
 // MARK: Subtraction
 
-public func -(c: Float, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier, rhs.constant - c)
+public func -(c: Number, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier, rhs.constant - c.doubleValue)
 }
 
-public func -(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func -(lhs: Coefficients, rhs: Number) -> Coefficients {
     return rhs - lhs
 }
 
 // MARK: Multiplication
 
-public func *(m: Float, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier * m, rhs.constant * m)
+public func *(m: Number, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier * m.doubleValue, rhs.constant * m.doubleValue)
 }
 
-public func *(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func *(lhs: Coefficients, rhs: Number) -> Coefficients {
     return rhs * lhs
 }
 
 // MARK: Division
 
-public func /(m: Float, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier / m, rhs.constant / m)
+public func /(m: Number, rhs: Coefficients) -> Coefficients {
+    return Coefficients(rhs.multiplier / m.doubleValue, rhs.constant / m.doubleValue)
 }
 
-public func /(lhs: Coefficients, rhs: Float) -> Coefficients {
+public func /(lhs: Coefficients, rhs: Number) -> Coefficients {
     return rhs / lhs
 }

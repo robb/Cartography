@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
+		543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
 		545F858D195322EA00791F75 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858C195322EA00791F75 /* Edges.swift */; };
 		545F858F1953235F00791F75 /* EdgesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858E1953235F00791F75 /* EdgesTests.swift */; };
 		546E9E891950A29300B16707 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* LayoutProxy.swift */; };
@@ -94,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		543250CB1A8112D700BE7581 /* TypesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTests.swift; sourceTree = "<group>"; };
 		545F858C195322EA00791F75 /* Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edges.swift; sourceTree = "<group>"; };
 		545F858E1953235F00791F75 /* EdgesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesTests.swift; sourceTree = "<group>"; };
 		546E9E881950A29300B16707 /* LayoutProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 				54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */,
 				54FA3A3D1951A3750094B82A /* PointTests.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
+				543250CB1A8112D700BE7581 /* TypesTests.swift */,
 				BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
@@ -451,6 +455,7 @@
 				54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesTests.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */,
+				543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionTests.swift in Sources */,
 				BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeTests.swift in Sources */,
@@ -491,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
+				543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */,
 				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
 				54F6A860195C213F00313D24 /* PointTests.swift in Sources */,
 				54F6A862195C213F00313D24 /* OperatorTests.swift in Sources */,
