@@ -142,7 +142,7 @@ layout(view) { view in
 Note that declaring compound attributes returns multiple constraints at once:
 
 ```swift
-var constraints: NSLayoutConstraint[]?
+var constraints: [NSLayoutConstraint]?
 
 layout(view) { view in
     constraints = (view.size == view.superview!.size ~ 100); return
