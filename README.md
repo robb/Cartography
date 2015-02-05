@@ -1,4 +1,4 @@
-# Cartography
+# Cartography :iphone::triangular_ruler:
 
 <a href="https://github.com/Carthage/Carthage/issues/179">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
