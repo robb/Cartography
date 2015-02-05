@@ -10,6 +10,9 @@
 Set up your Auto Layout constraints declaratively and without any stringly
 typing!
 
+If you end up using Cartography in production, I'd love to hear from you. You
+can reach me through [Twitter] or [email].
+
 ## How to use
 
 Call the `layout` function with your `UIView` or `NSView` instances as well as a
@@ -148,7 +151,11 @@ layout(view) { view in
 
 ## About Cartography
 
-Cartography was inspired by the excellent [FLKAutoLayout] by [Florian Kugler][florian].
+Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
+[FLKAutoLayout] by [Florian Kugler][florian].
 
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
-[florian]: https://github.com/floriankugler
+[florian]:       https://github.com/floriankugler
+[me]:            http://robb.is
+[twitter]:       https://twitter.com/ceterum_censeo
+[email]:         mailto:robb@robb.is
