@@ -37,13 +37,13 @@ class ReplacingConstraintsTests: XCTestCase {
         }
 
         let group = layout(view2) { view2 in
-            view2.height == 100; return
+            view2.height == 100
         }
 
         XCTAssertEqual(view2.frame, CGRectMake(10, 210, 380, 100), "should layout stuff")
 
         layout(view2, replace: group) { view2 in
-            view2.bottom >= view2.superview!.bottom; return
+            view2.bottom >= view2.superview!.bottom
         }
 
         XCTAssertEqual(view2.frame, CGRectMake(10, 210, 380, 190), "should layout stuff")

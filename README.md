@@ -106,13 +106,9 @@ layout(view) { view in
 
 ```swift
 layout(view) { view in
-    view.edges == inset(view.superview!.edges, 20, 20, 40, 20); return
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
 }
 ```
-
-(We need to return explicitly here to work around [a bug in
-Swift](https://github.com/robb/Cartography/issues/9), this only affects single
-line blocks, however.)
 
 ## Setting priorities
 
@@ -135,7 +131,7 @@ time:
 var width: NSLayoutConstraint?
 
 layout(view) { view in
-    width = (view.width == 200 ~ 100); return
+    width = (view.width == 200 ~ 100)
 }
 ```
 
@@ -145,7 +141,7 @@ Note that declaring compound attributes returns multiple constraints at once:
 var constraints: [NSLayoutConstraint]?
 
 layout(view) { view in
-    constraints = (view.size == view.superview!.size ~ 100); return
+    constraints = (view.size == view.superview!.size ~ 100)
 }
 ```
 

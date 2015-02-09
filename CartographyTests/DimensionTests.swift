@@ -22,7 +22,7 @@ class DimensionTests: XCTestCase {
 
     func testWidth() {
         layout(view) { view in
-            view.width == view.superview!.width - 200; return
+            view.width == view.superview!.width - 200
         }
 
         XCTAssert(CGRectGetWidth(view.frame) == 200, "It should layout the width")
@@ -30,7 +30,7 @@ class DimensionTests: XCTestCase {
 
     func testWidthConstants() {
         layout(view) { view in
-            view.width == 200; return
+            view.width == 200
         }
 
         XCTAssert(CGRectGetWidth(view.frame) == 200, "It should layout the width")
@@ -38,7 +38,7 @@ class DimensionTests: XCTestCase {
 
     func testHeight() {
         layout(view) { view in
-            view.height == view.superview!.height - 200; return
+            view.height == view.superview!.height - 200
         }
 
         XCTAssert(CGRectGetHeight(view.frame) == 200, "It should layout the height")
@@ -46,7 +46,7 @@ class DimensionTests: XCTestCase {
 
     func testHeightConstants() {
         layout(view) { view in
-            view.height == 200; return
+            view.height == 200
         }
 
         XCTAssert(CGRectGetHeight(view.frame) == 200, "It should layout the height")
