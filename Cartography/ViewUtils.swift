@@ -24,7 +24,7 @@ func closestCommonAncestor(a: View, b: View?) -> View? {
         if a == bSuper { return a }
         if b == aSuper { return b }
         if aSuper == bSuper { return aSuper }
-        
+
         // None of those; run the general algorithm
         var ancestorsOfA = NSSet(array: Array(ancestors(a)))
         for ancestor in ancestors(b) {

@@ -14,13 +14,13 @@ import AppKit
 
 infix operator  ~ { }
 
-public func ~(lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
+public func ~ (lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
     lhs.priority = rhs
 
     return lhs
 }
 
-public func ~(lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
+public func ~ (lhs: [NSLayoutConstraint], rhs: Float) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }
