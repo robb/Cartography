@@ -15,7 +15,7 @@ public class ConstraintGroup {
     @availability(iOS, introduced=8.0)
     public var active: Bool {
         get {
-            return constraints.map({ $0.layoutConstraint.active }).reduce(true, (&))
+            return constraints.map({ $0.layoutConstraint.active }).reduce(true) { $0 && $1 }
         }
         set {
             for constraint in constraints {
