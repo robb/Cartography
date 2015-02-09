@@ -13,7 +13,7 @@
 #endif
 
 internal extension Dictionary {
-    init (_ pairs: [Element]) {
+    init(_ pairs: [Element]) {
         self.init()
 
         for (key, value) in pairs {
