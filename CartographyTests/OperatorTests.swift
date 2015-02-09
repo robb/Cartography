@@ -44,7 +44,7 @@ class OperatorTests: XCTestCase {
         var constraint: NSLayoutConstraint!
 
         layout(view) { view in
-            constraint = view.width == (view.superview!.width + 100) * 2 + 5
+            constraint = view.width == (view.superview!.width + 100) * 2 + 5; return
         }
 
         XCTAssert(constraint.multiplier == 2, "It should set the constant")
@@ -55,7 +55,7 @@ class OperatorTests: XCTestCase {
         var constraint: NSLayoutConstraint!
 
         layout(view) { view in
-            constraint = view.width == (view.superview!.width + 100) / 2 + 5
+            constraint = view.width == (view.superview!.width + 100) / 2 + 5; return
         }
 
         XCTAssert(constraint.multiplier == 0.5, "It should set the constant")
