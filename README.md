@@ -149,6 +149,11 @@ layout(view) { view in
 }
 ```
 
+## Support
+
+Please, don't hesitate to [file an
+issue](https://github.com/robb/Cartography/issues/new) if you have questions.
+
 ## About Cartography
 
 Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
