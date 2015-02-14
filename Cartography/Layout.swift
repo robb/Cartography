@@ -49,7 +49,7 @@ public func layout<T: Hashable>(views: [T: View], replace group: ConstraintGroup
     return group
 }
 
-public func layout(#clear: ConstraintGroup) {
+public func layout(clear group: ConstraintGroup) {
     group.replaceConstraints([], performLayout: true)
 }
 
@@ -94,6 +94,6 @@ public func constrain<T: Hashable>(views: [T: View], replace group: ConstraintGr
     return group
 }
 
-public func constrain(#clear: ConstraintGroup) {
+public func constrain(clear group: ConstraintGroup) {
     group.replaceConstraints([], performLayout: false)
 }
