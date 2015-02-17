@@ -123,7 +123,9 @@ layout(view1, view2, view3) { view1, view2, view3 in
 }
 ```
 
-Which is equivalent to `view1.top == view2.top; view2.top == view3.top`.
+Which is equivalent to `view1.top == view2.top; view2.top == view3.top`. Similar
+variants exist for `top`, `right` `bottom`, `left`, `leading`, `trailing`,
+`centerX`, `centerY` and `baseline`.
 
 ## Setting priorities
 
