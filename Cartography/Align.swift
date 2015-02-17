@@ -12,17 +12,10 @@ import UIKit
 import AppKit
 #endif
 
-private typealias Accumulator = (previous: LayoutProxy, constraints: [NSLayoutConstraint])
-
 private func makeEqual<P: RelativeEquality>(attribute: LayoutProxy -> P, first: LayoutProxy, rest: [LayoutProxy]) -> [NSLayoutConstraint] {
-    let result = reduce(rest, (first, [])) { (var acc: Accumulator, current) in
-        acc.constraints += [ attribute(current) == attribute(acc.previous) ]
-        acc.previous = current
-
-        return acc
+    return reduce(rest, []) { acc, current in
+        return acc + [ attribute(first) == attribute(current) ]
     }
-
-    return result.1
 }
 
 public func align(top first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
