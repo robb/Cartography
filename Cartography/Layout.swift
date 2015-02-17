@@ -49,6 +49,10 @@ public func layout<T: Hashable>(views: [T: View], replace group: ConstraintGroup
     return group
 }
 
+public func layout(clear group: ConstraintGroup) {
+    group.replaceConstraints([], performLayout: true)
+}
+
 public func constrain(view: View, replace group: ConstraintGroup = ConstraintGroup(), block: LayoutProxy -> ()) -> ConstraintGroup {
     let context = Context()
     block(LayoutProxy(context, view))
@@ -88,4 +92,8 @@ public func constrain<T: Hashable>(views: [T: View], replace group: ConstraintGr
     group.replaceConstraints(context.constraints, performLayout: false)
 
     return group
+}
+
+public func constrain(clear group: ConstraintGroup) {
+    group.replaceConstraints([], performLayout: false)
 }
