@@ -49,6 +49,14 @@ public func align(trailing first: LayoutProxy, rest: LayoutProxy...) -> [NSLayou
     return makeEqual({ $0.trailing }, first, rest)
 }
 
+public func align(centerX first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
+    return makeEqual({ $0.centerX }, first, rest)
+}
+
+public func align(centerY first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
+    return makeEqual({ $0.centerY }, first, rest)
+}
+
 public func align(baseline first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return makeEqual({ $0.baseline }, first, rest)
 }

@@ -36,12 +36,25 @@ class AlignTests: XCTestCase {
         }
     }
 
-    func testAlign() {
+    func testAlignEdges() {
         layout(viewA, viewB, viewC) { viewA, viewB, viewC in
             align(top: viewA, viewB, viewC)
             align(right: viewA, viewB, viewC)
             align(bottom: viewA, viewB, viewC)
             align(left: viewA, viewB, viewC)
+        }
+
+        XCTAssertEqual(viewA.frame, viewB.frame, "It should align the edges")
+        XCTAssertEqual(viewA.frame, viewC.frame, "It should align the edges")
+    }
+
+    func testAlignCenter() {
+        layout(viewA, viewB, viewC) { viewA, viewB, viewC in
+            viewA.size == viewB.size
+            viewB.size == viewC.size
+
+            align(centerX: viewA, viewB, viewC)
+            align(centerY: viewA, viewB, viewC)
         }
 
         XCTAssertEqual(viewA.frame, viewB.frame, "It should align the edges")
