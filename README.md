@@ -114,7 +114,7 @@ layout(view) { view in
 Swift](https://github.com/robb/Cartography/issues/9), this only affects single
 line blocks, however.)
 
-If you need to align multiple views by a common edge, you can use the align
+If you need to align multiple views by a common edge, you can use the `align`
 methods:
 
 ```swift
