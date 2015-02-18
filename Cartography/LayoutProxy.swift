@@ -30,6 +30,19 @@ public class LayoutProxy {
 
     public let baseline: Edge
 
+    #if os(iOS)
+    public let firstBaseline: Edge
+
+    public let leftMargin: Edge
+    public let rightMargin: Edge
+    public let topMargin: Edge
+    public let bottomMargin: Edge
+    public let leadingMargin: Edge
+    public let trailingMargin: Edge
+    public let centerXWithinMargins: Edge
+    public let centerYWithinMargins: Edge
+    #endif
+
     internal let context: Context
     internal let view: View
 
@@ -66,5 +79,18 @@ public class LayoutProxy {
         center = Point.Center(context, view)
 
         baseline = Edge.Baseline(context, view)
+
+        #if os(iOS)
+        firstBaseline = .FirstBaseline(context, view)
+
+        leftMargin = .LeftMargin(context, view)
+        rightMargin = .RightMargin(context, view)
+        topMargin = .TopMargin(context, view)
+        bottomMargin = .BottomMargin(context, view)
+        leadingMargin = .LeadingMargin(context, view)
+        trailingMargin = .TrailingMargin(context, view)
+        centerXWithinMargins = .CenterXWithinMargins(context, view)
+        centerYWithinMargins = .CenterYWithinMargins(context, view)
+        #endif
     }
 }
