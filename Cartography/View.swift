@@ -18,7 +18,7 @@ import Foundation
         }
 
         func car_disableTranslatesAutoresizingMaskIntoConstraintsIfPossible() {
-            if car_isOwnedByViewController {
+            if !car_isOwnedByViewController {
                 setTranslatesAutoresizingMaskIntoConstraints(false)
             }
         }
@@ -31,6 +31,8 @@ import Foundation
             var responder: UIResponder = self
 
             while let nextResponder = nextResponder() {
+                if nextResponder === responder { break }
+
                 responder = nextResponder
 
                 if nextResponder.isKindOfClass(UIViewController.Type) { break }
