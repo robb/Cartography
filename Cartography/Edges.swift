@@ -58,10 +58,6 @@ public func == (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
-public func == (lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
 public func == (lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
@@ -80,14 +76,6 @@ public func <= (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <= (lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
 public func >= (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >= (lhs: Expression<Edges>, rhs: Edges) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }

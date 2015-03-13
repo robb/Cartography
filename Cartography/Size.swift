@@ -36,10 +36,6 @@ public func == (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
-public func == (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
 public func == (lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
@@ -58,16 +54,8 @@ public func <= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <= (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
 public func >= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >= (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }
 
 // MARK: Multiplication

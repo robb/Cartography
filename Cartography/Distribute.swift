@@ -19,13 +19,13 @@ private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutPro
 }
 
 public func distribute(by amount: Double, horizontally first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
-    return reduce(first, rest) { $0.trailing + amount == $1.leading }
+    return reduce(first, rest) { $0.trailing == $1.leading - amount }
 }
 
 public func distribute(by amount: Double, leftToRight first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
-    return reduce(first, rest) { $0.right + amount == $1.left }
+    return reduce(first, rest) { $0.right == $1.left - amount  }
 }
 
 public func distribute(by amount: Double, vertically first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
-    return reduce(first, rest) { $0.bottom + amount == $1.top }
+    return reduce(first, rest) { $0.bottom == $1.top - amount }
 }
