@@ -39,10 +39,6 @@ class ViewHierarchyTests: XCTestCase {
         return resultOne == resultTwo ? resultOne : nil
     }
     
-    func testNilView() {
-        XCTAssert(closestCommonAncestor(viewA, nil) == viewA, "It should ignore nil view when determining common ancestor")
-    }
-
     func testNoCommonAncestor() {
         XCTAssert(testBothWays(viewA, viewB) == nil, "It should detect absence of a common ancestor")
     }
