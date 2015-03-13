@@ -18,23 +18,15 @@ public class Context {
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_disableTranslatesAutoresizingMaskIntoConstraints()
 
-        var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
-
-        if to == nil {
-            toAttribute = NSLayoutAttribute.NotAnAttribute
-        } else {
-            toAttribute = to!.attribute
-        }
-
-        let superview = closestCommonAncestor(from.view, to?.view)
-
         let layoutConstraint = NSLayoutConstraint(item: from.view,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
                                                   toItem: to?.view,
-                                                  attribute: toAttribute,
+                                                  attribute: to?.attribute ?? .NotAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
+
+        let superview = closestCommonAncestor(from.view, to?.view)
 
         constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
 
