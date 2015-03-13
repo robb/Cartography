@@ -17,28 +17,8 @@ import Foundation
             layoutIfNeeded()
         }
 
-        func car_disableTranslatesAutoresizingMaskIntoConstraintsIfPossible() {
-            if !car_isOwnedByViewController {
-                setTranslatesAutoresizingMaskIntoConstraints(false)
-            }
-        }
-
-        private var car_isOwnedByViewController: Bool {
-            return self === car_closestViewController?.view
-        }
-
-        private var car_closestViewController: UIViewController? {
-            var responder: UIResponder = self
-
-            while let nextResponder = nextResponder() {
-                if nextResponder === responder { break }
-
-                responder = nextResponder
-
-                if nextResponder.isKindOfClass(UIViewController.Type) { break }
-            }
-
-            return responder as? UIViewController
+        func car_disableTranslatesAutoresizingMaskIntoConstraints() {
+            setTranslatesAutoresizingMaskIntoConstraints(false)
         }
     }
 #else
@@ -50,7 +30,7 @@ import Foundation
             (superview ?? self).layoutSubtreeIfNeeded()
         }
 
-        func car_disableTranslatesAutoresizingMaskIntoConstraintsIfPossible() {
+        func car_disableTranslatesAutoresizingMaskIntoConstraints() {
             translatesAutoresizingMaskIntoConstraints = false
         }
     }
