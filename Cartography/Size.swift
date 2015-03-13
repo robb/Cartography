@@ -90,18 +90,10 @@ public func * (lhs: Size, rhs: Number) -> Expression<Size> {
 
 // MARK: Division
 
-public func / (m: Number, rhs: Expression<Size>) -> Expression<Size> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m.doubleValue })
-}
-
 public func / (lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
-    return rhs / lhs
-}
-
-public func / (m: Number, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(1 / m.doubleValue, 0), Coefficients(1 / m.doubleValue, 0) ])
+    return lhs * (1 / rhs.doubleValue)
 }
 
 public func / (lhs: Size, rhs: Number) -> Expression<Size> {
-    return rhs / lhs
+    return lhs * (1 / rhs.doubleValue)
 }

@@ -154,18 +154,10 @@ public func * <P: Multiplication>(lhs: P, rhs: Number) -> Expression<P> {
     return rhs * lhs
 }
 
-public func / <P: Multiplication>(m: Number, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m })
-}
-
 public func / <P: Multiplication>(lhs: Expression<P>, rhs: Number) -> Expression<P> {
-    return rhs / lhs
-}
-
-public func / <P: Multiplication>(m: Number, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(1 / m.doubleValue, 0) ])
+    return lhs * (1 / rhs.doubleValue)
 }
 
 public func / <P: Multiplication>(lhs: P, rhs: Number) -> Expression<P> {
-    return rhs / lhs
+    return lhs * (1 / rhs.doubleValue)
 }
