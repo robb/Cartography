@@ -15,12 +15,12 @@ class ReplacingConstraintsTests: XCTestCase {
     var view2: View!
 
     override func setUp() {
-        superview = View(frame: CGRectMake(0, 0, 400, 400))
+        superview = TestView(frame: CGRectMake(0, 0, 400, 400))
 
-        view1 = View(frame: CGRectZero)
+        view1 = TestView(frame: CGRectZero)
         superview.addSubview(view1)
 
-        view2 = View(frame: CGRectZero)
+        view2 = TestView(frame: CGRectZero)
         superview.addSubview(view2)
     }
 
