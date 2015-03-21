@@ -106,9 +106,26 @@ layout(view) { view in
 
 ```swift
 layout(view) { view in
-    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20); return
 }
 ```
+
+(We need to return explicitly here to work around [a bug in
+Swift](https://github.com/robb/Cartography/issues/9), this only affects single
+line blocks, however.)
+
+If you need to align multiple views by a common edge, you can use the `align`
+methods:
+
+```swift
+layout(view1, view2, view3) { view1, view2, view3 in
+    align(top: view1, view2, view3); return
+}
+```
+
+Which is equivalent to `view1.top == view2.top; view2.top == view3.top`. Similar
+variants exist for `top`, `right` `bottom`, `left`, `leading`, `trailing`,
+`centerX`, `centerY` and `baseline`.
 
 ## Setting priorities
 
@@ -131,7 +148,7 @@ time:
 var width: NSLayoutConstraint?
 
 layout(view) { view in
-    width = (view.width == 200 ~ 100)
+    width = (view.width == 200 ~ 100); return
 }
 ```
 
@@ -141,7 +158,7 @@ Note that declaring compound attributes returns multiple constraints at once:
 var constraints: [NSLayoutConstraint]?
 
 layout(view) { view in
-    constraints = (view.size == view.superview!.size ~ 100)
+    constraints = (view.size == view.superview!.size ~ 100); return
 }
 ```
 
