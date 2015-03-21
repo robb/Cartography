@@ -49,9 +49,9 @@ class DistributeTests: XCTestCase {
         XCTAssertEqual(viewB.frame, CGRect(x: 110, y: 0, width: 100, height: 100), "It should distribute the views")
         XCTAssertEqual(viewC.frame, CGRect(x: 220, y: 0, width: 100, height: 100), "It should distribute the views")
 
-        XCTAssertFalse(viewA.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewB.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewC.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewA.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewB.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewC.car_translatesAutoresizingMaskIntoConstraints)
     }
 
     func testDistributeLeftToRight() {
@@ -64,9 +64,9 @@ class DistributeTests: XCTestCase {
         XCTAssertEqual(viewB.frame, CGRect(x: 110, y: 0, width: 100, height: 100), "It should distribute the views")
         XCTAssertEqual(viewC.frame, CGRect(x: 220, y: 0, width: 100, height: 100), "It should distribute the views")
 
-        XCTAssertFalse(viewA.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewB.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewC.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewA.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewB.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewC.car_translatesAutoresizingMaskIntoConstraints)
     }
 
     func testDistributeVertically() {
@@ -79,8 +79,8 @@ class DistributeTests: XCTestCase {
         XCTAssertEqual(viewB.frame, CGRect(x: 0, y: 110, width: 100, height: 100), "It should distribute the views")
         XCTAssertEqual(viewC.frame, CGRect(x: 0, y: 220, width: 100, height: 100), "It should distribute the views")
 
-        XCTAssertFalse(viewA.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewB.translatesAutoresizingMaskIntoConstraints)
-        XCTAssertFalse(viewC.translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewA.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewB.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewC.car_translatesAutoresizingMaskIntoConstraints)
     }
 }

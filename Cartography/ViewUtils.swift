@@ -6,14 +6,12 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS) && TEST
+#if TEST
+    import Cartography
+#elseif os(iOS)
     import UIKit
-    typealias View = UIView
-#elseif TEST
-    import AppKit
-    typealias View = NSView
 #else
-    import Foundation
+    import AppKit
 #endif
 
 func closestCommonAncestor(a: View, b: View?) -> View? {
