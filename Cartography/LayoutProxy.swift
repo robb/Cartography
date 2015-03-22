@@ -56,13 +56,28 @@ public class LayoutProxy {
     #if os(iOS)
     public let firstBaseline: Edge
 
+    /// The left margin of the view.
     public let leftMargin: Edge
+
+    /// The right margin of the view.
     public let rightMargin: Edge
+
+    /// The top margin of the view.
     public let topMargin: Edge
+
+    /// The bottom margin of the view.
     public let bottomMargin: Edge
+
+    /// The leading margin of the view.
     public let leadingMargin: Edge
+
+    /// The trailing margin of the view.
     public let trailingMargin: Edge
+
+    /// The horizontal center within the margins of the view.
     public let centerXWithinMargins: Edge
+
+    /// The vertical center within the margins of the view.
     public let centerYWithinMargins: Edge
     #endif
 
