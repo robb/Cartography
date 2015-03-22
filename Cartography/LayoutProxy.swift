@@ -79,6 +79,10 @@ public class LayoutProxy {
 
     /// The vertical center within the margins of the view.
     public let centerYWithinMargins: Edge
+
+    /// The center point within the margins of the view. This property affects
+    /// `centerXWithinMargins` and `centerYWithinMargins`.
+    public let centerWithinMargins: Point
     #endif
 
     internal let context: Context
@@ -130,6 +134,8 @@ public class LayoutProxy {
         trailingMargin = .TrailingMargin(context, view)
         centerXWithinMargins = .CenterXWithinMargins(context, view)
         centerYWithinMargins = .CenterYWithinMargins(context, view)
+
+        centerWithinMargins = .CenterWithinMargins(context, view)
         #endif
     }
 }
