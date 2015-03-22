@@ -36,10 +36,6 @@ public func == (lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
-public func == (lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
 public func == (lhs: Point, rhs: Point) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
@@ -58,14 +54,6 @@ public func <= (lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <= (lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
 public func >= (lhs: Point, rhs: Expression<Point>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >= (lhs: Expression<Point>, rhs: Point) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }

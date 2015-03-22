@@ -36,10 +36,6 @@ public func == (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
-public func == (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs == lhs
-}
-
 public func == (lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
@@ -58,16 +54,8 @@ public func <= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
-public func <= (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs >= lhs
-}
-
 public func >= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-public func >= (lhs: Expression<Size>, rhs: Size) -> [NSLayoutConstraint] {
-    return rhs <= lhs
 }
 
 // MARK: Multiplication
@@ -90,18 +78,10 @@ public func * (lhs: Size, rhs: Number) -> Expression<Size> {
 
 // MARK: Division
 
-public func / (m: Number, rhs: Expression<Size>) -> Expression<Size> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 / m.doubleValue })
-}
-
 public func / (lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
-    return rhs / lhs
-}
-
-public func / (m: Number, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(1 / m.doubleValue, 0), Coefficients(1 / m.doubleValue, 0) ])
+    return lhs * (1 / rhs.doubleValue)
 }
 
 public func / (lhs: Size, rhs: Number) -> Expression<Size> {
-    return rhs / lhs
+    return lhs * (1 / rhs.doubleValue)
 }
