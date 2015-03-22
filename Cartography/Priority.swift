@@ -30,7 +30,7 @@ public func ~ (lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
 /// Sets the priority for multiple constraints.
 ///
 /// :param: lhs An array of `NSLayoutConstraint` instances.
-/// :param: rhs The new priority/
+/// :param: rhs The new priority.
 ///
 /// :returns: The same constraints with their priorities updated.
 ///
