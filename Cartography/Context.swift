@@ -26,9 +26,15 @@ public class Context {
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
 
-        let superview = closestCommonAncestor(from.view, to?.view)
+        let targetView: View = to.map { to in
+            let commonSuperivew = closestCommonAncestor(from.view, to.view)
 
-        constraints += [ Constraint(view: superview!, layoutConstraint: layoutConstraint) ]
+            assert(commonSuperivew != .None, "No common superview found between \(from.view) and \(to.view)")
+
+            return commonSuperivew!
+        } ?? from.view
+
+        constraints += [ Constraint(view: targetView, layoutConstraint: layoutConstraint) ]
 
         return layoutConstraint
     }
