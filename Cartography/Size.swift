@@ -32,28 +32,76 @@ public enum Size : Compound {
 
 // MARK: Equality
 
+/// Declares a property equal to the result of an expression.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The expression.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func == (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
 }
 
+/// Declares a property equal to another property.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The other property.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func == (lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs)
 }
 
 // MARK: Inequality
 
+/// Declares a property less than or equal to another property.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The other property.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func <= (lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
+/// Declares a property greater than or equal to another property.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The other property.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func >= (lhs: Size, rhs: Size) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
+/// Declares a property less than or equal to the result of an expression.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The expression.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func <= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
 }
 
+/// Declares a property greater than or equal to the result of an expression.
+///
+/// :param: lhs The affected property. The associated view will have
+///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+/// :param: rhs The expression.
+///
+/// :returns: An `NSLayoutConstraint`.
+///
 public func >= (lhs: Size, rhs: Expression<Size>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
