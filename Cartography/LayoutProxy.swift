@@ -9,30 +9,54 @@
 import Foundation
 
 public class LayoutProxy {
+    /// The width of the view.
     public let width: Dimension
+
+    /// The height of the view.
     public let height: Dimension
 
+    /// The size of the view. This property affects both `width` and `height`.
     public let size: Size
 
+    /// The top edge of the view.
     public let top: Edge
+
+    /// The right edge of the view.
     public let right: Edge
+
+    /// The bottom edge of the view.
     public let bottom: Edge
+
+    /// The left edge of the view.
     public let left: Edge
 
+    /// All edges of the view. This property affects `top`, `bottom`, `leading`
+    /// and `trailing`.
     public let edges: Edges
 
+    /// The leading edge of the view.
     public let leading: Edge
+
+    /// The trailing edge of the view.
     public let trailing: Edge
 
+    /// The horizontal center of the view.
     public let centerX: Edge
+
+    /// The vertical center of the view.
     public let centerY: Edge
+
+    /// The center point of the view. This property affects `centerX` and
+    /// `centerY`.
     public let center: Point
 
+    /// The baseline of the view.
     public let baseline: Edge
 
     internal let context: Context
     internal let view: View
 
+    /// The superview of the view, if it exists.
     public var superview: LayoutProxy? {
         if let superview = view.superview {
             return LayoutProxy(context, superview)
