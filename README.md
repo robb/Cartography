@@ -33,6 +33,13 @@ layout(view1, view2) { view1, view2 in
 }
 ```
 
+For every view on the left hand side of an equality or inequality operator,
+Cartography will automatically set its
+`translatesAutoresizingMaskIntoConstraints` property to `false`. If the view is
+not controlled by you–for example if it belongs to a Apple-provided
+`UIViewController` class–you should take appropriate care when declaring its
+constraints.
+
 Note that `layout` will automatically relayout the views as necessary. If you
 instead want to trigger the layouting step yourself, you can instead use the
 `constrain` function:
