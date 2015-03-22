@@ -17,8 +17,9 @@ import Foundation
             layoutIfNeeded()
         }
 
-        func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            setTranslatesAutoresizingMaskIntoConstraints(flag)
+        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
+            get { return translatesAutoresizingMaskIntoConstraints() }
+            set { setTranslatesAutoresizingMaskIntoConstraints(newValue) }
         }
     }
 #else
@@ -30,8 +31,9 @@ import Foundation
             (superview ?? self).layoutSubtreeIfNeeded()
         }
 
-        func car_setTranslatesAutoresizingMaskIntoConstraints(flag: Bool) {
-            translatesAutoresizingMaskIntoConstraints = flag
+        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
+            get { return translatesAutoresizingMaskIntoConstraints }
+            set { translatesAutoresizingMaskIntoConstraints = newValue }
         }
     }
 #endif
