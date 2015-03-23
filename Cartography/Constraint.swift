@@ -14,7 +14,7 @@ import AppKit
 
 @objc
 internal class Constraint {
-    // set to weak to avoid a retain cycle on the associated view
+    // Set to weak to avoid a retain cycle on the associated view.
     weak var view: View?
     let layoutConstraint: NSLayoutConstraint
 
