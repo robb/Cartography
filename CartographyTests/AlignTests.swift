@@ -46,6 +46,10 @@ class AlignTests: XCTestCase {
 
         XCTAssertEqual(viewA.frame, viewB.frame, "It should align the edges")
         XCTAssertEqual(viewA.frame, viewC.frame, "It should align the edges")
+
+        XCTAssertFalse(viewA.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewB.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewC.car_translatesAutoresizingMaskIntoConstraints)
     }
 
     func testAlignCenter() {
@@ -59,5 +63,9 @@ class AlignTests: XCTestCase {
 
         XCTAssertEqual(viewA.frame, viewB.frame, "It should align the edges")
         XCTAssertEqual(viewA.frame, viewC.frame, "It should align the edges")
+
+        XCTAssertFalse(viewA.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewB.car_translatesAutoresizingMaskIntoConstraints)
+        XCTAssertFalse(viewC.car_translatesAutoresizingMaskIntoConstraints)
     }
 }

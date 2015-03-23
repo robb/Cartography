@@ -55,7 +55,7 @@ class ViewHierarchyTests: XCTestCase {
         XCTAssert(testBothWays(viewA, viewAGrandparent) == viewAGrandparent, "It should handle a view and its grandparent")
     }
 
-    func testSharedSuperTestView() {
+    func testSharedSuperview() {
         viewB.removeFromSuperview()
         viewAParent.addSubview(viewB)
         XCTAssert(testBothWays(viewA, viewB) == viewAParent, "It should handle two views with the same superview")

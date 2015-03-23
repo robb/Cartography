@@ -16,37 +16,25 @@ public class Context {
     internal var constraints: [Constraint] = []
 
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
-        from.view.car_disableTranslatesAutoresizingMaskIntoConstraintsIfPossible()
-        to?.view.car_disableTranslatesAutoresizingMaskIntoConstraintsIfPossible()
-
-        var toAttribute: NSLayoutAttribute! = NSLayoutAttribute.NotAnAttribute
-
-        if to == nil {
-            toAttribute = NSLayoutAttribute.NotAnAttribute
-        } else {
-            toAttribute = to!.attribute
-        }
-
-        var targetView: View
-
-        if let toView = to?.view {
-            let target = closestCommonAncestor(from.view, toView)
-            assert(target != .None, "No common superview found between \(from.view) and \(toView)")
-
-            targetView = target!
-        } else {
-            targetView = from.view
-        }
+        from.view.car_translatesAutoresizingMaskIntoConstraints = false
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
                                                   toItem: to?.view,
-                                                  attribute: toAttribute,
+                                                  attribute: to?.attribute ?? .NotAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
 
-        constraints += [ Constraint(view: targetView, layoutConstraint: layoutConstraint) ]
+        let targetView: View = to.map { to in
+            let commonSuperivew = closestCommonAncestor(from.view, to.view)
+
+            assert(commonSuperivew != .None, "No common superview found between \(from.view) and \(to.view)")
+
+            return commonSuperivew!
+        } ?? from.view
+
+        constraints.append(Constraint(view: targetView, layoutConstraint: layoutConstraint))
 
         return layoutConstraint
     }
