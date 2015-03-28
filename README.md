@@ -13,7 +13,7 @@ typing!
 If you end up using Cartography in production, I'd love to hear from you. You
 can reach me through [Twitter] or [email].
 
-## How to use
+## Usage
 
 Call the `layout` function with your `UIView` or `NSView` instances as well as a
 closure in which you declare the constraints between the different attributes of
