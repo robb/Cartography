@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-
+#if os(iOS)
 import UIKit
+#else
+import AppKit
+#endif
 
 public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
     case Top(Context, View)
@@ -23,6 +26,8 @@ public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Mul
 
     case Baseline(Context, View)
 
+    // The following properties are iOS exclusive and cannot have their
+    // `attribute` resolved on OS X.
     case FirstBaseline(Context, View)
     case LeftMargin(Context, View)
     case RightMargin(Context, View)
@@ -44,15 +49,33 @@ public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Mul
         case .CenterX(_): return .CenterX
         case .CenterY(_): return .CenterY
         case .Baseline(_): return .Baseline
-        case .FirstBaseline(_): return .FirstBaseline
-        case .LeftMargin(_): return .LeftMargin
-        case .RightMargin(_): return .RightMargin
-        case .TopMargin(_): return .TopMargin
-        case .BottomMargin(_): return .BottomMargin
-        case .LeadingMargin(_): return .LeadingMargin
-        case .TrailingMargin(_): return .TrailingMargin
-        case .CenterXWithinMargins(_): return .CenterXWithinMargins
-        case .CenterYWithinMargins(_): return .CenterYWithinMargins
+
+        // Swift does not let me mix `#if` statements with `case` statements as
+        // of Xcode 6.2
+        default:
+            #if os(iOS)
+            // Only on iOS we're able to look up the appropriate properties for
+            // the remaining cases.
+            switch (self) {
+            case .FirstBaseline(_): return .FirstBaseline
+            case .LeftMargin(_): return .LeftMargin
+            case .RightMargin(_): return .RightMargin
+            case .TopMargin(_): return .TopMargin
+            case .BottomMargin(_): return .BottomMargin
+            case .LeadingMargin(_): return .LeadingMargin
+            case .TrailingMargin(_): return .TrailingMargin
+            case .CenterXWithinMargins(_): return .CenterXWithinMargins
+            case .CenterYWithinMargins(_): return .CenterYWithinMargins
+            default:
+                fatalError("Unexpected case \(self).")
+                return .NotAnAttribute
+            }
+            #else
+            // Since `LayoutProxy` does not expose them on OS X, we should never
+            // have to resolve them.
+            fatalError("\(self) must not be used on OS X.")
+            return .NotAnAttribute
+            #endif
         }
     }
 
@@ -67,6 +90,8 @@ public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Mul
         case let .CenterX(context, _): return context
         case let .CenterY(context, _): return context
         case let .Baseline(context, _): return context
+
+        // iOS Only
         case let .FirstBaseline(context, _): return context
         case let .LeftMargin(context, _): return context
         case let .RightMargin(context, _): return context
@@ -90,6 +115,8 @@ public enum Edge : Property, RelativeEquality, RelativeInequality, Addition, Mul
         case let .CenterX(_, view): return view
         case let .CenterY(_, view): return view
         case let .Baseline(_, view): return view
+
+        // iOS Only
         case let .FirstBaseline(_, view): return view
         case let .LeftMargin(_, view): return view
         case let .RightMargin(_, view): return view
