@@ -14,18 +14,29 @@ import AppKit
 
 public enum Point: Compound {
     case Center(Context, View)
+    case CenterWithinMargins(Context, View)
 
     var context: Context {
         switch (self) {
-            case let .Center(context, _):
-                return context
+        case let .Center(context, _):
+            return context
+        case let .CenterWithinMargins(context, _):
+            return context
         }
     }
 
     var properties: [Property] {
         switch (self) {
-            case let .Center(context, view):
-                return [ Edge.CenterX(context, view), Edge.CenterY(context, view) ]
+        case let .Center(context, view):
+            return [
+                Edge.CenterX(context, view),
+                Edge.CenterY(context, view)
+            ]
+        case let .CenterWithinMargins(context, view):
+            return [
+                Edge.CenterXWithinMargins(context, view),
+                Edge.CenterYWithinMargins(context, view)
+            ]
         }
     }
 }

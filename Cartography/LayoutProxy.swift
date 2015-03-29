@@ -53,6 +53,39 @@ public class LayoutProxy {
     /// The baseline of the view.
     public let baseline: Edge
 
+    #if os(iOS)
+    /// The first baseline of the view. iOS exclusive.
+    public let firstBaseline: Edge
+
+    /// The left margin of the view. iOS exclusive.
+    public let leftMargin: Edge
+
+    /// The right margin of the view. iOS exclusive.
+    public let rightMargin: Edge
+
+    /// The top margin of the view. iOS exclusive.
+    public let topMargin: Edge
+
+    /// The bottom margin of the view. iOS exclusive.
+    public let bottomMargin: Edge
+
+    /// The leading margin of the view. iOS exclusive.
+    public let leadingMargin: Edge
+
+    /// The trailing margin of the view. iOS exclusive.
+    public let trailingMargin: Edge
+
+    /// The horizontal center within the margins of the view. iOS exclusive.
+    public let centerXWithinMargins: Edge
+
+    /// The vertical center within the margins of the view. iOS exclusive.
+    public let centerYWithinMargins: Edge
+
+    /// The center point within the margins of the view. This property affects
+    /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
+    public let centerWithinMargins: Point
+    #endif
+
     internal let context: Context
     internal let view: View
 
@@ -90,5 +123,20 @@ public class LayoutProxy {
         center = Point.Center(context, view)
 
         baseline = Edge.Baseline(context, view)
+
+        #if os(iOS)
+        firstBaseline = .FirstBaseline(context, view)
+
+        leftMargin = .LeftMargin(context, view)
+        rightMargin = .RightMargin(context, view)
+        topMargin = .TopMargin(context, view)
+        bottomMargin = .BottomMargin(context, view)
+        leadingMargin = .LeadingMargin(context, view)
+        trailingMargin = .TrailingMargin(context, view)
+        centerXWithinMargins = .CenterXWithinMargins(context, view)
+        centerYWithinMargins = .CenterYWithinMargins(context, view)
+
+        centerWithinMargins = .CenterWithinMargins(context, view)
+        #endif
     }
 }

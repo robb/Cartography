@@ -32,4 +32,16 @@ class PointTests: XCTestCase {
 
         XCTAssertEqual(view.frame, CGRectMake(100, 100, 200, 200), "should layout stuff")
     }
+
+    #if os(iOS)
+    func testCenterWithinMargins() {
+        view.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+
+        layout(view) { view in
+            view.centerWithinMargins == view.superview!.center; return
+        }
+
+        XCTAssertEqual(view.frame, CGRectMake(110, 110, 200, 200), "should layout stuff")
+    }
+    #endif
 }
