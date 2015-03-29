@@ -34,7 +34,7 @@ public class Context {
             return commonSuperivew!
         } ?? from.view
 
-        constraints += [ Constraint(view: targetView, layoutConstraint: layoutConstraint) ]
+        constraints.append(Constraint(view: targetView, layoutConstraint: layoutConstraint))
 
         return layoutConstraint
     }

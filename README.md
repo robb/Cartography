@@ -13,7 +13,7 @@ typing!
 If you end up using Cartography in production, I'd love to hear from you. You
 can reach me through [Twitter] or [email].
 
-## How to use
+## Usage
 
 Call the `layout` function with your `UIView` or `NSView` instances as well as a
 closure in which you declare the constraints between the different attributes of
@@ -121,8 +121,10 @@ layout(view) { view in
 Swift](https://github.com/robb/Cartography/issues/9), this only affects single
 line blocks, however.)
 
+### Aligning multiple view
+
 If you need to align multiple views by a common edge, you can use the `align`
-methods:
+functions:
 
 ```swift
 layout(view1, view2, view3) { view1, view2, view3 in
@@ -133,6 +135,19 @@ layout(view1, view2, view3) { view1, view2, view3 in
 Which is equivalent to `view1.top == view2.top; view2.top == view3.top`. Similar
 variants exist for `top`, `right` `bottom`, `left`, `leading`, `trailing`,
 `centerX`, `centerY` and `baseline`.
+
+### Distributing views evenly
+
+For distributing multiple views, either horizontally or vertically, you can use
+the `distribute` functions:
+
+```swift
+layout(view1, view2, view3) { view1, view2, view3 in
+    distribute(by: 10, horizontally: view1, view2, view3); return
+}
+```
+
+Which is equivalent to `view1.trailing == view2.leading - 10; view2.trailing == view3.leading - 10`.
 
 ## Setting priorities
 

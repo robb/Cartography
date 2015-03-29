@@ -23,7 +23,7 @@ public class ConstraintGroup {
             }
 
             for constraint in constraints {
-                constraint.view.car_updateLayout()
+                constraint.view?.car_updateLayout()
             }
         }
     }
@@ -37,13 +37,13 @@ public class ConstraintGroup {
             constraint.uninstall()
 
             if performLayout {
-                constraint.view.car_updateLayout()
+                constraint.view?.car_updateLayout()
             }
         }
 
         if performLayout {
             for view in self.constraints.map({ $0.view }) {
-                view.car_updateLayout()
+                view?.car_updateLayout()
             }
         }
 
@@ -52,14 +52,14 @@ public class ConstraintGroup {
         for constraint in self.constraints {
             constraint.install()
 
-            let existing = constraint.view.car_installedLayoutConstraints ?? []
+            let existing = constraint.view?.car_installedLayoutConstraints ?? []
 
-            constraint.view.car_installedLayoutConstraints = existing + [ constraint ]
+            constraint.view?.car_installedLayoutConstraints = existing + [ constraint ]
         }
 
         if performLayout {
             for view in self.constraints.map({ $0.view }) {
-                view.car_updateLayout()
+                view?.car_updateLayout()
             }
         }
     }
