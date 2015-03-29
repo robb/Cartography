@@ -96,10 +96,35 @@ let group = layout(button) { button in
 
 ## Supported attributes
 
-Cartography supports all built-in attributes as of iOS 7 and OS X 10.9, those
-are: `width`, `height`, `top`, `right` `bottom`, `left`, `leading`, `trailing`,
-`centerX`, `centerY` and `baseline`. These can be further refined using the
-following operators: `*`, `/`, `+` and `-`.
+Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those
+are:
+
+- `width`
+- `height`
+- `top`
+- `right`
+- `bottom`
+- `left`
+- `leading`
+- `trailing`
+- `centerX`
+- `centerY`
+- `baseline`
+
+as well as the iOS specific
+
+- `firstBaseline`
+- `leftMargin`
+- `rightMargin`
+- `topMargin`
+- `bottomMargin`
+- `leadingMargin`
+- `trailingMargin`
+- `centerXWithinMargins`
+- `centerYWithinMargins`
+
+These can be further refined using the following operators: `*`, `/`, `+` and
+`-`.
 
 Additionally, it supports convenient compound attributes that allow you to
 assign multiple attributes at once:
