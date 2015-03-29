@@ -7,9 +7,9 @@
 //
 
 #if os(iOS)
-    import UIKit
+import UIKit
 #else
-    import AppKit
+import AppKit
 #endif
 
 internal extension Dictionary {

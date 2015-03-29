@@ -72,4 +72,19 @@ class EdgeTests: XCTestCase {
 
         XCTAssert(CGRectGetMidY(view.frame) == 200, "It should layout the center y \'edge\'")
     }
+
+    #if os(iOS)
+    func testMargins() {
+        view.layoutMargins = UIEdgeInsets(top: -10, left: -20, bottom: -30, right: -40)
+
+        layout(view) { view in
+            view.topMargin    == view.superview!.top
+            view.leftMargin   == view.superview!.left
+            view.bottomMargin == view.superview!.bottom
+            view.rightMargin  == view.superview!.right
+        }
+
+        XCTAssertEqual(view.frame, CGRect(x: 20, y: 10, width: 340, height: 360), "It should layout the edges")
+    }
+    #endif
 }
