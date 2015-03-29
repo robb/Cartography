@@ -102,41 +102,55 @@ public class LayoutProxy {
         self.context = context
         self.view = view
 
-        width  = Dimension.Width(context, view)
-        height = Dimension.Height(context, view)
+        width  = Dimension(context, view, .Width)
+        height = Dimension(context, view, .Height)
 
-        size = Size.Size(context, view)
+        size = Size(context, [
+            Dimension(context, view, .Width),
+            Dimension(context, view, .Height)
+        ])
 
-        top    = Edge.Top(context, view)
-        right  = Edge.Right(context, view)
-        bottom = Edge.Bottom(context, view)
-        left   = Edge.Left(context, view)
+        top    = Edge(context, view, .Top)
+        right  = Edge(context, view, .Right)
+        bottom = Edge(context, view, .Bottom)
+        left   = Edge(context, view, .Left)
 
-        edges = Edges.Edges(context, view)
+        edges = Edges(context, [
+            Edge(context, view, .Top),
+            Edge(context, view, .Leading),
+            Edge(context, view, .Bottom),
+            Edge(context, view, .Trailing)
+        ])
 
-        leading = Edge.Leading(context, view)
-        trailing = Edge.Trailing(context, view)
+        leading = Edge(context, view, .Leading)
+        trailing = Edge(context, view, .Trailing)
 
-        centerX = Edge.CenterX(context, view)
-        centerY = Edge.CenterY(context, view)
+        centerX = Edge(context, view, .CenterX)
+        centerY = Edge(context, view, .CenterY)
 
-        center = Point.Center(context, view)
+        center = Point(context, [
+            Edge(context, view, .CenterX),
+            Edge(context, view, .CenterY)
+        ])
 
-        baseline = Edge.Baseline(context, view)
+        baseline = Edge(context, view, .Baseline)
 
         #if os(iOS)
-        firstBaseline = .FirstBaseline(context, view)
+        firstBaseline = Edge(context, view, .FirstBaseline)
 
-        leftMargin = .LeftMargin(context, view)
-        rightMargin = .RightMargin(context, view)
-        topMargin = .TopMargin(context, view)
-        bottomMargin = .BottomMargin(context, view)
-        leadingMargin = .LeadingMargin(context, view)
-        trailingMargin = .TrailingMargin(context, view)
-        centerXWithinMargins = .CenterXWithinMargins(context, view)
-        centerYWithinMargins = .CenterYWithinMargins(context, view)
+        leftMargin = Edge(context, view, .LeftMargin)
+        rightMargin = Edge(context, view, .RightMargin)
+        topMargin = Edge(context, view, .TopMargin)
+        bottomMargin = Edge(context, view, .BottomMargin)
+        leadingMargin = Edge(context, view, .LeadingMargin)
+        trailingMargin = Edge(context, view, .TrailingMargin)
+        centerXWithinMargins = Edge(context, view, .CenterXWithinMargins)
+        centerYWithinMargins = Edge(context, view, .CenterYWithinMargins)
 
-        centerWithinMargins = .CenterWithinMargins(context, view)
+        centerWithinMargins = Point(context, [
+            Edge(context, view, .CenterXWithinMargins),
+            Edge(context, view, .CenterYWithinMargins)
+        ])
         #endif
     }
 }

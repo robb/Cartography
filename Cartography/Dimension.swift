@@ -12,28 +12,14 @@ import UIKit
 import AppKit
 #endif
 
-public enum Dimension : Property, NumericalEquality, RelativeEquality, NumericalInequality, RelativeInequality, Addition, Multiplication {
-    case Width(Context, View)
-    case Height(Context, View)
+public struct Dimension : Property, NumericalEquality, RelativeEquality, NumericalInequality, RelativeInequality, Addition, Multiplication {
+    public let attribute: NSLayoutAttribute
+    public let context: Context
+    public let view: View
 
-    public var attribute: NSLayoutAttribute {
-        switch (self) {
-            case .Width(_): return NSLayoutAttribute.Width
-            case .Height(_): return NSLayoutAttribute.Height
-        }
-    }
-
-    public var context: Context {
-        switch (self) {
-            case let .Width(context, _): return context
-            case let .Height(context, _): return context
-        }
-    }
-
-    public var view: View {
-        switch (self) {
-            case let .Width(_, view): return view
-            case let .Height(_, view): return view
-        }
+    internal init(_ context: Context, _ view: View, _ attribute: NSLayoutAttribute) {
+        self.attribute = attribute
+        self.context = context
+        self.view = view
     }
 }

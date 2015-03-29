@@ -12,26 +12,13 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edges : Compound {
-    case Edges(Context, View)
+public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequality {
+    public let context: Context
+    public let properties: [Property]
 
-    var context: Context {
-        switch (self) {
-            case let .Edges(context, _):
-                return context
-        }
-    }
-
-    var properties: [Property] {
-        switch (self) {
-            case let .Edges(context, view):
-                return [
-                    Edge.Top(context, view),
-                    Edge.Leading(context, view),
-                    Edge.Bottom(context, view),
-                    Edge.Trailing(context, view)
-                ]
-        }
+    internal init(_ context: Context, _ properties: [Property]) {
+        self.context = context
+        self.properties = properties
     }
 }
 
@@ -77,80 +64,4 @@ public func inset(edges: Edges, top: Number, leading: Number, bottom: Number, tr
         Coefficients(1, -bottom.doubleValue),
         Coefficients(1, -trailing.doubleValue)
     ])
-}
-
-// MARK: Equality
-
-/// Declares a property equal to the result of an expression.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The expression.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func == (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value)
-}
-
-/// Declares a property equal to another property.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The other property.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func == (lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs)
-}
-
-// MARK: Inequality
-
-/// Declares a property less than or equal to another property.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The other property.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func <= (lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-/// Declares a property greater than or equal to another property.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The other property.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func >= (lhs: Edges, rhs: Edges) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
-
-/// Declares a property less than or equal to the result of an expression.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The expression.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func <= (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
-}
-
-/// Declares a property greater than or equal to the result of an expression.
-///
-/// :param: lhs The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// :param: rhs The expression.
-///
-/// :returns: An `NSLayoutConstraint`.
-///
-public func >= (lhs: Edges, rhs: Expression<Edges>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
