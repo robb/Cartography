@@ -54,34 +54,35 @@ public class LayoutProxy {
     public let baseline: Edge
 
     #if os(iOS)
+    /// The first baseline of the view. iOS exclusive.
     public let firstBaseline: Edge
 
-    /// The left margin of the view.
+    /// The left margin of the view. iOS exclusive.
     public let leftMargin: Edge
 
-    /// The right margin of the view.
+    /// The right margin of the view. iOS exclusive.
     public let rightMargin: Edge
 
-    /// The top margin of the view.
+    /// The top margin of the view. iOS exclusive.
     public let topMargin: Edge
 
-    /// The bottom margin of the view.
+    /// The bottom margin of the view. iOS exclusive.
     public let bottomMargin: Edge
 
-    /// The leading margin of the view.
+    /// The leading margin of the view. iOS exclusive.
     public let leadingMargin: Edge
 
-    /// The trailing margin of the view.
+    /// The trailing margin of the view. iOS exclusive.
     public let trailingMargin: Edge
 
-    /// The horizontal center within the margins of the view.
+    /// The horizontal center within the margins of the view. iOS exclusive.
     public let centerXWithinMargins: Edge
 
-    /// The vertical center within the margins of the view.
+    /// The vertical center within the margins of the view. iOS exclusive.
     public let centerYWithinMargins: Edge
 
     /// The center point within the margins of the view. This property affects
-    /// `centerXWithinMargins` and `centerYWithinMargins`.
+    /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
     public let centerWithinMargins: Point
     #endif
 
