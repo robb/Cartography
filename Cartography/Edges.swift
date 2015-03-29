@@ -12,26 +12,13 @@ import UIKit
 import AppKit
 #endif
 
-public enum Edges : Compound {
-    case Edges(Context, View)
+public struct Edges: Compound {
+    let context: Context
+    let properties: [Property]
 
-    var context: Context {
-        switch (self) {
-            case let .Edges(context, _):
-                return context
-        }
-    }
-
-    var properties: [Property] {
-        switch (self) {
-            case let .Edges(context, view):
-                return [
-                    Edge.Top(context, view),
-                    Edge.Leading(context, view),
-                    Edge.Bottom(context, view),
-                    Edge.Trailing(context, view)
-                ]
-        }
+    internal init(_ context: Context, _ properties: [Property]) {
+        self.context = context
+        self.properties = properties
     }
 }
 

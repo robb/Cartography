@@ -12,21 +12,13 @@ import UIKit
 import AppKit
 #endif
 
-public enum Size : Compound {
-    case Size(Context, View)
+public struct Size : Compound {
+    let context: Context
+    let properties: [Property]
 
-    var context: Context {
-        switch (self) {
-            case let .Size(context, _):
-                return context
-        }
-    }
-
-    var properties: [Property] {
-        switch (self) {
-            case let .Size(context, view):
-                return [ Dimension.Width(context, view), Dimension.Height(context, view) ]
-        }
+    internal init(_ context: Context, _ properties: [Property]) {
+        self.context = context
+        self.properties = properties
     }
 }
 

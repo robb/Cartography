@@ -12,32 +12,13 @@ import UIKit
 import AppKit
 #endif
 
-public enum Point: Compound {
-    case Center(Context, View)
-    case CenterWithinMargins(Context, View)
+public struct Point: Compound {
+    let context: Context
+    let properties: [Property]
 
-    var context: Context {
-        switch (self) {
-        case let .Center(context, _):
-            return context
-        case let .CenterWithinMargins(context, _):
-            return context
-        }
-    }
-
-    var properties: [Property] {
-        switch (self) {
-        case let .Center(context, view):
-            return [
-                Edge.CenterX(context, view),
-                Edge.CenterY(context, view)
-            ]
-        case let .CenterWithinMargins(context, view):
-            return [
-                Edge.CenterXWithinMargins(context, view),
-                Edge.CenterYWithinMargins(context, view)
-            ]
-        }
+    internal init(_ context: Context, _ properties: [Property]) {
+        self.context = context
+        self.properties = properties
     }
 }
 
