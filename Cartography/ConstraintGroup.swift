@@ -51,10 +51,6 @@ public class ConstraintGroup {
 
         for constraint in self.constraints {
             constraint.install()
-
-            let existing = constraint.view?.car_installedLayoutConstraints ?? []
-
-            constraint.view?.car_installedLayoutConstraints = existing + [ constraint ]
         }
 
         if performLayout {
