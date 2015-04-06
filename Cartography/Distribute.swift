@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
+#if os(iOS)
+    import UIKit
+    #else
+    import AppKit
+#endif
 
 typealias Accumulator = ([NSLayoutConstraint], LayoutProxy)
 
