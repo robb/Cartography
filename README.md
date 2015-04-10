@@ -142,10 +142,6 @@ layout(view) { view in
 }
 ```
 
-(We need to return explicitly here to work around [a bug in
-Swift](https://github.com/robb/Cartography/issues/9), this only affects single
-line blocks, however.)
-
 ### Aligning multiple view
 
 If you need to align multiple views by a common edge, you can use the `align`
