@@ -1,7 +1,0 @@
-language: objective-c
-osx_image: xcode61
-install:
-    - gem install xcpretty
-script:
-    - set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
-    - set -o pipefail && xcodebuild -scheme 'Cartography-iOS' test | xcpretty -c
