@@ -43,9 +43,10 @@
 		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
+		54DE2B9F1ABE2BC5004D62D8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
+		54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
 		54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
-		54F4F1981A8B598400781D31 /* NSView+Flipped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6A86A195C28F500313D24 /* NSView+Flipped.swift */; };
 		54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F6A838195C20C100313D24 /* Cartography.framework */; };
 		54F6A851195C213A00313D24 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54F6A852195C213A00313D24 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
@@ -133,11 +134,11 @@
 		54C96A22195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A23195063CD000CDD27 /* DimensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTests.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		54DF9F3219DAD8DA00EE3609 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		54F6A838195C20C100313D24 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A863195C217800313D24 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		54F6A86A195C28F500313D24 /* NSView+Flipped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Flipped.swift"; sourceTree = "<group>"; };
 		54FA3A351950FD320094B82A /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		54FA3A371950FD8E0094B82A /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
 		54FA3A3B1951A2B60094B82A /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -265,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				54C96A22195063CD000CDD27 /* Info.plist */,
-				54F6A86A195C28F500313D24 /* NSView+Flipped.swift */,
+				54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -473,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DE2B9F1ABE2BC5004D62D8 /* TestView.swift in Sources */,
 				54FA3A441951A9730094B82A /* SizeTests.swift in Sources */,
 				54BF29B31A934F240066ED10 /* AlignTests.swift in Sources */,
 				54143E511A939D7000208182 /* DistributeTests.swift in Sources */,
@@ -521,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */,
 				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
 				54BF29B41A934F250066ED10 /* AlignTests.swift in Sources */,
 				54143E521A939D7100208182 /* DistributeTests.swift in Sources */,
@@ -531,7 +534,6 @@
 				54F6A862195C213F00313D24 /* OperatorTests.swift in Sources */,
 				54F6A85E195C213F00313D24 /* EdgeTests.swift in Sources */,
 				54F6A85D195C213F00313D24 /* DimensionTests.swift in Sources */,
-				54F4F1981A8B598400781D31 /* NSView+Flipped.swift in Sources */,
 				54F6A861195C213F00313D24 /* SizeTests.swift in Sources */,
 				54B0939D1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */,
 				54F6A85F195C213F00313D24 /* EdgesTests.swift in Sources */,

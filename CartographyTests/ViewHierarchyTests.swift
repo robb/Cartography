@@ -25,8 +25,8 @@ class ViewHierarchyTests: XCTestCase {
     var viewB, viewBParent, viewBGrandparent: View!
 
     override func setUp() {
-        (viewA, viewAParent, viewAGrandparent) = (View(), View(), View())
-        (viewB, viewBParent, viewBGrandparent) = (View(), View(), View())
+        (viewA, viewAParent, viewAGrandparent) = (TestView(), TestView(), TestView())
+        (viewB, viewBParent, viewBGrandparent) = (TestView(), TestView(), TestView())
         viewAParent.addSubview(viewA)
         viewAGrandparent.addSubview(viewAParent)
         viewBParent.addSubview(viewB)

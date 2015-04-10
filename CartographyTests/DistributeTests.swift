@@ -16,15 +16,15 @@ class DistributeTests: XCTestCase {
     var viewC: View!
 
     override func setUp() {
-        superview = View(frame: CGRectMake(0, 0, 400, 400))
+        superview = TestView(frame: CGRectMake(0, 0, 400, 400))
 
-        viewA = View(frame: CGRectZero)
+        viewA = TestView(frame: CGRectZero)
         superview.addSubview(viewA)
 
-        viewB = View(frame: CGRectZero)
+        viewB = TestView(frame: CGRectZero)
         superview.addSubview(viewB)
 
-        viewC = View(frame: CGRectZero)
+        viewC = TestView(frame: CGRectZero)
         superview.addSubview(viewC)
 
         constrain(viewA, viewB, viewC) { viewA, viewB, viewC in

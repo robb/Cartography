@@ -14,15 +14,15 @@ class SizeTests: XCTestCase {
     var view: View!
 
     override func setUp() {
-        superview = View(frame: CGRectMake(0, 0, 400, 400))
+        superview = TestView(frame: CGRectMake(0, 0, 400, 400))
 
-        view = View(frame: CGRectZero)
+        view = TestView(frame: CGRectZero)
         superview.addSubview(view)
     }
 
     func testEquality() {
         layout(view) { view in
-            view.size == view.superview!.size; return
+            view.size == view.superview!.size
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 400, 400), "It should layout the size")
@@ -39,7 +39,7 @@ class SizeTests: XCTestCase {
 
     func testMultiplication() {
         layout(view) { view in
-            view.size == view.superview!.size * 1.5; return
+            view.size == view.superview!.size * 1.5
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 600, 600), "It should affect width and height")
@@ -47,7 +47,7 @@ class SizeTests: XCTestCase {
 
     func testDivision() {
         layout(view) { view in
-            view.size == view.superview!.size / 2; return
+            view.size == view.superview!.size / 2
         }
 
         XCTAssertEqual(view.frame, CGRectMake(0, 0, 200, 200), "It should affect width and height")

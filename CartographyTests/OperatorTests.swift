@@ -14,9 +14,9 @@ class OperatorTests: XCTestCase {
     var view: View!
 
     override func setUp() {
-        superview = View(frame: CGRectMake(0, 0, 200, 200))
+        superview = TestView(frame: CGRectMake(0, 0, 200, 200))
 
-        view = View(frame: CGRectZero)
+        view = TestView(frame: CGRectZero)
         superview.addSubview(view)
     }
 
@@ -44,7 +44,7 @@ class OperatorTests: XCTestCase {
         var constraint: NSLayoutConstraint!
 
         layout(view) { view in
-            constraint = view.width == (view.superview!.width + 100) * 2 + 5
+            constraint = view.width == (view.superview!.width + 100) * 2 + 5; return
         }
 
         XCTAssert(constraint.multiplier == 2, "It should set the constant")
@@ -55,7 +55,7 @@ class OperatorTests: XCTestCase {
         var constraint: NSLayoutConstraint!
 
         layout(view) { view in
-            constraint = view.width == (view.superview!.width + 100) / 2 + 5
+            constraint = view.width == (view.superview!.width + 100) / 2 + 5; return
         }
 
         XCTAssert(constraint.multiplier == 0.5, "It should set the constant")

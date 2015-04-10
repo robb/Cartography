@@ -14,9 +14,9 @@ class PointTests: XCTestCase {
     var view: View!
 
     override func setUp() {
-        superview = View(frame: CGRectMake(0, 0, 400, 400))
+        superview = TestView(frame: CGRectMake(0, 0, 400, 400))
 
-        view = View(frame: CGRectZero)
+        view = TestView(frame: CGRectZero)
         superview.addSubview(view)
 
         constrain(view) { view in
@@ -27,7 +27,7 @@ class PointTests: XCTestCase {
 
     func testPoint() {
         layout(view) { view in
-            view.center == view.superview!.center; return
+            view.center == view.superview!.center
         }
 
         XCTAssertEqual(view.frame, CGRectMake(100, 100, 200, 200), "should layout stuff")
