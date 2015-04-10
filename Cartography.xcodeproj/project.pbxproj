@@ -72,11 +72,11 @@
 		54F6A85F195C213F00313D24 /* EdgesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858E1953235F00791F75 /* EdgesSpec.swift */; };
 		54F6A860195C213F00313D24 /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointTests.swift */; };
 		54F6A861195C213F00313D24 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeTests.swift */; };
-		54F6A862195C213F00313D24 /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* OperatorTests.swift */; };
+		54F6A862195C213F00313D24 /* PrioritySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PrioritySpec.swift */; };
 		54F6A864195C217800313D24 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6A863195C217800313D24 /* View.swift */; };
 		54F6A865195C226700313D24 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6A863195C217800313D24 /* View.swift */; };
 		54FA3A361950FD320094B82A /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A351950FD320094B82A /* Priority.swift */; };
-		54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* OperatorTests.swift */; };
+		54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PrioritySpec.swift */; };
 		54FA3A3C1951A2B60094B82A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3B1951A2B60094B82A /* Point.swift */; };
 		54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointTests.swift */; };
 		54FA3A401951A41B0094B82A /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3F1951A41B0094B82A /* Compound.swift */; };
@@ -179,7 +179,7 @@
 		54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A863195C217800313D24 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		54FA3A351950FD320094B82A /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
-		54FA3A371950FD8E0094B82A /* OperatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperatorTests.swift; sourceTree = "<group>"; };
+		54FA3A371950FD8E0094B82A /* PrioritySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrioritySpec.swift; sourceTree = "<group>"; };
 		54FA3A3B1951A2B60094B82A /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		54FA3A3D1951A3750094B82A /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
 		54FA3A3F1951A41B0094B82A /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				545F858E1953235F00791F75 /* EdgesSpec.swift */,
 				546E9E921950A87600B16707 /* EdgeSpec.swift */,
 				545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */,
-				54FA3A371950FD8E0094B82A /* OperatorTests.swift */,
+				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
 				54FA3A3D1951A3750094B82A /* PointTests.swift */,
 				54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
@@ -555,7 +555,7 @@
 				54143E511A939D7000208182 /* DistributeSpec.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
-				54FA3A381950FD8E0094B82A /* OperatorTests.swift in Sources */,
+				54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */,
 				543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionSpec.swift in Sources */,
 				BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */,
@@ -606,7 +606,7 @@
 				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
 				54F6A860195C213F00313D24 /* PointTests.swift in Sources */,
 				545F35851ACDFFAF00B57E98 /* MemoryLeakSpec.swift in Sources */,
-				54F6A862195C213F00313D24 /* OperatorTests.swift in Sources */,
+				54F6A862195C213F00313D24 /* PrioritySpec.swift in Sources */,
 				54F6A85E195C213F00313D24 /* EdgeSpec.swift in Sources */,
 				54F6A85D195C213F00313D24 /* DimensionSpec.swift in Sources */,
 				54F6A861195C213F00313D24 /* SizeTests.swift in Sources */,
