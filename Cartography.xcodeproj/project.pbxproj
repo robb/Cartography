@@ -10,8 +10,8 @@
 		54143E4E1A93991D00208182 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467916E1A93962000DC9BF7 /* Distribute.swift */; };
 		54143E511A939D7000208182 /* DistributeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeSpec.swift */; };
 		54143E521A939D7100208182 /* DistributeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeSpec.swift */; };
-		543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
-		543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
+		543250CD1A8131F100BE7581 /* NumberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* NumberSpec.swift */; };
+		543250CE1A8131F200BE7581 /* NumberSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* NumberSpec.swift */; };
 		5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B41AD8610300B805F1 /* Nimble.framework */; };
 		5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; };
 		5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; };
@@ -141,7 +141,7 @@
 
 /* Begin PBXFileReference section */
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistributeSpec.swift; sourceTree = "<group>"; };
-		543250CB1A8112D700BE7581 /* TypesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTests.swift; sourceTree = "<group>"; };
+		543250CB1A8112D700BE7581 /* NumberSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberSpec.swift; sourceTree = "<group>"; };
 		5435B8B41AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		5435B8B51AD8610300B805F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		5435B8B81AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
@@ -318,13 +318,13 @@
 				54A388981A7663AC003945B7 /* ConstraintGroupSpec.swift */,
 				54C96A23195063CD000CDD27 /* DimensionSpec.swift */,
 				54143E4F1A939D6000208182 /* DistributeSpec.swift */,
-				545F858E1953235F00791F75 /* EdgesSpec.swift */,
 				546E9E921950A87600B16707 /* EdgeSpec.swift */,
+				545F858E1953235F00791F75 /* EdgesSpec.swift */,
 				545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */,
-				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
+				543250CB1A8112D700BE7581 /* NumberSpec.swift */,
 				54FA3A3D1951A3750094B82A /* PointSpec.swift */,
+				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
-				543250CB1A8112D700BE7581 /* TypesTests.swift */,
 				BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
@@ -552,7 +552,7 @@
 				54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */,
-				543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */,
+				543250CD1A8131F100BE7581 /* NumberSpec.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionSpec.swift in Sources */,
 				BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeSpec.swift in Sources */,
@@ -597,7 +597,7 @@
 				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
 				54BF29B41A934F250066ED10 /* AlignSpec.swift in Sources */,
 				54143E521A939D7100208182 /* DistributeSpec.swift in Sources */,
-				543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */,
+				543250CE1A8131F200BE7581 /* NumberSpec.swift in Sources */,
 				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
 				54F6A860195C213F00313D24 /* PointSpec.swift in Sources */,
 				545F35851ACDFFAF00B57E98 /* MemoryLeakSpec.swift in Sources */,
