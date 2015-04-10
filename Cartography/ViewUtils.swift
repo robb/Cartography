@@ -6,33 +6,35 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if TEST
-    import Cartography
-#elseif os(iOS)
-    import UIKit
+#if os(iOS)
+import UIKit
 #else
-    import AppKit
+import AppKit
 #endif
 
-func closestCommonAncestor(a: View, b: View) -> View? {
-    // Quick-check the most likely possibilities
-    if a == b { return a }
+internal func closestCommonAncestor(a: View, b: View) -> View? {
     let (aSuper, bSuper) = (a.superview, b.superview)
-    if a == bSuper { return a }
-    if b == aSuper { return b }
-    if aSuper == bSuper { return aSuper }
 
-    // None of those; run the general algorithm
-    var ancestorsOfA = NSSet(array: Array(ancestors(a)))
+    if a === b { return a }
+
+    if a === bSuper { return a }
+
+    if b === aSuper { return b }
+
+    if aSuper === bSuper { return aSuper }
+
+    var ancestorsOfA = Set(ancestors(a))
+
     for ancestor in ancestors(b) {
-        if ancestorsOfA.containsObject(ancestor) {
+        if ancestorsOfA.contains(ancestor) {
             return ancestor
         }
     }
-    return nil // No ancestors in common
+
+    return .None
 }
 
-func ancestors(v: View) -> SequenceOf<View> {
+private func ancestors(v: View) -> SequenceOf<View> {
     return SequenceOf<View> { () -> GeneratorOf<View> in
         var view: View? = v
         return GeneratorOf {

@@ -9,9 +9,31 @@
 import Cartography
 
 class TestView: View {
-    #if os(OSX)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        #if os(iOS)
+        setTranslatesAutoresizingMaskIntoConstraints(false)
+        #else
+        translatesAutoresizingMaskIntoConstraints = false
+        #endif
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+#if os(iOS)
+    var car_constraints: [NSLayoutConstraint] {
+        return constraints() as! [NSLayoutConstraint]
+    }
+#else
+    var car_constraints: [NSLayoutConstraint] {
+        return constraints as! [NSLayoutConstraint]
+    }
+
     override var flipped: Bool {
         return true
     }
-    #endif
+#endif
 }
