@@ -18,10 +18,59 @@ class DimensionSpec: QuickSpec {
         describe("LayoutProxy.width") {
             it("should support relative equalities") {
                 layout(view) { view in
-                    view.width == view.superview!.width - 200
+                    view.width == view.superview!.width
+                }
+
+                expect(view.frame.width).to(equal(400))
+            }
+
+            it("should support relative inequalities") {
+                layout(view) { view in
+                    view.width <= view.superview!.width
+                    view.width >= view.superview!.width
+                }
+
+                expect(view.frame.width).to(equal(400))
+            }
+
+            it("should support addition") {
+                layout(view) { view in
+                    view.width == view.superview!.width + 100
+                }
+
+                expect(view.frame.width).to(equal(500))
+            }
+
+            it("should support subtraction") {
+                layout(view) { view in
+                    view.width == view.superview!.width - 100
+                }
+
+                expect(view.frame.width).to(equal(300))
+            }
+
+            it("should support multiplication") {
+                layout(view) { view in
+                    view.width == view.superview!.width * 2
+                }
+
+                expect(view.frame.width).to(equal(800))
+            }
+
+            it("should support division") {
+                layout(view) { view in
+                    view.width == view.superview!.width / 2
                 }
 
                 expect(view.frame.width).to(equal(200))
+            }
+
+            it("should support complex expressions") {
+                layout(view) { view in
+                    view.width == view.superview!.width / 2 + 100
+                }
+
+                expect(view.frame.width).to(equal(300))
             }
 
             it("should support numerical equalities") {
@@ -36,10 +85,59 @@ class DimensionSpec: QuickSpec {
         describe("LayoutProxy.height") {
             it("should support relative equalities") {
                 layout(view) { view in
-                    view.height == view.superview!.height - 200
+                    view.height == view.superview!.height
+                }
+
+                expect(view.frame.height).to(equal(400))
+            }
+
+            it("should support relative inequalities") {
+                layout(view) { view in
+                    view.height <= view.superview!.height
+                    view.height >= view.superview!.height
+                }
+
+                expect(view.frame.height).to(equal(400))
+            }
+
+            it("should support addition") {
+                layout(view) { view in
+                    view.height == view.superview!.height + 100
+                }
+
+                expect(view.frame.height).to(equal(500))
+            }
+
+            it("should support subtraction") {
+                layout(view) { view in
+                    view.height == view.superview!.height - 100
+                }
+
+                expect(view.frame.height).to(equal(300))
+            }
+
+            it("should support multiplication") {
+                layout(view) { view in
+                    view.height == view.superview!.height * 2
+                }
+
+                expect(view.frame.height).to(equal(800))
+            }
+
+            it("should support division") {
+                layout(view) { view in
+                    view.height == view.superview!.height / 2
                 }
 
                 expect(view.frame.height).to(equal(200))
+            }
+
+            it("should support complex expressions") {
+                layout(view) { view in
+                    view.height == view.superview!.height / 2 + 100
+                }
+
+                expect(view.frame.height).to(equal(300))
             }
 
             it("should support numerical equalities") {
