@@ -138,7 +138,7 @@ layout(view) { view in
 
 ```swift
 layout(view) { view in
-    view.edges == inset(view.superview!.edges, 20, 20, 40, 20); return
+    view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
 }
 ```
 
@@ -153,7 +153,7 @@ functions:
 
 ```swift
 layout(view1, view2, view3) { view1, view2, view3 in
-    align(top: view1, view2, view3); return
+    align(top: view1, view2, view3)
 }
 ```
 
@@ -168,7 +168,7 @@ the `distribute` functions:
 
 ```swift
 layout(view1, view2, view3) { view1, view2, view3 in
-    distribute(by: 10, horizontally: view1, view2, view3); return
+    distribute(by: 10, horizontally: view1, view2, view3)
 }
 ```
 
@@ -195,7 +195,7 @@ time:
 var width: NSLayoutConstraint?
 
 layout(view) { view in
-    width = (view.width == 200 ~ 100); return
+    width = (view.width == 200 ~ 100)
 }
 ```
 
@@ -205,7 +205,7 @@ Note that declaring compound attributes returns multiple constraints at once:
 var constraints: [NSLayoutConstraint]?
 
 layout(view) { view in
-    constraints = (view.size == view.superview!.size ~ 100); return
+    constraints = (view.size == view.superview!.size ~ 100)
 }
 ```
 
