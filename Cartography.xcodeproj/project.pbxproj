@@ -12,6 +12,14 @@
 		54143E521A939D7100208182 /* DistributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeTests.swift */; };
 		543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
 		543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543250CB1A8112D700BE7581 /* TypesTests.swift */; };
+		5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B41AD8610300B805F1 /* Nimble.framework */; };
+		5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; };
+		5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; };
+		5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; };
+		5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B41AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E901950A76C00B16707 /* Edge.swift */; };
 		545F35841ACDFF6C00B57E98 /* MemoryLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakTests.swift */; };
 		545F35851ACDFFAF00B57E98 /* MemoryLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakTests.swift */; };
@@ -106,9 +114,40 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5435B8C41AD8614F00B805F1 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */,
+				5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5435B8C71AD8616000B805F1 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */,
+				5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		54143E4F1A939D6000208182 /* DistributeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistributeTests.swift; sourceTree = "<group>"; };
 		543250CB1A8112D700BE7581 /* TypesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesTests.swift; sourceTree = "<group>"; };
+		5435B8B41AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		5435B8B51AD8610300B805F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		5435B8B81AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		5435B8B91AD8610300B805F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		545F35831ACDFF6C00B57E98 /* MemoryLeakTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLeakTests.swift; sourceTree = "<group>"; };
 		545F858C195322EA00791F75 /* Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edges.swift; sourceTree = "<group>"; };
 		545F858E1953235F00791F75 /* EdgesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgesTests.swift; sourceTree = "<group>"; };
@@ -163,6 +202,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */,
+				5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */,
+				5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,17 +219,49 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */,
+				5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */,
+				5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5435B8B21AD8610300B805F1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5435B8B41AD8610300B805F1 /* Nimble.framework */,
+				5435B8B51AD8610300B805F1 /* Quick.framework */,
+			);
+			name = iOS;
+			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
+		5435B8B61AD8610300B805F1 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				5435B8B81AD8610300B805F1 /* Nimble.framework */,
+				5435B8B91AD8610300B805F1 /* Quick.framework */,
+			);
+			name = Mac;
+			path = Carthage/Build/Mac;
+			sourceTree = "<group>";
+		};
+		5435B8BA1AD8610700B805F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5435B8B21AD8610300B805F1 /* iOS */,
+				5435B8B61AD8610300B805F1 /* Mac */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		54C96A07195063CD000CDD27 = {
 			isa = PBXGroup;
 			children = (
 				54C96A13195063CD000CDD27 /* Cartography */,
 				54C96A20195063CD000CDD27 /* CartographyTests */,
+				5435B8BA1AD8610700B805F1 /* Frameworks */,
 				54C96A12195063CD000CDD27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -318,6 +391,7 @@
 				54C96A18195063CD000CDD27 /* Sources */,
 				54C96A19195063CD000CDD27 /* Frameworks */,
 				54C96A1A195063CD000CDD27 /* Resources */,
+				5435B8C71AD8616000B805F1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +429,7 @@
 				54F6A83E195C20C200313D24 /* Sources */,
 				54F6A83F195C20C200313D24 /* Frameworks */,
 				54F6A840195C20C200313D24 /* Resources */,
+				5435B8C41AD8614F00B805F1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -655,6 +730,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -673,6 +752,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -687,6 +770,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -706,6 +790,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -724,6 +809,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -750,6 +839,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -769,6 +862,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -792,6 +886,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

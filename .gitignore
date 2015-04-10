@@ -14,3 +14,5 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+Carthage/
