@@ -84,8 +84,8 @@
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
-		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */; };
-		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */; };
+		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
+		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,7 +182,7 @@
 		54FA3A3F1951A41B0094B82A /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		54FA3A411951A8070094B82A /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		54FA3A431951A9730094B82A /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
-		BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchyTests.swift; sourceTree = "<group>"; };
+		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
 		BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,7 +325,7 @@
 				54FA3A3D1951A3750094B82A /* PointSpec.swift */,
 				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
-				BB41A06E1A229BF7007142FE /* ViewHierarchyTests.swift */,
+				BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */,
 				54C96A21195063CD000CDD27 /* Supporting Files */,
 			);
 			path = CartographyTests;
@@ -557,7 +557,7 @@
 				BBAC6D191A22A79900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeSpec.swift in Sources */,
 				54A3889A1A7663BF003945B7 /* ConstraintGroupSpec.swift in Sources */,
-				BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchyTests.swift in Sources */,
+				BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */,
 				545F35841ACDFF6C00B57E98 /* MemoryLeakSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,7 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */,
-				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
+				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */,
 				54BF29B41A934F250066ED10 /* AlignSpec.swift in Sources */,
 				54143E521A939D7100208182 /* DistributeSpec.swift in Sources */,
 				543250CE1A8131F200BE7581 /* NumberSpec.swift in Sources */,
