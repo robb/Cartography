@@ -70,7 +70,7 @@
 		54F6A85D195C213F00313D24 /* DimensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionSpec.swift */; };
 		54F6A85E195C213F00313D24 /* EdgeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E921950A87600B16707 /* EdgeSpec.swift */; };
 		54F6A85F195C213F00313D24 /* EdgesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858E1953235F00791F75 /* EdgesSpec.swift */; };
-		54F6A860195C213F00313D24 /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointTests.swift */; };
+		54F6A860195C213F00313D24 /* PointSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointSpec.swift */; };
 		54F6A861195C213F00313D24 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeTests.swift */; };
 		54F6A862195C213F00313D24 /* PrioritySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PrioritySpec.swift */; };
 		54F6A864195C217800313D24 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6A863195C217800313D24 /* View.swift */; };
@@ -78,7 +78,7 @@
 		54FA3A361950FD320094B82A /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A351950FD320094B82A /* Priority.swift */; };
 		54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PrioritySpec.swift */; };
 		54FA3A3C1951A2B60094B82A /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3B1951A2B60094B82A /* Point.swift */; };
-		54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointTests.swift */; };
+		54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointSpec.swift */; };
 		54FA3A401951A41B0094B82A /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3F1951A41B0094B82A /* Compound.swift */; };
 		54FA3A421951A8070094B82A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A411951A8070094B82A /* Size.swift */; };
 		54FA3A441951A9730094B82A /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeTests.swift */; };
@@ -181,7 +181,7 @@
 		54FA3A351950FD320094B82A /* Priority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		54FA3A371950FD8E0094B82A /* PrioritySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrioritySpec.swift; sourceTree = "<group>"; };
 		54FA3A3B1951A2B60094B82A /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
-		54FA3A3D1951A3750094B82A /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
+		54FA3A3D1951A3750094B82A /* PointSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointSpec.swift; sourceTree = "<group>"; };
 		54FA3A3F1951A41B0094B82A /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		54FA3A411951A8070094B82A /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		54FA3A431951A9730094B82A /* SizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
@@ -325,7 +325,7 @@
 				546E9E921950A87600B16707 /* EdgeSpec.swift */,
 				545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */,
 				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
-				54FA3A3D1951A3750094B82A /* PointTests.swift */,
+				54FA3A3D1951A3750094B82A /* PointSpec.swift */,
 				54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */,
 				54FA3A431951A9730094B82A /* SizeTests.swift */,
 				543250CB1A8112D700BE7581 /* TypesTests.swift */,
@@ -553,7 +553,7 @@
 				54FA3A441951A9730094B82A /* SizeTests.swift in Sources */,
 				54BF29B31A934F240066ED10 /* AlignSpec.swift in Sources */,
 				54143E511A939D7000208182 /* DistributeSpec.swift in Sources */,
-				54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */,
+				54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */,
 				543250CD1A8131F100BE7581 /* TypesTests.swift in Sources */,
@@ -604,7 +604,7 @@
 				54143E521A939D7100208182 /* DistributeSpec.swift in Sources */,
 				543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */,
 				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
-				54F6A860195C213F00313D24 /* PointTests.swift in Sources */,
+				54F6A860195C213F00313D24 /* PointSpec.swift in Sources */,
 				545F35851ACDFFAF00B57E98 /* MemoryLeakSpec.swift in Sources */,
 				54F6A862195C213F00313D24 /* PrioritySpec.swift in Sources */,
 				54F6A85E195C213F00313D24 /* EdgeSpec.swift in Sources */,
