@@ -45,8 +45,8 @@
 		54B0939C1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */; };
 		54B0939D1A7172E4008A1102 /* ReplacingConstraintsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */; };
 		54BF29B01A9348B30066ED10 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29AF1A9348B30066ED10 /* Align.swift */; };
-		54BF29B31A934F240066ED10 /* AlignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29B11A934ECF0066ED10 /* AlignTests.swift */; };
-		54BF29B41A934F250066ED10 /* AlignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29B11A934ECF0066ED10 /* AlignTests.swift */; };
+		54BF29B31A934F240066ED10 /* AlignSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29B11A934ECF0066ED10 /* AlignSpec.swift */; };
+		54BF29B41A934F250066ED10 /* AlignSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29B11A934ECF0066ED10 /* AlignSpec.swift */; };
 		54BF29B51A9350170066ED10 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29AF1A9348B30066ED10 /* Align.swift */; };
 		54C96A17195063CD000CDD27 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C96A11195063CD000CDD27 /* Cartography.framework */; };
@@ -165,7 +165,7 @@
 		54B093961A7165F2008A1102 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		54B0939A1A716F12008A1102 /* ReplacingConstraintsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplacingConstraintsTests.swift; sourceTree = "<group>"; };
 		54BF29AF1A9348B30066ED10 /* Align.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Align.swift; sourceTree = "<group>"; };
-		54BF29B11A934ECF0066ED10 /* AlignTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignTests.swift; sourceTree = "<group>"; };
+		54BF29B11A934ECF0066ED10 /* AlignSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignSpec.swift; sourceTree = "<group>"; };
 		54C96A11195063CD000CDD27 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C96A15195063CD000CDD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C96A16195063CD000CDD27 /* Cartography.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cartography.h; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 		54C96A20195063CD000CDD27 /* CartographyTests */ = {
 			isa = PBXGroup;
 			children = (
-				54BF29B11A934ECF0066ED10 /* AlignTests.swift */,
+				54BF29B11A934ECF0066ED10 /* AlignSpec.swift */,
 				54A388981A7663AC003945B7 /* ConstraintGroupTests.swift */,
 				54C96A23195063CD000CDD27 /* DimensionTests.swift */,
 				54143E4F1A939D6000208182 /* DistributeTests.swift */,
@@ -551,7 +551,7 @@
 			files = (
 				54DE2B9F1ABE2BC5004D62D8 /* TestView.swift in Sources */,
 				54FA3A441951A9730094B82A /* SizeTests.swift in Sources */,
-				54BF29B31A934F240066ED10 /* AlignTests.swift in Sources */,
+				54BF29B31A934F240066ED10 /* AlignSpec.swift in Sources */,
 				54143E511A939D7000208182 /* DistributeTests.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointTests.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesTests.swift in Sources */,
@@ -600,7 +600,7 @@
 			files = (
 				54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */,
 				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchyTests.swift in Sources */,
-				54BF29B41A934F250066ED10 /* AlignTests.swift in Sources */,
+				54BF29B41A934F250066ED10 /* AlignSpec.swift in Sources */,
 				54143E521A939D7100208182 /* DistributeTests.swift in Sources */,
 				543250CE1A8131F200BE7581 /* TypesTests.swift in Sources */,
 				BBAC6D1A1A22A8EE00E8A3E2 /* ViewUtils.swift in Sources */,
