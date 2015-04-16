@@ -24,28 +24,28 @@ public struct Size : Compound, RelativeCompoundEquality, RelativeCompoundInequal
 
 // MARK: Multiplication
 
-public func * (m: Number, rhs: Expression<Size>) -> Expression<Size> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m.doubleValue })
+public func * (m: CGFloat, rhs: Expression<Size>) -> Expression<Size> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
 }
 
-public func * (lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
+public func * (lhs: Expression<Size>, rhs: CGFloat) -> Expression<Size> {
     return rhs * lhs
 }
 
-public func * (m: Number, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(m.doubleValue, 0), Coefficients(m.doubleValue, 0) ])
+public func * (m: CGFloat, rhs: Size) -> Expression<Size> {
+    return Expression(rhs, [ Coefficients(m, 0), Coefficients(m, 0) ])
 }
 
-public func * (lhs: Size, rhs: Number) -> Expression<Size> {
+public func * (lhs: Size, rhs: CGFloat) -> Expression<Size> {
     return rhs * lhs
 }
 
 // MARK: Division
 
-public func / (lhs: Expression<Size>, rhs: Number) -> Expression<Size> {
-    return lhs * (1 / rhs.doubleValue)
+public func / (lhs: Expression<Size>, rhs: CGFloat) -> Expression<Size> {
+    return lhs * (1 / rhs)
 }
 
-public func / (lhs: Size, rhs: Number) -> Expression<Size> {
-    return lhs * (1 / rhs.doubleValue)
+public func / (lhs: Size, rhs: CGFloat) -> Expression<Size> {
+    return lhs * (1 / rhs)
 }
