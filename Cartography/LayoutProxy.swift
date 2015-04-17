@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class LayoutProxy {
+public struct LayoutProxy {
     /// The width of the view.
     public var width: Dimension {
         return Dimension(context, view, .Width)
