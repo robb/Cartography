@@ -265,13 +265,13 @@ class EdgeSpec: QuickSpec {
 #if os(iOS)
         describe("on iOS only") {
             beforeEach {
-                view.layoutMargins = UIEdgeInsets(top: -10, left: -20, bottom: -30, right: -40)
+                superview.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
             }
 
             describe("LayoutProxy.topMargin") {
                 it("should support relative equalities") {
                     layout(view) { view in
-                        view.topMargin == view.superview!.top
+                        view.top == view.superview!.topMargin
                     }
 
                     expect(view.frame.minY).to(equal(10))
@@ -281,29 +281,29 @@ class EdgeSpec: QuickSpec {
             describe("LayoutProxy.rightMargin") {
                 it("should support relative equalities") {
                     layout(view) { view in
-                        view.rightMargin == view.superview!.right
+                        view.right == view.superview!.rightMargin
                     }
-                    
+
                     expect(view.frame.maxX).to(equal(360))
                 }
             }
-            
+
             describe("LayoutProxy.bottomMargin") {
                 it("should support relative equalities") {
                     layout(view) { view in
-                        view.bottomMargin == view.superview!.bottom
+                        view.bottom == view.superview!.bottomMargin
                     }
-                    
+
                     expect(view.frame.maxY).to(equal(370))
                 }
             }
-            
+
             describe("LayoutProxy.leftMargin") {
                 it("should support relative equalities") {
                     layout(view) { view in
-                        view.leftMargin == view.superview!.left
+                        view.left == view.superview!.leftMargin
                     }
-                    
+
                     expect(view.frame.minX).to(equal(20))
                 }
             }
