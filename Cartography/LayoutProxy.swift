@@ -98,6 +98,18 @@ public struct LayoutProxy {
         return Edge(context, view, .FirstBaseline)
     }
 
+    /// All edges of the view with their respective margins. This property
+    /// affects `topMargin`, `bottomMargin`, `leadingMargin` and
+    /// `trailingMargin`.
+    public var edgesWithinMargins: Edges {
+        return Edges(context, [
+            Edge(context, view, .TopMargin),
+            Edge(context, view, .LeadingMargin),
+            Edge(context, view, .BottomMargin),
+            Edge(context, view, .TrailingMargin)
+        ])
+    }
+
     /// The left margin of the view. iOS exclusive.
     public var leftMargin: Edge {
         return Edge(context, view, .LeftMargin)
