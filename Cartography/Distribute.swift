@@ -14,7 +14,7 @@
 
 typealias Accumulator = ([NSLayoutConstraint], LayoutProxy)
 
-private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
+private func reduce(first: LayoutProxy, rest: ArraySlice<LayoutProxy>, combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
     rest.last?.view.car_translatesAutoresizingMaskIntoConstraints = false
 
     return reduce(rest, ([], first)) { (acc, current) -> Accumulator in
@@ -52,7 +52,7 @@ public func distribute(by amount: CGFloat, horizontally first: LayoutProxy, rest
 ///
 
 public func distribute(by amount: CGFloat, horizontally views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views.first!, Array(views[1..<views.count])) { $0.trailing == $1.leading - amount }
+    return reduce(views.first!, views[1..<views.count]) { $0.trailing == $1.leading - amount }
 }
 
 
@@ -82,7 +82,7 @@ public func distribute(by amount: CGFloat, leftToRight first: LayoutProxy, rest:
 /// :returns: An array of `NSLayoutConstraint` instances.
 ///
 public func distribute(by amount: CGFloat, leftToRight views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views.first!, Array(views[1..<views.count])) { $0.right == $1.left - amount  }
+    return reduce(views.first!, views[1..<views.count]) { $0.right == $1.left - amount  }
 }
 
 
@@ -112,5 +112,5 @@ public func distribute(by amount: CGFloat, vertically first: LayoutProxy, rest: 
 /// :returns: An array of `NSLayoutConstraint` instances.
 ///
 public func distribute(by amount: CGFloat, vertically views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views.first!, Array(views[1..<views.count])) { $0.bottom == $1.top - amount }
+    return reduce(views.first!, views[1..<views.count]) { $0.bottom == $1.top - amount }
 }
