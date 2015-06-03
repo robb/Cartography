@@ -75,5 +75,47 @@ class DistributeSpec: QuickSpec {
                 expect(viewC.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
             }
         }
+        
+        describe("horizontally with array of views") {
+            beforeEach {
+                layout([viewA, viewB, viewC]) { views in
+                    align(centerY: views[0], views[1], views[2])
+                    distribute(by: 10, leftToRight: views)
+                }
+                
+                it("should distribute the views") {
+                    expect(viewA.frame.minX).to(equal(  0))
+                    expect(viewB.frame.minX).to(equal(110))
+                    expect(viewC.frame.minX).to(equal(220))
+                }
+                
+                it("should disable translating autoresizing masks into constraints") {
+                    expect(viewA.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                    expect(viewB.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                    expect(viewC.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                }
+            }
+        }
+        
+        describe("vertically with array of views") {
+            beforeEach {
+                layout([viewA, viewB, viewC]) { views in
+                    align(centerY: views[0], views[1], views[2])
+                    distribute(by: 10, leftToRight: views)
+                }
+                
+                it("should distribute the views") {
+                    expect(viewA.frame.minY).to(equal(  0))
+                    expect(viewB.frame.minY).to(equal(110))
+                    expect(viewC.frame.minY).to(equal(220))
+                }
+                
+                it("should disable translating autoresizing masks into constraints") {
+                    expect(viewA.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                    expect(viewB.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                    expect(viewC.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                }
+            }
+        }
     }
 }
