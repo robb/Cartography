@@ -11,8 +11,8 @@ import Foundation
 public class ConstraintGroup {
     private var constraints: [Constraint] = []
 
-    @availability(OSX, introduced=10.10)
-    @availability(iOS, introduced=8.0)
+    @available(OSX, introduced=10.10)
+    @available(iOS, introduced=8.0)
     public var active: Bool {
         get {
             return constraints.map({ $0.layoutConstraint.active }).reduce(true) { $0 && $1 }

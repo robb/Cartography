@@ -18,8 +18,8 @@ import Foundation
         }
 
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints() }
-            set { setTranslatesAutoresizingMaskIntoConstraints(newValue) }
+            get { return translatesAutoresizingMaskIntoConstraints }
+            set { translatesAutoresizingMaskIntoConstraints = newValue }
         }
     }
 #else

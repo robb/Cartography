@@ -13,7 +13,7 @@ class TestView: View {
         super.init(frame: frame)
 
         #if os(iOS)
-        setTranslatesAutoresizingMaskIntoConstraints(false)
+        translatesAutoresizingMaskIntoConstraints = false
         #else
         translatesAutoresizingMaskIntoConstraints = false
         #endif
@@ -25,7 +25,7 @@ class TestView: View {
 
 #if os(iOS)
     var car_constraints: [NSLayoutConstraint] {
-        return constraints() as! [NSLayoutConstraint]
+        return constraints
     }
 #else
     var car_constraints: [NSLayoutConstraint] {

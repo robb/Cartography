@@ -9,8 +9,8 @@ class ViewHierarchySpec: QuickSpec {
             pending("should throw an exception if the views share no common ancestor") {
                 let viewA = TestView()
                 let viewB = TestView()
-
-                expect({
+                
+                expect(expression: {
                     layout(viewA, viewB) { viewA, viewB in
                         viewA.width == viewB.width
                     }
