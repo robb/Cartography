@@ -122,6 +122,7 @@ as well as the iOS specific
 - `trailingMargin`
 - `centerXWithinMargins`
 - `centerYWithinMargins`
+- `edgesWithinMargins`
 
 These can be further refined using the following operators: `*`, `/`, `+` and
 `-`.
