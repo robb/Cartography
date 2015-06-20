@@ -61,5 +61,23 @@ class EdgesSpec: QuickSpec {
                 expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
             }
         }
+
+#if os(iOS)
+        describe("on iOS only") {
+            beforeEach {
+                superview.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+            }
+
+            describe("LayoutProxy.edgesWithinMargins") {
+                it("should support relative equalities") {
+                    layout(view) { view in
+                        view.edges == view.superview!.edgesWithinMargins
+                    }
+
+                   expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
+                }
+            }
+        }
+#endif
     }
 }
