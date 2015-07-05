@@ -20,10 +20,10 @@ infix operator  ~ { }
 
 /// Sets the priority for a constraint.
 ///
-/// :param: lhs The constraint to update.
-/// :param: rhs The new priority.
+/// - parameter lhs: The constraint to update.
+/// - parameter rhs: The new priority.
 ///
-/// :returns: The same constraint with its priority updated.
+/// - returns: The same constraint with its priority updated.
 ///
 public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
     lhs.priority = rhs
@@ -33,10 +33,10 @@ public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstrai
 
 /// Sets the priority for multiple constraints.
 ///
-/// :param: lhs An array of `NSLayoutConstraint` instances.
-/// :param: rhs The new priority.
+/// - parameter lhs: An array of `NSLayoutConstraint` instances.
+/// - parameter rhs: The new priority.
 ///
-/// :returns: The same constraints with their priorities updated.
+/// - returns: The same constraints with their priorities updated.
 ///
 public func ~ (lhs: [NSLayoutConstraint], rhs: LayoutPriority) -> [NSLayoutConstraint] {
     return lhs.map {

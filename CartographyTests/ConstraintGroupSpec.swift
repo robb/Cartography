@@ -5,14 +5,14 @@ import Quick
 
 class ConstraintGroupSpec: QuickSpec {
     override func spec() {
-        var superview: View!
+        var window: View!
         var view1: View!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view1 = TestView(frame: CGRectZero)
-            superview.addSubview(view1)
+            window.addSubview(view1)
         }
 
         describe("Activating a group") {
@@ -54,7 +54,7 @@ class ConstraintGroupSpec: QuickSpec {
 
             beforeEach {
                 view2 = TestView(frame: CGRectZero)
-                superview.addSubview(view2)
+                window.addSubview(view2)
 
                 layout(view1, view2) { view1, view2 in
                     view1.top    == view1.superview!.top   + 10

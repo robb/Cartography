@@ -5,14 +5,14 @@ import Quick
 
 class PointSpec: QuickSpec {
     override func spec() {
-        var superview: View!
+        var window: View!
         var view: View!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
 
             constrain(view) { view in
                 view.width  == 200
