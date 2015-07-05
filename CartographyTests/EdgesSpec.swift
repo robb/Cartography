@@ -5,14 +5,14 @@ import Quick
 
 class EdgesSpec: QuickSpec {
     override func spec() {
-        var superview: View!
+        var window: View!
         var view: View!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         describe("LayoutProxy.edges") {
@@ -65,7 +65,7 @@ class EdgesSpec: QuickSpec {
 #if os(iOS)
         describe("on iOS only") {
             beforeEach {
-                superview.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+                window.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
             }
 
             describe("LayoutProxy.edgesWithinMargins") {

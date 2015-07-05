@@ -5,14 +5,14 @@ import Quick
 
 class PrioritySpec: QuickSpec {
     override func spec() {
-        var superview: View!
+        var window: View!
         var view: View!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 200, 200))
+            window = TestWindow(frame: CGRectMake(0, 0, 200, 200))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         it("should operate on a single constraint") {

@@ -5,22 +5,22 @@ import Quick
 
 class AlignSpec: QuickSpec {
     override func spec() {
-        var superview: View!
+        var window: View!
         var viewA: View!
         var viewB: View!
         var viewC: View!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             viewA = TestView(frame: CGRectZero)
-            superview.addSubview(viewA)
+            window.addSubview(viewA)
 
             viewB = TestView(frame: CGRectZero)
-            superview.addSubview(viewB)
+            window.addSubview(viewB)
 
             viewC = TestView(frame: CGRectZero)
-            superview.addSubview(viewC)
+            window.addSubview(viewC)
 
             constrain(viewA) { view in
                 view.height == 200
