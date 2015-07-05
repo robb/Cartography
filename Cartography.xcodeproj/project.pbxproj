@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541305B91B49598E003F1935 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
+		541305BA1B49598F003F1935 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		54143E4E1A93991D00208182 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467916E1A93962000DC9BF7 /* Distribute.swift */; };
 		54143E511A939D7000208182 /* DistributeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeSpec.swift */; };
 		54143E521A939D7100208182 /* DistributeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeSpec.swift */; };
@@ -136,6 +138,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		541305B71B495986003F1935 /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistributeSpec.swift; sourceTree = "<group>"; };
 		5435B8B41AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		5435B8B51AD8610300B805F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
@@ -329,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				54C96A22195063CD000CDD27 /* Info.plist */,
+				541305B71B495986003F1935 /* Matchers.swift */,
 				54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */,
 			);
 			name = "Supporting Files";
@@ -544,6 +548,7 @@
 				54BF29B31A934F240066ED10 /* AlignSpec.swift in Sources */,
 				54143E511A939D7000208182 /* DistributeSpec.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */,
+				541305B91B49598E003F1935 /* Matchers.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionSpec.swift in Sources */,
@@ -585,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541305BA1B49598F003F1935 /* Matchers.swift in Sources */,
 				54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */,
 				BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */,
 				54BF29B41A934F250066ED10 /* AlignSpec.swift in Sources */,
