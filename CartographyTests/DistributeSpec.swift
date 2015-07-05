@@ -49,9 +49,9 @@ class DistributeSpec: QuickSpec {
             }
 
             it("should disable translating autoresizing masks into constraints") {
-                expect(viewA.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
-                expect(viewB.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
-                expect(viewC.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
             }
         }
 
@@ -70,9 +70,9 @@ class DistributeSpec: QuickSpec {
             }
 
             it("should disable translating autoresizing masks into constraints") {
-                expect(viewA.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
-                expect(viewB.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
-                expect(viewC.car_translatesAutoresizingMaskIntoConstraints).to(beFalse())
+                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
             }
         }
     }
