@@ -59,6 +59,45 @@ public func layout(view1: View, view2: View, view3: View, replace group: Constra
     return group
 }
 
+/// Layouts four views.
+///
+/// The views will have their layout updated after this call.
+///
+/// :param: view1   A view to layout.
+/// :param: view2   A view to layout.
+/// :param: view3   A view to layout.
+/// :param: view4   A view to layout.
+/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
+/// :param: block   A block that declares the layout for the views.
+///
+public func layout(view1: View, view2: View, view3: View, view4: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    let context = Context()
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4))
+    group.replaceConstraints(context.constraints, performLayout: true)
+
+    return group
+}
+
+/// Layouts five views.
+///
+/// The views will have their layout updated after this call.
+///
+/// :param: view1   A view to layout.
+/// :param: view2   A view to layout.
+/// :param: view3   A view to layout.
+/// :param: view4   A view to layout.
+/// :param: view5   A view to layout.
+/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
+/// :param: block   A block that declares the layout for the views.
+///
+public func layout(view1: View, view2: View, view3: View, view4: View, view5: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    let context = Context()
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4), LayoutProxy(context, view5))
+    group.replaceConstraints(context.constraints, performLayout: true)
+
+    return group
+}
+
 /// Layouts an array of views.
 ///
 /// The views will have their layout updated after this call.
@@ -142,6 +181,41 @@ public func constrain(v1: View, v2: View, replace group: ConstraintGroup = Const
 public func constrain(v1: View, v2: View, v3: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
     block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
+    group.replaceConstraints(context.constraints, performLayout: false)
+
+    return group
+}
+
+/// Updates the constraints of four views.
+///
+/// :param: view1   A view to layout.
+/// :param: view2   A view to layout.
+/// :param: view3   A view to layout.
+/// :param: view4   A view to layout.
+/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
+/// :param: block   A block that declares the layout for the views.
+///
+public func constrain(view1: View, view2: View, view3: View, view4: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    let context = Context()
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4))
+    group.replaceConstraints(context.constraints, performLayout: false)
+
+    return group
+}
+
+/// Updates the constraints of five views.
+///
+/// :param: view1   A view to layout.
+/// :param: view2   A view to layout.
+/// :param: view3   A view to layout.
+/// :param: view4   A view to layout.
+/// :param: view5   A view to layout.
+/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
+/// :param: block   A block that declares the layout for the views.
+///
+public func constrain(view1: View, view2: View, view3: View, view4: View, view5: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+    let context = Context()
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4), LayoutProxy(context, view5))
     group.replaceConstraints(context.constraints, performLayout: false)
 
     return group
