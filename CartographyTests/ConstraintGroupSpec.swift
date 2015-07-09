@@ -38,11 +38,15 @@ class ConstraintGroupSpec: QuickSpec {
             it("should update the view") {
                 a.active = true
 
+                view1.layoutIfNeeded()
+
                 expect(view1.frame.width).to(equal(100))
                 expect(view1.frame.height).to(equal(100))
 
                 a.active = false
                 b.active = true
+
+                view1.layoutIfNeeded()
 
                 expect(view1.frame.width).to(equal(200))
                 expect(view1.frame.height).to(equal(200))
