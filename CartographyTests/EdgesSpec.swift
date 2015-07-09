@@ -5,8 +5,8 @@ import Quick
 
 class EdgesSpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var view: View!
+        var superview: TestView!
+        var view: TestView!
 
         beforeEach {
             superview = TestView(frame: CGRectMake(0, 0, 400, 400))
@@ -17,9 +17,11 @@ class EdgesSpec: QuickSpec {
 
         describe("LayoutProxy.edges") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.edges == view.superview!.edges
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame).to(equal(view.superview?.frame))
             }
@@ -27,10 +29,12 @@ class EdgesSpec: QuickSpec {
 
         describe("LayoutProxy.edges") {
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.edges <= view.superview!.edges
                     view.edges >= view.superview!.edges
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame).to(equal(view.superview?.frame))
             }
@@ -38,25 +42,31 @@ class EdgesSpec: QuickSpec {
 
         describe("inset") {
             it("should inset all edges with the same amount") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 20)
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame).to(equal(CGRectMake(20, 20, 360, 360)))
             }
 
             it("should inset the horizontal and vertical edge individually") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 20, 30)
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame).to(equal(CGRectMake(20, 30, 360, 340)))
             }
 
             it("should inset all edges individually") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 10, 20, 30, 40)
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
             }
@@ -70,9 +80,11 @@ class EdgesSpec: QuickSpec {
 
             describe("LayoutProxy.edgesWithinMargins") {
                 it("should support relative equalities") {
-                    layout(view) { view in
+                    constrain(view) { view in
                         view.edges == view.superview!.edgesWithinMargins
                     }
+
+                    superview.layoutIfNeeded()
 
                    expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
                 }
