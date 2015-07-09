@@ -5,8 +5,8 @@ import Quick
 
 class EdgeSpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var view: View!
+        var superview: TestView!
+        var view: TestView!
 
         beforeEach {
             superview = TestView(frame: CGRectMake(0, 0, 400, 400))
@@ -22,7 +22,7 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.top") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.top == view.superview!.top
                 }
 
@@ -30,7 +30,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.top <= view.superview!.top
                     view.top >= view.superview!.top
                 }
@@ -39,17 +39,21 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.top == view.superview!.top + 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.minY).to(equal(100))
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.top == view.superview!.top - 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.minY).to(equal(-100))
             }
@@ -57,34 +61,42 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.right") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.right == view.superview!.right
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(400))
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.right <= view.superview!.right
                     view.right >= view.superview!.right
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(400))
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.right == view.superview!.right + 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(500))
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.right == view.superview!.right - 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(300))
             }
@@ -92,34 +104,42 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.bottom") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.bottom == view.superview!.bottom
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(400))
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.bottom <= view.superview!.bottom
                     view.bottom >= view.superview!.bottom
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(400))
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.bottom == view.superview!.bottom + 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(500))
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.bottom == view.superview!.bottom - 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(300))
             }
@@ -127,7 +147,7 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.left") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.left == view.superview!.left
                 }
 
@@ -135,7 +155,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.left <= view.superview!.left
                     view.left >= view.superview!.left
                 }
@@ -144,17 +164,21 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.left == view.superview!.left + 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.minX).to(equal(100))
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.left == view.superview!.left - 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.minX).to(equal(-100))
             }
@@ -162,50 +186,62 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.centerX") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(200))
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX <= view.superview!.centerX
                     view.centerX >= view.superview!.centerX
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(200))
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX + 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(300))
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX - 100
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(100))
             }
 
             it("should support multiplication") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX * 2
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(400))
             }
 
             it("should support division") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX / 2
                 }
+
+                superview.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(100))
             }
@@ -213,7 +249,7 @@ class EdgeSpec: QuickSpec {
 
         describe("LayoutProxy.centerX") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX
                 }
 
@@ -221,7 +257,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX <= view.superview!.centerX
                     view.centerX >= view.superview!.centerX
                 }
@@ -230,7 +266,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support addition") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX + 100
                 }
 
@@ -238,7 +274,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support subtraction") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX - 100
                 }
 
@@ -246,7 +282,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support multiplication") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX * 2
                 }
 
@@ -254,7 +290,7 @@ class EdgeSpec: QuickSpec {
             }
 
             it("should support division") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.centerX == view.superview!.centerX / 2
                 }
 
@@ -270,9 +306,11 @@ class EdgeSpec: QuickSpec {
 
             describe("LayoutProxy.topMargin") {
                 it("should support relative equalities") {
-                    layout(view) { view in
+                    constrain(view) { view in
                         view.top == view.superview!.topMargin
                     }
+
+                    superview.layoutIfNeeded()
 
                     expect(view.frame.minY).to(equal(10))
                 }
@@ -280,9 +318,11 @@ class EdgeSpec: QuickSpec {
 
             describe("LayoutProxy.rightMargin") {
                 it("should support relative equalities") {
-                    layout(view) { view in
+                    constrain(view) { view in
                         view.right == view.superview!.rightMargin
                     }
+
+                    superview.layoutIfNeeded()
 
                     expect(view.frame.maxX).to(equal(360))
                 }
@@ -290,9 +330,11 @@ class EdgeSpec: QuickSpec {
 
             describe("LayoutProxy.bottomMargin") {
                 it("should support relative equalities") {
-                    layout(view) { view in
+                    constrain(view) { view in
                         view.bottom == view.superview!.bottomMargin
                     }
+
+                    superview.layoutIfNeeded()
 
                     expect(view.frame.maxY).to(equal(370))
                 }
@@ -300,9 +342,11 @@ class EdgeSpec: QuickSpec {
 
             describe("LayoutProxy.leftMargin") {
                 it("should support relative equalities") {
-                    layout(view) { view in
+                    constrain(view) { view in
                         view.left == view.superview!.leftMargin
                     }
+
+                    superview.layoutIfNeeded()
 
                     expect(view.frame.minX).to(equal(20))
                 }

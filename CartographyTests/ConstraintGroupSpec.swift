@@ -38,11 +38,15 @@ class ConstraintGroupSpec: QuickSpec {
             it("should update the view") {
                 a.active = true
 
+                view1.layoutIfNeeded()
+
                 expect(view1.frame.width).to(equal(100))
                 expect(view1.frame.height).to(equal(100))
 
                 a.active = false
                 b.active = true
+
+                view1.layoutIfNeeded()
 
                 expect(view1.frame.width).to(equal(200))
                 expect(view1.frame.height).to(equal(200))
@@ -56,7 +60,7 @@ class ConstraintGroupSpec: QuickSpec {
                 view2 = TestView(frame: CGRectZero)
                 superview.addSubview(view2)
 
-                layout(view1, view2) { view1, view2 in
+                constrain(view1, view2) { view1, view2 in
                     view1.top    == view1.superview!.top   + 10
                     view1.left   == view1.superview!.left  + 10
                     view1.right  == view1.superview!.right - 10
@@ -66,18 +70,24 @@ class ConstraintGroupSpec: QuickSpec {
                     view2.top     == view1.bottom
                     view2.width   == view1.width
                 }
+
+                superview.layoutIfNeeded()
             }
 
             it("should update the view") {
-                let group = layout(view2) { view2 in
+                let group = constrain(view2) { view2 in
                     view2.height == 100
                 }
 
+                view2.layoutIfNeeded()
+
                 expect(view2.frame.height).to(equal(100))
 
-                layout(view2, replace: group) { view2 in
+                constrain(view2, replace: group) { view2 in
                     view2.bottom >= view2.superview!.bottom
                 }
+
+                view2.layoutIfNeeded()
 
                 expect(view2.frame.height).to(equal(190))
             }

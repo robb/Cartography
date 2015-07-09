@@ -33,7 +33,7 @@ class AlignSpec: QuickSpec {
 
         describe("for edges") {
             beforeEach {
-                layout(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(top: viewA, viewB, viewC)
                     align(right: viewA, viewB, viewC)
                     align(bottom: viewA, viewB, viewC)
@@ -55,7 +55,7 @@ class AlignSpec: QuickSpec {
 
         describe("for horizontal and vertical centers") {
             beforeEach {
-                layout(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     viewA.size == viewB.size
                     viewB.size == viewC.size
 

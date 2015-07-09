@@ -51,8 +51,8 @@
 		54C96A30195064A6000CDD27 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
 		54DE2B9F1ABE2BC5004D62D8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		54DE2BA01ABE2BC5004D62D8 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
-		54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
-		54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Layout.swift */; };
+		54DF9F3319DAD8DA00EE3609 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Constrain.swift */; };
+		54DF9F3419DAD8DD00EE3609 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Constrain.swift */; };
 		54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F6A838195C20C100313D24 /* Cartography.framework */; };
 		54F6A851195C213A00313D24 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54F6A852195C213A00313D24 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
@@ -169,7 +169,7 @@
 		54C96A23195063CD000CDD27 /* DimensionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionSpec.swift; sourceTree = "<group>"; };
 		54C96A2F195064A6000CDD27 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		54DF9F3219DAD8DA00EE3609 /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		54DF9F3219DAD8DA00EE3609 /* Constrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrain.swift; sourceTree = "<group>"; };
 		54F6A838195C20C100313D24 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6A863195C217800313D24 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -279,6 +279,7 @@
 				54BF29AF1A9348B30066ED10 /* Align.swift */,
 				546E9E8E1950A33700B16707 /* Coefficients.swift */,
 				54FA3A3F1951A41B0094B82A /* Compound.swift */,
+				54DF9F3219DAD8DA00EE3609 /* Constrain.swift */,
 				547BC85619E2EB9B007BEE9E /* Constraint.swift */,
 				54B093941A715E52008A1102 /* ConstraintGroup.swift */,
 				547BC85419E2DD06007BEE9E /* Context.swift */,
@@ -288,7 +289,6 @@
 				545F858C195322EA00791F75 /* Edges.swift */,
 				546E9E941950A97F00B16707 /* Expression.swift */,
 				54B093961A7165F2008A1102 /* Extensions.swift */,
-				54DF9F3219DAD8DA00EE3609 /* Layout.swift */,
 				546E9E881950A29300B16707 /* LayoutProxy.swift */,
 				54FA3A3B1951A2B60094B82A /* Point.swift */,
 				54FA3A351950FD320094B82A /* Priority.swift */,
@@ -441,6 +441,7 @@
 		54C96A08195063CD000CDD27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Robert Böhnke";
 				TargetAttributes = {
@@ -525,7 +526,7 @@
 				545F858D195322EA00791F75 /* Edges.swift in Sources */,
 				BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,
-				54DF9F3319DAD8DA00EE3609 /* Layout.swift in Sources */,
+				54DF9F3319DAD8DA00EE3609 /* Constrain.swift in Sources */,
 				5467916F1A93962000DC9BF7 /* Distribute.swift in Sources */,
 				546E9E911950A76C00B16707 /* Edge.swift in Sources */,
 				54FA3A421951A8070094B82A /* Size.swift in Sources */,
@@ -579,7 +580,7 @@
 				54B093981A716A2A008A1102 /* ConstraintGroup.swift in Sources */,
 				54F6A865195C226700313D24 /* View.swift in Sources */,
 				BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */,
-				54DF9F3419DAD8DD00EE3609 /* Layout.swift in Sources */,
+				54DF9F3419DAD8DD00EE3609 /* Constrain.swift in Sources */,
 				549B47B61A58198B002498C7 /* Context.swift in Sources */,
 				54F6A854195C213A00313D24 /* Dimension.swift in Sources */,
 				54F6A857195C213A00313D24 /* Expression.swift in Sources */,
