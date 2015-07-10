@@ -35,5 +35,9 @@ class TestView: View {
     override var flipped: Bool {
         return true
     }
+
+    func layoutIfNeeded() {
+        (superview ?? self).layoutSubtreeIfNeeded()
+    }
 #endif
 }
