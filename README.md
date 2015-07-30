@@ -60,10 +60,14 @@ constrain(view1, view2) { view1, view2 in
 
 For every view on the left hand side of an equality or inequality operator,
 Cartography will automatically set its
-`translatesAutoresizingMaskIntoConstraints` property to `false`. If the view is
-not controlled by you–for example if it belongs to a Apple-provided
-`UIViewController` class–you should take appropriate care when declaring its
+`translatesAutoresizingMaskIntoConstraints` property to `false`.
+
+If the view is
+not controlled by you–for example _if it belongs to a Apple-provided
+`UIViewController` class_–you should take appropriate care when declaring its
 constraints.
+
+<br><br>
 
 ## Replacing constraints
 
