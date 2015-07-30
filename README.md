@@ -1,17 +1,40 @@
 # Cartography :iphone::triangular_ruler:
 
+<a href="https://travis-ci.org/robb/Cartography?branch=master">
+    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" hspace="6px" align="right" vspace="2px">
+</a>
+
 <a href="https://github.com/Carthage/Carthage/issues/179">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
 </a>
-<a href="https://travis-ci.org/robb/Cartography?branch=master">
-    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" align="right" vspace="2px" hspace="5px">
-</a>
 
-Set up your Auto Layout constraints declaratively and without any stringly
-typing!
+Using Cartography, you can set up your Layout constraints in declarative code and without any stringly typing!
 
-If you end up using Cartography in production, I'd love to hear from you. You
-can reach me through [Twitter] or [email].
+In short, it allows you to replace this:
+
+<img src="/images/pirates2.png" align="right" height="280px" hspace="30px" vspace="30px">
+
+```Swift
+addConstraint(NSLayoutConstraint(
+    item: button1,
+    attribute: .Right,
+    relatedBy: .Equal,
+    toItem: button2,
+    attribute: .Left,
+    multiplier: 1.0,
+    constant: -12.0
+))
+```
+
+with this
+
+```Swift
+constrain(button1, button2) { button1, button2 in
+    button1.right == button2.left - 12
+}
+```
+
+If you end up using Cartography in production, I'd love to hear from you. You can reach me through [Twitter] or [email].
 
 ## Usage
 
@@ -32,6 +55,8 @@ constrain(view1, view2) { view1, view2 in
     view2.top == view1.bottom + 20
 }
 ```
+
+<img src="/images/pirates1.png" align="left" height="220px" hspace="20px" vspace="10px">
 
 For every view on the left hand side of an equality or inequality operator,
 Cartography will automatically set its
@@ -82,8 +107,10 @@ let group = constrain(button) { button in
 
 ## Supported attributes
 
-Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those
-are:
+
+Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those are:
+
+<img src="/images/pirates3.png" align="right" height="400px" hspace="20px" vspace="100px">
 
 - `width`
 - `height`
