@@ -5,14 +5,14 @@ import Quick
 
 class SizeSpec: QuickSpec {
     override func spec() {
-        var superview: TestView!
+        var window: TestWindow!
         var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         describe("LayoutProxy.size") {
@@ -21,7 +21,7 @@ class SizeSpec: QuickSpec {
                     view.size == view.superview!.size
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
             }
@@ -32,7 +32,7 @@ class SizeSpec: QuickSpec {
                     view.size >= view.superview!.size
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
             }
@@ -42,7 +42,7 @@ class SizeSpec: QuickSpec {
                     view.size == view.superview!.size * 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(800, 800)))
             }
@@ -52,7 +52,7 @@ class SizeSpec: QuickSpec {
                     view.size == view.superview!.size / 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(200, 200)))
             }

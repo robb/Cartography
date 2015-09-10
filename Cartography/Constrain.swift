@@ -29,9 +29,9 @@ public func constrain(view: View, replace group: ConstraintGroup = ConstraintGro
 /// :param: replace The `ConstraintGroup` whose constraints should be replaced.
 /// :param: block   A block that declares the layout for the views.
 ///
-public func constrain(v1: View, v2: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+public func constrain(view1: View, _ view2: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2))
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2))
     group.replaceConstraints(context.constraints)
 
     return group
@@ -45,9 +45,9 @@ public func constrain(v1: View, v2: View, replace group: ConstraintGroup = Const
 /// :param: replace The `ConstraintGroup` whose constraints should be replaced.
 /// :param: block   A block that declares the layout for the views.
 ///
-public func constrain(v1: View, v2: View, v3: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+public func constrain(view1: View, _ view2: View, _ view3: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
-    block(LayoutProxy(context, v1), LayoutProxy(context, v2), LayoutProxy(context, v3))
+    block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3))
     group.replaceConstraints(context.constraints)
 
     return group
@@ -62,7 +62,7 @@ public func constrain(v1: View, v2: View, v3: View, replace group: ConstraintGro
 /// :param: replace The `ConstraintGroup` whose constraints should be replaced.
 /// :param: block   A block that declares the layout for the views.
 ///
-public func constrain(view1: View, view2: View, view3: View, view4: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
     block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4))
     group.replaceConstraints(context.constraints)
@@ -80,7 +80,7 @@ public func constrain(view1: View, view2: View, view3: View, view4: View, replac
 /// :param: replace The `ConstraintGroup` whose constraints should be replaced.
 /// :param: block   A block that declares the layout for the views.
 ///
-public func constrain(view1: View, view2: View, view3: View, view4: View, view5: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
+public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, _ view5: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
     block(LayoutProxy(context, view1), LayoutProxy(context, view2), LayoutProxy(context, view3), LayoutProxy(context, view4), LayoutProxy(context, view5))
     group.replaceConstraints(context.constraints)
@@ -110,7 +110,7 @@ public func constrain(views: [View], replace group: ConstraintGroup = Constraint
 ///
 public func constrain<T: Hashable>(views: [T: View], replace group: ConstraintGroup = ConstraintGroup(), @noescape block: ([T : LayoutProxy] -> ())) -> ConstraintGroup {
     let context = Context()
-    let proxies = map(views) { ($0, LayoutProxy(context, $1)) }
+    let proxies = views.map { ($0, LayoutProxy(context, $1)) }
     block(Dictionary(proxies))
     group.replaceConstraints(context.constraints)
 

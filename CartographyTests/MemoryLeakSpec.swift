@@ -5,7 +5,7 @@ import Quick
 
 class MemoryLeakSpec: QuickSpec {
     override func spec() {
-        describe("layout") {
+        describe("constrain") {
             it("should not leak memory") {
                 weak var weak_superview: View? = .None
                 weak var weak_viewA: View? = .None
@@ -14,10 +14,10 @@ class MemoryLeakSpec: QuickSpec {
                 autoreleasepool {
                     let superview = View(frame: CGRectMake(0, 0, 400, 400))
 
-                    let viewA: View = View(frame: CGRectMake(0, 0, 200, 200))
+                    let viewA: TestView = TestView(frame: CGRectMake(0, 0, 200, 200))
                     superview.addSubview(viewA)
 
-                    let viewB: View = View(frame: CGRectMake(0, 0, 200, 200))
+                    let viewB: TestView = TestView(frame: CGRectMake(0, 0, 200, 200))
                     superview.addSubview(viewB)
 
                     weak_superview = superview

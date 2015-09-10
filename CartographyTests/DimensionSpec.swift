@@ -5,14 +5,14 @@ import Quick
 
 class DimensionSpec: QuickSpec {
     override func spec() {
-        var superview: TestView!
+        var window: TestWindow!
         var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         describe("LayoutProxy.width") {
@@ -21,7 +21,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(400))
             }
@@ -32,7 +32,7 @@ class DimensionSpec: QuickSpec {
                     view.width >= view.superview!.width
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(400))
             }
@@ -42,7 +42,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(500))
             }
@@ -52,7 +52,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(300))
             }
@@ -62,7 +62,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width * 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(800))
             }
@@ -72,7 +72,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width / 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(200))
             }
@@ -82,7 +82,7 @@ class DimensionSpec: QuickSpec {
                     view.width == view.superview!.width / 2 + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(300))
             }
@@ -92,7 +92,7 @@ class DimensionSpec: QuickSpec {
                     view.width == 200
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.width).to(equal(200))
             }
@@ -104,7 +104,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(400))
             }
@@ -115,7 +115,7 @@ class DimensionSpec: QuickSpec {
                     view.height >= view.superview!.height
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(400))
             }
@@ -125,7 +125,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(500))
             }
@@ -135,7 +135,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(300))
             }
@@ -145,7 +145,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height * 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(800))
             }
@@ -155,7 +155,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height / 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(200))
             }
@@ -165,7 +165,7 @@ class DimensionSpec: QuickSpec {
                     view.height == view.superview!.height / 2 + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(300))
             }
@@ -175,7 +175,7 @@ class DimensionSpec: QuickSpec {
                     view.height == 200
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.height).to(equal(200))
             }

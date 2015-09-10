@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 github "Quick/Nimble" "v1.0.0"
 github "Quick/Quick" "v0.3.1"
+=======
+github "Quick/Nimble" "463b70b9d4c0d4d9879fb35e24b2d2109b648eb8"
+github "Quick/Quick" "4609b61c8bd52ec7a4438888c7f6cb9b630537b4"
+>>>>>>> swift-2.0

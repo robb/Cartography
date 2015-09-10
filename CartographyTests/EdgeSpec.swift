@@ -5,14 +5,14 @@ import Quick
 
 class EdgeSpec: QuickSpec {
     override func spec() {
-        var superview: TestView!
+        var window: TestWindow!
         var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
 
             constrain(view) { view in
                 view.height == 200
@@ -26,6 +26,8 @@ class EdgeSpec: QuickSpec {
                     view.top == view.superview!.top
                 }
 
+                window.layoutIfNeeded()
+
                 expect(view.frame.minY).to(equal(0))
             }
 
@@ -35,6 +37,8 @@ class EdgeSpec: QuickSpec {
                     view.top >= view.superview!.top
                 }
 
+                window.layoutIfNeeded()
+
                 expect(view.frame.minY).to(equal(0))
             }
 
@@ -43,7 +47,7 @@ class EdgeSpec: QuickSpec {
                     view.top == view.superview!.top + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.minY).to(equal(100))
             }
@@ -53,7 +57,7 @@ class EdgeSpec: QuickSpec {
                     view.top == view.superview!.top - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.minY).to(equal(-100))
             }
@@ -65,7 +69,7 @@ class EdgeSpec: QuickSpec {
                     view.right == view.superview!.right
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(400))
             }
@@ -76,7 +80,7 @@ class EdgeSpec: QuickSpec {
                     view.right >= view.superview!.right
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(400))
             }
@@ -86,7 +90,7 @@ class EdgeSpec: QuickSpec {
                     view.right == view.superview!.right + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(500))
             }
@@ -96,7 +100,7 @@ class EdgeSpec: QuickSpec {
                     view.right == view.superview!.right - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxX).to(equal(300))
             }
@@ -108,7 +112,7 @@ class EdgeSpec: QuickSpec {
                     view.bottom == view.superview!.bottom
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(400))
             }
@@ -119,7 +123,7 @@ class EdgeSpec: QuickSpec {
                     view.bottom >= view.superview!.bottom
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(400))
             }
@@ -129,7 +133,7 @@ class EdgeSpec: QuickSpec {
                     view.bottom == view.superview!.bottom + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(500))
             }
@@ -139,7 +143,7 @@ class EdgeSpec: QuickSpec {
                     view.bottom == view.superview!.bottom - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.maxY).to(equal(300))
             }
@@ -151,6 +155,8 @@ class EdgeSpec: QuickSpec {
                     view.left == view.superview!.left
                 }
 
+                window.layoutIfNeeded()
+
                 expect(view.frame.minX).to(equal(0))
             }
 
@@ -160,6 +166,8 @@ class EdgeSpec: QuickSpec {
                     view.left >= view.superview!.left
                 }
 
+                window.layoutIfNeeded()
+
                 expect(view.frame.minX).to(equal(0))
             }
 
@@ -168,7 +176,7 @@ class EdgeSpec: QuickSpec {
                     view.left == view.superview!.left + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.minX).to(equal(100))
             }
@@ -178,7 +186,7 @@ class EdgeSpec: QuickSpec {
                     view.left == view.superview!.left - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.minX).to(equal(-100))
             }
@@ -190,7 +198,7 @@ class EdgeSpec: QuickSpec {
                     view.centerX == view.superview!.centerX
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(200))
             }
@@ -201,7 +209,7 @@ class EdgeSpec: QuickSpec {
                     view.centerX >= view.superview!.centerX
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(200))
             }
@@ -211,7 +219,7 @@ class EdgeSpec: QuickSpec {
                     view.centerX == view.superview!.centerX + 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(300))
             }
@@ -221,7 +229,7 @@ class EdgeSpec: QuickSpec {
                     view.centerX == view.superview!.centerX - 100
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(100))
             }
@@ -231,7 +239,7 @@ class EdgeSpec: QuickSpec {
                     view.centerX == view.superview!.centerX * 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(400))
             }
@@ -241,58 +249,70 @@ class EdgeSpec: QuickSpec {
                     view.centerX == view.superview!.centerX / 2
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame.midX).to(equal(100))
             }
         }
 
-        describe("LayoutProxy.centerX") {
+        describe("LayoutProxy.centerY") {
             it("should support relative equalities") {
                 constrain(view) { view in
-                    view.centerX == view.superview!.centerX
+                    view.centerY == view.superview!.centerY
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(200))
             }
 
             it("should support relative inequalities") {
                 constrain(view) { view in
-                    view.centerX <= view.superview!.centerX
-                    view.centerX >= view.superview!.centerX
+                    view.centerY <= view.superview!.centerY
+                    view.centerY >= view.superview!.centerY
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(200))
             }
 
             it("should support addition") {
                 constrain(view) { view in
-                    view.centerX == view.superview!.centerX + 100
+                    view.centerY == view.superview!.centerY + 100
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(300))
             }
 
             it("should support subtraction") {
                 constrain(view) { view in
-                    view.centerX == view.superview!.centerX - 100
+                    view.centerY == view.superview!.centerY - 100
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(100))
             }
 
             it("should support multiplication") {
                 constrain(view) { view in
-                    view.centerX == view.superview!.centerX * 2
+                    view.centerY == view.superview!.centerY * 2
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(400))
             }
 
             it("should support division") {
                 constrain(view) { view in
-                    view.centerX == view.superview!.centerX / 2
+                    view.centerY == view.superview!.centerY / 2
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.midY).to(equal(100))
             }
@@ -301,7 +321,7 @@ class EdgeSpec: QuickSpec {
 #if os(iOS)
         describe("on iOS only") {
             beforeEach {
-                superview.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+                window.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
             }
 
             describe("LayoutProxy.topMargin") {
@@ -310,7 +330,7 @@ class EdgeSpec: QuickSpec {
                         view.top == view.superview!.topMargin
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame.minY).to(equal(10))
                 }
@@ -322,7 +342,7 @@ class EdgeSpec: QuickSpec {
                         view.right == view.superview!.rightMargin
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame.maxX).to(equal(360))
                 }
@@ -334,7 +354,7 @@ class EdgeSpec: QuickSpec {
                         view.bottom == view.superview!.bottomMargin
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame.maxY).to(equal(370))
                 }
@@ -346,7 +366,7 @@ class EdgeSpec: QuickSpec {
                         view.left == view.superview!.leftMargin
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame.minX).to(equal(20))
                 }

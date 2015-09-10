@@ -14,7 +14,7 @@ class ViewHierarchySpec: QuickSpec {
                     constrain(viewA, viewB) { viewA, viewB in
                         viewA.width == viewB.width
                     }
-                }).to(raiseException())
+                }()).to(raiseException())
             }
 
             it("should consider a view its own closest common ancestor") {
@@ -24,7 +24,7 @@ class ViewHierarchySpec: QuickSpec {
                     view.width  == 200
                 }
 
-                expect(view.car_constraints.count).to(equal(1))
+                expect(view.constraints.count).to(equal(1))
             }
 
             it("should handle a direct parent-child-relationship") {
@@ -37,7 +37,7 @@ class ViewHierarchySpec: QuickSpec {
                     parent.width == child.width
                 }
 
-                expect(parent.car_constraints.count).to(equal(1))
+                expect(parent.constraints.count).to(equal(1))
             }
 
             it("should handle a grandparent-child-relationship") {
@@ -52,7 +52,7 @@ class ViewHierarchySpec: QuickSpec {
                     grandparent.width == child.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
 
             it("should handle views that share a parent") {
@@ -67,7 +67,7 @@ class ViewHierarchySpec: QuickSpec {
                     childA.width == childB.width
                 }
 
-                expect(parent.car_constraints.count).to(equal(1))
+                expect(parent.constraints.count).to(equal(1))
             }
 
             it("should handle views that share a grandparent") {
@@ -86,7 +86,7 @@ class ViewHierarchySpec: QuickSpec {
                     childA.width == childB.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
 
             it("should handle asymmetric view hierachies") {
@@ -103,7 +103,7 @@ class ViewHierarchySpec: QuickSpec {
                     childA.width == parentB.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
         }
     }

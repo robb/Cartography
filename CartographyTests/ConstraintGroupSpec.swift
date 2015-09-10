@@ -5,14 +5,14 @@ import Quick
 
 class ConstraintGroupSpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var view1: View!
+        var window: TestWindow!
+        var view1: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view1 = TestView(frame: CGRectZero)
-            superview.addSubview(view1)
+            window.addSubview(view1)
         }
 
         describe("Activating a group") {
@@ -46,7 +46,7 @@ class ConstraintGroupSpec: QuickSpec {
                 a.active = false
                 b.active = true
 
-                view1.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view1.frame.width).to(equal(200))
                 expect(view1.frame.height).to(equal(200))
@@ -54,11 +54,11 @@ class ConstraintGroupSpec: QuickSpec {
         }
 
         describe("Replacing constraints") {
-            var view2: View!
+            var view2: TestView!
 
             beforeEach {
                 view2 = TestView(frame: CGRectZero)
-                superview.addSubview(view2)
+                window.addSubview(view2)
 
                 constrain(view1, view2) { view1, view2 in
                     view1.top    == view1.superview!.top   + 10
@@ -71,7 +71,7 @@ class ConstraintGroupSpec: QuickSpec {
                     view2.width   == view1.width
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
             }
 
             it("should update the view") {
@@ -79,7 +79,7 @@ class ConstraintGroupSpec: QuickSpec {
                     view2.height == 100
                 }
 
-                view2.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view2.frame.height).to(equal(100))
 
@@ -87,7 +87,7 @@ class ConstraintGroupSpec: QuickSpec {
                     view2.bottom >= view2.superview!.bottom
                 }
 
-                view2.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view2.frame.height).to(equal(190))
             }

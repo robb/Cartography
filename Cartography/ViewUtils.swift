@@ -23,7 +23,7 @@ internal func closestCommonAncestor(a: View, b: View) -> View? {
 
     if aSuper === bSuper { return aSuper }
 
-    var ancestorsOfA = Set(ancestors(a))
+    let ancestorsOfA = Set(ancestors(a))
 
     for ancestor in ancestors(b) {
         if ancestorsOfA.contains(ancestor) {
@@ -34,10 +34,10 @@ internal func closestCommonAncestor(a: View, b: View) -> View? {
     return .None
 }
 
-private func ancestors(v: View) -> SequenceOf<View> {
-    return SequenceOf<View> { () -> GeneratorOf<View> in
+private func ancestors(v: View) -> AnySequence<View> {
+    return AnySequence { () -> AnyGenerator<View> in
         var view: View? = v
-        return GeneratorOf {
+        return anyGenerator {
             let current = view
             view = view?.superview
             return current

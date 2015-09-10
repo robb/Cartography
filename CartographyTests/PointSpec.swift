@@ -5,14 +5,14 @@ import Quick
 
 class PointSpec: QuickSpec {
     override func spec() {
-        var superview: TestView!
+        var window: TestWindow!
         var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
 
             constrain(view) { view in
                 view.width  == 200
@@ -26,7 +26,7 @@ class PointSpec: QuickSpec {
                     view.center == view.superview!.center
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame).to(equal(CGRectMake(100, 100, 200, 200)))
             }
@@ -37,7 +37,7 @@ class PointSpec: QuickSpec {
                     view.center >= view.superview!.center
                 }
 
-                superview.layoutIfNeeded()
+                window.layoutIfNeeded()
 
                 expect(view.frame).to(equal(CGRectMake(100, 100, 200, 200)))
             }
@@ -55,7 +55,7 @@ class PointSpec: QuickSpec {
                         view.centerWithinMargins == view.superview!.center
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame).to(equal(CGRectMake(110, 110, 200, 200)))
                 }
@@ -66,7 +66,7 @@ class PointSpec: QuickSpec {
                         view.centerWithinMargins >= view.superview!.center
                     }
 
-                    superview.layoutIfNeeded()
+                    window.layoutIfNeeded()
 
                     expect(view.frame).to(equal(CGRectMake(110, 110, 200, 200)))
                 }
