@@ -94,6 +94,7 @@ public struct LayoutProxy {
 
     #if os(iOS)
     /// The first baseline of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var firstBaseline: Edge {
         return Edge(context, view, .FirstBaseline)
     }
@@ -101,6 +102,7 @@ public struct LayoutProxy {
     /// All edges of the view with their respective margins. This property
     /// affects `topMargin`, `bottomMargin`, `leadingMargin` and
     /// `trailingMargin`.
+    @available(iOS, introduced=8.0)
     public var edgesWithinMargins: Edges {
         return Edges(context, [
             Edge(context, view, .TopMargin),
@@ -111,47 +113,56 @@ public struct LayoutProxy {
     }
 
     /// The left margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var leftMargin: Edge {
         return Edge(context, view, .LeftMargin)
     }
 
     /// The right margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var rightMargin: Edge {
         return Edge(context, view, .RightMargin)
     }
 
     /// The top margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var topMargin: Edge {
         return Edge(context, view, .TopMargin)
     }
 
     /// The bottom margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var bottomMargin: Edge {
         return Edge(context, view, .BottomMargin)
     }
 
     /// The leading margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var leadingMargin: Edge {
         return Edge(context, view, .LeadingMargin)
     }
 
     /// The trailing margin of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var trailingMargin: Edge {
         return Edge(context, view, .TrailingMargin)
     }
 
     /// The horizontal center within the margins of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var centerXWithinMargins: Edge {
         return Edge(context, view, .CenterXWithinMargins)
     }
 
     /// The vertical center within the margins of the view. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var centerYWithinMargins: Edge {
         return Edge(context, view, .CenterYWithinMargins)
     }
 
     /// The center point within the margins of the view. This property affects
     /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
+    @available(iOS, introduced=8.0)
     public var centerWithinMargins: Point {
         return Point(context, [
             Edge(context, view, .CenterXWithinMargins),
