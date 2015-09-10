@@ -10,9 +10,10 @@ import Foundation
 
 /// Updates the constraints of a single view.
 ///
-/// :param: view    The view to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for `view`.
+/// - parameter view:    The view to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for `view`.
 ///
 public func constrain(view: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: LayoutProxy -> ()) -> ConstraintGroup {
     let context = Context()
@@ -24,10 +25,11 @@ public func constrain(view: View, replace group: ConstraintGroup = ConstraintGro
 
 /// Updates the constraints of two views.
 ///
-/// :param: view1   A view to layout.
-/// :param: view2   A view to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for the views.
+/// - parameter view1:   A view to layout.
+/// - parameter view2:   A view to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for the views.
 ///
 public func constrain(view1: View, _ view2: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
@@ -39,11 +41,12 @@ public func constrain(view1: View, _ view2: View, replace group: ConstraintGroup
 
 /// Updates the constraints of three views.
 ///
-/// :param: view1   A view to layout.
-/// :param: view2   A view to layout.
-/// :param: view3   A view to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for the views.
+/// - parameter view1:   A view to layout.
+/// - parameter view2:   A view to layout.
+/// - parameter view3:   A view to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for the views.
 ///
 public func constrain(view1: View, _ view2: View, _ view3: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
@@ -55,12 +58,13 @@ public func constrain(view1: View, _ view2: View, _ view3: View, replace group: 
 
 /// Updates the constraints of four views.
 ///
-/// :param: view1   A view to layout.
-/// :param: view2   A view to layout.
-/// :param: view3   A view to layout.
-/// :param: view4   A view to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for the views.
+/// - parameter view1:   A view to layout.
+/// - parameter view2:   A view to layout.
+/// - parameter view3:   A view to layout.
+/// - parameter view4:   A view to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for the views.
 ///
 public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
@@ -72,13 +76,14 @@ public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, 
 
 /// Updates the constraints of five views.
 ///
-/// :param: view1   A view to layout.
-/// :param: view2   A view to layout.
-/// :param: view3   A view to layout.
-/// :param: view4   A view to layout.
-/// :param: view5   A view to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for the views.
+/// - parameter view1:   A view to layout.
+/// - parameter view2:   A view to layout.
+/// - parameter view3:   A view to layout.
+/// - parameter view4:   A view to layout.
+/// - parameter view5:   A view to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for the views.
 ///
 public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, _ view5: View, replace group: ConstraintGroup = ConstraintGroup(), @noescape block: (LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy, LayoutProxy) -> ()) -> ConstraintGroup {
     let context = Context()
@@ -90,9 +95,10 @@ public func constrain(view1: View, _ view2: View, _ view3: View, _ view4: View, 
 
 /// Updates the constraints of an array of views.
 ///
-/// :param: views   The views to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for `views`.
+/// - parameter views:   The views to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for `views`.
 ///
 public func constrain(views: [View], replace group: ConstraintGroup = ConstraintGroup(), @noescape block: ([LayoutProxy]) -> ()) -> ConstraintGroup {
     let context = Context()
@@ -104,9 +110,10 @@ public func constrain(views: [View], replace group: ConstraintGroup = Constraint
 
 /// Updates the constraints of a dictionary of views.
 ///
-/// :param: views   The views to layout.
-/// :param: replace The `ConstraintGroup` whose constraints should be replaced.
-/// :param: block   A block that declares the layout for `views`.
+/// - parameter views:   The views to layout.
+/// - parameter replace: The `ConstraintGroup` whose constraints should be
+///                      replaced.
+/// - parameter block:   A block that declares the layout for `views`.
 ///
 public func constrain<T: Hashable>(views: [T: View], replace group: ConstraintGroup = ConstraintGroup(), @noescape block: ([T : LayoutProxy] -> ())) -> ConstraintGroup {
     let context = Context()
@@ -119,7 +126,7 @@ public func constrain<T: Hashable>(views: [T: View], replace group: ConstraintGr
 
 /// Removes all constraints for a group.
 ///
-/// :param: clear The `ConstraintGroup` whose constraints should be removed.
+/// - parameter clear: The `ConstraintGroup` whose constraints should be removed.
 ///
 public func constrain(clear group: ConstraintGroup) {
     group.replaceConstraints([])
