@@ -3,7 +3,7 @@ import Nimble
 
 public func translateAutoresizingMasksToConstraints() -> NonNilMatcherFunc<View> {
     return NonNilMatcherFunc { actualExpression, failureMessage in
-        let view = actualExpression.evaluate()
+        let view = try! actualExpression.evaluate()
 
         failureMessage.expected = "expected \(view?.description ?? view)"
         failureMessage.actualValue = nil

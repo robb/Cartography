@@ -5,20 +5,20 @@ import Quick
 
 class PrioritySpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var view: View!
+        var window: TestWindow!
+        var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 200, 200))
+            window = TestWindow(frame: CGRectMake(0, 0, 200, 200))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         it("should operate on a single constraint") {
             var constraint: NSLayoutConstraint!
 
-            layout(view) { view in
+            constrain(view) { view in
                 constraint = (view.width == 200 ~ 100)
             }
 
@@ -28,7 +28,7 @@ class PrioritySpec: QuickSpec {
         it("should operate on an array of constraints") {
             var constraints: [NSLayoutConstraint]!
 
-            layout(view) { view in
+            constrain(view) { view in
                 constraints = (view.size <= view.superview!.size ~ 100)
             }
 

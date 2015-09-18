@@ -12,28 +12,30 @@ class TestView: View {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        #if os(iOS)
-        setTranslatesAutoresizingMaskIntoConstraints(false)
-        #else
         translatesAutoresizingMaskIntoConstraints = false
-        #endif
     }
 
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-#if os(iOS)
-    var car_constraints: [NSLayoutConstraint] {
-        return constraints() as! [NSLayoutConstraint]
-    }
-#else
-    var car_constraints: [NSLayoutConstraint] {
-        return constraints as! [NSLayoutConstraint]
-    }
-
+#if os(OSX)
     override var flipped: Bool {
         return true
     }
+
+    func layoutIfNeeded() {
+        (superview ?? self).layoutSubtreeIfNeeded()
+    }
 #endif
 }
+
+#if os(iOS)
+class TestWindow: UIWindow {
+
+}
+#else
+class TestWindow: TestView {
+
+}
+#endif

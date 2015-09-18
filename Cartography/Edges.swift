@@ -24,40 +24,40 @@ public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequal
 
 /// Insets all edges.
 ///
-/// :param: edges The edges to inset.
-/// :param: all   The amount by which to inset all edges, in points.
+/// - parameter edges: The edges to inset.
+/// - parameter all:   The amount by which to inset all edges, in points.
 ///
-/// :returns: A new expression with the inset edges.
+/// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, all: CGFloat) -> Expression<Edges> {
+public func inset(edges: Edges, _ all: CGFloat) -> Expression<Edges> {
     return inset(edges, all, all, all, all)
 }
 
 /// Insets the horizontal and vertical edges.
 ///
-/// :param: edges      The edges to inset.
-/// :param: horizontal The amount by which to inset the horizontal edges, in
+/// - parameter edges:      The edges to inset.
+/// - parameter horizontal: The amount by which to inset the horizontal edges, in
 ///                    points.
-/// :param: vertical   The amount by which to inset the vertical edges, in
+/// - parameter vertical:   The amount by which to inset the vertical edges, in
 ///                    points.
 ///
-/// :returns: A new expression with the inset edges.
+/// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, horizontal: CGFloat, vertical: CGFloat) -> Expression<Edges> {
+public func inset(edges: Edges, _ horizontal: CGFloat, _ vertical: CGFloat) -> Expression<Edges> {
     return inset(edges, vertical, horizontal, vertical, horizontal)
 }
 
 /// Insets edges individually.
 ///
-/// :param: edges    The edges to inset.
-/// :param: top      The amount by which to inset the top edge, in points.
-/// :param: leading  The amount by which to inset the leading edge, in points.
-/// :param: bottom   The amount by which to inset the bottom edge, in points.
-/// :param: trailing The amount by which to inset the trailing edge, in points.
+/// - parameter edges:    The edges to inset.
+/// - parameter top:      The amount by which to inset the top edge, in points.
+/// - parameter leading:  The amount by which to inset the leading edge, in points.
+/// - parameter bottom:   The amount by which to inset the bottom edge, in points.
+/// - parameter trailing: The amount by which to inset the trailing edge, in points.
 ///
-/// :returns: A new expression with the inset edges.
+/// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, top: CGFloat, leading: CGFloat, bottom: CGFloat, trailing: CGFloat) -> Expression<Edges> {
+public func inset(edges: Edges, _ top: CGFloat, _ leading: CGFloat, _ bottom: CGFloat, _ trailing: CGFloat) -> Expression<Edges> {
     return Expression(edges, [
         Coefficients(1, top),
         Coefficients(1, leading),

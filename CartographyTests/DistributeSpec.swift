@@ -5,22 +5,22 @@ import Quick
 
 class DistributeSpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var viewA: View!
-        var viewB: View!
-        var viewC: View!
+        var window: TestWindow!
+        var viewA: TestView!
+        var viewB: TestView!
+        var viewC: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             viewA = TestView(frame: CGRectZero)
-            superview.addSubview(viewA)
+            window.addSubview(viewA)
 
             viewB = TestView(frame: CGRectZero)
-            superview.addSubview(viewB)
+            window.addSubview(viewB)
 
             viewC = TestView(frame: CGRectZero)
-            superview.addSubview(viewC)
+            window.addSubview(viewC)
 
             constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                 viewA.width  == 100
@@ -36,10 +36,12 @@ class DistributeSpec: QuickSpec {
 
         describe("from left to right") {
             beforeEach {
-                layout(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerY: viewA, viewB, viewC)
                     distribute(by: 10, leftToRight: viewA, viewB, viewC)
                 }
+
+                window.layoutIfNeeded()
             }
 
             it("should distribute the views") {
@@ -57,10 +59,12 @@ class DistributeSpec: QuickSpec {
 
         describe("vertically") {
             beforeEach {
-                layout(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerX: viewA, viewB, viewC)
                     distribute(by: 10, vertically: viewA, viewB, viewC)
                 }
+
+                window.layoutIfNeeded()
             }
 
             it("should distribute the views") {
