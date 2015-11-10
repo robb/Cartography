@@ -80,6 +80,7 @@
 		54FA3A401951A41B0094B82A /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3F1951A41B0094B82A /* Compound.swift */; };
 		54FA3A421951A8070094B82A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A411951A8070094B82A /* Size.swift */; };
 		54FA3A441951A9730094B82A /* SizeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeSpec.swift */; };
+		632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632F090A1BF1E7AA002431A3 /* Cartography.framework */; };
 		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -107,6 +108,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 54F6A837195C20C100313D24;
 			remoteInfo = "Cartography-Mac";
+		};
+		632F09281BF1E7FC002431A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54C96A08195063CD000CDD27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 632F09091BF1E7AA002431A3;
+			remoteInfo = "Cartography-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -180,6 +188,8 @@
 		54FA3A3F1951A41B0094B82A /* Compound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compound.swift; sourceTree = "<group>"; };
 		54FA3A411951A8070094B82A /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		54FA3A431951A9730094B82A /* SizeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeSpec.swift; sourceTree = "<group>"; };
+		632F090A1BF1E7AA002431A3 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-tvOS-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
 		BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +229,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		632F09061BF1E7AA002431A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		632F091F1BF1E7FC002431A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -245,6 +270,7 @@
 		5435B8BA1AD8610700B805F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				632F09041BF1E771002431A3 /* tvOS */,
 				5435B8B21AD8610300B805F1 /* iOS */,
 				5435B8B61AD8610300B805F1 /* Mac */,
 			);
@@ -268,6 +294,8 @@
 				54C96A1C195063CD000CDD27 /* Cartography-iOS-Tests.xctest */,
 				54F6A838195C20C100313D24 /* Cartography.framework */,
 				54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */,
+				632F090A1BF1E7AA002431A3 /* Cartography.framework */,
+				632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,6 +366,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		632F09041BF1E771002431A3 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -354,6 +389,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6A851195C213A00313D24 /* Cartography.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		632F09071BF1E7AA002431A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,13 +477,49 @@
 			productReference = 54F6A842195C20C200313D24 /* Cartography-Mac-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		632F09091BF1E7AA002431A3 /* Cartography-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 632F090F1BF1E7AA002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS" */;
+			buildPhases = (
+				632F09051BF1E7AA002431A3 /* Sources */,
+				632F09061BF1E7AA002431A3 /* Frameworks */,
+				632F09071BF1E7AA002431A3 /* Headers */,
+				632F09081BF1E7AA002431A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cartography-tvOS";
+			productName = "Cartography-tvOS";
+			productReference = 632F090A1BF1E7AA002431A3 /* Cartography.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		632F09211BF1E7FC002431A3 /* Cartography-tvOS-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 632F092A1BF1E7FC002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS-tests" */;
+			buildPhases = (
+				632F091E1BF1E7FC002431A3 /* Sources */,
+				632F091F1BF1E7FC002431A3 /* Frameworks */,
+				632F09201BF1E7FC002431A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				632F09291BF1E7FC002431A3 /* PBXTargetDependency */,
+			);
+			name = "Cartography-tvOS-tests";
+			productName = "Cartography-tvOS-tests";
+			productReference = 632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		54C96A08195063CD000CDD27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Robert Böhnke";
 				TargetAttributes = {
@@ -458,6 +536,12 @@
 					54F6A841195C20C200313D24 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 54F6A837195C20C100313D24;
+					};
+					632F09091BF1E7AA002431A3 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					632F09211BF1E7FC002431A3 = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -477,6 +561,8 @@
 				54C96A1B195063CD000CDD27 /* Cartography-iOS-Tests */,
 				54F6A837195C20C100313D24 /* Cartography-Mac */,
 				54F6A841195C20C200313D24 /* Cartography-Mac-Tests */,
+				632F09091BF1E7AA002431A3 /* Cartography-tvOS */,
+				632F09211BF1E7FC002431A3 /* Cartography-tvOS-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -504,6 +590,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		54F6A840195C20C200313D24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		632F09081BF1E7AA002431A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		632F09201BF1E7FC002431A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -606,6 +706,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		632F09051BF1E7AA002431A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		632F091E1BF1E7FC002431A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -623,6 +737,11 @@
 			isa = PBXTargetDependency;
 			target = 54F6A837195C20C100313D24 /* Cartography-Mac */;
 			targetProxy = 54F6A844195C20C200313D24 /* PBXContainerItemProxy */;
+		};
+		632F09291BF1E7FC002431A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 632F09091BF1E7AA002431A3 /* Cartography-tvOS */;
+			targetProxy = 632F09281BF1E7FC002431A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -900,6 +1019,84 @@
 			};
 			name = Release;
 		};
+		632F09101BF1E7AA002431A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertboehnke.Cartography;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		632F09111BF1E7AA002431A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.robertboehnke.Cartography;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		632F092B1BF1E7FC002431A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Cartography-tvOS-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Cartography.Cartography-tvOS-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		632F092C1BF1E7FC002431A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Cartography-tvOS-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Cartography.Cartography-tvOS-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -944,6 +1141,24 @@
 			buildConfigurations = (
 				54F6A84F195C20C200313D24 /* Debug */,
 				54F6A850195C20C200313D24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		632F090F1BF1E7AA002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				632F09101BF1E7AA002431A3 /* Debug */,
+				632F09111BF1E7AA002431A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		632F092A1BF1E7FC002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				632F092B1BF1E7FC002431A3 /* Debug */,
+				632F092C1BF1E7FC002431A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
