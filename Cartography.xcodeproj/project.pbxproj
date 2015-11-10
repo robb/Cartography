@@ -81,6 +81,40 @@
 		54FA3A421951A8070094B82A /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A411951A8070094B82A /* Size.swift */; };
 		54FA3A441951A9730094B82A /* SizeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeSpec.swift */; };
 		632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632F090A1BF1E7AA002431A3 /* Cartography.framework */; };
+		632F09341BF1F0DD002431A3 /* Cartography.h in Headers */ = {isa = PBXBuildFile; fileRef = 54C96A16195063CD000CDD27 /* Cartography.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		632F09351BF1F127002431A3 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29AF1A9348B30066ED10 /* Align.swift */; };
+		632F09361BF1F127002431A3 /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8E1950A33700B16707 /* Coefficients.swift */; };
+		632F09371BF1F127002431A3 /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3F1951A41B0094B82A /* Compound.swift */; };
+		632F09381BF1F127002431A3 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DF9F3219DAD8DA00EE3609 /* Constrain.swift */; };
+		632F09391BF1F127002431A3 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC85619E2EB9B007BEE9E /* Constraint.swift */; };
+		632F093A1BF1F127002431A3 /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B093941A715E52008A1102 /* ConstraintGroup.swift */; };
+		632F093B1BF1F127002431A3 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547BC85419E2DD06007BEE9E /* Context.swift */; };
+		632F093C1BF1F127002431A3 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E8C1950A31100B16707 /* Dimension.swift */; };
+		632F093D1BF1F127002431A3 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467916E1A93962000DC9BF7 /* Distribute.swift */; };
+		632F093E1BF1F127002431A3 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E901950A76C00B16707 /* Edge.swift */; };
+		632F093F1BF1F127002431A3 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858C195322EA00791F75 /* Edges.swift */; };
+		632F09401BF1F127002431A3 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E941950A97F00B16707 /* Expression.swift */; };
+		632F09411BF1F127002431A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B093961A7165F2008A1102 /* Extensions.swift */; };
+		632F09421BF1F127002431A3 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E881950A29300B16707 /* LayoutProxy.swift */; };
+		632F09431BF1F127002431A3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3B1951A2B60094B82A /* Point.swift */; };
+		632F09441BF1F127002431A3 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A351950FD320094B82A /* Priority.swift */; };
+		632F09451BF1F127002431A3 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A2F195064A6000CDD27 /* Property.swift */; };
+		632F09461BF1F127002431A3 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A411951A8070094B82A /* Size.swift */; };
+		632F09471BF1F127002431A3 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6A863195C217800313D24 /* View.swift */; };
+		632F09481BF1F127002431A3 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
+		632F09491BF1F146002431A3 /* AlignSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BF29B11A934ECF0066ED10 /* AlignSpec.swift */; };
+		632F094A1BF1F146002431A3 /* ConstraintGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A388981A7663AC003945B7 /* ConstraintGroupSpec.swift */; };
+		632F094B1BF1F146002431A3 /* DimensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C96A23195063CD000CDD27 /* DimensionSpec.swift */; };
+		632F094C1BF1F146002431A3 /* DistributeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54143E4F1A939D6000208182 /* DistributeSpec.swift */; };
+		632F094D1BF1F146002431A3 /* EdgeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E921950A87600B16707 /* EdgeSpec.swift */; };
+		632F094E1BF1F146002431A3 /* EdgesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F858E1953235F00791F75 /* EdgesSpec.swift */; };
+		632F094F1BF1F146002431A3 /* MemoryLeakSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */; };
+		632F09501BF1F146002431A3 /* PointSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A3D1951A3750094B82A /* PointSpec.swift */; };
+		632F09511BF1F146002431A3 /* PrioritySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A371950FD8E0094B82A /* PrioritySpec.swift */; };
+		632F09521BF1F146002431A3 /* SizeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA3A431951A9730094B82A /* SizeSpec.swift */; };
+		632F09531BF1F146002431A3 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
+		632F09541BF1F15C002431A3 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
+		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -396,7 +430,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F6A851195C213A00313D24 /* Cartography.h in Headers */,
+				632F09341BF1F0DD002431A3 /* Cartography.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +745,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632F09351BF1F127002431A3 /* Align.swift in Sources */,
+				632F09361BF1F127002431A3 /* Coefficients.swift in Sources */,
+				632F09371BF1F127002431A3 /* Compound.swift in Sources */,
+				632F09381BF1F127002431A3 /* Constrain.swift in Sources */,
+				632F09391BF1F127002431A3 /* Constraint.swift in Sources */,
+				632F093A1BF1F127002431A3 /* ConstraintGroup.swift in Sources */,
+				632F093B1BF1F127002431A3 /* Context.swift in Sources */,
+				632F093C1BF1F127002431A3 /* Dimension.swift in Sources */,
+				632F093D1BF1F127002431A3 /* Distribute.swift in Sources */,
+				632F093E1BF1F127002431A3 /* Edge.swift in Sources */,
+				632F093F1BF1F127002431A3 /* Edges.swift in Sources */,
+				632F09401BF1F127002431A3 /* Expression.swift in Sources */,
+				632F09411BF1F127002431A3 /* Extensions.swift in Sources */,
+				632F09421BF1F127002431A3 /* LayoutProxy.swift in Sources */,
+				632F09431BF1F127002431A3 /* Point.swift in Sources */,
+				632F09441BF1F127002431A3 /* Priority.swift in Sources */,
+				632F09451BF1F127002431A3 /* Property.swift in Sources */,
+				632F09461BF1F127002431A3 /* Size.swift in Sources */,
+				632F09471BF1F127002431A3 /* View.swift in Sources */,
+				632F09481BF1F127002431A3 /* ViewUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +772,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632F09541BF1F15C002431A3 /* Matchers.swift in Sources */,
+				632F09551BF1F15C002431A3 /* TestView.swift in Sources */,
+				632F09491BF1F146002431A3 /* AlignSpec.swift in Sources */,
+				632F094A1BF1F146002431A3 /* ConstraintGroupSpec.swift in Sources */,
+				632F094B1BF1F146002431A3 /* DimensionSpec.swift in Sources */,
+				632F094C1BF1F146002431A3 /* DistributeSpec.swift in Sources */,
+				632F094D1BF1F146002431A3 /* EdgeSpec.swift in Sources */,
+				632F094E1BF1F146002431A3 /* EdgesSpec.swift in Sources */,
+				632F094F1BF1F146002431A3 /* MemoryLeakSpec.swift in Sources */,
+				632F09501BF1F146002431A3 /* PointSpec.swift in Sources */,
+				632F09511BF1F146002431A3 /* PrioritySpec.swift in Sources */,
+				632F09521BF1F146002431A3 /* SizeSpec.swift in Sources */,
+				632F09531BF1F146002431A3 /* ViewHierarchySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
