@@ -30,7 +30,7 @@ class TestView: View {
 #endif
 }
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 class TestWindow: UIWindow {
 
 }
