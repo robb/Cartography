@@ -5,46 +5,54 @@ import Quick
 
 class SizeSpec: QuickSpec {
     override func spec() {
-        var superview: View!
-        var view: View!
+        var window: TestWindow!
+        var view: TestView!
 
         beforeEach {
-            superview = TestView(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
 
             view = TestView(frame: CGRectZero)
-            superview.addSubview(view)
+            window.addSubview(view)
         }
 
         describe("LayoutProxy.size") {
             it("should support relative equalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.size == view.superview!.size
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
             }
 
             it("should support relative inequalities") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.size <= view.superview!.size
                     view.size >= view.superview!.size
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
             }
 
             it("should support multiplication") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.size == view.superview!.size * 2
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(800, 800)))
             }
 
             it("should support division") {
-                layout(view) { view in
+                constrain(view) { view in
                     view.size == view.superview!.size / 2
                 }
+
+                window.layoutIfNeeded()
 
                 expect(view.frame.size).to(equal(CGSizeMake(200, 200)))
             }

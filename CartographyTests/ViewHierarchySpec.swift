@@ -11,20 +11,20 @@ class ViewHierarchySpec: QuickSpec {
                 let viewB = TestView()
 
                 expect({
-                    layout(viewA, viewB) { viewA, viewB in
+                    constrain(viewA, viewB) { viewA, viewB in
                         viewA.width == viewB.width
                     }
-                }).to(raiseException())
+                }()).to(raiseException())
             }
 
             it("should consider a view its own closest common ancestor") {
                 let view = TestView()
 
-                layout(view) { view in
+                constrain(view) { view in
                     view.width  == 200
                 }
 
-                expect(view.car_constraints.count).to(equal(1))
+                expect(view.constraints.count).to(equal(1))
             }
 
             it("should handle a direct parent-child-relationship") {
@@ -33,11 +33,11 @@ class ViewHierarchySpec: QuickSpec {
 
                 parent.addSubview(child)
 
-                layout(parent, child) { parent, child in
+                constrain(parent, child) { parent, child in
                     parent.width == child.width
                 }
 
-                expect(parent.car_constraints.count).to(equal(1))
+                expect(parent.constraints.count).to(equal(1))
             }
 
             it("should handle a grandparent-child-relationship") {
@@ -48,11 +48,11 @@ class ViewHierarchySpec: QuickSpec {
                 grandparent.addSubview(parent)
                 parent.addSubview(child)
 
-                layout(grandparent, child) { grandparent, child in
+                constrain(grandparent, child) { grandparent, child in
                     grandparent.width == child.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
 
             it("should handle views that share a parent") {
@@ -63,11 +63,11 @@ class ViewHierarchySpec: QuickSpec {
                 parent.addSubview(childA)
                 parent.addSubview(childB)
 
-                layout(childA, childB) { childA, childB in
+                constrain(childA, childB) { childA, childB in
                     childA.width == childB.width
                 }
 
-                expect(parent.car_constraints.count).to(equal(1))
+                expect(parent.constraints.count).to(equal(1))
             }
 
             it("should handle views that share a grandparent") {
@@ -82,11 +82,11 @@ class ViewHierarchySpec: QuickSpec {
                 parentA.addSubview(childA)
                 parentB.addSubview(childB)
 
-                layout(childA, childB) { childA, childB in
+                constrain(childA, childB) { childA, childB in
                     childA.width == childB.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
 
             it("should handle asymmetric view hierachies") {
@@ -99,11 +99,11 @@ class ViewHierarchySpec: QuickSpec {
                 grandparent.addSubview(parentB)
                 parentA.addSubview(childA)
 
-                layout(childA, parentB) { childA, parentB in
+                constrain(childA, parentB) { childA, parentB in
                     childA.width == parentB.width
                 }
 
-                expect(grandparent.car_constraints.count).to(equal(1))
+                expect(grandparent.constraints.count).to(equal(1))
             }
         }
     }

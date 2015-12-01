@@ -1,11 +1,14 @@
 language: objective-c
-osx_image: beta-xcode6.3
+osx_image: xcode7
 before_install:
-    - brew update
-    - brew install carthage || brew outdated carthage || brew upgrade carthage
+- brew update
+- brew install carthage || brew outdated carthage || brew upgrade carthage
 install:
-    - gem install xcpretty
-    - carthage bootstrap
+- gem install xcpretty
+- carthage bootstrap
 script:
-    - set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
-    - set -o pipefail && xcodebuild -scheme 'Cartography-iOS' test | xcpretty -c
+- set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
+- set -o pipefail && xcodebuild -scheme 'Cartography-iOS' -sdk iphonesimulator test | xcpretty -c
+env:
+  global:
+    secure: odPR+Uvp5Enxc8qlFxuUo+aYVf1zS9xF7t2at4IXAJtP0wegwmG8dYOZ5IiMZP/gbBtAWWYc2en4NVnqS9K9wPFIrKdShMwBGnRcsYPj3b6kH/vQM/OLwzYFit2oSqhR3n4RP5UM+lc4jJnfqrK7StMY6ZxCkvLdZkMbFGqVJ20=

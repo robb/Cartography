@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54C96A10195063CD000CDD27"
+               BlueprintIdentifier = "632F09091BF1E7AA002431A3"
                BuildableName = "Cartography.framework"
-               BlueprintName = "Cartography-iOS"
+               BlueprintName = "Cartography-tvOS"
+               ReferencedContainer = "container:Cartography.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "632F09211BF1E7FC002431A3"
+               BuildableName = "Cartography-tvOS-tests.xctest"
+               BlueprintName = "Cartography-tvOS-tests"
                ReferencedContainer = "container:Cartography.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,17 +42,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54C96A1B195063CD000CDD27"
-               BuildableName = "Cartography-iOS-Tests.xctest"
-               BlueprintName = "Cartography-iOS-Tests"
-               ReferencedContainer = "container:Cartography.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "632F09091BF1E7AA002431A3"
+            BuildableName = "Cartography.framework"
+            BlueprintName = "Cartography-tvOS"
+            ReferencedContainer = "container:Cartography.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -55,9 +68,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "54C96A10195063CD000CDD27"
+            BlueprintIdentifier = "632F09091BF1E7AA002431A3"
             BuildableName = "Cartography.framework"
-            BlueprintName = "Cartography-iOS"
+            BlueprintName = "Cartography-tvOS"
             ReferencedContainer = "container:Cartography.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,6 +83,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "632F09091BF1E7AA002431A3"
+            BuildableName = "Cartography.framework"
+            BlueprintName = "Cartography-tvOS"
+            ReferencedContainer = "container:Cartography.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

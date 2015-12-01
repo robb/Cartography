@@ -8,18 +8,14 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
     import UIKit
     public typealias View = UIView
 
     extension View {
-        func car_updateLayout() {
-            layoutIfNeeded()
-        }
-
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints() }
-            set { setTranslatesAutoresizingMaskIntoConstraints(newValue) }
+            get { return translatesAutoresizingMaskIntoConstraints }
+            set { translatesAutoresizingMaskIntoConstraints = newValue }
         }
     }
 #else
@@ -27,10 +23,6 @@ import Foundation
     public typealias View = NSView
 
     extension View {
-        func car_updateLayout() {
-            (superview ?? self).layoutSubtreeIfNeeded()
-        }
-
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
             get { return translatesAutoresizingMaskIntoConstraints }
             set { translatesAutoresizingMaskIntoConstraints = newValue }

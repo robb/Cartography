@@ -1,26 +1,49 @@
 # Cartography :iphone::triangular_ruler:
 
+<a href="https://travis-ci.org/robb/Cartography?branch=master">
+    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" hspace="6px" align="right" vspace="2px">
+</a>
+
 <a href="https://github.com/Carthage/Carthage/issues/179">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
 </a>
-<a href="https://travis-ci.org/robb/Cartography?branch=master">
-    <img src="https://travis-ci.org/robb/Cartography.svg?branch=master" align="right" vspace="2px" hspace="5px">
-</a>
 
-Set up your Auto Layout constraints declaratively and without any stringly
-typing!
+Using Cartography, you can set up your Auto Layout constraints in declarative code and without any stringly typing!
 
-If you end up using Cartography in production, I'd love to hear from you. You
-can reach me through [Twitter] or [email].
+In short, it allows you to replace this:
+
+<img src="/images/pirates2.png" align="right" height="280px" hspace="30px" vspace="30px">
+
+```Swift
+addConstraint(NSLayoutConstraint(
+    item: button1,
+    attribute: .Right,
+    relatedBy: .Equal,
+    toItem: button2,
+    attribute: .Left,
+    multiplier: 1.0,
+    constant: -12.0
+))
+```
+
+with this
+
+```Swift
+constrain(button1, button2) { button1, button2 in
+    button1.right == button2.left - 12
+}
+```
+
+If you end up using Cartography in production, I'd love to hear from you. You can reach me through [Twitter] or [email].
 
 ## Usage
 
-Call the `layout` function with your `UIView` or `NSView` instances as well as a
-closure in which you declare the constraints between the different attributes of
-your views:
+Call the `constrain` function with your `UIView` or `NSView` instances as well
+as a closure in which you declare the constraints between the different
+attributes of your views:
 
 ```swift
-layout(view1, view2) { view1, view2 in
+constrain(view1, view2) { view1, view2 in
     view1.width   == (view1.superview!.width - 50) * 0.5
     view2.width   == view1.width - 50
     view1.height  == 40
@@ -33,26 +56,18 @@ layout(view1, view2) { view1, view2 in
 }
 ```
 
+<img src="/images/pirates1.png" align="left" height="220px" hspace="20px" vspace="10px">
+
 For every view on the left hand side of an equality or inequality operator,
 Cartography will automatically set its
-`translatesAutoresizingMaskIntoConstraints` property to `false`. If the view is
-not controlled by you–for example if it belongs to a Apple-provided
-`UIViewController` class–you should take appropriate care when declaring its
+`translatesAutoresizingMaskIntoConstraints` property to `false`.
+
+If the view is
+not controlled by you–for example _if it belongs to a Apple-provided
+`UIViewController` class_–you should take appropriate care when declaring its
 constraints.
 
-Note that `layout` will automatically relayout the views as necessary. If you
-instead want to trigger the layouting step yourself, you can instead use the
-`constrain` function:
-
-```swift
-constrain(view1) { view1 in
-    view1.width  == 100
-    view1.height == 100
-    view1.center == view.superview!.center
-}
-
-UIView.animateWithDuration(0.5, animations: view1.layoutIfNeeded)
-```
+<br><br>
 
 ## Replacing constraints
 
@@ -84,11 +99,11 @@ constrain(view, replace: group) { view in
 UIView.animateWithDuration(0.5, animations: view.layoutIfNeeded)
 ```
 
-For convenience, the `layout` and `constrain` functions also return
-`ConstraintGroup` instances:
+For convenience, the `constrain` functions also returns `ConstraintGroup`
+instances:
 
 ```swift
-let group = layout(button) { button in
+let group = constrain(button) { button in
     button.width  == 100
     button.height == 400
 }
@@ -96,8 +111,10 @@ let group = layout(button) { button in
 
 ## Supported attributes
 
-Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those
-are:
+
+Cartography supports all built-in attributes as of iOS 8 and OS X 10.9, those are:
+
+<img src="/images/pirates3.png" align="right" height="400px" hspace="20px" vspace="100px">
 
 - `width`
 - `height`
@@ -131,14 +148,14 @@ Additionally, it supports convenient compound attributes that allow you to
 assign multiple attributes at once:
 
 ```swift
-layout(view) { view in
+constrain(view) { view in
     view.size   == view.superview!.size / 2
     view.center == view.superview!.center
 }
 ```
 
 ```swift
-layout(view) { view in
+constrain(view) { view in
     view.edges == inset(view.superview!.edges, 20, 20, 40, 20)
 }
 ```
@@ -149,7 +166,7 @@ If you need to align multiple views by a common edge, you can use the `align`
 functions:
 
 ```swift
-layout(view1, view2, view3) { view1, view2, view3 in
+constrain(view1, view2, view3) { view1, view2, view3 in
     align(top: view1, view2, view3)
 }
 ```
@@ -164,7 +181,7 @@ For distributing multiple views, either horizontally or vertically, you can use
 the `distribute` functions:
 
 ```swift
-layout(view1, view2, view3) { view1, view2, view3 in
+constrain(view1, view2, view3) { view1, view2, view3 in
     distribute(by: 10, horizontally: view1, view2, view3)
 }
 ```
@@ -176,7 +193,7 @@ Which is equivalent to `view1.trailing == view2.leading - 10; view2.trailing == 
 You can set the priorities of your constraints using the `~` operator:
 
 ```swift
-layout(view) { view in
+constrain(view) { view in
     view.width  >= 200 ~ 100
     view.height >= 200 ~ 100
 }
@@ -191,7 +208,7 @@ time:
 ```swift
 var width: NSLayoutConstraint?
 
-layout(view) { view in
+constrain(view) { view in
     width = (view.width == 200 ~ 100)
 }
 ```
@@ -201,7 +218,7 @@ Note that declaring compound attributes returns multiple constraints at once:
 ```swift
 var constraints: [NSLayoutConstraint]?
 
-layout(view) { view in
+constrain(view) { view in
     constraints = (view.size == view.superview!.size ~ 100)
 }
 ```
@@ -223,5 +240,5 @@ Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
 [florian]:       https://github.com/floriankugler
 [me]:            http://robb.is
-[twitter]:       https://twitter.com/ceterum_censeo
+[twitter]:       https://twitter.com/dlx
 [email]:         mailto:robb@robb.is
