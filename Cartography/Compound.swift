@@ -95,19 +95,84 @@ public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [N
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-public func == <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs)
-}
+#if os(iOS) || os(tvOS)
 
-public func == <P: RelativeEquality>(lhs: P, rhs: Expression<UILayoutSupport>) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
-}
+    /// Declares a property equal to a layout support.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
 
-public func >= <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
-}
+    public func == <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs)
+    }
 
-public func <= <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
-}
+    /// Declares a property equal to the result of a layout support expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support expression.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
 
+    public func == <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
+    }
+
+    /// Declares a property greater than or equal to a layout support.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+
+    public func >= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    }
+    
+    /// Declares a property less than or equal to a layout support.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+
+    public func <= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    }
+
+    /// Declares a property greater than or equal to the result of a layout support expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+
+    public func >= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.GreaterThanOrEqual)
+    }
+
+    /// Declares a property less than or equal to the result of a layout support expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The layout support.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+
+    public func <= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.LessThanOrEqual)
+    }
+    
+#endif

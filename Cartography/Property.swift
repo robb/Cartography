@@ -180,14 +180,17 @@ public func - <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
     return rhs - lhs
 }
 
-public func + (lhs: UILayoutSupport, c : CGFloat) -> Expression<UILayoutSupport> {
-    return Expression<UILayoutSupport>(lhs, [Coefficients(1, c)])
-}
+#if os(iOS) || os(tvOS)
 
-public func - (lhs: UILayoutSupport, c : CGFloat) -> Expression<UILayoutSupport> {
-    return lhs + (-c)
-}
+    public func + (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+        return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
+    }
 
+    public func - (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+        return lhs + (-c)
+    }
+
+#endif
 // MARK: Multiplication
 
 public protocol Multiplication : Property { }
