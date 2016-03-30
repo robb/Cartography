@@ -18,11 +18,16 @@ import Foundation
 
     public extension UIViewController {
         
-        public func topLayoutGuideCartography() -> LayoutSupport {
-            return LayoutSupport(layoutGuide: topLayoutGuide, attribute: .Bottom)
+        public var topLayoutGuideCartography : LayoutSupport {
+            get {
+                return LayoutSupport(layoutGuide: self.topLayoutGuide, attribute: .Bottom)
+            }
         }
-        public func bottomLayoutGuideCartography() -> LayoutSupport{
-            return LayoutSupport(layoutGuide: bottomLayoutGuide, attribute: .Top)
+        
+        public var bottomLayoutGuideCartography : LayoutSupport {
+            get {
+                return LayoutSupport(layoutGuide: self.bottomLayoutGuide, attribute: .Top)
+            }
         }
     }
 
