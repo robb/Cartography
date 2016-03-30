@@ -144,7 +144,7 @@ public func >= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutCo
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-// Mark: Addition
+//MARK: Addition
 
 public protocol Addition : Property { }
 
@@ -178,6 +178,14 @@ public func - <P: Addition>(c: CGFloat, rhs: Expression<P>) -> Expression<P> {
 
 public func - <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
     return rhs - lhs
+}
+
+public func + (lhs: UILayoutSupport, c : CGFloat) -> Expression<UILayoutSupport> {
+    return Expression<UILayoutSupport>(lhs, [Coefficients(1, c)])
+}
+
+public func - (lhs: UILayoutSupport, c : CGFloat) -> Expression<UILayoutSupport> {
+    return lhs + (-c)
 }
 
 // MARK: Multiplication

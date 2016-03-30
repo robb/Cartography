@@ -9,12 +9,12 @@
 import Foundation
 
 public struct Coefficients {
-    var multiplier: CGFloat = 1
-    var constant: CGFloat = 0
+    public var multiplier: CGFloat = 1
+    public var constant: CGFloat = 0
 
-    init() { }
+    public init() { }
 
-    init(_ multiplier: CGFloat, _ constant: CGFloat) {
+    public init(_ multiplier: CGFloat, _ constant: CGFloat) {
         self.constant = constant
         self.multiplier = multiplier
     }

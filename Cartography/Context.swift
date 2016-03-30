@@ -15,6 +15,26 @@ import AppKit
 public class Context {
     internal var constraints: [Constraint] = []
 
+    internal func addConstraint(from: Property, to: UILayoutSupport, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
+        from.view.car_translatesAutoresizingMaskIntoConstraints = false
+        
+        let layoutConstraint = NSLayoutConstraint(item: from.view,
+                                                  attribute: from.attribute,
+                                                  relatedBy: relation,
+                                                  toItem: to,
+                                                  attribute: NSLayoutAttribute.Bottom,
+                                                  multiplier: CGFloat(coefficients.multiplier),
+                                                  constant: CGFloat(coefficients.constant))
+        
+        var view = from.view
+        while let superview = view.superview {
+            view = superview
+        }
+        constraints.append(Constraint(view: view, layoutConstraint: layoutConstraint))
+        
+        return layoutConstraint
+    }
+
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
         from.view.car_translatesAutoresizingMaskIntoConstraints = false
 

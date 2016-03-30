@@ -94,3 +94,20 @@ public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [N
 public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [NSLayoutConstraint] {
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
+
+public func == <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs)
+}
+
+public func == <P: RelativeEquality>(lhs: P, rhs: Expression<UILayoutSupport>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
+}
+
+public func >= <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+}
+
+public func <= <P: RelativeEquality>(lhs: P, rhs: UILayoutSupport) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+}
+
