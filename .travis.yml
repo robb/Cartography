@@ -5,7 +5,7 @@ before_install:
 - brew install carthage || brew outdated carthage || brew upgrade carthage
 install:
 - gem install xcpretty
-- carthage bootstrap
+- carthage bootstrap --platform "ios osx"
 script:
 - set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
 - set -o pipefail && xcodebuild -scheme 'Cartography-iOS' -sdk iphonesimulator test | xcpretty -c
