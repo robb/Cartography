@@ -13,7 +13,7 @@ import AppKit
 #endif
 
 internal func closestCommonAncestor(a: View, b: View) -> View? {
-    let (aSuper, bSuper) = (a.superview, b.superview)
+    let (aSuper, bSuper) = ((a as? UIView)?.superview, (b as? UIView)?.superview)
 
     if a === b { return a }
 
@@ -39,7 +39,7 @@ private func ancestors(v: View) -> AnySequence<View> {
         var view: View? = v
         return AnyGenerator {
             let current = view
-            view = view?.superview
+            view = (view as? UIView)?.superview
             return current
         }
     }

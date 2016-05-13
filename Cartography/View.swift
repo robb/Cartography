@@ -10,9 +10,9 @@ import Foundation
 
 #if os(iOS) || os(tvOS)
     import UIKit
-    public typealias View = UIView
+    public typealias View = NSObject
 
-    extension View {
+    extension UIView {
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
             get { return translatesAutoresizingMaskIntoConstraints }
             set { translatesAutoresizingMaskIntoConstraints = newValue }
@@ -20,9 +20,9 @@ import Foundation
     }
 #else
     import AppKit
-    public typealias View = NSView
+    public typealias View = AnyObject
 
-    extension View {
+    extension NSView {
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
             get { return translatesAutoresizingMaskIntoConstraints }
             set { translatesAutoresizingMaskIntoConstraints = newValue }
