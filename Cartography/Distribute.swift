@@ -15,9 +15,11 @@
 typealias Accumulator = ([NSLayoutConstraint], LayoutProxy)
 
 private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
-    if let view = rest.last?.view as? UIView {
+    if let view = rest.last?.view as? ViewType {
         view.car_translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    (rest.last?.view as? ViewType)?.car_translatesAutoresizingMaskIntoConstraints = false
 
     return rest.reduce(([], first)) { (acc, current) -> Accumulator in
         let (constraints, previous) = acc

@@ -11,6 +11,7 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
     public typealias View = NSObject
+    public typealias ViewType = UIView
 
     extension UIView {
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
@@ -20,7 +21,8 @@ import Foundation
     }
 #else
     import AppKit
-    public typealias View = AnyObject
+    public typealias View = NSObject
+    public typealias ViewType = NSView
 
     extension NSView {
         public var car_translatesAutoresizingMaskIntoConstraints: Bool {
