@@ -90,6 +90,19 @@ class EdgesSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("on iOS only, inset using UIEdgeInsets") {
+            it("should inset all edges individually") {
+                constrain(view) { view in
+                    let insets = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
+                    view.edges == inset(view.superview!.edges, insets)
+                }
+
+                window.layoutIfNeeded()
+
+                expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
+            }
+        }
 #endif
     }
 }
