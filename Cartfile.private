@@ -1,2 +1,2 @@
-github "Quick/Nimble" ~> 4.0
-github "Quick/Quick" ~> 0.9
+github "Quick/Nimble" "xcode-8"
+github "sharplet/Quick" "xcode-8"
