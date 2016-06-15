@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-private func makeEqual<P: RelativeEquality>(attribute: LayoutProxy -> P, first: LayoutProxy, rest: [LayoutProxy]) -> [NSLayoutConstraint] {
+private func makeEqual<P: RelativeEquality>(_ attribute: (LayoutProxy) -> P, first: LayoutProxy, rest: [LayoutProxy]) -> [NSLayoutConstraint] {
     return rest.reduce([]) { acc, current in
         current.view.car_translatesAutoresizingMaskIntoConstraints = false
 

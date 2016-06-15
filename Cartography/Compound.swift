@@ -56,7 +56,7 @@ public protocol RelativeCompoundInequality : Compound { }
 /// - returns: An `NSLayoutConstraint`.
 ///
 public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.lessThanOrEqual)
 }
 
 /// Declares a property greater than or equal to another compound property.
@@ -68,7 +68,7 @@ public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConst
 /// - returns: An `NSLayoutConstraint`.
 ///
 public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.greaterThanOrEqual)
 }
 
 /// Declares a property less than or equal to the result of an expression.
@@ -80,7 +80,7 @@ public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConst
 /// - returns: An `NSLayoutConstraint`.
 ///
 public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.LessThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.lessThanOrEqual)
 }
 
 /// Declares a property greater than or equal to the result of an expression.
@@ -92,5 +92,5 @@ public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [N
 /// - returns: An `NSLayoutConstraint`.
 ///
 public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.greaterThanOrEqual)
 }
