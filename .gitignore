@@ -16,3 +16,6 @@ DerivedData
 *.xcuserstate
 
 Carthage/
+
+# Finder
+.DS_Store

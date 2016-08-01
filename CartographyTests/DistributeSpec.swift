@@ -33,6 +33,34 @@ class DistributeSpec: QuickSpec {
                 viewA.size == viewC.size
             }
         }
+        
+        func testLeftToRightConstraints() {
+            it("should distribute the views") {
+                expect(viewA.frame.minX).to(equal(  0))
+                expect(viewB.frame.minX).to(equal(110))
+                expect(viewC.frame.minX).to(equal(220))
+            }
+            
+            it("should disable translating autoresizing masks into constraints") {
+                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
+            }
+        }
+        
+        func testVerticalConstraints() {
+            it("should distribute the views") {
+                expect(viewA.frame.minY).to(equal(  0))
+                expect(viewB.frame.minY).to(equal(110))
+                expect(viewC.frame.minY).to(equal(220))
+            }
+            
+            it("should disable translating autoresizing masks into constraints") {
+                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
+                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
+            }
+        }
 
         describe("from left to right") {
             beforeEach {
@@ -44,17 +72,20 @@ class DistributeSpec: QuickSpec {
                 window.layoutIfNeeded()
             }
 
-            it("should distribute the views") {
-                expect(viewA.frame.minX).to(equal(  0))
-                expect(viewB.frame.minX).to(equal(110))
-                expect(viewC.frame.minX).to(equal(220))
+            testLeftToRightConstraints()
+        }
+        
+        describe("from left to right with layout proxy array") {
+            beforeEach {
+                constrain([viewA, viewB, viewC]) { views in
+                    align(centerY: views)
+                    distribute(by: 10, leftToRight: views)
+                }
+                
+                window.layoutIfNeeded()
             }
-
-            it("should disable translating autoresizing masks into constraints") {
-                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
-                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
-                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
-            }
+            
+            testLeftToRightConstraints()
         }
 
         describe("vertically") {
@@ -67,17 +98,20 @@ class DistributeSpec: QuickSpec {
                 window.layoutIfNeeded()
             }
 
-            it("should distribute the views") {
-                expect(viewA.frame.minY).to(equal(  0))
-                expect(viewB.frame.minY).to(equal(110))
-                expect(viewC.frame.minY).to(equal(220))
+            testVerticalConstraints()
+        }
+        
+        describe("vertically with layout proxy array") {
+            beforeEach {
+                constrain([viewA, viewB, viewC]) { views in
+                    align(centerX: views)
+                    distribute(by: 10, vertically: views)
+                }
+                
+                window.layoutIfNeeded()
             }
-
-            it("should disable translating autoresizing masks into constraints") {
-                expect(viewA).notTo(translateAutoresizingMasksToConstraints())
-                expect(viewB).notTo(translateAutoresizingMasksToConstraints())
-                expect(viewC).notTo(translateAutoresizingMasksToConstraints())
-            }
+            
+            testVerticalConstraints()
         }
     }
 }
