@@ -89,7 +89,7 @@ public struct LayoutProxy {
 
     /// The baseline of the view.
     public var baseline: Edge {
-        return Edge(context, view, .Baseline)
+        return Edge(context, view, .LastBaseline)
     }
 
     /// The last baseline of the view.
