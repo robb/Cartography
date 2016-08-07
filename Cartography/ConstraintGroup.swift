@@ -11,17 +11,17 @@ import Foundation
 public class ConstraintGroup {
     private var constraints: [Constraint] = []
 
-    @available(OSX, introduced=10.10)
-    @available(iOS, introduced=8.0)
+    @available(OSX, introduced: 10.10)
+    @available(iOS, introduced: 8.0)
     public var active: Bool {
         get {
             return constraints
-                .map { $0.layoutConstraint.active }
+                .map { $0.layoutConstraint.isActive }
                 .reduce(true) { $0 && $1 }
         }
         set {
             for constraint in constraints {
-                constraint.layoutConstraint.active = newValue
+                constraint.layoutConstraint.isActive = newValue
             }
         }
     }
@@ -30,7 +30,7 @@ public class ConstraintGroup {
 
     }
 
-    internal func replaceConstraints(constraints: [Constraint]) {
+    internal func replaceConstraints(_ constraints: [Constraint]) {
         for constraint in self.constraints {
             constraint.uninstall()
         }
