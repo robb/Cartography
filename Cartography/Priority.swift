@@ -25,7 +25,7 @@ infix operator  ~ { }
 ///
 /// - returns: The same constraint with its priority updated.
 ///
-public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
+@discardableResult public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
     lhs.priority = rhs
 
     return lhs
@@ -38,7 +38,7 @@ public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstrai
 ///
 /// - returns: The same constraints with their priorities updated.
 ///
-public func ~ (lhs: [NSLayoutConstraint], rhs: LayoutPriority) -> [NSLayoutConstraint] {
+@discardableResult public func ~ (lhs: [NSLayoutConstraint], rhs: LayoutPriority) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }
