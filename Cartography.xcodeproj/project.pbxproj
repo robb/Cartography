@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A3756C91D67445F0036190E /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
+		4A3756CC1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
 		541305B91B49598E003F1935 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		541305BA1B49598F003F1935 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		54143E4E1A93991D00208182 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5467916E1A93962000DC9BF7 /* Distribute.swift */; };
@@ -182,6 +184,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupportSpec.swift; sourceTree = "<group>"; };
 		541305B71B495986003F1935 /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DistributeSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5435B8B41AD8610300B805F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
@@ -384,6 +387,7 @@
 				54143E4F1A939D6000208182 /* DistributeSpec.swift */,
 				546E9E921950A87600B16707 /* EdgeSpec.swift */,
 				545F858E1953235F00791F75 /* EdgesSpec.swift */,
+				4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */,
 				545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */,
 				54FA3A3D1951A3750094B82A /* PointSpec.swift */,
 				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
@@ -689,6 +693,7 @@
 				54FA3A441951A9730094B82A /* SizeSpec.swift in Sources */,
 				54BF29B31A934F240066ED10 /* AlignSpec.swift in Sources */,
 				54143E511A939D7000208182 /* DistributeSpec.swift in Sources */,
+				4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */,
 				541305B91B49598E003F1935 /* Matchers.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
@@ -783,6 +788,7 @@
 				632F09551BF1F15C002431A3 /* TestView.swift in Sources */,
 				632F09491BF1F146002431A3 /* AlignSpec.swift in Sources */,
 				632F094A1BF1F146002431A3 /* ConstraintGroupSpec.swift in Sources */,
+				4A3756CC1D6749190036190E /* LayoutSupportSpec.swift in Sources */,
 				632F094B1BF1F146002431A3 /* DimensionSpec.swift in Sources */,
 				632F094C1BF1F146002431A3 /* DistributeSpec.swift in Sources */,
 				632F094D1BF1F146002431A3 /* EdgeSpec.swift in Sources */,
