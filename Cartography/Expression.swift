@@ -12,7 +12,7 @@ public struct Expression<T> {
     let value: T
     var coefficients: [Coefficients]
 
-    public init(_ value: T, _ coefficients: [Coefficients]) {
+    init(_ value: T, _ coefficients: [Coefficients]) {
         assert(coefficients.count > 0)
 
         self.value = value

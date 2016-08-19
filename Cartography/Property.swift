@@ -144,7 +144,7 @@ public func >= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutCo
     return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients[0], to: rhs.value, relation: NSLayoutRelation.GreaterThanOrEqual)
 }
 
-//MARK: Addition
+// MARK: Addition
 
 public protocol Addition : Property { }
 
