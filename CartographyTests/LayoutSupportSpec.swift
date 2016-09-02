@@ -13,9 +13,9 @@ class LayoutSupportSpec: QuickSpec {
         var tabBarController: UITabBarController!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0,0,400,400))
+            window = TestWindow(frame: CGRect(x: 0,y: 0, width: 400, height: 400))
             
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             
             viewController = UIViewController()
             viewController.view.addSubview(view)
@@ -48,7 +48,7 @@ class LayoutSupportSpec: QuickSpec {
                 }
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).minY).to(equal(viewController.topLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).minY).to(equal(viewController.topLayoutGuide.length))
             }
             
             it("should support relative inequalities") {
@@ -59,7 +59,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).minY).to(equal(viewController.topLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).minY).to(equal(viewController.topLayoutGuide.length))
             }
             
             it("should support addition") {
@@ -69,7 +69,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).minY).to(equal(100 + viewController.topLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).minY).to(equal(100 + viewController.topLayoutGuide.length))
             }
             
             it("should support subtraction") {
@@ -79,7 +79,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).minY).to(equal(-100 - viewController.topLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).minY).to(equal(-100 - viewController.topLayoutGuide.length))
             }
         }
         
@@ -90,7 +90,7 @@ class LayoutSupportSpec: QuickSpec {
                 }
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).maxY).to(equal(window.bounds.maxY - viewController.bottomLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).maxY).to(equal(window.bounds.maxY - viewController.bottomLayoutGuide.length))
             }
             
             it("should support relative inequalities") {
@@ -101,7 +101,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).maxY).to(equal(window.bounds.maxY - viewController.bottomLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).maxY).to(equal(window.bounds.maxY - viewController.bottomLayoutGuide.length))
             }
             
             it("should support addition") {
@@ -111,7 +111,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).maxY).to(equal(100 + window.bounds.maxY - viewController.bottomLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).maxY).to(equal(100 + window.bounds.maxY - viewController.bottomLayoutGuide.length))
             }
             
             it("should support subtraction") {
@@ -121,7 +121,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
                 
-                expect(view.convertRect(view.bounds, toView: window).maxY).to(equal((window.bounds.maxY - 100) - viewController.bottomLayoutGuide.length))
+                expect(view.convert(view.bounds, to: window).maxY).to(equal((window.bounds.maxY - 100) - viewController.bottomLayoutGuide.length))
             }
             
         }

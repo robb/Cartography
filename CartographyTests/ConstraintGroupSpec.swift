@@ -9,9 +9,9 @@ class ConstraintGroupSpec: QuickSpec {
         var view1: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            view1 = TestView(frame: CGRectZero)
+            view1 = TestView(frame: CGRect.zero)
             window.addSubview(view1)
         }
 
@@ -57,7 +57,7 @@ class ConstraintGroupSpec: QuickSpec {
             var view2: TestView!
 
             beforeEach {
-                view2 = TestView(frame: CGRectZero)
+                view2 = TestView(frame: CGRect.zero)
                 window.addSubview(view2)
 
                 constrain(view1, view2) { view1, view2 in

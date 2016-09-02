@@ -9,9 +9,9 @@ class PrioritySpec: QuickSpec {
         var view: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 200, 200))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             window.addSubview(view)
         }
 
