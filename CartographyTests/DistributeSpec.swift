@@ -11,15 +11,15 @@ class DistributeSpec: QuickSpec {
         var viewC: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            viewA = TestView(frame: CGRectZero)
+            viewA = TestView(frame: CGRect.zero)
             window.addSubview(viewA)
 
-            viewB = TestView(frame: CGRectZero)
+            viewB = TestView(frame: CGRect.zero)
             window.addSubview(viewB)
 
-            viewC = TestView(frame: CGRectZero)
+            viewC = TestView(frame: CGRect.zero)
             window.addSubview(viewC)
 
             constrain(viewA, viewB, viewC) { viewA, viewB, viewC in

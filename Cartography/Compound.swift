@@ -106,7 +106,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func == <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+    @discardableResult public func == <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs)
     }
 
@@ -119,7 +119,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func == <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+    @discardableResult public func == <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
     }
 
@@ -132,7 +132,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func >= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+    @discardableResult public func >= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.greaterThanOrEqual)
     }
     
@@ -145,7 +145,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func <= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
+    @discardableResult public func <= <P: RelativeEquality>(lhs: P, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.lessThanOrEqual)
     }
 
@@ -158,7 +158,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func >= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+    @discardableResult public func >= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.greaterThanOrEqual)
     }
 
@@ -171,7 +171,7 @@ public protocol RelativeCompoundInequality : Compound { }
     /// - returns: An `NSLayoutConstraint`.
     ///
 
-    public func <= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
+    @discardableResult public func <= <P: RelativeEquality>(lhs: P, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.lessThanOrEqual)
     }
     

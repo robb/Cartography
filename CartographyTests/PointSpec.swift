@@ -9,9 +9,9 @@ class PointSpec: QuickSpec {
         var view: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             window.addSubview(view)
 
             constrain(view) { view in
@@ -28,7 +28,7 @@ class PointSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(100, 100, 200, 200)))
+                expect(view.frame).to(equal(CGRect(x: 100, y: 100, width: 200, height: 200)))
             }
 
             it("should support relative inequalities") {
@@ -39,7 +39,7 @@ class PointSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(100, 100, 200, 200)))
+                expect(view.frame).to(equal(CGRect(x: 100, y: 100, width: 200, height: 200)))
             }
         }
 
@@ -57,7 +57,7 @@ class PointSpec: QuickSpec {
 
                     window.layoutIfNeeded()
 
-                    expect(view.frame).to(equal(CGRectMake(110, 110, 200, 200)))
+                    expect(view.frame).to(equal(CGRect(x: 110, y: 110, width: 200, height: 200)))
                 }
 
                 it("should support relative inequalities") {
@@ -68,7 +68,7 @@ class PointSpec: QuickSpec {
 
                     window.layoutIfNeeded()
 
-                    expect(view.frame).to(equal(CGRectMake(110, 110, 200, 200)))
+                    expect(view.frame).to(equal(CGRect(x: 110, y: 110, width: 200, height: 200)))
                 }
             }
         }
