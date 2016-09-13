@@ -16,9 +16,9 @@ class PrioritySpec: QuickSpec {
         }
 
         it("should operate on a single constraint") {
-            var constraint: NSLayoutConstraint!
+            var constraint: NSLayoutConstraint
 
-            constrain(view) { view in
+            constrain(view) { (view: LayoutProxy) -> Void in
                 constraint = (view.width == 200 ~ 100)
             }
 

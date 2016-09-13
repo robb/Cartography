@@ -15,4 +15,4 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Carthage/
+Pods/

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C914A4B45615A94521C23C /* Pods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */; };
 		4A3756C91D67445F0036190E /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
 		4A3756CC1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
@@ -119,10 +120,12 @@
 		632F09541BF1F15C002431A3 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		66AF7EEE1CABEABC00249E27 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		963DA7B1EC3A20178AC1A36D /* Pods_Cartography_Mac_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */; };
 		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
 		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
+		C134B443264C5E34B3B3C387 /* Pods_Cartography_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +187,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupportSpec.swift; sourceTree = "<group>"; };
 		541305B71B495986003F1935 /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DistributeSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -229,9 +233,17 @@
 		54FA3A431951A9730094B82A /* SizeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeSpec.swift; sourceTree = "<group>"; };
 		632F090A1BF1E7AA002431A3 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-tvOS-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_tvOS_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupport.swift; sourceTree = "<group>"; };
+		736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-tvOS-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BAB4C3970D4D8F780513DF5 /* Pods-Cartography-Mac-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-Mac-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
 		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
 		BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		CFBCD4D63164CC285F7D7B50 /* Pods-Cartography-Mac-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-Mac-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D60D315D892FB7DA6E05A362 /* Pods-Cartography-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +261,7 @@
 				54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */,
 				5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */,
+				C134B443264C5E34B3B3C387 /* Pods_Cartography_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +279,7 @@
 				54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */,
 				5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */,
+				963DA7B1EC3A20178AC1A36D /* Pods_Cartography_Mac_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +295,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */,
+				36C914A4B45615A94521C23C /* Pods_Cartography_tvOS_tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F12B8E5120CB9E4A9CE0B7F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BAB4C3970D4D8F780513DF5 /* Pods-Cartography-Mac-Tests.debug.xcconfig */,
+				CFBCD4D63164CC285F7D7B50 /* Pods-Cartography-Mac-Tests.release.xcconfig */,
+				D60D315D892FB7DA6E05A362 /* Pods-Cartography-iOS-Tests.debug.xcconfig */,
+				17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */,
+				736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */,
+				9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5435B8B21AD8610300B805F1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +341,9 @@
 				632F09041BF1E771002431A3 /* tvOS */,
 				5435B8B21AD8610300B805F1 /* iOS */,
 				5435B8B61AD8610300B805F1 /* Mac */,
+				7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */,
+				EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */,
+				646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,6 +355,7 @@
 				54C96A20195063CD000CDD27 /* CartographyTests */,
 				5435B8BA1AD8610700B805F1 /* Frameworks */,
 				54C96A12195063CD000CDD27 /* Products */,
+				2F12B8E5120CB9E4A9CE0B7F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -467,10 +499,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "Cartography-iOS-Tests" */;
 			buildPhases = (
+				24028C048E277759E25AE786 /* [CP] Check Pods Manifest.lock */,
 				54C96A18195063CD000CDD27 /* Sources */,
 				54C96A19195063CD000CDD27 /* Frameworks */,
 				54C96A1A195063CD000CDD27 /* Resources */,
 				5435B8C71AD8616000B805F1 /* Copy Frameworks */,
+				B6F7D337FFD9973F4083FCD3 /* [CP] Embed Pods Frameworks */,
+				8EB90FDED8EA58C4CCBBC95A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -505,10 +540,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54F6A84E195C20C200313D24 /* Build configuration list for PBXNativeTarget "Cartography-Mac-Tests" */;
 			buildPhases = (
+				DA4D07B720B9F2E815A2DE6C /* [CP] Check Pods Manifest.lock */,
 				54F6A83E195C20C200313D24 /* Sources */,
 				54F6A83F195C20C200313D24 /* Frameworks */,
 				54F6A840195C20C200313D24 /* Resources */,
 				5435B8C41AD8614F00B805F1 /* Copy Frameworks */,
+				28E8257CE249F34272E74DA2 /* [CP] Embed Pods Frameworks */,
+				713F939466D9EC6B77F49675 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,9 +580,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632F092A1BF1E7FC002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS-tests" */;
 			buildPhases = (
+				23F8E3613FE66A444A4C94A1 /* [CP] Check Pods Manifest.lock */,
 				632F091E1BF1E7FC002431A3 /* Sources */,
 				632F091F1BF1E7FC002431A3 /* Frameworks */,
 				632F09201BF1E7FC002431A3 /* Resources */,
+				02D0EEC2C95F444E52A8D1D4 /* [CP] Embed Pods Frameworks */,
+				B48162A10CC76148734211CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -656,6 +697,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02D0EEC2C95F444E52A8D1D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23F8E3613FE66A444A4C94A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		24028C048E277759E25AE786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		28E8257CE249F34272E74DA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713F939466D9EC6B77F49675 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EB90FDED8EA58C4CCBBC95A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B48162A10CC76148734211CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6F7D337FFD9973F4083FCD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA4D07B720B9F2E815A2DE6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54C96A0C195063CD000CDD27 /* Sources */ = {
@@ -966,6 +1145,7 @@
 		};
 		54C96A2B195063CD000CDD27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D60D315D892FB7DA6E05A362 /* Pods-Cartography-iOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -988,6 +1168,7 @@
 		};
 		54C96A2C195063CD000CDD27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1059,6 +1240,7 @@
 		};
 		54F6A84F195C20C200313D24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BAB4C3970D4D8F780513DF5 /* Pods-Cartography-Mac-Tests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1084,6 +1266,7 @@
 		};
 		54F6A850195C20C200313D24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFBCD4D63164CC285F7D7B50 /* Pods-Cartography-Mac-Tests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1161,6 +1344,7 @@
 		};
 		632F092B1BF1E7FC002431A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1177,6 +1361,7 @@
 		};
 		632F092C1BF1E7FC002431A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
