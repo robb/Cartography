@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Cartography"
-  s.version      = "0.5.0"
+  s.version      = "0.7.0"
   s.summary      = "Declarative Auto Layout in Swift"
 
   s.description  = <<-DESC
