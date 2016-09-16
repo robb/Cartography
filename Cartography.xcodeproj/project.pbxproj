@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09F7751A581957EA262BC6A4 /* Pods_TestPods_Cartography_Mac_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */; };
 		36C914A4B45615A94521C23C /* Pods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */; };
+		40F7238205F9E56862357198 /* Pods_TestPods_Cartography_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */; };
 		4A3756C91D67445F0036190E /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
 		4A3756CC1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
@@ -20,10 +22,6 @@
 		5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; };
 		5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; };
 		5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; };
-		5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B41AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E901950A76C00B16707 /* Edge.swift */; };
 		545F35841ACDFF6C00B57E98 /* MemoryLeakSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */; };
 		545F35851ACDFFAF00B57E98 /* MemoryLeakSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */; };
@@ -121,6 +119,7 @@
 		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		66AF7EEE1CABEABC00249E27 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		963DA7B1EC3A20178AC1A36D /* Pods_Cartography_Mac_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */; };
+		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
 		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -166,8 +165,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */,
-				5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,8 +175,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */,
-				5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,7 +182,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_tvOS_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		43F922F060AD40DEF231AAB1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupportSpec.swift; sourceTree = "<group>"; };
 		541305B71B495986003F1935 /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DistributeSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -235,8 +236,11 @@
 		632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-tvOS-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_tvOS_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupport.swift; sourceTree = "<group>"; };
+		690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-Mac-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-tvOS-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
+		825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB4C3970D4D8F780513DF5 /* Pods-Cartography-Mac-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-Mac-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
 		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */,
 				C134B443264C5E34B3B3C387 /* Pods_Cartography_iOS_Tests.framework in Frameworks */,
+				40F7238205F9E56862357198 /* Pods_TestPods_Cartography_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +285,7 @@
 				5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */,
 				963DA7B1EC3A20178AC1A36D /* Pods_Cartography_Mac_Tests.framework in Frameworks */,
+				09F7751A581957EA262BC6A4 /* Pods_TestPods_Cartography_Mac_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +302,7 @@
 			files = (
 				632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */,
 				36C914A4B45615A94521C23C /* Pods_Cartography_tvOS_tests.framework in Frameworks */,
+				A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +318,12 @@
 				17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */,
 				736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */,
 				9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */,
+				43F922F060AD40DEF231AAB1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */,
+				690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */,
+				007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */,
+				125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */,
+				45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */,
+				7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -344,6 +357,9 @@
 				7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */,
 				EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */,
 				646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */,
+				825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */,
+				0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */,
+				0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -715,7 +731,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		23F8E3613FE66A444A4C94A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -760,7 +776,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		713F939466D9EC6B77F49675 /* [CP] Copy Pods Resources */ = {
@@ -775,7 +791,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-Mac-Tests/Pods-Cartography-Mac-Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8EB90FDED8EA58C4CCBBC95A /* [CP] Copy Pods Resources */ = {
@@ -790,7 +806,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B48162A10CC76148734211CF /* [CP] Copy Pods Resources */ = {
@@ -805,7 +821,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-tvOS-tests/Pods-Cartography-tvOS-tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6F7D337FFD9973F4083FCD3 /* [CP] Embed Pods Frameworks */ = {
@@ -820,7 +836,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cartography-iOS-Tests/Pods-Cartography-iOS-Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DA4D07B720B9F2E815A2DE6C /* [CP] Check Pods Manifest.lock */ = {
@@ -1149,7 +1165,7 @@
 		};
 		54C96A2B195063CD000CDD27 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D60D315D892FB7DA6E05A362 /* Pods-Cartography-iOS-Tests.debug.xcconfig */;
+			baseConfigurationReference = 007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1163,7 +1179,6 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1172,7 +1187,7 @@
 		};
 		54C96A2C195063CD000CDD27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17B2E8C5FB2E5772DF5D0D59 /* Pods-Cartography-iOS-Tests.release.xcconfig */;
+			baseConfigurationReference = 125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1182,7 +1197,6 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1244,7 +1258,7 @@
 		};
 		54F6A84F195C20C200313D24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BAB4C3970D4D8F780513DF5 /* Pods-Cartography-Mac-Tests.debug.xcconfig */;
+			baseConfigurationReference = 43F922F060AD40DEF231AAB1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1260,7 +1274,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1270,7 +1283,7 @@
 		};
 		54F6A850195C20C200313D24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFBCD4D63164CC285F7D7B50 /* Pods-Cartography-Mac-Tests.release.xcconfig */;
+			baseConfigurationReference = 690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1283,7 +1296,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1348,7 +1360,7 @@
 		};
 		632F092B1BF1E7FC002431A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 736EDC8B0DA6D9ACD254C178 /* Pods-Cartography-tvOS-tests.debug.xcconfig */;
+			baseConfigurationReference = 45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1365,7 +1377,7 @@
 		};
 		632F092C1BF1E7FC002431A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DF1F761461FD202CE9426FE /* Pods-Cartography-tvOS-tests.release.xcconfig */;
+			baseConfigurationReference = 7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

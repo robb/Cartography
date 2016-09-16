@@ -16,3 +16,4 @@ DerivedData
 *.xcuserstate
 
 Pods/
+.DS_Store
