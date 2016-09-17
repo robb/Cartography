@@ -182,7 +182,7 @@ public struct LayoutProxy {
 
     /// The superview of the view, if it exists.
     public var superview: LayoutProxy? {
-        if let superview = view.superview {
+        if let superview = (view as? ViewType)?.superview {
             return LayoutProxy(context, superview)
         } else {
             return nil

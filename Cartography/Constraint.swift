@@ -18,11 +18,11 @@ internal class Constraint {
     let layoutConstraint: NSLayoutConstraint
 
     func install() {
-        view?.addConstraint(layoutConstraint)
+        (view as? ViewType)?.addConstraint(layoutConstraint)
     }
 
     func uninstall() {
-        view?.removeConstraint(layoutConstraint)
+        (view as? ViewType)?.removeConstraint(layoutConstraint)
     }
 
     init(view: View, layoutConstraint: NSLayoutConstraint) {

@@ -40,7 +40,7 @@ public class Context {
     #endif
     
     internal func addConstraint(from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .Equal) -> NSLayoutConstraint {
-        from.view.car_translatesAutoresizingMaskIntoConstraints = false
+        (from.view as? ViewType)?.car_translatesAutoresizingMaskIntoConstraints = false
 
         let layoutConstraint = NSLayoutConstraint(item: from.view,
                                                   attribute: from.attribute,
