@@ -1,9 +1,8 @@
-platform :ios, '8.0'
+use_frameworks!
 
 abstract_target "TestPods" do
-    use_frameworks!
     pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git'
-    pod 'Quick', :git => 'https://github.com/Quick/Quick.git', :branch => 'swift-3.0'
+    pod 'Quick', :git => 'https://github.com/Quick/Quick.git'
 
     target 'Cartography-iOS-Tests'
     target 'Cartography-Mac-Tests'
