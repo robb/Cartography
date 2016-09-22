@@ -5,8 +5,9 @@ install:
 - gem install cocoapods --pre
 script:
 - pod update
-- set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
-- set -o pipefail && xcodebuild -scheme 'Cartography-iOS' -sdk iphonesimulator test | xcpretty -c
+- set -o pipefail && xcodebuild -workspace Cartography.xcworkspace -scheme 'Cartography-Mac' test | xcpretty -c
+- set -o pipefail && xcodebuild -workspace Cartography.xcworkspace -scheme 'Cartography-iOS' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' test | xcpretty -c
+
 env:
   global:
     secure: odPR+Uvp5Enxc8qlFxuUo+aYVf1zS9xF7t2at4IXAJtP0wegwmG8dYOZ5IiMZP/gbBtAWWYc2en4NVnqS9K9wPFIrKdShMwBGnRcsYPj3b6kH/vQM/OLwzYFit2oSqhR3n4RP5UM+lc4jJnfqrK7StMY6ZxCkvLdZkMbFGqVJ20=
