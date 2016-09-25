@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09F7751A581957EA262BC6A4 /* Pods_TestPods_Cartography_Mac_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */; };
+		40F7238205F9E56862357198 /* Pods_TestPods_Cartography_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */; };
 		4A3756C91D67445F0036190E /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
 		4A3756CC1D6749190036190E /* LayoutSupportSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */; };
@@ -19,10 +21,6 @@
 		5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; };
 		5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; };
 		5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; };
-		5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B81AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B91AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B41AD8610300B805F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5435B8B51AD8610300B805F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546E9E901950A76C00B16707 /* Edge.swift */; };
 		545F35841ACDFF6C00B57E98 /* MemoryLeakSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */; };
 		545F35851ACDFFAF00B57E98 /* MemoryLeakSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */; };
@@ -119,6 +117,7 @@
 		632F09541BF1F15C002431A3 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		66AF7EEE1CABEABC00249E27 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
 		BBAC6D131A22A27900E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D141A22A3AC00E8A3E2 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -163,8 +162,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5435B8C51AD8615600B805F1 /* Nimble.framework in Copy Frameworks */,
-				5435B8C61AD8615600B805F1 /* Quick.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,8 +172,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5435B8C81AD8616900B805F1 /* Nimble.framework in Copy Frameworks */,
-				5435B8C91AD8616900B805F1 /* Quick.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +179,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_tvOS_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		3C61A3F684FD20F5E1B1F8D1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupportSpec.swift; sourceTree = "<group>"; };
 		541305B71B495986003F1935 /* Matchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matchers.swift; sourceTree = "<group>"; };
 		54143E4F1A939D6000208182 /* DistributeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DistributeSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -229,9 +230,15 @@
 		54FA3A431951A9730094B82A /* SizeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeSpec.swift; sourceTree = "<group>"; };
 		632F090A1BF1E7AA002431A3 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		632F09221BF1E7FC002431A3 /* Cartography-tvOS-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cartography-tvOS-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_tvOS_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutSupport.swift; sourceTree = "<group>"; };
+		690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-Mac-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
+		825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
 		BBAC6D121A22A27900E8A3E2 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +256,7 @@
 				54C96A1D195063CD000CDD27 /* Cartography.framework in Frameworks */,
 				5435B8BF1AD8612C00B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C01AD8612C00B805F1 /* Quick.framework in Frameworks */,
+				40F7238205F9E56862357198 /* Pods_TestPods_Cartography_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +274,7 @@
 				54F6A843195C20C200313D24 /* Cartography.framework in Frameworks */,
 				5435B8C11AD8613500B805F1 /* Nimble.framework in Frameworks */,
 				5435B8C21AD8613500B805F1 /* Quick.framework in Frameworks */,
+				09F7751A581957EA262BC6A4 /* Pods_TestPods_Cartography_Mac_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,12 +290,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				632F09271BF1E7FC002431A3 /* Cartography.framework in Frameworks */,
+				A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F12B8E5120CB9E4A9CE0B7F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */,
+				007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */,
+				125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */,
+				45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */,
+				7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */,
+				3C61A3F684FD20F5E1B1F8D1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5435B8B21AD8610300B805F1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +336,12 @@
 				632F09041BF1E771002431A3 /* tvOS */,
 				5435B8B21AD8610300B805F1 /* iOS */,
 				5435B8B61AD8610300B805F1 /* Mac */,
+				7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */,
+				EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */,
+				646D273E5E982865688DF028 /* Pods_Cartography_tvOS_tests.framework */,
+				825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */,
+				0C63D81EB2304A489BE29E6A /* Pods_TestPods_Cartography_iOS_Tests.framework */,
+				0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,6 +353,7 @@
 				54C96A20195063CD000CDD27 /* CartographyTests */,
 				5435B8BA1AD8610700B805F1 /* Frameworks */,
 				54C96A12195063CD000CDD27 /* Products */,
+				2F12B8E5120CB9E4A9CE0B7F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -467,10 +497,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54C96A2A195063CD000CDD27 /* Build configuration list for PBXNativeTarget "Cartography-iOS-Tests" */;
 			buildPhases = (
+				24028C048E277759E25AE786 /* [CP] Check Pods Manifest.lock */,
 				54C96A18195063CD000CDD27 /* Sources */,
 				54C96A19195063CD000CDD27 /* Frameworks */,
 				54C96A1A195063CD000CDD27 /* Resources */,
 				5435B8C71AD8616000B805F1 /* Copy Frameworks */,
+				B6F7D337FFD9973F4083FCD3 /* [CP] Embed Pods Frameworks */,
+				8EB90FDED8EA58C4CCBBC95A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -505,10 +538,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54F6A84E195C20C200313D24 /* Build configuration list for PBXNativeTarget "Cartography-Mac-Tests" */;
 			buildPhases = (
+				DA4D07B720B9F2E815A2DE6C /* [CP] Check Pods Manifest.lock */,
 				54F6A83E195C20C200313D24 /* Sources */,
 				54F6A83F195C20C200313D24 /* Frameworks */,
 				54F6A840195C20C200313D24 /* Resources */,
 				5435B8C41AD8614F00B805F1 /* Copy Frameworks */,
+				28E8257CE249F34272E74DA2 /* [CP] Embed Pods Frameworks */,
+				713F939466D9EC6B77F49675 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,9 +578,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632F092A1BF1E7FC002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS-tests" */;
 			buildPhases = (
+				23F8E3613FE66A444A4C94A1 /* [CP] Check Pods Manifest.lock */,
 				632F091E1BF1E7FC002431A3 /* Sources */,
 				632F091F1BF1E7FC002431A3 /* Frameworks */,
 				632F09201BF1E7FC002431A3 /* Resources */,
+				02D0EEC2C95F444E52A8D1D4 /* [CP] Embed Pods Frameworks */,
+				B48162A10CC76148734211CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -572,6 +611,7 @@
 					};
 					54C96A1B195063CD000CDD27 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 54C96A10195063CD000CDD27;
 					};
 					54F6A837195C20C100313D24 = {
@@ -659,6 +699,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02D0EEC2C95F444E52A8D1D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23F8E3613FE66A444A4C94A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		24028C048E277759E25AE786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		28E8257CE249F34272E74DA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713F939466D9EC6B77F49675 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-Mac-Tests/Pods-TestPods-Cartography-Mac-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EB90FDED8EA58C4CCBBC95A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B48162A10CC76148734211CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6F7D337FFD9973F4083FCD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestPods-Cartography-iOS-Tests/Pods-TestPods-Cartography-iOS-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA4D07B720B9F2E815A2DE6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54C96A0C195063CD000CDD27 /* Sources */ = {
@@ -844,8 +1022,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -891,8 +1071,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
@@ -936,7 +1118,7 @@
 				PRODUCT_NAME = Cartography;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -959,12 +1141,13 @@
 				PRODUCT_NAME = Cartography;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		54C96A2B195063CD000CDD27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 007A7C5A4CF651CD9D550547 /* Pods-TestPods-Cartography-iOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -978,14 +1161,15 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		54C96A2C195063CD000CDD27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 125531F897589C40A2E6968E /* Pods-TestPods-Cartography-iOS-Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -995,10 +1179,10 @@
 				INFOPLIST_FILE = CartographyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1025,7 +1209,7 @@
 				PRODUCT_NAME = Cartography;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1050,12 +1234,13 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		54F6A84F195C20C200313D24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C61A3F684FD20F5E1B1F8D1 /* Pods-TestPods-Cartography-Mac-Tests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1071,16 +1256,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = YES;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		54F6A850195C20C200313D24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690415756227F5789FBF9D77 /* Pods-TestPods-Cartography-Mac-Tests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1093,12 +1278,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = NO;
-				OTHER_SWIFT_FLAGS = "-DTEST";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1122,7 +1306,7 @@
 				PRODUCT_NAME = Cartography;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1150,7 +1334,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1158,6 +1342,7 @@
 		};
 		632F092B1BF1E7FC002431A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45CEEFB5D80398843533851A /* Pods-TestPods-Cartography-tvOS-tests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1167,13 +1352,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Cartography.Cartography-tvOS-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		632F092C1BF1E7FC002431A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1185,7 +1371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;

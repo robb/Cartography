@@ -14,7 +14,7 @@
 
 typealias Accumulator = ([NSLayoutConstraint], LayoutProxy)
 
-private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
+@discardableResult private func reduce(_ first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
     rest.last?.view.car_translatesAutoresizingMaskIntoConstraints = false
 
     return rest.reduce(([], first)) { (acc, current) -> Accumulator in
@@ -34,7 +34,7 @@ private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutPro
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: CGFloat, horizontally first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat, horizontally first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.trailing == $1.leading - amount }
 }
 
@@ -48,7 +48,7 @@ public func distribute(by amount: CGFloat, horizontally first: LayoutProxy, _ re
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: CGFloat, leftToRight first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat, leftToRight first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.right == $1.left - amount  }
 }
 
@@ -62,6 +62,6 @@ public func distribute(by amount: CGFloat, leftToRight first: LayoutProxy, _ res
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: CGFloat, vertically first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat, vertically first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.bottom == $1.top - amount }
 }

@@ -9,9 +9,9 @@ class DimensionSpec: QuickSpec {
         var view: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             window.addSubview(view)
         }
 

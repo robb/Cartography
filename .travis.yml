@@ -1,14 +1,13 @@
 language: objective-c
-osx_image: xcode7.3
-before_install:
-- brew update
-- brew install carthage || brew outdated carthage || brew upgrade carthage
+osx_image: xcode8
 install:
 - gem install xcpretty
-- carthage bootstrap --platform "ios osx"
+- gem install cocoapods --pre
 script:
-- set -o pipefail && xcodebuild -scheme 'Cartography-Mac' test | xcpretty -c
-- set -o pipefail && xcodebuild -scheme 'Cartography-iOS' -sdk iphonesimulator test | xcpretty -c
+- pod update
+- set -o pipefail && xcodebuild -workspace Cartography.xcworkspace -scheme 'Cartography-Mac' test | xcpretty -c
+- set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace ./Cartography.xcworkspace -scheme Cartography-iOS -destination 'platform=iOS Simulator,name=iPhone 6s Plus'  build test | xcpretty 
+
 env:
   global:
     secure: odPR+Uvp5Enxc8qlFxuUo+aYVf1zS9xF7t2at4IXAJtP0wegwmG8dYOZ5IiMZP/gbBtAWWYc2en4NVnqS9K9wPFIrKdShMwBGnRcsYPj3b6kH/vQM/OLwzYFit2oSqhR3n4RP5UM+lc4jJnfqrK7StMY6ZxCkvLdZkMbFGqVJ20=

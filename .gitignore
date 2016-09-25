@@ -15,4 +15,5 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Carthage/
+Pods/
+.DS_Store

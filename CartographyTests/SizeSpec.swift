@@ -9,9 +9,9 @@ class SizeSpec: QuickSpec {
         var view: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             window.addSubview(view)
         }
 
@@ -23,7 +23,7 @@ class SizeSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
+                expect(view.frame.size).to(equal(CGSize(width: 400, height: 400)))
             }
 
             it("should support relative inequalities") {
@@ -34,7 +34,7 @@ class SizeSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame.size).to(equal(CGSizeMake(400, 400)))
+                expect(view.frame.size).to(equal(CGSize(width: 400, height: 400)))
             }
 
             it("should support multiplication") {
@@ -44,7 +44,7 @@ class SizeSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame.size).to(equal(CGSizeMake(800, 800)))
+                expect(view.frame.size).to(equal(CGSize(width: 800, height: 800)))
             }
 
             it("should support division") {
@@ -54,7 +54,7 @@ class SizeSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame.size).to(equal(CGSizeMake(200, 200)))
+                expect(view.frame.size).to(equal(CGSize(width: 200, height: 200)))
             }
         }
     }

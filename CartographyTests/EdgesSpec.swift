@@ -9,9 +9,9 @@ class EdgesSpec: QuickSpec {
         var view: TestView!
 
         beforeEach {
-            window = TestWindow(frame: CGRectMake(0, 0, 400, 400))
+            window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
-            view = TestView(frame: CGRectZero)
+            view = TestView(frame: CGRect.zero)
             window.addSubview(view)
         }
 
@@ -48,7 +48,7 @@ class EdgesSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(20, 20, 360, 360)))
+                expect(view.frame).to(equal(CGRect(x: 20, y: 20, width: 360, height: 360)))
             }
 
             it("should inset the horizontal and vertical edge individually") {
@@ -58,7 +58,7 @@ class EdgesSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(20, 30, 360, 340)))
+                expect(view.frame).to(equal(CGRect(x: 20, y: 30, width: 360, height: 340)))
             }
 
             it("should inset all edges individually") {
@@ -68,7 +68,7 @@ class EdgesSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
+                expect(view.frame).to(equal(CGRect(x: 20, y: 10, width: 340, height: 360)))
             }
         }
 
@@ -86,7 +86,7 @@ class EdgesSpec: QuickSpec {
 
                     window.layoutIfNeeded()
 
-                   expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
+                    expect(view.frame).to(equal(CGRect(x: 20, y: 10, width: 340, height: 360)))
                 }
             }
         }
@@ -100,7 +100,7 @@ class EdgesSpec: QuickSpec {
 
                 window.layoutIfNeeded()
 
-                expect(view.frame).to(equal(CGRectMake(20, 10, 340, 360)))
+                expect(view.frame).to(equal(CGRect(x: 20, y: 10, width: 340, height: 360)))
             }
         }
 #endif
