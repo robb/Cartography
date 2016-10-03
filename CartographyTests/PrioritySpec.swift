@@ -19,8 +19,7 @@ class PrioritySpec: QuickSpec {
             var constraint: NSLayoutConstraint!
 
             constrain(view) { (view: LayoutProxy) in
-                constraint = view.width == 200
-                constraint ~ 100
+                constraint = view.width == 200 ~ 100.0
             }
 
             expect(constraint.priority).to(equal(100))
