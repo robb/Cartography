@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Cartography"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Declarative Auto Layout in Swift"
 
   s.description  = <<-DESC
@@ -18,7 +18,4 @@ Pod::Spec.new do |s|
 
   s.source = { :git => "https://github.com/robb/Cartography.git", :tag => "#{s.version}" }
   s.source_files  = "Cartography/*.swift"
-
-  s.requires_arc = true
-
 end
