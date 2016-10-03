@@ -18,6 +18,7 @@ public typealias LayoutPriority = NSLayoutPriority
 
 precedencegroup CarthographyPriorityPrecedence {
     lowerThan: ComparisonPrecedence
+    higherThan: AssignmentPrecedence
 }
 
 infix operator  ~: CarthographyPriorityPrecedence
