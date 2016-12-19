@@ -18,7 +18,9 @@ typealias Accumulator = ([NSLayoutConstraint], LayoutProxy)
     elements.last?.view.car_translatesAutoresizingMaskIntoConstraints = false
     
     if let first = elements.first {
-        return elements.reduce(([], first)) { (acc, current) -> Accumulator in
+        let rest = elements.dropFirst()
+        
+        return rest.reduce(([], first)) { (acc, current) -> Accumulator in
             let (constraints, previous) = acc
             
             return (constraints + [ combine(previous, current) ], current)
