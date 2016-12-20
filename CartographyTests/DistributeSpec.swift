@@ -81,7 +81,7 @@ class DistributeSpec: QuickSpec {
         }
         
         describe("no constraints") {
-            it("should have no constraints for a single view alignment") {
+            it("should have no constraints for a single view distribution") {
                 constrain(viewA) { viewA in
                     let constraints = distribute(horizontally: [viewA])
                     
