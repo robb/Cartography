@@ -75,5 +75,20 @@ class AlignSpec: QuickSpec {
                 expect(viewC).notTo(translateAutoresizingMasksToConstraints())
             }
         }
+        
+        describe("no constraints") {
+            it("should have no constraints for a single view alignment") {
+                constrain(viewA) { viewA in
+                    let constraints = align(top: [viewA])
+                    
+                    expect(constraints.count).to(equal(0))
+                }
+            }
+            
+            it("should have no constraints for no view") {
+                let constraints = align(top: [])
+                expect(constraints.count).to(equal(0))
+            }
+        }
     }
 }
