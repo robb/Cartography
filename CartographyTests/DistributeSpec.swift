@@ -79,5 +79,20 @@ class DistributeSpec: QuickSpec {
                 expect(viewC).notTo(translateAutoresizingMasksToConstraints())
             }
         }
+        
+        describe("no constraints") {
+            it("should have no constraints for a single view distribution") {
+                constrain(viewA) { viewA in
+                    let constraints = distribute(horizontally: [viewA])
+                    
+                    expect(constraints.count).to(equal(0))
+                }
+            }
+            
+            it("should have no constraints for no view") {
+                let constraints = distribute(horizontally: [])
+                expect(constraints.count).to(equal(0))
+            }
+        }
     }
 }
