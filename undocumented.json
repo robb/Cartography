@@ -1,0 +1,481 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 14,
+      "symbol": "Coefficients",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 28,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 32,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 38,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 42,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 48,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 52,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 58,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Coefficients.swift",
+      "line": 62,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Compound.swift",
+      "line": 15,
+      "symbol": "Compound",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Compound.swift",
+      "line": 16,
+      "symbol": "Compound.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Compound.swift",
+      "line": 17,
+      "symbol": "Compound.properties",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/ConstraintGroup.swift",
+      "line": 11,
+      "symbol": "ConstraintGroup",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/ConstraintGroup.swift",
+      "line": 16,
+      "symbol": "ConstraintGroup.active",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/ConstraintGroup.swift",
+      "line": 29,
+      "symbol": "ConstraintGroup.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Context.swift",
+      "line": 15,
+      "symbol": "Context",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Dimension.swift",
+      "line": 15,
+      "symbol": "Dimension",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Dimension.swift",
+      "line": 16,
+      "symbol": "Dimension.attribute",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Dimension.swift",
+      "line": 17,
+      "symbol": "Dimension.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Dimension.swift",
+      "line": 18,
+      "symbol": "Dimension.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edge.swift",
+      "line": 15,
+      "symbol": "Edge",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edge.swift",
+      "line": 16,
+      "symbol": "Edge.attribute",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edge.swift",
+      "line": 17,
+      "symbol": "Edge.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edge.swift",
+      "line": 18,
+      "symbol": "Edge.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edges.swift",
+      "line": 15,
+      "symbol": "Edges",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edges.swift",
+      "line": 16,
+      "symbol": "Edges.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Edges.swift",
+      "line": 17,
+      "symbol": "Edges.properties",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Expression.swift",
+      "line": 11,
+      "symbol": "Expression",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/LayoutProxy.swift",
+      "line": 11,
+      "symbol": "LayoutProxy",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/LayoutSupport.swift",
+      "line": 14,
+      "symbol": "LayoutSupport",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/LayoutSupport.swift",
+      "line": 21,
+      "symbol": "UIViewController.topLayoutGuideCartography",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/LayoutSupport.swift",
+      "line": 27,
+      "symbol": "UIViewController.bottomLayoutGuideCartography",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Point.swift",
+      "line": 15,
+      "symbol": "Point",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Point.swift",
+      "line": 16,
+      "symbol": "Point.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Point.swift",
+      "line": 17,
+      "symbol": "Point.properties",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 15,
+      "symbol": "Property",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 16,
+      "symbol": "Property.attribute",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 17,
+      "symbol": "Property.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 18,
+      "symbol": "Property.view",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 149,
+      "symbol": "Addition",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 151,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 155,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 159,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 163,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 167,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 171,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 175,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 179,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 185,
+      "symbol": "+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 189,
+      "symbol": "-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 196,
+      "symbol": "Multiplication",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 198,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 202,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 206,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 210,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 214,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Property.swift",
+      "line": 218,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 15,
+      "symbol": "Size",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 16,
+      "symbol": "Size.context",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 17,
+      "symbol": "Size.properties",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 27,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 31,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 35,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 39,
+      "symbol": "*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 45,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/Size.swift",
+      "line": 49,
+      "symbol": "/(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/View.swift",
+      "line": null,
+      "symbol": "View",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/eric/other-src/Cartography/Cartography/Cartography/View.swift",
+      "line": 16,
+      "symbol": "View.car_translatesAutoresizingMaskIntoConstraints",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/eric/other-src/Cartography/Cartography"
+}

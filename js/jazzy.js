@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 // On token click, toggle its discussion and animate token.marginLeft
-$(".token").click(function() {
+$(".token").click(function(event) {
   if (window.jazzy.docset) {
     return;
   }
@@ -28,4 +28,19 @@ $(".token").click(function() {
   link.animate({'margin-left':original ? "0px" : tokenOffset}, animationDuration);
   $content = link.parent().parent().next();
   $content.slideToggle(animationDuration);
+
+  // Keeps the document from jumping to the hash.
+  var href = $(this).attr('href');
+  if (history.pushState) {
+    history.pushState({}, '', href);
+  } else {
+    location.hash = href;
+  }
+  event.preventDefault();
+});
+
+// Dumb down quotes within code blocks that delimit strings instead of quotations
+// https://github.com/realm/jazzy/issues/714
+$("code q").replaceWith(function () {
+  return ["\"", $(this).contents(), "\""];
 });
