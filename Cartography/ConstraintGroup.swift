@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension Sequence {
+    func all(predicate: (Iterator.Element) -> Bool) -> Bool {
+        return !contains { !predicate($0) }
+    }
+}
+
 public class ConstraintGroup {
     private var constraints: [Constraint] = []
 
@@ -15,9 +21,7 @@ public class ConstraintGroup {
     @available(iOS, introduced: 8.0)
     public var active: Bool {
         get {
-            return constraints
-                .map { $0.layoutConstraint.isActive }
-                .reduce(true) { $0 && $1 }
+            return constraints.all { $0.layoutConstraint.isActive }
         }
         set {
             for constraint in constraints {
