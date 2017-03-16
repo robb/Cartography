@@ -159,11 +159,11 @@ extension Addition {
     static public func +(c: CGFloat, rhs: Self) -> Expression<Self> {
         return Expression(rhs, [ Coefficients(1, c) ])
     }
-    
+
     static public func +(lhs: Self, rhs: CGFloat) -> Expression<Self> {
         return rhs + lhs
     }
-    
+
     static public func -(lhs: Self, rhs: CGFloat) -> Expression<Self> {
         return rhs - lhs
     }
@@ -177,55 +177,59 @@ extension Expression where T : Addition {
     static public func +(c: CGFloat, rhs: Expression<T>) -> Expression<T> {
         return Expression(rhs.value, rhs.coefficients.map { $0 + c })
     }
-    
+
     static public func +(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
         return rhs + lhs
     }
-    
+
     static public func -(c: CGFloat, rhs: Expression<T>) -> Expression<T> {
         return Expression(rhs.value, rhs.coefficients.map { $0 - c})
     }
-    
+
     static public func -(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
         return rhs - lhs
     }
 }
 
 #if os(iOS) || os(tvOS)
-    
-    public func + (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+extension LayoutSupport {
+    static public func +(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
         return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
     }
     
-    public func - (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+    static public func -(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
         return lhs + (-c)
     }
-    
+}
 #endif
 // MARK: Multiplication
 
 public protocol Multiplication : Property { }
 
-public func * <P: Multiplication>(m: CGFloat, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+extension Multiplication {
+    static public func *(m: CGFloat, rhs: Self) -> Expression<Self> {
+        return Expression(rhs, [ Coefficients(m, 0) ])
+    }
+
+    static public func *(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return rhs * lhs
+    }
+
+    static public func /(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return lhs * (1 / rhs)
+    }
 }
 
-public func * <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return rhs * lhs
-}
+extension Expression where T : Multiplication {
+    static public func *(m: CGFloat, rhs: Expression<T>) -> Expression<T> {
+        return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+    }
 
-public func * <P: Multiplication>(m: CGFloat, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
-}
+    static public func *(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+        return rhs * lhs
+    }
 
-public func * <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return rhs * lhs
-}
-
-public func / <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return lhs * (1 / rhs)
-}
-
-public func / <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return lhs * (1 / rhs)
+    static public func /(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+        return lhs * (1 / rhs)
+    }
 }
