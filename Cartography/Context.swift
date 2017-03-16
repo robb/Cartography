@@ -65,14 +65,12 @@ public class Context {
     }
 
     internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = .equal) -> [NSLayoutConstraint] {
-        var results: [NSLayoutConstraint] = []
-
-        for i in 0..<from.properties.count {
-            let n: Coefficients = coefficients?[i] ?? Coefficients()
-
-            results.append(addConstraint(from.properties[i], to: to?.properties[i], coefficients: n, relation: relation))
+        return (0..<from.properties.count).map {
+            let n: Coefficients = coefficients?[$0] ?? Coefficients()
+            return addConstraint(from.properties[$0],
+                                 to: to?.properties[$0],
+                                 coefficients: n,
+                                 relation: relation)
         }
-
-        return results
     }
 }
