@@ -27,7 +27,7 @@ extension View {
         var current : View? = self
         return AnyIterator {
             defer {
-                current = self.superview
+                current = current?.superview
             }
             return current
         }

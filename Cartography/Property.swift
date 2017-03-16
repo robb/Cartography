@@ -194,7 +194,7 @@ extension Expression where T : Addition {
 #if os(iOS) || os(tvOS)
 extension LayoutSupport {
     static public func +(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
-        return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
+        return Expression(lhs, [Coefficients(1, c)])
     }
     
     static public func -(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
