@@ -108,7 +108,6 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func ==(lhs: Self, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs)
     }
@@ -121,11 +120,10 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func ==(lhs: Self, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
     }
-    
+
     /// Declares a property greater than or equal to a layout support.
     ///
     /// - parameter lhs: The affected property. The associated view will have
@@ -134,7 +132,6 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func >=(lhs: Self, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs, relation: .greaterThanOrEqual)
     }
@@ -147,11 +144,10 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func <=(lhs: Self, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs, relation: .lessThanOrEqual)
     }
-    
+
     /// Declares a property greater than or equal to the result of a layout support expression.
     ///
     /// - parameter lhs: The affected property. The associated view will have
@@ -160,7 +156,6 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func >=(lhs: Self, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .greaterThanOrEqual)
     }
@@ -173,7 +168,6 @@ extension RelativeEquality {
     ///
     /// - returns: An `NSLayoutConstraint`.
     ///
-    
     @discardableResult static public func <=(lhs: Self, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .lessThanOrEqual)
     }
