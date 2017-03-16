@@ -174,19 +174,19 @@ extension Addition {
 }
 
 extension Expression where T : Addition {
-    static public func +(c: CGFloat, rhs: Expression<T>) -> Expression<T> {
+    static public func +(c: CGFloat, rhs: Expression) -> Expression {
         return Expression(rhs.value, rhs.coefficients.map { $0 + c })
     }
 
-    static public func +(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+    static public func +(lhs: Expression, rhs: CGFloat) -> Expression {
         return rhs + lhs
     }
 
-    static public func -(c: CGFloat, rhs: Expression<T>) -> Expression<T> {
+    static public func -(c: CGFloat, rhs: Expression) -> Expression {
         return Expression(rhs.value, rhs.coefficients.map { $0 - c})
     }
 
-    static public func -(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+    static public func -(lhs: Expression, rhs: CGFloat) -> Expression {
         return rhs - lhs
     }
 }
@@ -221,15 +221,15 @@ extension Multiplication {
 }
 
 extension Expression where T : Multiplication {
-    static public func *(m: CGFloat, rhs: Expression<T>) -> Expression<T> {
+    static public func *(m: CGFloat, rhs: Expression) -> Expression {
         return Expression(rhs.value, rhs.coefficients.map { $0 * m })
     }
 
-    static public func *(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+    static public func *(lhs: Expression, rhs: CGFloat) -> Expression {
         return rhs * lhs
     }
 
-    static public func /(lhs: Expression<T>, rhs: CGFloat) -> Expression<T> {
+    static public func /(lhs: Expression, rhs: CGFloat) -> Expression {
         return lhs * (1 / rhs)
     }
 }
