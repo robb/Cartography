@@ -12,20 +12,24 @@ import Foundation
     import UIKit
     public typealias View = UIView
 
-    extension View {
-        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints }
-            set { translatesAutoresizingMaskIntoConstraints = newValue }
-        }
-    }
 #else
     import AppKit
     public typealias View = NSView
+#endif
 
-    extension View {
-        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints }
-            set { translatesAutoresizingMaskIntoConstraints = newValue }
+extension View {
+    public var car_translatesAutoresizingMaskIntoConstraints: Bool {
+        get { return translatesAutoresizingMaskIntoConstraints }
+        set { translatesAutoresizingMaskIntoConstraints = newValue }
+    }
+    
+    func ancestors() -> AnyIterator<View> {
+        var current : View? = self
+        return AnyIterator {
+            defer {
+                current = self.superview
+            }
+            return current
         }
     }
-#endif
+}
