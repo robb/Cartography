@@ -64,7 +64,7 @@ public class Context {
         return layoutConstraint
     }
 
-    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.equal) -> [NSLayoutConstraint] {
+    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = .equal) -> [NSLayoutConstraint] {
         var results: [NSLayoutConstraint] = []
 
         for i in 0..<from.properties.count {
