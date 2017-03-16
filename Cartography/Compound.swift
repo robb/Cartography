@@ -111,7 +111,7 @@ extension RelativeEquality {
     @discardableResult static public func ==(lhs: Self, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs)
     }
-    
+
     /// Declares a property equal to the result of a layout support expression.
     ///
     /// - parameter lhs: The affected property. The associated view will have
@@ -135,7 +135,7 @@ extension RelativeEquality {
     @discardableResult static public func >=(lhs: Self, rhs: LayoutSupport) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs, relation: .greaterThanOrEqual)
     }
-    
+
     /// Declares a property less than or equal to a layout support.
     ///
     /// - parameter lhs: The affected property. The associated view will have
@@ -159,7 +159,7 @@ extension RelativeEquality {
     @discardableResult static public func >=(lhs: Self, rhs: Expression<LayoutSupport>) -> NSLayoutConstraint {
         return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .greaterThanOrEqual)
     }
-    
+
     /// Declares a property less than or equal to the result of a layout support expression.
     ///
     /// - parameter lhs: The affected property. The associated view will have
