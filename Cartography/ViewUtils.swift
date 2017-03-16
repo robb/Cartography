@@ -25,12 +25,8 @@ internal func closestCommonAncestor(_ a: View, b: View) -> View? {
 
     let ancestorsOfA = Set(a.ancestors())
 
-    for ancestor in b.ancestors() {
-        if ancestorsOfA.contains(ancestor) {
-            return ancestor
-        }
+    return b.ancestors().first {
+        ancestorsOfA.contains($0)
     }
-
-    return .none
 }
 
