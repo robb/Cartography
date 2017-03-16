@@ -52,11 +52,10 @@ public class Context {
                                                   constant: CGFloat(coefficients.constant))
 
         if let to = to {
-            if let common = closestCommonAncestor(from.view, b: to.view ) {
-                constraints.append(Constraint(view: common, layoutConstraint: layoutConstraint))
-            } else {
+            guard let common = closestCommonAncestor(from.view, b: to.view ) else {
                 fatalError("No common superview found between \(from.view) and \(to.view)")
             }
+            constraints.append(Constraint(view: common, layoutConstraint: layoutConstraint))
         } else {
             constraints.append(Constraint(view: from.view, layoutConstraint: layoutConstraint))
         }
