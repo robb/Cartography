@@ -141,6 +141,6 @@ import Foundation
 ///
 /// - parameter clear: The `ConstraintGroup` whose constraints should be removed.
 ///
-@discardableResult public func constrain(clear group: ConstraintGroup) {
+public func constrain(clear group: ConstraintGroup) {
     group.replaceConstraints([])
 }
