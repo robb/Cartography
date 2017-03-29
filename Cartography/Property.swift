@@ -7,9 +7,9 @@
 //
 
 #if os(iOS) || os(tvOS)
-import UIKit
+    import UIKit
 #else
-import AppKit
+    import AppKit
 #endif
 
 public protocol Property {
@@ -24,42 +24,46 @@ public protocol Property {
 /// numerical constants.
 public protocol NumericalEquality : Property { }
 
-/// Declares a property equal to a numerical constant.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The numerical constant.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func == (lhs: NumericalEquality, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
+extension NumericalEquality {
+    /// Declares a property equal to a numerical constant.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The numerical constant.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func ==(lhs: NumericalEquality, rhs: CGFloat) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
+    }
 }
 
 /// Properties conforming to this protocol can use the `==` operator with other
 /// properties of the same type.
 public protocol RelativeEquality : Property { }
 
-/// Declares a property equal to a the result of an expression.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The expression.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func == <P: RelativeEquality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
-}
-
-/// Declares a property equal to another property.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The other property.
-///
-@discardableResult public func == <P: RelativeEquality>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs)
+extension RelativeEquality {
+    /// Declares a property equal to a the result of an expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The expression.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func ==(lhs: Self, rhs: Expression<Self>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
+    }
+    
+    /// Declares a property equal to another property.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The other property.
+    ///
+    @discardableResult static public func ==(lhs: Self, rhs: Self) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs)
+    }
 }
 
 // MARK: Inequality
@@ -68,153 +72,164 @@ public protocol RelativeEquality : Property { }
 /// with numerical constants.
 public protocol NumericalInequality : Property { }
 
-/// Declares a property less than or equal to a numerical constant.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The numerical constant.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func <= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.lessThanOrEqual)
+extension NumericalInequality {
+    /// Declares a property less than or equal to a numerical constant.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The numerical constant.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func <= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: .lessThanOrEqual)
+    }
+    
+    /// Declares a property greater than or equal to a numerical constant.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The numerical constant.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func >= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: .greaterThanOrEqual)
+    }
 }
-
-/// Declares a property greater than or equal to a numerical constant.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The numerical constant.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func >= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: NSLayoutRelation.greaterThanOrEqual)
-}
-
 /// Properties conforming to this protocol can use the `<=` and `>=` operators
 /// with other properties of the same type.
 public protocol RelativeInequality : Property { }
 
-/// Declares a property less than or equal to another property.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The other property.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func <= <P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.lessThanOrEqual)
-}
-
-/// Declares a property greater than or equal to another property.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The other property.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func >= <P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.greaterThanOrEqual)
-}
-
-/// Declares a property less than or equal to the result of an expression.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The other property.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func <= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.lessThanOrEqual)
-}
-
-/// Declares a property greater than or equal to the result of an expression.
-///
-/// - parameter lhs: The affected property. The associated view will have
-///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
-/// - parameter rhs: The other property.
-///
-/// - returns: An `NSLayoutConstraint`.
-///
-@discardableResult public func >= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
-    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: NSLayoutRelation.greaterThanOrEqual)
+extension RelativeInequality {
+    /// Declares a property less than or equal to another property.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The other property.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func <=(lhs: Self, rhs: Self) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs, relation: .lessThanOrEqual)
+    }
+    
+    /// Declares a property greater than or equal to another property.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The other property.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func >=(lhs: Self, rhs: Self) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs, relation: .greaterThanOrEqual)
+    }
+    
+    /// Declares a property less than or equal to the result of an expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The other property.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func <=(lhs: Self, rhs: Expression<Self>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .lessThanOrEqual)
+    }
+    
+    /// Declares a property greater than or equal to the result of an expression.
+    ///
+    /// - parameter lhs: The affected property. The associated view will have
+    ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
+    /// - parameter rhs: The other property.
+    ///
+    /// - returns: An `NSLayoutConstraint`.
+    ///
+    @discardableResult static public func >=(lhs: Self, rhs: Expression<Self>) -> NSLayoutConstraint {
+        return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .greaterThanOrEqual)
+    }
 }
 
 // MARK: Addition
 
 public protocol Addition : Property { }
 
-public func + <P: Addition>(c: CGFloat, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(1, c) ])
+extension Addition {
+    static public func +(c: CGFloat, rhs: Self) -> Expression<Self> {
+        return Expression(rhs, [ Coefficients(1, c) ])
+    }
+
+    static public func +(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return rhs + lhs
+    }
+
+    static public func -(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return rhs - lhs
+    }
+
+    static public func -(c: CGFloat, rhs: Self) -> Expression<Self> {
+        return Expression(rhs, [ Coefficients(1, -c) ])
+    }
 }
 
-public func + <P: Addition>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return rhs + lhs
-}
+extension Expression where T : Addition {
+    static public func +(c: CGFloat, rhs: Expression) -> Expression {
+        return Expression(rhs.value, rhs.coefficients.map { $0 + c })
+    }
 
-public func + <P: Addition>(c: CGFloat, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
-}
+    static public func +(lhs: Expression, rhs: CGFloat) -> Expression {
+        return rhs + lhs
+    }
 
-public func + <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return rhs + lhs
-}
+    static public func -(c: CGFloat, rhs: Expression) -> Expression {
+        return Expression(rhs.value, rhs.coefficients.map { $0 - c})
+    }
 
-public func - <P: Addition>(c: CGFloat, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(1, -c) ])
-}
-
-public func - <P: Addition>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return rhs - lhs
-}
-
-public func - <P: Addition>(c: CGFloat, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
-}
-
-public func - <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return rhs - lhs
+    static public func -(lhs: Expression, rhs: CGFloat) -> Expression {
+        return rhs - lhs
+    }
 }
 
 #if os(iOS) || os(tvOS)
-
-    public func + (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
-        return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
+extension LayoutSupport {
+    static public func +(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
+        return Expression(lhs, [Coefficients(1, c)])
     }
-
-    public func - (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+    
+    static public func -(lhs: LayoutSupport, c: CGFloat) -> Expression<LayoutSupport> {
         return lhs + (-c)
     }
-
+}
 #endif
 // MARK: Multiplication
 
 public protocol Multiplication : Property { }
 
-public func * <P: Multiplication>(m: CGFloat, rhs: Expression<P>) -> Expression<P> {
-    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+extension Multiplication {
+    static public func *(m: CGFloat, rhs: Self) -> Expression<Self> {
+        return Expression(rhs, [ Coefficients(m, 0) ])
+    }
+
+    static public func *(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return rhs * lhs
+    }
+
+    static public func /(lhs: Self, rhs: CGFloat) -> Expression<Self> {
+        return lhs * (1 / rhs)
+    }
 }
 
-public func * <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return rhs * lhs
-}
+extension Expression where T : Multiplication {
+    static public func *(m: CGFloat, rhs: Expression) -> Expression {
+        return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+    }
 
-public func * <P: Multiplication>(m: CGFloat, rhs: P) -> Expression<P> {
-    return Expression(rhs, [ Coefficients(m, 0) ])
-}
+    static public func *(lhs: Expression, rhs: CGFloat) -> Expression {
+        return rhs * lhs
+    }
 
-public func * <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return rhs * lhs
-}
-
-public func / <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
-    return lhs * (1 / rhs)
-}
-
-public func / <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
-    return lhs * (1 / rhs)
+    static public func /(lhs: Expression, rhs: CGFloat) -> Expression {
+        return lhs * (1 / rhs)
+    }
 }

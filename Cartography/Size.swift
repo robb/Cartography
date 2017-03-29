@@ -32,12 +32,14 @@ public func * (lhs: Expression<Size>, rhs: CGFloat) -> Expression<Size> {
     return rhs * lhs
 }
 
-public func * (m: CGFloat, rhs: Size) -> Expression<Size> {
-    return Expression(rhs, [ Coefficients(m, 0), Coefficients(m, 0) ])
-}
+extension Size {
+    static public func * (m: CGFloat, rhs: Size) -> Expression<Size> {
+        return Expression(rhs, [ Coefficients(m, 0), Coefficients(m, 0) ])
+    }
 
-public func * (lhs: Size, rhs: CGFloat) -> Expression<Size> {
-    return rhs * lhs
+    static public func *(lhs: Size, rhs: CGFloat) -> Expression<Size> {
+        return rhs * lhs
+    }
 }
 
 // MARK: Division

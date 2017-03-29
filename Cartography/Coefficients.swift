@@ -23,42 +23,40 @@ public struct Coefficients {
     }
 }
 
-// MARK: Addition
+extension Coefficients {
+    // MARK: Addition
+    static public func +(c: CGFloat, rhs: Coefficients) -> Coefficients {
+        return Coefficients(rhs.multiplier, rhs.constant + c)
+    }
 
-public func + (c: CGFloat, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier, rhs.constant + c)
-}
+    static public func +(lhs: Coefficients, rhs: CGFloat) -> Coefficients {
+        return rhs + lhs
+    }
 
-public func + (lhs: Coefficients, rhs: CGFloat) -> Coefficients {
-    return rhs + lhs
-}
+    // MARK: Subtraction
+    static public func -(c: CGFloat, rhs: Coefficients) -> Coefficients {
+        return Coefficients(rhs.multiplier, rhs.constant - c)
+    }
 
-// MARK: Subtraction
+    static public func -(lhs: Coefficients, rhs: CGFloat) -> Coefficients {
+        return rhs - lhs
+    }
 
-public func - (c: CGFloat, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier, rhs.constant - c)
-}
+    // MARK: Multiplication
+    static public func *(m: CGFloat, rhs: Coefficients) -> Coefficients {
+        return Coefficients(rhs.multiplier * m, rhs.constant * m)
+    }
 
-public func - (lhs: Coefficients, rhs: CGFloat) -> Coefficients {
-    return rhs - lhs
-}
+    static public func *(lhs: Coefficients, rhs: CGFloat) -> Coefficients {
+        return rhs * lhs
+    }
 
-// MARK: Multiplication
+    // MARK: Division
+    static public func /(m: CGFloat, rhs: Coefficients) -> Coefficients {
+        return Coefficients(rhs.multiplier / m, rhs.constant / m)
+    }
 
-public func * (m: CGFloat, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier * m, rhs.constant * m)
-}
-
-public func * (lhs: Coefficients, rhs: CGFloat) -> Coefficients {
-    return rhs * lhs
-}
-
-// MARK: Division
-
-public func / (m: CGFloat, rhs: Coefficients) -> Coefficients {
-    return Coefficients(rhs.multiplier / m, rhs.constant / m)
-}
-
-public func / (lhs: Coefficients, rhs: CGFloat) -> Coefficients {
-    return rhs / lhs
+    static public func /(lhs: Coefficients, rhs: CGFloat) -> Coefficients {
+        return rhs / lhs
+    }
 }

@@ -23,24 +23,10 @@ internal func closestCommonAncestor(_ a: View, b: View) -> View? {
 
     if aSuper === bSuper { return aSuper }
 
-    let ancestorsOfA = Set(ancestors(a))
+    let ancestorsOfA = Set(a.ancestors())
 
-    for ancestor in ancestors(b) {
-        if ancestorsOfA.contains(ancestor) {
-            return ancestor
-        }
-    }
-
-    return .none
-}
-
-private func ancestors(_ v: View) -> AnySequence<View> {
-    return AnySequence { () -> AnyIterator<View> in
-        var view: View? = v
-        return AnyIterator {
-            let current = view
-            view = view?.superview
-            return current
-        }
+    return b.ancestors().first {
+        ancestorsOfA.contains($0)
     }
 }
+

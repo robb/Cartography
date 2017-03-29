@@ -16,11 +16,10 @@ import Foundation
 /// - parameter block:   A block that declares the layout for `view`.
 ///
 @discardableResult public func constrain(_ view: View, replace group: ConstraintGroup? = nil, block: (LayoutProxy) -> ()) -> ConstraintGroup {
-    let constraintGroup = group ?? ConstraintGroup()
     let context = Context()
     block(LayoutProxy(context, view))
+    let constraintGroup = group ?? ConstraintGroup()
     constraintGroup.replaceConstraints(context.constraints)
-
     return constraintGroup
 }
 

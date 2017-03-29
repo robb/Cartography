@@ -50,29 +50,24 @@ public class Context {
                                                   attribute: to?.attribute ?? .notAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
-
+        let view : View
         if let to = to {
-            if let common = closestCommonAncestor(from.view, b: to.view ) {
-                constraints.append(Constraint(view: common, layoutConstraint: layoutConstraint))
-            } else {
-                fatalError("No common superview found between \(from.view) and \(to.view)")
-            }
+            guard let common = closestCommonAncestor(from.view, b: to.view) else { fatalError("No common superview found between \(from.view) and \(to.view)") }
+            view = common
         } else {
-            constraints.append(Constraint(view: from.view, layoutConstraint: layoutConstraint))
+            view = from.view
         }
 
+        constraints.append(Constraint(view: view, layoutConstraint: layoutConstraint))
         return layoutConstraint
     }
 
-    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.equal) -> [NSLayoutConstraint] {
-        var results: [NSLayoutConstraint] = []
-
-        for i in 0..<from.properties.count {
-            let n: Coefficients = coefficients?[i] ?? Coefficients()
-
-            results.append(addConstraint(from.properties[i], to: to?.properties[i], coefficients: n, relation: relation))
+    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = .equal) -> [NSLayoutConstraint] {
+        return (0..<from.properties.count).map {
+            return addConstraint(from.properties[$0],
+                                 to: to?.properties[$0],
+                                 coefficients: coefficients?[$0] ?? Coefficients(),
+                                 relation: relation)
         }
-
-        return results
     }
 }

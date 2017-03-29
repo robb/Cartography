@@ -20,13 +20,13 @@ import Foundation
         
         public var topLayoutGuideCartography : LayoutSupport {
             get {
-                return LayoutSupport(layoutGuide: self.topLayoutGuide, attribute: .bottom)
+                return LayoutSupport(layoutGuide: topLayoutGuide, attribute: .bottom)
             }
         }
         
         public var bottomLayoutGuideCartography : LayoutSupport {
             get {
-                return LayoutSupport(layoutGuide: self.bottomLayoutGuide, attribute: .top)
+                return LayoutSupport(layoutGuide: bottomLayoutGuide, attribute: .top)
             }
         }
     }
