@@ -56,7 +56,7 @@ public protocol RelativeCompoundInequality : Compound { }
 /// - returns: An `NSLayoutConstraint`.
 ///
 @discardableResult public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.lessThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: .lessThanOrEqual)
 }
 
 /// Declares a property greater than or equal to another compound property.
@@ -68,7 +68,7 @@ public protocol RelativeCompoundInequality : Compound { }
 /// - returns: An `NSLayoutConstraint`.
 ///
 @discardableResult public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: P) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, to: rhs, relation: NSLayoutRelation.greaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, to: rhs, relation: .greaterThanOrEqual)
 }
 
 /// Declares a property less than or equal to the result of an expression.
@@ -80,7 +80,7 @@ public protocol RelativeCompoundInequality : Compound { }
 /// - returns: An `NSLayoutConstraint`.
 ///
 @discardableResult public func <= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.lessThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: .lessThanOrEqual)
 }
 
 /// Declares a property greater than or equal to the result of an expression.
@@ -92,7 +92,7 @@ public protocol RelativeCompoundInequality : Compound { }
 /// - returns: An `NSLayoutConstraint`.
 ///
 @discardableResult public func >= <P: RelativeCompoundInequality>(lhs: P, rhs: Expression<P>) -> [NSLayoutConstraint] {
-    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: NSLayoutRelation.greaterThanOrEqual)
+    return lhs.context.addConstraint(lhs, coefficients: rhs.coefficients, to: rhs.value, relation: .greaterThanOrEqual)
 }
 
 #if os(iOS) || os(tvOS)
