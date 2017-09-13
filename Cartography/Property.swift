@@ -8,8 +8,12 @@
 
 #if os(iOS) || os(tvOS)
 import UIKit
+
+public typealias LayoutAttribute = NSLayoutAttribute
 #else
 import AppKit
+
+public typealias LayoutAttribute = NSLayoutConstraint.Attribute
 #endif
 
 public protocol Property {
