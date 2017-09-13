@@ -8,8 +8,12 @@
 
 #if os(iOS) || os(tvOS)
 import UIKit
+
+public typealias LayoutRelation = NSLayoutRelation
 #else
 import AppKit
+
+public typealias LayoutRelation = NSLayoutConstraint.Relation
 #endif
 
 public class Context {
@@ -17,7 +21,7 @@ public class Context {
 
     #if os(iOS) || os(tvOS)
 
-        internal func addConstraint(_ from: Property, to: LayoutSupport, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .equal) -> NSLayoutConstraint {
+        internal func addConstraint(_ from: Property, to: LayoutSupport, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
             from.view.car_translatesAutoresizingMaskIntoConstraints = false
             
             let layoutConstraint = NSLayoutConstraint(item: from.view,
@@ -39,7 +43,7 @@ public class Context {
     
     #endif
     
-    internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: NSLayoutRelation = .equal) -> NSLayoutConstraint {
+    internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
         
         from.view.car_translatesAutoresizingMaskIntoConstraints = false
 
@@ -64,7 +68,7 @@ public class Context {
         return layoutConstraint
     }
 
-    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: NSLayoutRelation = NSLayoutRelation.equal) -> [NSLayoutConstraint] {
+    internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: LayoutRelation = .equal) -> [NSLayoutConstraint] {
         var results: [NSLayoutConstraint] = []
 
         for i in 0..<from.properties.count {

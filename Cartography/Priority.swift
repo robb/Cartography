@@ -13,7 +13,7 @@ public typealias LayoutPriority = UILayoutPriority
 #else
 import AppKit
 
-public typealias LayoutPriority = NSLayoutPriority
+public typealias LayoutPriority = NSLayoutConstraint.Priority
 #endif
 
 precedencegroup CarthographyPriorityPrecedence {

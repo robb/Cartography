@@ -121,7 +121,7 @@ import Foundation
 ///                      replaced.
 /// - parameter block:   A block that declares the layout for `views`.
 ///
-@discardableResult public func constrain<T: Hashable>(_ views: [T: View], replace group: ConstraintGroup? = nil, block: (([T : LayoutProxy]) -> ())) -> ConstraintGroup {
+@discardableResult public func constrain<T>(_ views: [T: View], replace group: ConstraintGroup? = nil, block: (([T : LayoutProxy]) -> ())) -> ConstraintGroup {
     let constraintGroup = group ?? ConstraintGroup()
     let context = Context()
     let proxies = views.map { ($0, LayoutProxy(context, $1)) }
