@@ -229,6 +229,11 @@ constrain(view) { view in
 
 Read the documentation [here](http://robb.github.io/Cartography/). For more information, see the [gh-pages](https://github.com/robb/Cartography/tree/gh-pages) branch.
 
+## Versioning
+
+For *Swift 3.x*: 1.1.0
+For *Swift 4.x*: 2.0.0
+
 ## Support
 
 Please, don't hesitate to [file an
@@ -236,7 +241,7 @@ issue](https://github.com/robb/Cartography/issues/new) if you have questions.
 
 ## About Cartography
 
-Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
+Cartography was built by [Robb Böhnke][me], is maintained by [Orta Therox][ot] and was inspired by the excellent
 [FLKAutoLayout] by [Florian Kugler][florian].
 
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
@@ -244,3 +249,4 @@ Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
 [me]:            http://robb.is
 [twitter]:       https://twitter.com/dlx
 [email]:         mailto:robb@robb.is
+[ot]:            https://github.com/orta
