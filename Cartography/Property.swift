@@ -19,7 +19,7 @@ public typealias LayoutAttribute = NSLayoutConstraint.Attribute
 public protocol Property {
     var attribute: LayoutAttribute { get }
     var context: Context { get }
-    var view: View { get }
+    var element: AnyObject { get } //type-erased LayoutElement
 }
 
 // MARK: Equality

@@ -14,7 +14,7 @@ class PointSpec: QuickSpec {
             view = TestView(frame: CGRect.zero)
             window.addSubview(view)
 
-            constrain(view) { view in
+            constrain(elements: view) { view in
                 view.width  == 200
                 view.height == 200
             }
@@ -22,7 +22,7 @@ class PointSpec: QuickSpec {
 
         describe("LayoutProxy.center") {
             it("should support relative equalities") {
-                constrain(view) { view in
+                constrain(elements: view) { view in
                     view.center == view.superview!.center
                 }
 
@@ -32,7 +32,7 @@ class PointSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                constrain(view) { view in
+                constrain(elements: view) { view in
                     view.center <= view.superview!.center
                     view.center >= view.superview!.center
                 }
@@ -51,7 +51,7 @@ class PointSpec: QuickSpec {
 
             describe("LayoutProxy.centerWithinMargins") {
                 it("should support relative equalities") {
-                    constrain(view) { view in
+                    constrain(elements: view) { view in
                         view.centerWithinMargins == view.superview!.center
                     }
 
@@ -61,7 +61,7 @@ class PointSpec: QuickSpec {
                 }
 
                 it("should support relative inequalities") {
-                    constrain(view) { view in
+                    constrain(elements: view) { view in
                         view.centerWithinMargins <= view.superview!.center
                         view.centerWithinMargins >= view.superview!.center
                     }

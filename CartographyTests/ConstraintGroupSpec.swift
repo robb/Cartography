@@ -20,14 +20,14 @@ class ConstraintGroupSpec: QuickSpec {
             var b: ConstraintGroup!
 
             beforeEach {
-                a = constrain(view1) { view in
+                a = constrain(elements: view1) { view in
                     view.width  == 100
                     view.height == 100
                 }
 
                 a.active = false
 
-                b = constrain(view1) { view in
+                b = constrain(elements: view1) { view in
                     view.width  == 200
                     view.height == 200
                 }
@@ -60,7 +60,7 @@ class ConstraintGroupSpec: QuickSpec {
                 view2 = TestView(frame: CGRect.zero)
                 window.addSubview(view2)
 
-                constrain(view1, view2) { view1, view2 in
+                constrain(elements: view1, view2) { view1, view2 in
                     view1.top    == view1.superview!.top   + 10
                     view1.left   == view1.superview!.left  + 10
                     view1.right  == view1.superview!.right - 10
@@ -75,7 +75,7 @@ class ConstraintGroupSpec: QuickSpec {
             }
 
             it("should update the view") {
-                let group = constrain(view2) { view2 in
+                let group = constrain(elements: view2) { view2 in
                     view2.height == 100
                 }
 
@@ -83,7 +83,7 @@ class ConstraintGroupSpec: QuickSpec {
 
                 expect(view2.frame.height).to(equal(100))
 
-                constrain(view2, replace: group) { view2 in
+                constrain(elements: view2, replace: group) { view2 in
                     view2.bottom >= view2.superview!.bottom
                 }
 
