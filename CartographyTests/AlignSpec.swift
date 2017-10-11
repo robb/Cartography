@@ -22,7 +22,7 @@ class AlignSpec: QuickSpec {
             viewC = TestView(frame: CGRect.zero)
             window.addSubview(viewC)
 
-            constrain(viewA) { view in
+            constrain(elements: viewA) { view in
                 view.height == 200
                 view.width == 200
 
@@ -33,7 +33,7 @@ class AlignSpec: QuickSpec {
 
         describe("for edges") {
             beforeEach {
-                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(elements: viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(top: viewA, viewB, viewC)
                     align(right: viewA, viewB, viewC)
                     align(bottom: viewA, viewB, viewC)
@@ -55,7 +55,7 @@ class AlignSpec: QuickSpec {
 
         describe("for horizontal and vertical centers") {
             beforeEach {
-                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(elements: viewA, viewB, viewC) { viewA, viewB, viewC in
                     viewA.size == viewB.size
                     viewB.size == viewC.size
 
@@ -78,7 +78,7 @@ class AlignSpec: QuickSpec {
         
         describe("no constraints") {
             it("should have no constraints for a single view alignment") {
-                constrain(viewA) { viewA in
+                constrain(elements: viewA) { viewA in
                     let constraints = align(top: [viewA])
                     
                     expect(constraints.count).to(equal(0))

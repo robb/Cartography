@@ -24,7 +24,7 @@ class MemoryLeakSpec: QuickSpec {
                     weak_viewA = viewA
                     weak_viewB = viewB
 
-                    constrain(viewA, viewB) { viewA, viewB in
+                    constrain(elements: viewA, viewB) { viewA, viewB in
                         viewA.top    == viewB.top
                         viewB.bottom == viewA.bottom
                     }
