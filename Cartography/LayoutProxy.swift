@@ -56,7 +56,7 @@ extension SupportsTopLayoutProxy {
     /// The top margin of the element. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var topMargin: Edge {
-        return edge(with: .top)
+        return edge(with: .topMargin)
     }
     #endif
 }
