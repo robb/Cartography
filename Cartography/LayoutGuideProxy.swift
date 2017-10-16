@@ -13,12 +13,12 @@ public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {
     public let context: Context
     public let element: AnyObject
 
-    init(context: Context, element: UILayoutGuide) {
+    public init(context: Context, element: UILayoutGuide) {
         self.context = context
         self.element = element
     }
 
-    var owningView: ViewProxy? {
+    public var owningView: ViewProxy? {
         guard let layoutGuide = element as? UILayoutGuide else {
             fatalError("This shouldn't happen")
         }

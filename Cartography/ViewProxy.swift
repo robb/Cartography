@@ -10,7 +10,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy {
     public var context: Context
     public var element: AnyObject
 
-    init(context: Context, view: View) {
+    public init(context: Context, view: View) {
         self.context = context
         self.element = view
     }

@@ -13,7 +13,7 @@ public final class LayoutSupportProxy: SupportsHeightLayoutProxy, SupportsTopLay
     public let context: Context
     public let element: AnyObject
 
-    init(context: Context, element: LayoutSupport) {
+    public init(context: Context, element: LayoutSupport) {
         self.context = context
         self.element = element.layoutGuide
     }
