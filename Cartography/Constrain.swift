@@ -16,7 +16,7 @@ public func constrain(clear group: ConstraintGroup) {
     group.replaceConstraints([])
 }
 
-@discardableResult public func constrain<A: LayoutElement>(elements element: A, replace group: ConstraintGroup = .init(), block: (A.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement>(_ element: A, replace group: ConstraintGroup = .init(), block: (A.ProxyType) -> Void) -> ConstraintGroup {
     let proxy = element.asProxy()
 
     block(proxy)
@@ -26,7 +26,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement>(elements element1: A, _ element2: B, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement>(_ element1: A, _ element2: B, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -39,7 +39,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -53,7 +53,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -68,7 +68,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -84,7 +84,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -101,7 +101,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -119,7 +119,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -138,7 +138,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement, I: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, _ element9: I, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType, I.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement, I: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, _ element9: I, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType, I.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -158,7 +158,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement, I: LayoutElement, J: LayoutElement>(elements element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, _ element9: I, _ element10: J, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType, I.ProxyType, J.ProxyType) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<A: LayoutElement, B: LayoutElement, C: LayoutElement, D: LayoutElement, E: LayoutElement, F: LayoutElement, G: LayoutElement, H: LayoutElement, I: LayoutElement, J: LayoutElement>(_ element1: A, _ element2: B, _ element3: C, _ element4: D, _ element5: E, _ element6: F, _ element7: G, _ element8: H, _ element9: I, _ element10: J, replace group: ConstraintGroup = .init(), block: (A.ProxyType, B.ProxyType, C.ProxyType, D.ProxyType, E.ProxyType, F.ProxyType, G.ProxyType, H.ProxyType, I.ProxyType, J.ProxyType) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy1 = element1.asProxy(context: ctx)
@@ -179,7 +179,7 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<T: LayoutElement>(elements: [T], replace group: ConstraintGroup = .init(), block: ([T.ProxyType]) -> Void) -> ConstraintGroup {
+@discardableResult public func constrain<T: LayoutElement>(_ elements: [T], replace group: ConstraintGroup = .init(), block: ([T.ProxyType]) -> Void) -> ConstraintGroup {
     let ctx = Context()
 
     let proxy = elements.map { $0.asProxy(context: ctx) }
@@ -190,6 +190,6 @@ public func constrain(clear group: ConstraintGroup) {
     return group
 }
 
-@discardableResult public func constrain<T, U: LayoutElement>(elements: [T: U], replace group: ConstraintGroup = .init(), block: ([T: U.ProxyType]) -> Void) {
+@discardableResult public func constrain<T, U: LayoutElement>(_ elements: [T: U], replace group: ConstraintGroup = .init(), block: ([T: U.ProxyType]) -> Void) {
     
 }

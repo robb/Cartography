@@ -22,7 +22,7 @@ class DistributeSpec: QuickSpec {
             viewC = TestView(frame: CGRect.zero)
             window.addSubview(viewC)
 
-            constrain(elements: viewA, viewB, viewC) { viewA, viewB, viewC in
+            constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                 viewA.width  == 100
                 viewA.height == 100
 
@@ -36,7 +36,7 @@ class DistributeSpec: QuickSpec {
 
         describe("from left to right") {
             beforeEach {
-                constrain(elements: viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerY: viewA, viewB, viewC)
                     distribute(by: 10, leftToRight: viewA, viewB, viewC)
                 }
@@ -59,7 +59,7 @@ class DistributeSpec: QuickSpec {
 
         describe("vertically") {
             beforeEach {
-                constrain(elements: viewA, viewB, viewC) { viewA, viewB, viewC in
+                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerX: viewA, viewB, viewC)
                     distribute(by: 10, vertically: viewA, viewB, viewC)
                 }
@@ -82,7 +82,7 @@ class DistributeSpec: QuickSpec {
         
         describe("no constraints") {
             it("should have no constraints for a single view distribution") {
-                constrain(elements: viewA) { viewA in
+                constrain(viewA) { viewA in
                     let constraints = distribute(horizontally: [viewA])
                     
                     expect(constraints.count).to(equal(0))

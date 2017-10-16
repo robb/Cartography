@@ -20,7 +20,7 @@ class LayoutSupportSpec: QuickSpec {
             viewController = UIViewController()
             viewController.view.addSubview(view)
             
-            constrain(elements: view) { view in
+            constrain(view) { view in
                 view.height == 200
                 view.width == 200
             }
@@ -43,7 +43,7 @@ class LayoutSupportSpec: QuickSpec {
                 
                 viewController.view.layoutIfNeeded()
 
-                constrain(elements: view, viewController.car_topLayoutGuide) { view, topLayoutGuide in
+                constrain(view, viewController.car_topLayoutGuide) { view, topLayoutGuide in
                     view.top == topLayoutGuide.bottom
                 }
                 viewController.view.layoutIfNeeded()
@@ -52,7 +52,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support relative inequalities") {
-                constrain(elements: view, viewController.car_topLayoutGuide) { view, topLayoutGuide in
+                constrain(view, viewController.car_topLayoutGuide) { view, topLayoutGuide in
                     view.top <= topLayoutGuide.bottom
                     view.top >= topLayoutGuide.bottom
                 }
@@ -63,7 +63,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support addition") {
-                constrain(elements: view, viewController.car_topLayoutGuide) { view, topGuide in
+                constrain(view, viewController.car_topLayoutGuide) { view, topGuide in
                     view.top == topGuide.bottom + 100
                 }
                 
@@ -73,7 +73,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support subtraction") {
-                constrain(elements: view, viewController.car_topLayoutGuide) { view, topGuide in
+                constrain(view, viewController.car_topLayoutGuide) { view, topGuide in
                     view.top == topGuide.bottom - 100
                 }
                 
@@ -85,7 +85,7 @@ class LayoutSupportSpec: QuickSpec {
         
         describe("LayoutSupport.bottom") {
             it("should support relative equalities") {
-                constrain(elements: view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
+                constrain(view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
                     view.bottom == bottomGuide.top
                 }
                 viewController.view.layoutIfNeeded()
@@ -94,7 +94,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support relative inequalities") {
-                constrain(elements: view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
+                constrain(view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
                     view.bottom <= bottomGuide.top
                     view.bottom >= bottomGuide.top
                 }
@@ -105,7 +105,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support addition") {
-                constrain(elements: view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
+                constrain(view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
                     view.bottom == bottomGuide.top + 100
                 }
                 
@@ -115,7 +115,7 @@ class LayoutSupportSpec: QuickSpec {
             }
             
             it("should support subtraction") {
-                constrain(elements: view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
+                constrain(view, viewController.car_bottomLayoutGuide) { view, bottomGuide in
                     view.bottom == bottomGuide.top - 100
                 }
                 

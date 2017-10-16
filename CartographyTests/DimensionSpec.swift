@@ -17,7 +17,7 @@ class DimensionSpec: QuickSpec {
 
         describe("LayoutProxy.width") {
             it("should support relative equalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width
                 }
 
@@ -27,7 +27,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width <= view.superview!.width
                     view.width >= view.superview!.width
                 }
@@ -38,7 +38,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support addition") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width + 100
                 }
 
@@ -48,7 +48,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support subtraction") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width - 100
                 }
 
@@ -58,7 +58,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support multiplication") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width * 2
                 }
 
@@ -68,7 +68,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support division") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width / 2
                 }
 
@@ -78,7 +78,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support complex expressions") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == view.superview!.width / 2 + 100
                 }
 
@@ -88,7 +88,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support numerical equalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.width == 200
                 }
 
@@ -100,7 +100,7 @@ class DimensionSpec: QuickSpec {
 
         describe("LayoutProxy.height") {
             it("should support relative equalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height
                 }
 
@@ -110,7 +110,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height <= view.superview!.height
                     view.height >= view.superview!.height
                 }
@@ -121,7 +121,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support addition") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height + 100
                 }
 
@@ -131,7 +131,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support subtraction") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height - 100
                 }
 
@@ -141,7 +141,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support multiplication") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height * 2
                 }
 
@@ -151,7 +151,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support division") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height / 2
                 }
 
@@ -161,7 +161,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support complex expressions") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == view.superview!.height / 2 + 100
                 }
 
@@ -171,7 +171,7 @@ class DimensionSpec: QuickSpec {
             }
 
             it("should support numerical equalities") {
-                constrain(elements: view) { view in
+                constrain(view) { view in
                     view.height == 200
                 }
 
