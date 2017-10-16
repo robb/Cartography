@@ -23,7 +23,7 @@ public protocol RelativeCompoundEquality : Compound { }
 
 /// Declares a property equal to a the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The expression.
 ///
@@ -35,7 +35,7 @@ public protocol RelativeCompoundEquality : Compound { }
 
 /// Declares a property equal to another compound property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -49,7 +49,7 @@ public protocol RelativeCompoundInequality : Compound { }
 
 /// Declares a property less than or equal to another compound property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -61,7 +61,7 @@ public protocol RelativeCompoundInequality : Compound { }
 
 /// Declares a property greater than or equal to another compound property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -73,7 +73,7 @@ public protocol RelativeCompoundInequality : Compound { }
 
 /// Declares a property less than or equal to the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -85,7 +85,7 @@ public protocol RelativeCompoundInequality : Compound { }
 
 /// Declares a property greater than or equal to the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///

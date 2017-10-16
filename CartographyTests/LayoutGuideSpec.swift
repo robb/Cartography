@@ -2,7 +2,7 @@
 //  LayoutGuideSpec.swift
 //  Cartography-iOS
 //
-//  Created by corujautx on 16/10/17.
+//  Created by Vitor Travain on 16/10/17.
 //  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
 

@@ -28,32 +28,32 @@
 
 public typealias SupportsHorizontalDistributionLayoutProxy = SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy
 
-/// Distributes multiple views horizontally.
+/// Distributes multiple elements horizontally.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  An array of views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  An array of elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 
-@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally views: [SupportsHorizontalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally elements: [SupportsHorizontalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements) {
         let cast1 = $0 as! SupportsHorizontalDistributionLayoutProxy
         let cast2 = $1 as! SupportsHorizontalDistributionLayoutProxy
         return cast1.trailing == cast2.leading - amount
     }
 }
 
-/// Distributes multiple views horizontally.
+/// Distributes multiple elements horizontally.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  The views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  The elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
@@ -63,31 +63,31 @@ public typealias SupportsHorizontalDistributionLayoutProxy = SupportsLeadingLayo
 
 public typealias SupportsLeftToRightDistributionLayoutProxy = SupportsLeftLayoutProxy & SupportsRightLayoutProxy
 
-/// Distributes multiple views horizontally from left to right.
+/// Distributes multiple elements horizontally from left to right.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  An array of views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  An array of elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight views: [SupportsLeftToRightDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight elements: [SupportsLeftToRightDistributionLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements) {
         let cast1 = $0 as! SupportsLeftToRightDistributionLayoutProxy
         let cast2 = $1 as! SupportsLeftToRightDistributionLayoutProxy
         return cast1.right == cast2.left - amount
     }
 }
 
-/// Distributes multiple views horizontally from left to right.
+/// Distributes multiple elements horizontally from left to right.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  The views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  The elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
@@ -97,31 +97,31 @@ public typealias SupportsLeftToRightDistributionLayoutProxy = SupportsLeftLayout
 
 public typealias SupportsVerticalDistributionLayoutProxy = SupportsTopLayoutProxy & SupportsBottomLayoutProxy
 
-/// Distributes multiple views vertically.
+/// Distributes multiple elements vertically.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  An array of views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  An array of elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically views: [SupportsVerticalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(views) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically elements: [SupportsVerticalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements) {
         let cast1 = $0 as! SupportsVerticalDistributionLayoutProxy
         let cast2 = $1 as! SupportsVerticalDistributionLayoutProxy
         return cast1.bottom == cast2.top - amount
     }
 }
 
-/// Distributes multiple views vertically.
+/// Distributes multiple elements vertically.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the views.
-/// - parameter views:  The views to distribute.
+/// - parameter amount: The distance between the elements.
+/// - parameter elements:  The elements to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///

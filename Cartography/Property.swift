@@ -30,7 +30,7 @@ public protocol NumericalEquality : Property { }
 
 /// Declares a property equal to a numerical constant.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The numerical constant.
 ///
@@ -46,7 +46,7 @@ public protocol RelativeEquality : Property { }
 
 /// Declares a property equal to a the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The expression.
 ///
@@ -58,7 +58,7 @@ public protocol RelativeEquality : Property { }
 
 /// Declares a property equal to another property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -74,7 +74,7 @@ public protocol NumericalInequality : Property { }
 
 /// Declares a property less than or equal to a numerical constant.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The numerical constant.
 ///
@@ -86,7 +86,7 @@ public protocol NumericalInequality : Property { }
 
 /// Declares a property greater than or equal to a numerical constant.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The numerical constant.
 ///
@@ -102,7 +102,7 @@ public protocol RelativeInequality : Property { }
 
 /// Declares a property less than or equal to another property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -114,7 +114,7 @@ public protocol RelativeInequality : Property { }
 
 /// Declares a property greater than or equal to another property.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -126,7 +126,7 @@ public protocol RelativeInequality : Property { }
 
 /// Declares a property less than or equal to the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///
@@ -138,7 +138,7 @@ public protocol RelativeInequality : Property { }
 
 /// Declares a property greater than or equal to the result of an expression.
 ///
-/// - parameter lhs: The affected property. The associated view will have
+/// - parameter lhs: The affected property. The associated element will have
 ///             `translatesAutoresizingMaskIntoConstraints` set to `false`.
 /// - parameter rhs: The other property.
 ///

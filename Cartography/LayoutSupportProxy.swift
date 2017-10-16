@@ -2,7 +2,7 @@
 //  LayoutSupportProxy.swift
 //  Cartography-iOS
 //
-//  Created by corujautx on 11/10/17.
+//  Created by Vitor Travain on 11/10/17.
 //  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
 
