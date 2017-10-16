@@ -20,6 +20,7 @@ public protocol Property {
     var attribute: LayoutAttribute { get }
     var context: Context { get }
     var view: View { get }
+    var needsSafeArea: Bool { get }
 }
 
 // MARK: Equality
