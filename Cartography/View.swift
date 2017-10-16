@@ -12,20 +12,22 @@ import Foundation
     import UIKit
     public typealias View = UIView
 
-    extension View {
-        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints }
-            set { translatesAutoresizingMaskIntoConstraints = newValue }
+    extension UIView: LayoutElement {
+        public func asProxy(context: Context) -> ViewProxy {
+            self.translatesAutoresizingMaskIntoConstraints = false
+
+            return ViewProxy(context: context, view: self)
         }
     }
 #else
     import AppKit
     public typealias View = NSView
 
-    extension View {
-        public var car_translatesAutoresizingMaskIntoConstraints: Bool {
-            get { return translatesAutoresizingMaskIntoConstraints }
-            set { translatesAutoresizingMaskIntoConstraints = newValue }
+    extension NSView: LayoutElement {
+        public func asProxy(context: Context) -> ViewProxy {
+            self.translatesAutoresizingMaskIntoConstraints = false
+
+            return ViewProxy(context: context, view: self)
         }
     }
 #endif

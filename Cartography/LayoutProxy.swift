@@ -8,189 +8,212 @@
 
 import Foundation
 
-public struct LayoutProxy {
-    /// The width of the view.
-    public var width: Dimension {
-        return Dimension(context, view, .width)
+public protocol LayoutProxy {
+    var context: Context { get }
+    var element: AnyObject { get } //type-erased LayoutElement
+}
+
+extension LayoutProxy {
+    internal func dimension(with attribute: NSLayoutAttribute) -> Dimension {
+        return Dimension(context, element, attribute)
     }
 
-    /// The height of the view.
-    public var height: Dimension {
-        return Dimension(context, view, .height)
+    internal func edge(with attribute: NSLayoutAttribute) -> Edge {
+        return Edge(context, element, attribute)
     }
 
-    /// The size of the view. This property affects both `width` and `height`.
-    public var size: Size {
-        return Size(context, [
-            Dimension(context, view, .width),
-            Dimension(context, view, .height)
-        ])
+    internal func point(for attr1: Edge, _ attr2: Edge) -> Point {
+        return Point(context, [attr1, attr2])
     }
 
-    /// The top edge of the view.
+    internal func size(for attr1: Dimension, _ attr2: Dimension) -> Size {
+        return Size(context, [attr1, attr2])
+    }
+
+    internal func edges(for attr1: Edge, _ attr2: Edge, _ attr3: Edge, _ attr4: Edge) -> Edges {
+        return Edges(context, [attr1, attr2, attr3, attr4])
+    }
+}
+
+public protocol SupportsTopLayoutProxy: LayoutProxy {}
+extension SupportsTopLayoutProxy {
+    /// The top edge of the element.
     public var top: Edge {
-        return Edge(context, view, .top)
+        return edge(with: .top)
     }
-
-    /// The right edge of the view.
-    public var right: Edge {
-        return Edge(context, view, .right)
+    /// The top margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var topMargin: Edge {
+        return edge(with: .topMargin)
     }
+}
 
-    /// The bottom edge of the view.
+public protocol SupportsBottomLayoutProxy: LayoutProxy {}
+extension SupportsBottomLayoutProxy {
+    /// The bottom edge of the element.
     public var bottom: Edge {
-        return Edge(context, view, .bottom)
+        return edge(with: .bottom)
     }
 
-    /// The left edge of the view.
+    /// The bottom margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var bottomMargin: Edge {
+        return edge(with: .bottomMargin)
+    }
+}
+
+public protocol SupportsRightLayoutProxy: LayoutProxy {}
+extension SupportsRightLayoutProxy {
+    /// The right edge of the element.
+    public var right: Edge {
+        return edge(with: .right)
+    }
+
+    /// The right margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var rightMargin: Edge {
+        return edge(with: .rightMargin)
+    }
+}
+
+public protocol SupportsLeftLayoutProxy: LayoutProxy {}
+extension SupportsLeftLayoutProxy {
+    /// The left edge of the element.
     public var left: Edge {
-        return Edge(context, view, .left)
+        return edge(with: .left)
     }
 
-    /// All edges of the view. This property affects `top`, `bottom`, `leading`
+    /// The left margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var leftMargin: Edge {
+        return edge(with: .leftMargin)
+    }
+}
+
+public protocol SupportsLeadingLayoutProxy: LayoutProxy {}
+extension SupportsLeadingLayoutProxy {
+    /// The leading edge of the element.
+    public var leading: Edge {
+        return edge(with: .leading)
+    }
+
+    /// The leading margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var leadingMargin: Edge {
+        return edge(with: .leadingMargin)
+    }
+}
+
+public protocol SupportsTrailingLayoutProxy: LayoutProxy {}
+extension SupportsTrailingLayoutProxy {
+    /// The trailing edge of the element.
+    public var trailing: Edge {
+        return edge(with: .trailing)
+    }
+
+    /// The trailing margin of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var trailingMargin: Edge {
+        return edge(with: .trailingMargin)
+    }
+}
+
+public protocol SupportsEdgesLayoutProxy: SupportsTopLayoutProxy, SupportsBottomLayoutProxy, SupportsLeadingLayoutProxy, SupportsTrailingLayoutProxy, SupportsLeftLayoutProxy, SupportsRightLayoutProxy {}
+extension SupportsEdgesLayoutProxy {
+    /// All edges of the element. This property affects `top`, `bottom`, `leading`
     /// and `trailing`.
     public var edges: Edges {
-        return Edges(context, [
-            Edge(context, view, .top),
-            Edge(context, view, .leading),
-            Edge(context, view, .bottom),
-            Edge(context, view, .trailing)
-        ])
+        return edges(for: top, leading, bottom, trailing)
     }
 
-    /// The leading edge of the view.
-    public var leading: Edge {
-        return Edge(context, view, .leading)
-    }
-
-    /// The trailing edge of the view.
-    public var trailing: Edge {
-        return Edge(context, view, .trailing)
-    }
-
-    /// The horizontal center of the view.
-    public var centerX: Edge {
-        return Edge(context, view, .centerX)
-    }
-
-    /// The vertical center of the view.
-    public var centerY: Edge {
-        return Edge(context, view, .centerY)
-    }
-
-    /// The center point of the view. This property affects `centerX` and
-    /// `centerY`.
-    public var center: Point {
-        return Point(context, [
-            Edge(context, view, .centerX),
-            Edge(context, view, .centerY)
-        ])
-    }
-
-    /// The baseline of the view.
-    public var baseline: Edge {
-        return Edge(context, view, .lastBaseline)
-    }
-
-    /// The last baseline of the view.
-    public var lastBaseline: Edge {
-        return Edge(context, view, .lastBaseline)
-    }
-    
-    #if os(iOS) || os(tvOS)
-    /// The first baseline of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var firstBaseline: Edge {
-        return Edge(context, view, .firstBaseline)
-    }
-
-    /// All edges of the view with their respective margins. This property
+    /// All edges of the element with their respective margins. This property
     /// affects `topMargin`, `bottomMargin`, `leadingMargin` and
     /// `trailingMargin`.
     @available(iOS, introduced: 8.0)
     public var edgesWithinMargins: Edges {
-        return Edges(context, [
-            Edge(context, view, .topMargin),
-            Edge(context, view, .leadingMargin),
-            Edge(context, view, .bottomMargin),
-            Edge(context, view, .trailingMargin)
-        ])
+        return edges(for: topMargin, leadingMargin, bottomMargin, trailingMargin)
+    }
+}
+
+public protocol SupportsCenteringLayoutProxy: LayoutProxy {}
+extension SupportsCenteringLayoutProxy {
+    /// The horizontal center of the element.
+    public var centerX: Edge {
+        return edge(with: .centerX)
     }
 
-    /// The left margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var leftMargin: Edge {
-        return Edge(context, view, .leftMargin)
+    /// The vertical center of the element.
+    public var centerY: Edge {
+        return edge(with: .centerY)
     }
 
-    /// The right margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var rightMargin: Edge {
-        return Edge(context, view, .rightMargin)
+    /// The center point of the element. This property affects `centerX` and
+    /// `centerY`.
+    public var center: Point {
+        return point(for: centerX, centerY)
     }
 
-    /// The top margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var topMargin: Edge {
-        return Edge(context, view, .topMargin)
-    }
-
-    /// The bottom margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var bottomMargin: Edge {
-        return Edge(context, view, .bottomMargin)
-    }
-
-    /// The leading margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var leadingMargin: Edge {
-        return Edge(context, view, .leadingMargin)
-    }
-
-    /// The trailing margin of the view. iOS exclusive.
-    @available(iOS, introduced: 8.0)
-    public var trailingMargin: Edge {
-        return Edge(context, view, .trailingMargin)
-    }
-
-    /// The horizontal center within the margins of the view. iOS exclusive.
+    /// The horizontal center within the margins of the element. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerXWithinMargins: Edge {
-        return Edge(context, view, .centerXWithinMargins)
+        return edge(with: .centerXWithinMargins)
     }
 
-    /// The vertical center within the margins of the view. iOS exclusive.
+    /// The vertical center within the margins of the element. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerYWithinMargins: Edge {
-        return Edge(context, view, .centerYWithinMargins)
+        return edge(with: .centerYWithinMargins)
     }
 
-    /// The center point within the margins of the view. This property affects
+    /// The center point within the margins of the element. This property affects
     /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerWithinMargins: Point {
-        return Point(context, [
-            Edge(context, view, .centerXWithinMargins),
-            Edge(context, view, .centerYWithinMargins)
-        ])
-    }
-    #endif
-
-    internal let context: Context
-
-    internal let view: View
-
-    /// The superview of the view, if it exists.
-    public var superview: LayoutProxy? {
-        if let superview = view.superview {
-            return LayoutProxy(context, superview)
-        } else {
-            return nil
-        }
-    }
-
-    init(_ context: Context, _ view: View) {
-        self.context = context
-        self.view = view
+        return point(for: centerXWithinMargins, centerYWithinMargins)
     }
 }
+
+public protocol SupportsWidthLayoutProxy: LayoutProxy {}
+extension SupportsWidthLayoutProxy {
+    /// The width of the element.
+    public var width: Dimension {
+        return dimension(with: .width)
+    }
+}
+
+public protocol SupportsHeightLayoutProxy: LayoutProxy {}
+extension SupportsHeightLayoutProxy {
+    /// The height of the element.
+    public var height: Dimension {
+        return dimension(with: .height)
+    }
+}
+
+public protocol SupportsSizeLayoutProxy: SupportsWidthLayoutProxy, SupportsHeightLayoutProxy {}
+extension SupportsSizeLayoutProxy {
+    /// The size of the element. This property affects both `width` and `height`.
+    public var size: Size {
+        return size(for: width, height)
+    }
+}
+
+public protocol SupportsBaselineLayoutProxy: LayoutProxy {}
+extension SupportsBaselineLayoutProxy {
+    /// The last baseline of the element.
+    public var lastBaseline: Edge {
+        return edge(with: .lastBaseline)
+    }
+
+    /// The baseline of the element.
+    public var baseline: Edge {
+        return edge(with: .lastBaseline)
+    }
+
+    /// The first baseline of the element. iOS exclusive.
+    @available(iOS, introduced: 8.0)
+    public var firstBaseline: Edge {
+        return edge(with: .firstBaseline)
+    }
+}
+
+public protocol SupportsPositioningLayoutProxy: SupportsEdgesLayoutProxy, SupportsBaselineLayoutProxy, SupportsSizeLayoutProxy, SupportsCenteringLayoutProxy {}

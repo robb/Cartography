@@ -14,13 +14,9 @@ import AppKit
 
 private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, elements: [LayoutProxy]) -> [NSLayoutConstraint] {
     if let first = elements.first {
-        first.view.car_translatesAutoresizingMaskIntoConstraints = false
-        
         let rest = elements.dropFirst()
         
         return rest.reduce([]) { acc, current in
-            current.view.car_translatesAutoresizingMaskIntoConstraints = false
-            
             return acc + [ attribute(first) == attribute(current) ]
         }
     } else {
@@ -28,218 +24,218 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
     }
 }
 
-/// Aligns multiple views by their top edge.
+/// Aligns multiple elements by their top edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter views: an array of views to align
+/// - parameter elements: an array of elements to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(top views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.top }, elements: views)
+@discardableResult public func align(top elements: [SupportsTopLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsTopLayoutProxy).top }, elements: elements)
 }
 
-/// Aligns multiple views by their right edge.
+/// Aligns multiple elements by their top edge.
 ///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(right views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.right }, elements: views)
-}
-
-/// Aligns multiple views by their bottom edge.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(bottom views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.bottom }, elements: views)
-}
-
-/// Aligns multiple views by their left edge.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(left views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.left }, elements: views)
-}
-
-/// Aligns multiple views by their leading edge.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(leading views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.leading }, elements: views)
-}
-
-/// Aligns multiple views by their trailing edge.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(trailing views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.trailing }, elements: views)
-}
-
-/// Aligns multiple views by their horizontal center.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(centerX views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.centerX }, elements: views)
-}
-
-/// Aligns multiple views by their vertical center.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(centerY views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.centerY }, elements: views)
-}
-
-/// Aligns multiple views by their baseline.
-///
-/// All views passed to this function will have
-/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
-///
-/// - parameter views: an array of views to align
-///
-/// - returns: An array of `NSLayoutConstraint` instances.
-///
-@discardableResult public func align(baseline views: [LayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.baseline }, elements: views)
-}
-
-/// Aligns multiple views by their top edge.
-///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(top first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(top first: SupportsTopLayoutProxy, _ rest: SupportsTopLayoutProxy...) -> [NSLayoutConstraint] {
     return align(top: [first] + rest)
 }
 
-/// Aligns multiple views by their right edge.
+/// Aligns multiple elements by their right edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(right elements: [SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsRightLayoutProxy).right }, elements: elements)
+}
+
+/// Aligns multiple elements by their right edge.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(right first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(right first: SupportsRightLayoutProxy, _ rest: SupportsRightLayoutProxy...) -> [NSLayoutConstraint] {
     return align(right: [first] + rest)
 }
 
-/// Aligns multiple views by their bottom edge.
+/// Aligns multiple elements by their bottom edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(bottom elements: [SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsBottomLayoutProxy).bottom }, elements: elements)
+}
+
+/// Aligns multiple elements by their bottom edge.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(bottom first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(bottom first: SupportsBottomLayoutProxy, _ rest: SupportsBottomLayoutProxy...) -> [NSLayoutConstraint] {
     return align(bottom: [first] + rest)
 }
 
-/// Aligns multiple views by their left edge.
+/// Aligns multiple elements by their left edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(left elements: [SupportsLeftLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsLeftLayoutProxy).left }, elements: elements)
+}
+
+/// Aligns multiple elements by their left edge.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(left first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(left first: SupportsLeftLayoutProxy, _ rest: SupportsLeftLayoutProxy...) -> [NSLayoutConstraint] {
     return align(left: [first] + rest)
 }
 
-/// Aligns multiple views by their leading edge.
+/// Aligns multiple elements by their leading edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(leading elements: [SupportsLeadingLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsLeadingLayoutProxy).leading }, elements: elements)
+}
+
+/// Aligns multiple elements by their leading edge.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(leading first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(leading first: SupportsLeadingLayoutProxy, _ rest: SupportsLeadingLayoutProxy...) -> [NSLayoutConstraint] {
     return align(leading: [first] + rest)
+}
+
+/// Aligns multiple elements by their trailing edge.
+///
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(trailing elements: [SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsTrailingLayoutProxy).trailing }, elements: elements)
 }
 
 /// Aligns multiple vies by their trailing edge.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(trailing first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(trailing first: SupportsTrailingLayoutProxy, _ rest: SupportsTrailingLayoutProxy...) -> [NSLayoutConstraint] {
     return align(trailing: [first] + rest)
 }
 
-/// Aligns multiple views by their horizontal center.
+/// Aligns multiple elements by their horizontal center.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(centerX elements: [SupportsCenteringLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsCenteringLayoutProxy).centerX }, elements: elements)
+}
+
+/// Aligns multiple elements by their horizontal center.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerX first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(centerX first: SupportsCenteringLayoutProxy, _ rest: SupportsCenteringLayoutProxy...) -> [NSLayoutConstraint] {
     return align(centerX: [first] + rest)
 }
 
-/// Aligns multiple views by their vertical center.
+/// Aligns multiple elements by their vertical center.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(centerY elements: [SupportsCenteringLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsCenteringLayoutProxy).centerY }, elements: elements)
+}
+
+/// Aligns multiple elements by their vertical center.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerY first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(centerY first: SupportsCenteringLayoutProxy, _ rest: SupportsCenteringLayoutProxy...) -> [NSLayoutConstraint] {
     return align(centerY: [first] + rest)
 }
 
-/// Aligns multiple views by their baseline.
+/// Aligns multiple elements by their baseline.
 ///
-/// All views passed to this function will have
+/// All elements passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - parameter elements: an array of elements to align
+///
+/// - returns: An array of `NSLayoutConstraint` instances.
+///
+@discardableResult public func align(baseline elements: [SupportsBaselineLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { ($0 as! SupportsBaselineLayoutProxy).baseline }, elements: elements)
+}
+
+/// Aligns multiple elements by their baseline.
+///
+/// All elements passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(baseline first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(baseline first: SupportsBaselineLayoutProxy, _ rest: SupportsBaselineLayoutProxy...) -> [NSLayoutConstraint] {
     return align(baseline: [first] + rest)
 }

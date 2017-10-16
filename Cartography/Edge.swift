@@ -15,11 +15,11 @@ import AppKit
 public struct Edge : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
     public let attribute: LayoutAttribute
     public let context: Context
-    public let view: View
+    public let element: AnyObject
 
-    internal init(_ context: Context, _ view: View, _ attribute: LayoutAttribute) {
+    internal init(_ context: Context, _ element: AnyObject, _ attribute: LayoutAttribute) {
         self.attribute = attribute
         self.context = context
-        self.view = view
+        self.element = element
     }
 }
