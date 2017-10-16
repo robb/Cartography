@@ -116,6 +116,7 @@
 		632F09541BF1F15C002431A3 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		66AF7EEE1CABEABC00249E27 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		979F29CB1F94DCA800257363 /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		97D17C901F8E73F200C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		97D17C911F8E740A00C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		97D17C921F8E740B00C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
@@ -246,6 +247,7 @@
 		7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
 		825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuideSpec.swift; sourceTree = "<group>"; };
 		97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSupportProxy.swift; sourceTree = "<group>"; };
 		97D17C951F8E774400C57CE1 /* LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuide.swift; sourceTree = "<group>"; };
 		97D17C9A1F8E774700C57CE1 /* EdgeSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeSpec.swift; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				546E9E921950A87600B16707 /* EdgeSpec.swift */,
 				545F858E1953235F00791F75 /* EdgesSpec.swift */,
 				4A3756CA1D6749180036190E /* LayoutSupportSpec.swift */,
+				979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */,
 				545F35831ACDFF6C00B57E98 /* MemoryLeakSpec.swift */,
 				54FA3A3D1951A3750094B82A /* PointSpec.swift */,
 				54FA3A371950FD8E0094B82A /* PrioritySpec.swift */,
@@ -967,6 +970,7 @@
 				546E9EA21950B33D00B16707 /* DimensionSpec.swift in Sources */,
 				546E9E931950A87600B16707 /* EdgeSpec.swift in Sources */,
 				54A3889A1A7663BF003945B7 /* ConstraintGroupSpec.swift in Sources */,
+				979F29CB1F94DCA800257363 /* LayoutGuideSpec.swift in Sources */,
 				BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */,
 				545F35841ACDFF6C00B57E98 /* MemoryLeakSpec.swift in Sources */,
 			);

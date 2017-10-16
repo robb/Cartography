@@ -35,7 +35,7 @@ class LayoutSupportSpec: QuickSpec {
             window.setNeedsLayout()
             window.layoutIfNeeded()
             
-            print(viewController.topLayoutGuide.debugDescription)
+            print(viewController.topLayoutGuide)
         }
         
         describe("LayoutSupport.top") {
