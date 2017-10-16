@@ -26,4 +26,16 @@ public final class ViewProxy: SupportsPositioningLayoutProxy {
 
         return ViewProxy(context: context, view: superview)
     }
+
+    @available(iOS, introduced: 11.0)
+    @available(tvOS, introduced: 11.0)
+    public var safeAreaLayoutGuide: LayoutGuideProxy {
+        guard let view = element as? UIView else {
+            fatalError("This wasn't supposed to happen")
+        }
+
+        let layoutGuide = view.safeAreaLayoutGuide
+
+        return LayoutGuideProxy(context: context, element: layoutGuide)
+    }
 }

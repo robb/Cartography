@@ -23,7 +23,11 @@ public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {
             fatalError("This shouldn't happen")
         }
 
-        return layoutGuide.owningView?.asProxy(context: context)
+        guard let owningView = layoutGuide.owningView else {
+            return nil
+        }
+
+        return ViewProxy(context: context, view: owningView)
     }
 }
 #endif
