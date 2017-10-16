@@ -27,6 +27,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy {
         return ViewProxy(context: context, view: superview)
     }
 
+    #if os(iOS) || os(tvOS)
     @available(iOS, introduced: 11.0)
     @available(tvOS, introduced: 11.0)
     public var safeAreaLayoutGuide: LayoutGuideProxy {
@@ -38,4 +39,5 @@ public final class ViewProxy: SupportsPositioningLayoutProxy {
 
         return LayoutGuideProxy(context: context, element: layoutGuide)
     }
+    #endif
 }

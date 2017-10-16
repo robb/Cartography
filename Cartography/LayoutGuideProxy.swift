@@ -7,6 +7,8 @@
 //
 
 #if os(iOS) || os(tvOS)
+import UIKit
+
 @available(iOS, introduced: 9.0)
 @available(tvOS, introduced: 9.0)
 public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {

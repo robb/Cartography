@@ -19,5 +19,4 @@ extension UILayoutGuide: LayoutElement {
         return LayoutGuideProxy(context: context, element: self)
     }
 }
-
 #endif

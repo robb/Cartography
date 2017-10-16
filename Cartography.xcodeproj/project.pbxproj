@@ -116,9 +116,12 @@
 		632F09541BF1F15C002431A3 /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541305B71B495986003F1935 /* Matchers.swift */; };
 		632F09551BF1F15C002431A3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DE2B9E1ABE2BC5004D62D8 /* TestView.swift */; };
 		66AF7EEE1CABEABC00249E27 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		9722953C1F950A1E00FA4AF9 /* ViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A81F8D598A004857CE /* ViewProxy.swift */; };
+		9722953D1F950A1F00FA4AF9 /* ViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A81F8D598A004857CE /* ViewProxy.swift */; };
+		9722953E1F950A2E00FA4AF9 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
+		9722953F1F950A3000FA4AF9 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		979F29CB1F94DCA800257363 /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		97D17C901F8E73F200C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
-		97D17C911F8E740A00C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		97D17C921F8E740B00C57CE1 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		97D17C931F8E741200C57CE1 /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A61F8D51C1004857CE /* LayoutElement.swift */; };
 		97D17C941F8E741300C57CE1 /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A61F8D51C1004857CE /* LayoutElement.swift */; };
@@ -981,12 +984,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				54F6A85C195C213A00313D24 /* Size.swift in Sources */,
+				9722953F1F950A3000FA4AF9 /* LayoutSupport.swift in Sources */,
 				54F6A85B195C213A00313D24 /* Property.swift in Sources */,
 				97D17C931F8E741200C57CE1 /* LayoutElement.swift in Sources */,
 				549B47B71A581992002498C7 /* Constraint.swift in Sources */,
 				54F6A856195C213A00313D24 /* Edges.swift in Sources */,
 				54F6A858195C213A00313D24 /* LayoutProxy.swift in Sources */,
 				54BF29B51A9350170066ED10 /* Align.swift in Sources */,
+				9722953C1F950A1E00FA4AF9 /* ViewProxy.swift in Sources */,
 				97D17CAB1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */,
 				543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */,
 				54F6A853195C213A00313D24 /* Compound.swift in Sources */,
@@ -995,10 +1000,10 @@
 				54F6A859195C213A00313D24 /* Priority.swift in Sources */,
 				54F6A852195C213A00313D24 /* Coefficients.swift in Sources */,
 				54143E4E1A93991D00208182 /* Distribute.swift in Sources */,
+				9722953E1F950A2E00FA4AF9 /* LayoutSupportProxy.swift in Sources */,
 				54F6A85A195C213A00313D24 /* Point.swift in Sources */,
 				54B093981A716A2A008A1102 /* ConstraintGroup.swift in Sources */,
 				54F6A865195C226700313D24 /* View.swift in Sources */,
-				97D17C911F8E740A00C57CE1 /* LayoutSupportProxy.swift in Sources */,
 				54DF9F3419DAD8DD00EE3609 /* Constrain.swift in Sources */,
 				549B47B61A58198B002498C7 /* Context.swift in Sources */,
 				54F6A854195C213A00313D24 /* Dimension.swift in Sources */,
@@ -1030,6 +1035,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				632F09351BF1F127002431A3 /* Align.swift in Sources */,
+				9722953D1F950A1F00FA4AF9 /* ViewProxy.swift in Sources */,
 				632F09361BF1F127002431A3 /* Coefficients.swift in Sources */,
 				632F09371BF1F127002431A3 /* Compound.swift in Sources */,
 				632F09381BF1F127002431A3 /* Constrain.swift in Sources */,
@@ -1305,7 +1311,7 @@
 				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Cartography;
@@ -1328,7 +1334,7 @@
 				INFOPLIST_FILE = Cartography/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Cartography;
