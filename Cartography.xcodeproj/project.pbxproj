@@ -136,6 +136,8 @@
 		97F50E521F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		97F50E541F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
 		97F50E551F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
+		97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
+		97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
 		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -1000,6 +1002,7 @@
 				54F6A856195C213A00313D24 /* Edges.swift in Sources */,
 				54F6A858195C213A00313D24 /* LayoutProxy.swift in Sources */,
 				54BF29B51A9350170066ED10 /* Align.swift in Sources */,
+				97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				9722953C1F950A1E00FA4AF9 /* ViewProxy.swift in Sources */,
 				97D17CAB1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */,
 				543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */,
@@ -1051,6 +1054,7 @@
 				632F09391BF1F127002431A3 /* Constraint.swift in Sources */,
 				632F093A1BF1F127002431A3 /* ConstraintGroup.swift in Sources */,
 				97D17C921F8E740B00C57CE1 /* LayoutSupportProxy.swift in Sources */,
+				97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				97D17C941F8E741300C57CE1 /* LayoutItem.swift in Sources */,
 				97D17C981F8E774400C57CE1 /* LayoutGuide.swift in Sources */,
 				632F093B1BF1F127002431A3 /* Context.swift in Sources */,
