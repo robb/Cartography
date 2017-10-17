@@ -15,8 +15,8 @@ struct AnyTopLayoutProxy: SupportsTopLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsTopLayoutProxy) {
@@ -31,8 +31,8 @@ struct AnyBottomLayoutProxy: SupportsBottomLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsBottomLayoutProxy) {
@@ -47,8 +47,8 @@ struct AnyLeftLayoutProxy: SupportsLeftLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsLeftLayoutProxy) {
@@ -63,8 +63,8 @@ struct AnyRightLayoutProxy: SupportsRightLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsRightLayoutProxy) {
@@ -79,8 +79,8 @@ struct AnyLeadingLayoutProxy: SupportsLeadingLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsLeadingLayoutProxy) {
@@ -95,8 +95,8 @@ struct AnyTrailingLayoutProxy: SupportsTrailingLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsTrailingLayoutProxy) {
@@ -111,8 +111,8 @@ struct AnyCenterXLayoutProxy: SupportsCenterXLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsCenterXLayoutProxy) {
@@ -127,8 +127,8 @@ struct AnyCenterYLayoutProxy: SupportsCenterYLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsCenterYLayoutProxy) {
@@ -143,8 +143,8 @@ struct AnyBaselineLayoutProxy: SupportsBaselineLayoutProxy {
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsBaselineLayoutProxy) {
@@ -159,8 +159,8 @@ struct AnyHorizontalDistributionLayoutProxy: SupportsLeadingLayoutProxy, Support
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy) {
@@ -175,8 +175,8 @@ struct AnyLeftToRightDistributionLayoutProxy: SupportsLeftLayoutProxy, SupportsR
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsLeftLayoutProxy & SupportsRightLayoutProxy) {
@@ -191,8 +191,8 @@ struct AnyVerticalDistributionLayoutProxy: SupportsTopLayoutProxy, SupportsBotto
         return proxy.context
     }
 
-    var element: AnyObject {
-        return proxy.element
+    var item: AnyObject {
+        return proxy.item
     }
 
     init(_ proxy: SupportsTopLayoutProxy & SupportsBottomLayoutProxy) {

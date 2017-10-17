@@ -11,12 +11,12 @@ import UIKit
 
 @available(iOS, introduced: 9.0)
 @available(tvOS, introduced: 9.0)
-extension UILayoutGuide: LayoutElement {
+extension UILayoutGuide: LayoutItem {
 
     @available(iOS, introduced: 9.0)
     @available(tvOS, introduced: 9.0)
     public func asProxy(context: Context) -> LayoutGuideProxy {
-        return LayoutGuideProxy(context: context, element: self)
+        return LayoutGuideProxy(context: context, item: self)
     }
 }
 #endif

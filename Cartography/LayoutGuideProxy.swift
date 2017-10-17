@@ -15,13 +15,13 @@ public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {
     public let context: Context
 
     private let layoutGuide: UILayoutGuide
-    public var element: AnyObject {
+    public var item: AnyObject {
         return layoutGuide
     }
 
-    public init(context: Context, element: UILayoutGuide) {
+    public init(context: Context, item: UILayoutGuide) {
         self.context = context
-        self.layoutGuide = element
+        self.layoutGuide = item
     }
 
     public var owningView: ViewProxy? {

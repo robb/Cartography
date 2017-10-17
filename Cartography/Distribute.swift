@@ -12,9 +12,9 @@
     import AppKit
 #endif
 
-@discardableResult private func reduce<T: LayoutProxy>(_ elements: [T], combine: (T, T) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
-    if let first = elements.first {
-        let rest = elements.dropFirst()
+@discardableResult private func reduce<T: LayoutProxy>(_ items: [T], combine: (T, T) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
+    if let first = items.first {
+        let rest = items.dropFirst()
         
         return rest.reduce(([], first)) { (acc, current) -> ([NSLayoutConstraint], T) in
             let (constraints, previous) = acc
@@ -26,30 +26,30 @@
     }
 }
 
-/// Distributes multiple elements horizontally.
+/// Distributes multiple items horizontally.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  An array of elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  An array of items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 
-@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally elements: [SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements.map(AnyHorizontalDistributionLayoutProxy.init)) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally items: [SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(items.map(AnyHorizontalDistributionLayoutProxy.init)) {
         return $0.trailing == $1.leading - amount
     }
 }
 
-/// Distributes multiple elements horizontally.
+/// Distributes multiple items horizontally.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  The elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  The items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
@@ -57,29 +57,29 @@
     return distribute(by: amount, horizontally: [first] + rest)
 }
 
-/// Distributes multiple elements horizontally from left to right.
+/// Distributes multiple items horizontally from left to right.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  An array of elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  An array of items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight elements: [SupportsLeftLayoutProxy & SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements.map(AnyLeftToRightDistributionLayoutProxy.init)) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight items: [SupportsLeftLayoutProxy & SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(items.map(AnyLeftToRightDistributionLayoutProxy.init)) {
         return $0.right == $1.left - amount
     }
 }
 
-/// Distributes multiple elements horizontally from left to right.
+/// Distributes multiple items horizontally from left to right.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  The elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  The items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
@@ -87,29 +87,29 @@
     return distribute(by: amount, leftToRight: [first] + rest)
 }
 
-/// Distributes multiple elements vertically.
+/// Distributes multiple items vertically.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  An array of elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  An array of items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically elements: [SupportsTopLayoutProxy & SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements.map(AnyVerticalDistributionLayoutProxy.init)) {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically items: [SupportsTopLayoutProxy & SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(items.map(AnyVerticalDistributionLayoutProxy.init)) {
         return $0.bottom == $1.top - amount
     }
 }
 
-/// Distributes multiple elements vertically.
+/// Distributes multiple items vertically.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter amount: The distance between the elements.
-/// - parameter elements:  The elements to distribute.
+/// - parameter amount: The distance between the items.
+/// - parameter items:  The items to distribute.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///

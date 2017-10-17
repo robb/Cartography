@@ -10,7 +10,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
     public var context: Context
 
     private let view: View
-    public var element: AnyObject {
+    public var item: AnyObject {
         return self.view
     }
 
@@ -33,7 +33,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
     public var safeAreaLayoutGuide: LayoutGuideProxy {
         let layoutGuide = view.safeAreaLayoutGuide
 
-        return LayoutGuideProxy(context: context, element: layoutGuide)
+        return LayoutGuideProxy(context: context, item: layoutGuide)
     }
     #endif
 }

@@ -20,10 +20,10 @@ public class Context {
     internal var constraints: [Constraint] = []
     
     internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
-        let layoutConstraint = NSLayoutConstraint(item: from.element,
+        let layoutConstraint = NSLayoutConstraint(item: from.item,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
-                                                  toItem: to?.element,
+                                                  toItem: to?.item,
                                                   attribute: to?.attribute ?? .notAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))

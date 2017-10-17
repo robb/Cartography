@@ -11,7 +11,7 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
 
-    public final class LayoutSupport: LayoutElement {
+    public final class LayoutSupport: LayoutItem {
         let layoutGuide : UILayoutSupport
 
         init(layoutGuide: UILayoutSupport) {
@@ -19,7 +19,7 @@ import Foundation
         }
 
         public func asProxy(context: Context) -> LayoutSupportProxy {
-            return LayoutSupportProxy(context: context, element: self)
+            return LayoutSupportProxy(context: context, item: self)
         }
     }
 

@@ -12,7 +12,7 @@ import Foundation
     import UIKit
     public typealias View = UIView
 
-    extension UIView: LayoutElement {
+    extension UIView: LayoutItem {
         public func asProxy(context: Context) -> ViewProxy {
             self.translatesAutoresizingMaskIntoConstraints = false
 
@@ -23,7 +23,7 @@ import Foundation
     import AppKit
     public typealias View = NSView
 
-    extension NSView: LayoutElement {
+    extension NSView: LayoutItem {
         public func asProxy(context: Context) -> ViewProxy {
             self.translatesAutoresizingMaskIntoConstraints = false
 

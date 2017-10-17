@@ -12,9 +12,9 @@ import UIKit
 import AppKit
 #endif
 
-private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) -> P, elements: [T]) -> [NSLayoutConstraint] {
-    if let first = elements.first {
-        let rest = elements.dropFirst()
+private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) -> P, items: [T]) -> [NSLayoutConstraint] {
+    if let first = items.first {
+        let rest = items.dropFirst()
         
         return rest.reduce([]) { acc, current in
             return acc + [ attribute(first) == attribute(current) ]
@@ -24,22 +24,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     }
 }
 
-/// Aligns multiple elements by their top edge.
+/// Aligns multiple items by their top edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(top elements: [SupportsTopLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.top }, elements: elements.map(AnyTopLayoutProxy.init))
+@discardableResult public func align(top items: [SupportsTopLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.top }, items: items.map(AnyTopLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their top edge.
+/// Aligns multiple items by their top edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -48,22 +48,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(top: [first] + rest)
 }
 
-/// Aligns multiple elements by their right edge.
+/// Aligns multiple items by their right edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(right elements: [SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.right }, elements: elements.map(AnyRightLayoutProxy.init))
+@discardableResult public func align(right items: [SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.right }, items: items.map(AnyRightLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their right edge.
+/// Aligns multiple items by their right edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -72,22 +72,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(right: [first] + rest)
 }
 
-/// Aligns multiple elements by their bottom edge.
+/// Aligns multiple items by their bottom edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(bottom elements: [SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.bottom }, elements: elements.map(AnyBottomLayoutProxy.init))
+@discardableResult public func align(bottom items: [SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.bottom }, items: items.map(AnyBottomLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their bottom edge.
+/// Aligns multiple items by their bottom edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -96,22 +96,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(bottom: [first] + rest)
 }
 
-/// Aligns multiple elements by their left edge.
+/// Aligns multiple items by their left edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(left elements: [SupportsLeftLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.left }, elements: elements.map(AnyLeftLayoutProxy.init))
+@discardableResult public func align(left items: [SupportsLeftLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.left }, items: items.map(AnyLeftLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their left edge.
+/// Aligns multiple items by their left edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -120,22 +120,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(left: [first] + rest)
 }
 
-/// Aligns multiple elements by their leading edge.
+/// Aligns multiple items by their leading edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(leading elements: [SupportsLeadingLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.leading }, elements: elements.map(AnyLeadingLayoutProxy.init))
+@discardableResult public func align(leading items: [SupportsLeadingLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.leading }, items: items.map(AnyLeadingLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their leading edge.
+/// Aligns multiple items by their leading edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -144,22 +144,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(leading: [first] + rest)
 }
 
-/// Aligns multiple elements by their trailing edge.
+/// Aligns multiple items by their trailing edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(trailing elements: [SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.trailing }, elements: elements.map(AnyTrailingLayoutProxy.init))
+@discardableResult public func align(trailing items: [SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.trailing }, items: items.map(AnyTrailingLayoutProxy.init))
 }
 
 /// Aligns multiple vies by their trailing edge.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -168,22 +168,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(trailing: [first] + rest)
 }
 
-/// Aligns multiple elements by their horizontal center.
+/// Aligns multiple items by their horizontal center.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerX elements: [SupportsCenterXLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.centerX }, elements: elements.map(AnyCenterXLayoutProxy.init))
+@discardableResult public func align(centerX items: [SupportsCenterXLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.centerX }, items: items.map(AnyCenterXLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their horizontal center.
+/// Aligns multiple items by their horizontal center.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -192,22 +192,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(centerX: [first] + rest)
 }
 
-/// Aligns multiple elements by their vertical center.
+/// Aligns multiple items by their vertical center.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerY elements: [SupportsCenterYLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.centerY }, elements: elements.map(AnyCenterYLayoutProxy.init))
+@discardableResult public func align(centerY items: [SupportsCenterYLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.centerY }, items: items.map(AnyCenterYLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their vertical center.
+/// Aligns multiple items by their vertical center.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
@@ -216,22 +216,22 @@ private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) ->
     return align(centerY: [first] + rest)
 }
 
-/// Aligns multiple elements by their baseline.
+/// Aligns multiple items by their baseline.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
-/// - parameter elements: an array of elements to align
+/// - parameter items: an array of items to align
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(baseline elements: [SupportsBaselineLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { $0.baseline }, elements: elements.map(AnyBaselineLayoutProxy.init))
+@discardableResult public func align(baseline items: [SupportsBaselineLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.baseline }, items: items.map(AnyBaselineLayoutProxy.init))
 }
 
-/// Aligns multiple elements by their baseline.
+/// Aligns multiple items by their baseline.
 ///
-/// All elements passed to this function will have
+/// All items passed to this function will have
 /// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
