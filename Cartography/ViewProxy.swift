@@ -6,7 +6,7 @@
 //  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
 
-public final class ViewProxy: SupportsPositioningLayoutProxy {
+public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLayoutProxy {
     public var context: Context
     public var element: AnyObject
 

@@ -244,4 +244,4 @@ extension SupportsBaselineLayoutProxy {
     }
 }
 
-public protocol SupportsPositioningLayoutProxy: SupportsEdgesLayoutProxy, SupportsBaselineLayoutProxy, SupportsSizeLayoutProxy, SupportsCenteringLayoutProxy {}
+public protocol SupportsPositioningLayoutProxy: SupportsEdgesLayoutProxy, SupportsSizeLayoutProxy, SupportsCenteringLayoutProxy {}
