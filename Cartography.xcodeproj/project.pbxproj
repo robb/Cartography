@@ -134,6 +134,8 @@
 		97E7F0A71F8D51C1004857CE /* LayoutElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A61F8D51C1004857CE /* LayoutElement.swift */; };
 		97E7F0A91F8D598A004857CE /* ViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A81F8D598A004857CE /* ViewProxy.swift */; };
 		97F50E521F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
+		97F50E541F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
+		97F50E551F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
 		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
 		BBAC6D1B1A22A8F300E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
 		BBAC6D1C1A22A8F400E8A3E2 /* ViewHierarchySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */; };
@@ -273,6 +275,7 @@
 		97E7F0A61F8D51C1004857CE /* LayoutElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutElement.swift; sourceTree = "<group>"; };
 		97E7F0A81F8D598A004857CE /* ViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProxy.swift; sourceTree = "<group>"; };
 		97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutProxy+TypeErasure.swift"; sourceTree = "<group>"; };
+		97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaLayoutGuideSpec.swift; sourceTree = "<group>"; };
 		BB41A06E1A229BF7007142FE /* ViewHierarchySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHierarchySpec.swift; sourceTree = "<group>"; };
 		EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -506,6 +509,7 @@
 				97D17CA61F8E774700C57CE1 /* ConstraintGroupSpec.swift */,
 				97D17CA71F8E774700C57CE1 /* Info.plist */,
 				97D17CA81F8E774700C57CE1 /* SizeSpec.swift */,
+				97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */,
 			);
 			path = CartographyTests;
 			sourceTree = SOURCE_ROOT;
@@ -972,6 +976,7 @@
 				4A3756CB1D6749190036190E /* LayoutSupportSpec.swift in Sources */,
 				54FA3A3E1951A3750094B82A /* PointSpec.swift in Sources */,
 				541305B91B49598E003F1935 /* Matchers.swift in Sources */,
+				97F50E541F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */,
 				545F858F1953235F00791F75 /* EdgesSpec.swift in Sources */,
 				54FA3A381950FD8E0094B82A /* PrioritySpec.swift in Sources */,
 				546E9EA21950B33D00B16707 /* DimensionSpec.swift in Sources */,
@@ -1070,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F50E551F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */,
 				632F09541BF1F15C002431A3 /* Matchers.swift in Sources */,
 				632F09551BF1F15C002431A3 /* TestView.swift in Sources */,
 				632F09491BF1F146002431A3 /* AlignSpec.swift in Sources */,
