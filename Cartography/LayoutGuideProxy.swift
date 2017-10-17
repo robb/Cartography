@@ -13,18 +13,18 @@ import UIKit
 @available(tvOS, introduced: 9.0)
 public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {
     public let context: Context
-    public let element: AnyObject
+
+    private let layoutGuide: UILayoutGuide
+    public var element: AnyObject {
+        return layoutGuide
+    }
 
     public init(context: Context, element: UILayoutGuide) {
         self.context = context
-        self.element = element
+        self.layoutGuide = element
     }
 
     public var owningView: ViewProxy? {
-        guard let layoutGuide = element as? UILayoutGuide else {
-            fatalError("This shouldn't happen")
-        }
-
         guard let owningView = layoutGuide.owningView else {
             return nil
         }

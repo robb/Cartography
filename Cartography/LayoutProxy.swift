@@ -160,22 +160,11 @@ extension SupportsEdgesLayoutProxy {
     #endif
 }
 
-public protocol SupportsCenteringLayoutProxy: LayoutProxy {}
-extension SupportsCenteringLayoutProxy {
+public protocol SupportsCenterXLayoutProxy: LayoutProxy {}
+extension SupportsCenterXLayoutProxy {
     /// The horizontal center of the element.
     public var centerX: Edge {
         return edge(with: .centerX)
-    }
-
-    /// The vertical center of the element.
-    public var centerY: Edge {
-        return edge(with: .centerY)
-    }
-
-    /// The center point of the element. This property affects `centerX` and
-    /// `centerY`.
-    public var center: Point {
-        return point(for: centerX, centerY)
     }
 
     #if os(iOS) || os(tvOS)
@@ -184,13 +173,34 @@ extension SupportsCenteringLayoutProxy {
     public var centerXWithinMargins: Edge {
         return edge(with: .centerXWithinMargins)
     }
+    #endif
+}
 
+public protocol SupportsCenterYLayoutProxy: LayoutProxy {}
+extension SupportsCenterYLayoutProxy {
+    /// The vertical center of the element.
+    public var centerY: Edge {
+        return edge(with: .centerY)
+    }
+
+    #if os(iOS) || os(tvOS)
     /// The vertical center within the margins of the element. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerYWithinMargins: Edge {
         return edge(with: .centerYWithinMargins)
     }
+    #endif
+}
 
+public protocol SupportsCenteringLayoutProxy: SupportsCenterXLayoutProxy, SupportsCenterYLayoutProxy {}
+extension SupportsCenteringLayoutProxy {
+    /// The center point of the element. This property affects `centerX` and
+    /// `centerY`.
+    public var center: Point {
+        return point(for: centerX, centerY)
+    }
+
+    #if os(iOS) || os(tvOS)
     /// The center point within the margins of the element. This property affects
     /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
     @available(iOS, introduced: 8.0)

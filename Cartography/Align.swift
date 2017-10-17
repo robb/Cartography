@@ -12,7 +12,7 @@ import UIKit
 import AppKit
 #endif
 
-private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, elements: [LayoutProxy]) -> [NSLayoutConstraint] {
+private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) -> P, elements: [T]) -> [NSLayoutConstraint] {
     if let first = elements.first {
         let rest = elements.dropFirst()
         
@@ -34,7 +34,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(top elements: [SupportsTopLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsTopLayoutProxy).top }, elements: elements)
+    return makeEqual(by: { $0.top }, elements: elements.map(AnyTopLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their top edge.
@@ -58,7 +58,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(right elements: [SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsRightLayoutProxy).right }, elements: elements)
+    return makeEqual(by: { $0.right }, elements: elements.map(AnyRightLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their right edge.
@@ -82,7 +82,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(bottom elements: [SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsBottomLayoutProxy).bottom }, elements: elements)
+    return makeEqual(by: { $0.bottom }, elements: elements.map(AnyBottomLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their bottom edge.
@@ -106,7 +106,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(left elements: [SupportsLeftLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsLeftLayoutProxy).left }, elements: elements)
+    return makeEqual(by: { $0.left }, elements: elements.map(AnyLeftLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their left edge.
@@ -130,7 +130,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(leading elements: [SupportsLeadingLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsLeadingLayoutProxy).leading }, elements: elements)
+    return makeEqual(by: { $0.leading }, elements: elements.map(AnyLeadingLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their leading edge.
@@ -154,7 +154,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(trailing elements: [SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsTrailingLayoutProxy).trailing }, elements: elements)
+    return makeEqual(by: { $0.trailing }, elements: elements.map(AnyTrailingLayoutProxy.init))
 }
 
 /// Aligns multiple vies by their trailing edge.
@@ -177,8 +177,8 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerX elements: [SupportsCenteringLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsCenteringLayoutProxy).centerX }, elements: elements)
+@discardableResult public func align(centerX elements: [SupportsCenterXLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.centerX }, elements: elements.map(AnyCenterXLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their horizontal center.
@@ -188,7 +188,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerX first: SupportsCenteringLayoutProxy, _ rest: SupportsCenteringLayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(centerX first: SupportsCenterXLayoutProxy, _ rest: SupportsCenterXLayoutProxy...) -> [NSLayoutConstraint] {
     return align(centerX: [first] + rest)
 }
 
@@ -201,8 +201,8 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerY elements: [SupportsCenteringLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsCenteringLayoutProxy).centerY }, elements: elements)
+@discardableResult public func align(centerY elements: [SupportsCenterYLayoutProxy]) -> [NSLayoutConstraint] {
+    return makeEqual(by: { $0.centerY }, elements: elements.map(AnyCenterYLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their vertical center.
@@ -212,7 +212,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func align(centerY first: SupportsCenteringLayoutProxy, _ rest: SupportsCenteringLayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func align(centerY first: SupportsCenterYLayoutProxy, _ rest: SupportsCenterYLayoutProxy...) -> [NSLayoutConstraint] {
     return align(centerY: [first] + rest)
 }
 
@@ -226,7 +226,7 @@ private func makeEqual<P: RelativeEquality>(by attribute: (LayoutProxy) -> P, el
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 @discardableResult public func align(baseline elements: [SupportsBaselineLayoutProxy]) -> [NSLayoutConstraint] {
-    return makeEqual(by: { ($0 as! SupportsBaselineLayoutProxy).baseline }, elements: elements)
+    return makeEqual(by: { $0.baseline }, elements: elements.map(AnyBaselineLayoutProxy.init))
 }
 
 /// Aligns multiple elements by their baseline.

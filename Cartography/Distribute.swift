@@ -12,11 +12,11 @@
     import AppKit
 #endif
 
-@discardableResult private func reduce(_ elements: [LayoutProxy], combine: (LayoutProxy, LayoutProxy) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
+@discardableResult private func reduce<T: LayoutProxy>(_ elements: [T], combine: (T, T) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
     if let first = elements.first {
         let rest = elements.dropFirst()
         
-        return rest.reduce(([], first)) { (acc, current) -> ([NSLayoutConstraint], LayoutProxy) in
+        return rest.reduce(([], first)) { (acc, current) -> ([NSLayoutConstraint], T) in
             let (constraints, previous) = acc
             
             return (constraints + [ combine(previous, current) ], current)
@@ -26,8 +26,6 @@
     }
 }
 
-public typealias SupportsHorizontalDistributionLayoutProxy = SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy
-
 /// Distributes multiple elements horizontally.
 ///
 /// All elements passed to this function will have
@@ -39,11 +37,9 @@ public typealias SupportsHorizontalDistributionLayoutProxy = SupportsLeadingLayo
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
 
-@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally elements: [SupportsHorizontalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements) {
-        let cast1 = $0 as! SupportsHorizontalDistributionLayoutProxy
-        let cast2 = $1 as! SupportsHorizontalDistributionLayoutProxy
-        return cast1.trailing == cast2.leading - amount
+@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally elements: [SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements.map(AnyHorizontalDistributionLayoutProxy.init)) {
+        return $0.trailing == $1.leading - amount
     }
 }
 
@@ -57,12 +53,10 @@ public typealias SupportsHorizontalDistributionLayoutProxy = SupportsLeadingLayo
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally first: SupportsHorizontalDistributionLayoutProxy, _ rest: SupportsHorizontalDistributionLayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, horizontally first: SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy, _ rest: (SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy)...) -> [NSLayoutConstraint] {
     return distribute(by: amount, horizontally: [first] + rest)
 }
 
-public typealias SupportsLeftToRightDistributionLayoutProxy = SupportsLeftLayoutProxy & SupportsRightLayoutProxy
-
 /// Distributes multiple elements horizontally from left to right.
 ///
 /// All elements passed to this function will have
@@ -73,11 +67,9 @@ public typealias SupportsLeftToRightDistributionLayoutProxy = SupportsLeftLayout
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight elements: [SupportsLeftToRightDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements) {
-        let cast1 = $0 as! SupportsLeftToRightDistributionLayoutProxy
-        let cast2 = $1 as! SupportsLeftToRightDistributionLayoutProxy
-        return cast1.right == cast2.left - amount
+@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight elements: [SupportsLeftLayoutProxy & SupportsRightLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements.map(AnyLeftToRightDistributionLayoutProxy.init)) {
+        return $0.right == $1.left - amount
     }
 }
 
@@ -91,12 +83,10 @@ public typealias SupportsLeftToRightDistributionLayoutProxy = SupportsLeftLayout
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight first: SupportsLeftToRightDistributionLayoutProxy, _ rest: SupportsLeftToRightDistributionLayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, leftToRight first: SupportsLeftLayoutProxy & SupportsRightLayoutProxy, _ rest: (SupportsLeftLayoutProxy & SupportsRightLayoutProxy)...) -> [NSLayoutConstraint] {
     return distribute(by: amount, leftToRight: [first] + rest)
 }
 
-public typealias SupportsVerticalDistributionLayoutProxy = SupportsTopLayoutProxy & SupportsBottomLayoutProxy
-
 /// Distributes multiple elements vertically.
 ///
 /// All elements passed to this function will have
@@ -107,11 +97,9 @@ public typealias SupportsVerticalDistributionLayoutProxy = SupportsTopLayoutProx
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically elements: [SupportsVerticalDistributionLayoutProxy]) -> [NSLayoutConstraint] {
-    return reduce(elements) {
-        let cast1 = $0 as! SupportsVerticalDistributionLayoutProxy
-        let cast2 = $1 as! SupportsVerticalDistributionLayoutProxy
-        return cast1.bottom == cast2.top - amount
+@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically elements: [SupportsTopLayoutProxy & SupportsBottomLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(elements.map(AnyVerticalDistributionLayoutProxy.init)) {
+        return $0.bottom == $1.top - amount
     }
 }
 
@@ -125,6 +113,6 @@ public typealias SupportsVerticalDistributionLayoutProxy = SupportsTopLayoutProx
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically first: SupportsVerticalDistributionLayoutProxy, _ rest: SupportsVerticalDistributionLayoutProxy...) -> [NSLayoutConstraint] {
+@discardableResult public func distribute(by amount: CGFloat = 0.0, vertically first: SupportsTopLayoutProxy & SupportsBottomLayoutProxy, _ rest: (SupportsTopLayoutProxy & SupportsBottomLayoutProxy)...) -> [NSLayoutConstraint] {
     return distribute(by: amount, vertically: [first] + rest)
 }

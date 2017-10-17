@@ -11,11 +11,15 @@ import UIKit
 
 public final class LayoutSupportProxy: SupportsHeightLayoutProxy, SupportsTopLayoutProxy, SupportsBottomLayoutProxy {
     public let context: Context
-    public let element: AnyObject
+
+    private let layoutGuide: UILayoutSupport
+    public var element: AnyObject {
+        return layoutGuide
+    }
 
     public init(context: Context, element: LayoutSupport) {
         self.context = context
-        self.element = element.layoutGuide
+        self.layoutGuide = element.layoutGuide
     }
 }
 #endif
