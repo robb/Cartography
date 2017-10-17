@@ -180,7 +180,7 @@ public struct LayoutProxy {
 
     internal let view: View
 
-    internal let needsSafeArea: Bool
+    private let needsSafeArea: Bool
 
     /// The superview of the view, if it exists.
     public var superview: LayoutProxy? {

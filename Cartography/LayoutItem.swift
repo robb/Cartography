@@ -11,7 +11,7 @@
     import AppKit
 #endif
 
-public protocol LayoutItem: class {}
+internal protocol LayoutItem: class {}
 
 extension View: LayoutItem {}
 
