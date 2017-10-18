@@ -16,10 +16,12 @@ public struct Edge : Property, RelativeEquality, RelativeInequality, Addition, M
     public let attribute: LayoutAttribute
     public let context: Context
     public let view: View
+    public let needsSafeArea: Bool
 
-    internal init(_ context: Context, _ view: View, _ attribute: LayoutAttribute) {
+    internal init(_ context: Context, _ view: View, _ attribute: LayoutAttribute, _ needsSafeArea: Bool) {
         self.attribute = attribute
         self.context = context
         self.view = view
+        self.needsSafeArea = needsSafeArea
     }
 }

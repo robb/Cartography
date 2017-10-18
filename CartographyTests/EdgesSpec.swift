@@ -89,6 +89,77 @@ class EdgesSpec: QuickSpec {
                     expect(view.frame).to(equal(CGRect(x: 20, y: 10, width: 340, height: 360)))
                 }
             }
+
+            if #available(iOS 11.0, *) {
+                describe("LayoutProxy.safeArea.edges") {
+                    it("should support relative equalities") {
+                        constrain(view) { view in
+                            view.edges == view.superview!.safeArea.edges
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(view.superview?.frame))
+                    }
+                }
+
+                describe("LayoutProxy.edges") {
+                    it("should support relative inequalities") {
+                        constrain(view) { view in
+                            view.edges <= view.superview!.safeArea.edges
+                            view.edges >= view.superview!.safeArea.edges
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(view.superview?.frame))
+                    }
+                }
+
+                describe("inset") {
+                    it("should inset all edges with the same amount") {
+                        constrain(view) { view in
+                            view.edges == inset(view.superview!.safeArea.edges, 20)
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(CGRect(x: 20, y: 20, width: 360, height: 360)))
+                    }
+
+                    it("should inset the horizontal and vertical edge individually") {
+                        constrain(view) { view in
+                            view.edges == inset(view.superview!.safeArea.edges, 20, 30)
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(CGRect(x: 20, y: 30, width: 360, height: 340)))
+                    }
+
+                    it("should inset all edges individually") {
+                        constrain(view) { view in
+                            view.edges == inset(view.superview!.safeArea.edges, 10, 20, 30, 40)
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(CGRect(x: 20, y: 10, width: 340, height: 360)))
+                    }
+                }
+
+                describe("LayoutProxy.safeArea.edgesWithinMargins") {
+                    it("should support relative equalities") {
+                        constrain(view) { view in
+                            view.edges == view.superview!.safeArea.edgesWithinMargins
+                        }
+
+                        window.layoutIfNeeded()
+
+                        expect(view.frame).to(equal(CGRect(x: 0, y: 0, width: 400, height: 400)))
+                    }
+                }
+            }
         }
         
         describe("on iOS only, inset using UIEdgeInsets") {

@@ -21,17 +21,24 @@ public class Context {
 
     #if os(iOS) || os(tvOS)
 
-        internal func addConstraint(_ from: Property, to: LayoutSupport, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
+    internal func addConstraint(_ from: Property, to: LayoutSupport, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
             from.view.car_translatesAutoresizingMaskIntoConstraints = false
-            
-            let layoutConstraint = NSLayoutConstraint(item: from.view,
+
+            let item: LayoutItem
+            if #available(iOS 11.0, tvOS 11.0, *), from.needsSafeArea {
+                item = from.view.safeAreaLayoutGuide
+            } else {
+                item = from.view
+            }
+
+            let layoutConstraint = NSLayoutConstraint(item: item,
                                                       attribute: from.attribute,
                                                       relatedBy: relation,
                                                       toItem: to.layoutGuide,
                                                       attribute: to.attribute,
                                                       multiplier: CGFloat(coefficients.multiplier),
                                                       constant: CGFloat(coefficients.constant))
-            
+
             var view = from.view
             while let superview = view.superview {
                 view = superview
@@ -40,17 +47,30 @@ public class Context {
             
             return layoutConstraint
         }
-    
-    #endif
-    
+
     internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
-        
+
         from.view.car_translatesAutoresizingMaskIntoConstraints = false
 
-        let layoutConstraint = NSLayoutConstraint(item: from.view,
+        let item: LayoutItem
+        let toItem: LayoutItem?
+
+        if #available(iOS 11.0, tvOS 11.0, *), from.needsSafeArea {
+            item = from.view.safeAreaLayoutGuide
+        } else {
+            item = from.view
+        }
+
+        if #available(iOS 11.0, tvOS 11.0, *), let needsSafeArea = to?.needsSafeArea, needsSafeArea {
+            toItem = to?.view.safeAreaLayoutGuide
+        } else {
+            toItem = to?.view
+        }
+
+        let layoutConstraint = NSLayoutConstraint(item: item,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
-                                                  toItem: to?.view,
+                                                  toItem: toItem,
                                                   attribute: to?.attribute ?? .notAnAttribute,
                                                   multiplier: CGFloat(coefficients.multiplier),
                                                   constant: CGFloat(coefficients.constant))
@@ -67,6 +87,38 @@ public class Context {
 
         return layoutConstraint
     }
+
+    #else
+
+    internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
+
+        from.view.car_translatesAutoresizingMaskIntoConstraints = false
+
+        let item: LayoutItem = from.view
+        let toItem: LayoutItem? = to?.view
+
+        let layoutConstraint = NSLayoutConstraint(item: item,
+                                                  attribute: from.attribute,
+                                                  relatedBy: relation,
+                                                  toItem: toItem,
+                                                  attribute: to?.attribute ?? .notAnAttribute,
+                                                  multiplier: CGFloat(coefficients.multiplier),
+                                                  constant: CGFloat(coefficients.constant))
+
+        if let to = to {
+            if let common = closestCommonAncestor(from.view, b: to.view ) {
+                constraints.append(Constraint(view: common, layoutConstraint: layoutConstraint))
+            } else {
+                fatalError("No common superview found between \(from.view) and \(to.view)")
+            }
+        } else {
+            constraints.append(Constraint(view: from.view, layoutConstraint: layoutConstraint))
+        }
+
+        return layoutConstraint
+    }
+
+    #endif
 
     internal func addConstraint(_ from: Compound, coefficients: [Coefficients]? = nil, to: Compound? = nil, relation: LayoutRelation = .equal) -> [NSLayoutConstraint] {
         var results: [NSLayoutConstraint] = []
