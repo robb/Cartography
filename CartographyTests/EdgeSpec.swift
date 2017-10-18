@@ -318,7 +318,7 @@ class EdgeSpec: QuickSpec {
             }
         }
 
-#if os(iOS) || os(tvOS)
+        #if os(iOS) || os(tvOS)
         describe("on iOS only") {
             beforeEach {
                 window.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 30, right: 40)
@@ -372,6 +372,6 @@ class EdgeSpec: QuickSpec {
                 }
             }
         }
-#endif
+        #endif
     }
 }
