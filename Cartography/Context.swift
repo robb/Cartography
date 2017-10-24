@@ -20,8 +20,8 @@ public class Context {
     internal var constraints: [Constraint] = []
     
     internal func addConstraint(_ from: Property, to: Property? = nil, coefficients: Coefficients = Coefficients(), relation: LayoutRelation = .equal) -> NSLayoutConstraint {
-        if let from = from as? AutoresizingMaskLayoutProxy {
-            from.translatesAutoresizingMaskIntoConstraints = false
+        if let fromItem = from.item as? View {
+            fromItem.translatesAutoresizingMaskIntoConstraints = false
         }
 
         let layoutConstraint = NSLayoutConstraint(item: from.item,
