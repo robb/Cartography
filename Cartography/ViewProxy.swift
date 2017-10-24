@@ -6,12 +6,21 @@
 //  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
 
-public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLayoutProxy {
+public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLayoutProxy, AutoresizingMaskLayoutProxy {
     public var context: Context
 
     private let view: View
     public var item: AnyObject {
         return self.view
+    }
+
+    public var translatesAutoresizingMaskIntoConstraints: Bool {
+        get {
+            return view.translatesAutoresizingMaskIntoConstraints
+        }
+        set(value) {
+            view.translatesAutoresizingMaskIntoConstraints = value
+        }
     }
 
     public init(context: Context, view: View) {

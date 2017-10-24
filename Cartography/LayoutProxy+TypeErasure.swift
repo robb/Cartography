@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AnyTopLayoutProxy: SupportsTopLayoutProxy {
+final class AnyTopLayoutProxy: SupportsTopLayoutProxy {
     let proxy: SupportsTopLayoutProxy
 
     var context: Context {
@@ -24,7 +24,7 @@ struct AnyTopLayoutProxy: SupportsTopLayoutProxy {
     }
 }
 
-struct AnyBottomLayoutProxy: SupportsBottomLayoutProxy {
+final class AnyBottomLayoutProxy: SupportsBottomLayoutProxy {
     let proxy: SupportsBottomLayoutProxy
 
     var context: Context {
@@ -40,7 +40,7 @@ struct AnyBottomLayoutProxy: SupportsBottomLayoutProxy {
     }
 }
 
-struct AnyLeftLayoutProxy: SupportsLeftLayoutProxy {
+final class AnyLeftLayoutProxy: SupportsLeftLayoutProxy {
     let proxy: SupportsLeftLayoutProxy
 
     var context: Context {
@@ -56,7 +56,7 @@ struct AnyLeftLayoutProxy: SupportsLeftLayoutProxy {
     }
 }
 
-struct AnyRightLayoutProxy: SupportsRightLayoutProxy {
+final class AnyRightLayoutProxy: SupportsRightLayoutProxy {
     let proxy: SupportsRightLayoutProxy
 
     var context: Context {
@@ -72,7 +72,7 @@ struct AnyRightLayoutProxy: SupportsRightLayoutProxy {
     }
 }
 
-struct AnyLeadingLayoutProxy: SupportsLeadingLayoutProxy {
+final class AnyLeadingLayoutProxy: SupportsLeadingLayoutProxy {
     let proxy: SupportsLeadingLayoutProxy
 
     var context: Context {
@@ -88,7 +88,7 @@ struct AnyLeadingLayoutProxy: SupportsLeadingLayoutProxy {
     }
 }
 
-struct AnyTrailingLayoutProxy: SupportsTrailingLayoutProxy {
+final class AnyTrailingLayoutProxy: SupportsTrailingLayoutProxy {
     let proxy: SupportsTrailingLayoutProxy
 
     var context: Context {
@@ -104,7 +104,7 @@ struct AnyTrailingLayoutProxy: SupportsTrailingLayoutProxy {
     }
 }
 
-struct AnyCenterXLayoutProxy: SupportsCenterXLayoutProxy {
+final class AnyCenterXLayoutProxy: SupportsCenterXLayoutProxy {
     let proxy: SupportsCenterXLayoutProxy
 
     var context: Context {
@@ -120,7 +120,7 @@ struct AnyCenterXLayoutProxy: SupportsCenterXLayoutProxy {
     }
 }
 
-struct AnyCenterYLayoutProxy: SupportsCenterYLayoutProxy {
+final class AnyCenterYLayoutProxy: SupportsCenterYLayoutProxy {
     let proxy: SupportsCenterYLayoutProxy
 
     var context: Context {
@@ -136,7 +136,7 @@ struct AnyCenterYLayoutProxy: SupportsCenterYLayoutProxy {
     }
 }
 
-struct AnyBaselineLayoutProxy: SupportsBaselineLayoutProxy {
+final class AnyBaselineLayoutProxy: SupportsBaselineLayoutProxy {
     let proxy: SupportsBaselineLayoutProxy
 
     var context: Context {
@@ -152,7 +152,7 @@ struct AnyBaselineLayoutProxy: SupportsBaselineLayoutProxy {
     }
 }
 
-struct AnyHorizontalDistributionLayoutProxy: SupportsLeadingLayoutProxy, SupportsTrailingLayoutProxy {
+final class AnyHorizontalDistributionLayoutProxy: SupportsLeadingLayoutProxy, SupportsTrailingLayoutProxy {
     let proxy: SupportsLeadingLayoutProxy & SupportsTrailingLayoutProxy
 
     var context: Context {
@@ -168,7 +168,7 @@ struct AnyHorizontalDistributionLayoutProxy: SupportsLeadingLayoutProxy, Support
     }
 }
 
-struct AnyLeftToRightDistributionLayoutProxy: SupportsLeftLayoutProxy, SupportsRightLayoutProxy {
+final class AnyLeftToRightDistributionLayoutProxy: SupportsLeftLayoutProxy, SupportsRightLayoutProxy {
     let proxy: SupportsLeftLayoutProxy & SupportsRightLayoutProxy
 
     var context: Context {
@@ -184,7 +184,7 @@ struct AnyLeftToRightDistributionLayoutProxy: SupportsLeftLayoutProxy, SupportsR
     }
 }
 
-struct AnyVerticalDistributionLayoutProxy: SupportsTopLayoutProxy, SupportsBottomLayoutProxy {
+final class AnyVerticalDistributionLayoutProxy: SupportsTopLayoutProxy, SupportsBottomLayoutProxy {
     let proxy: SupportsTopLayoutProxy & SupportsBottomLayoutProxy
 
     var context: Context {

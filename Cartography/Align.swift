@@ -14,9 +14,17 @@ import AppKit
 
 private func makeEqual<P: RelativeEquality, T: LayoutProxy>(by attribute: (T) -> P, items: [T]) -> [NSLayoutConstraint] {
     if let first = items.first {
+        if let first = first as? AutoresizingMaskLayoutProxy {
+            first.translatesAutoresizingMaskIntoConstraints = false
+        }
+
         let rest = items.dropFirst()
         
         return rest.reduce([]) { acc, current in
+            if let current = current as? AutoresizingMaskLayoutProxy {
+                current.translatesAutoresizingMaskIntoConstraints = false
+            }
+
             return acc + [ attribute(first) == attribute(current) ]
         }
     } else {

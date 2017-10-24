@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol LayoutProxy {
+public protocol LayoutProxy: class {
     var context: Context { get }
     var item: AnyObject { get } //type-erased Layoutitem
 }

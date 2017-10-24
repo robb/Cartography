@@ -86,6 +86,7 @@
 		9722953D1F950A1F00FA4AF9 /* ViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A81F8D598A004857CE /* ViewProxy.swift */; };
 		9722953E1F950A2E00FA4AF9 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		9722953F1F950A3000FA4AF9 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
+		977C36821F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
 		979558E41F9700B40096BBEA /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		979558EC1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
 		979558ED1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
@@ -244,6 +245,7 @@
 		7BBFE24E2FED786C571966AE /* Pods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3596ED3F137EB677E57692 /* Pods-TestPods-Cartography-tvOS-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPods-Cartography-tvOS-tests/Pods-TestPods-Cartography-tvOS-tests.release.xcconfig"; sourceTree = "<group>"; };
 		825625A8CCFA9B2B102BDDDB /* Pods_TestPods_Cartography_Mac_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestPods_Cartography_Mac_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoresizingMaskLayoutProxy.swift; sourceTree = "<group>"; };
 		979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuideSpec.swift; sourceTree = "<group>"; };
 		97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutSupportProxy.swift; sourceTree = "<group>"; };
 		97D17C951F8E774400C57CE1 /* LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuide.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				97D17CA91F8E779300C57CE1 /* LayoutGuideProxy.swift */,
 				97D17C991F8E774700C57CE1 /* CartographyTests */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
+				977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */,
 			);
 			path = Cartography;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 				547BC85519E2DD06007BEE9E /* Context.swift in Sources */,
 				97F50E521F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				EE8531501F936462003EC021 /* LayoutItem.swift in Sources */,
+				977C36821F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */,
 				545F858D195322EA00791F75 /* Edges.swift in Sources */,
 				97E7F0A91F8D598A004857CE /* ViewProxy.swift in Sources */,
 				546E9E8D1950A31100B16707 /* Dimension.swift in Sources */,

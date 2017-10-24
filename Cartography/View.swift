@@ -25,8 +25,6 @@ import Foundation
 
     extension NSView: LayoutItem {
         public func asProxy(context: Context) -> ViewProxy {
-            self.translatesAutoresizingMaskIntoConstraints = false
-
             return ViewProxy(context: context, view: self)
         }
     }

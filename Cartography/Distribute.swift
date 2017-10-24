@@ -13,6 +13,10 @@
 #endif
 
 @discardableResult private func reduce<T: LayoutProxy>(_ items: [T], combine: (T, T) -> NSLayoutConstraint) -> [NSLayoutConstraint] {
+    if let last = items.last as? AutoresizingMaskLayoutProxy {
+        last.translatesAutoresizingMaskIntoConstraints = false
+    }
+
     if let first = items.first {
         let rest = items.dropFirst()
         
