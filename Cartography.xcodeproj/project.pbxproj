@@ -87,6 +87,8 @@
 		9722953E1F950A2E00FA4AF9 /* LayoutSupportProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C8F1F8E73F200C57CE1 /* LayoutSupportProxy.swift */; };
 		9722953F1F950A3000FA4AF9 /* LayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AF7EED1CABEABC00249E27 /* LayoutSupport.swift */; };
 		977C36821F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
+		977C36831F9FC2900057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
+		977C36841F9FC2910057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
 		979558E41F9700B40096BBEA /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		979558EC1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
 		979558ED1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
@@ -419,6 +421,7 @@
 				EE85314F1F9363DC003EC021 /* LayoutItem.swift */,
 				546E9E881950A29300B16707 /* LayoutProxy.swift */,
 				97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */,
+				977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */,
 				54FA3A3B1951A2B60094B82A /* Point.swift */,
 				54FA3A351950FD320094B82A /* Priority.swift */,
 				54C96A2F195064A6000CDD27 /* Property.swift */,
@@ -431,7 +434,6 @@
 				97D17CA91F8E779300C57CE1 /* LayoutGuideProxy.swift */,
 				97D17C991F8E774700C57CE1 /* CartographyTests */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
-				977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */,
 			);
 			path = Cartography;
 			sourceTree = "<group>";
@@ -964,6 +966,7 @@
 				54BF29B51A9350170066ED10 /* Align.swift in Sources */,
 				97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				9722953C1F950A1E00FA4AF9 /* ViewProxy.swift in Sources */,
+				977C36831F9FC2900057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */,
 				97D17CAB1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */,
 				543B37FA1AC82FBF00367D8B /* Edge.swift in Sources */,
 				EE8531531F94131B003EC021 /* LayoutItem.swift in Sources */,
@@ -1008,6 +1011,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977C36841F9FC2910057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */,
 				632F09351BF1F127002431A3 /* Align.swift in Sources */,
 				9722953D1F950A1F00FA4AF9 /* ViewProxy.swift in Sources */,
 				632F09361BF1F127002431A3 /* Coefficients.swift in Sources */,
