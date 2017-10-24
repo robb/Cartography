@@ -25,11 +25,7 @@ public final class LayoutGuideProxy: SupportsPositioningLayoutProxy {
     }
 
     public var owningView: ViewProxy? {
-        guard let owningView = layoutGuide.owningView else {
-            return nil
-        }
-
-        return ViewProxy(context: context, view: owningView)
+        return layoutGuide.owningView?.asProxy(context: context)
     }
 }
 #endif

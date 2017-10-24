@@ -29,20 +29,14 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
     }
 
     public var superview: ViewProxy? {
-        guard let superview = self.view.superview else {
-            return nil
-        }
-
-        return ViewProxy(context: context, view: superview)
+        return view.superview?.asProxy(context: context)
     }
 
     #if os(iOS) || os(tvOS)
     @available(iOS, introduced: 11.0)
     @available(tvOS, introduced: 11.0)
     public var safeAreaLayoutGuide: LayoutGuideProxy {
-        let layoutGuide = view.safeAreaLayoutGuide
-
-        return LayoutGuideProxy(context: context, item: layoutGuide)
+        return view.safeAreaLayoutGuide.asProxy(context: context)
     }
     #endif
 }
