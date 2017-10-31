@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
   s.tvos.deployment_target = "9.0"
 
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+
   s.source = { :git => "https://github.com/robb/Cartography.git", :tag => s.version }
   s.source_files = "Cartography/*.swift"
 end
