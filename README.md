@@ -232,6 +232,7 @@ Read the documentation [here](http://robb.github.io/Cartography/). For more info
 ## Versioning
 
 For *Swift 3.x*: 1.1.0
+
 For *Swift 4.x*: 2.0.0
 
 ## Support
