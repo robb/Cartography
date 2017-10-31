@@ -10,6 +10,6 @@ public func translateAutoresizingMasksToConstraints() -> NonNilMatcherFunc<View>
         failureMessage.actualValue = nil
         failureMessage.postfixMessage = "translate autoresizing masks to constraints"
 
-        return view?.car_translatesAutoresizingMaskIntoConstraints ?? false
+        return view?.translatesAutoresizingMaskIntoConstraints ?? false
     }
 }

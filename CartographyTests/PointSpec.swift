@@ -71,31 +71,6 @@ class PointSpec: QuickSpec {
                     expect(view.frame).to(equal(CGRect(x: 110, y: 110, width: 200, height: 200)))
                 }
             }
-
-            if #available(iOS 11.0, *) {
-                describe("LayoutProxy.safeArea.center") {
-                    it("should support relative equalities") {
-                        constrain(view) { view in
-                            view.center == view.superview!.safeArea.center
-                        }
-
-                        window.layoutIfNeeded()
-
-                        expect(view.frame).to(equal(CGRect(x: 100, y: 100, width: 200, height: 200)))
-                    }
-
-                    it("should support relative inequalities") {
-                        constrain(view) { view in
-                            view.center <= view.superview!.safeArea.center
-                            view.center >= view.superview!.safeArea.center
-                        }
-
-                        window.layoutIfNeeded()
-
-                        expect(view.frame).to(equal(CGRect(x: 100, y: 100, width: 200, height: 200)))
-                    }
-                }
-            }
         }
 #endif
     }

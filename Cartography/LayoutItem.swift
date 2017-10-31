@@ -2,20 +2,18 @@
 //  LayoutItem.swift
 //  Cartography-iOS
 //
-//  Created by Yusuke Morishia on 2017/10/15.
-//  Copyright © 2017年 Robert Böhnke. All rights reserved.
+//  Created by Vitor Travain on 10/10/17.
+//  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
-#if os(iOS) || os(tvOS)
-    import UIKit
-#else
-    import AppKit
-#endif
 
-internal protocol LayoutItem: class {}
+public protocol LayoutItem: class {
+    associatedtype ProxyType: LayoutProxy
 
-extension View: LayoutItem {}
+    func asProxy(context: Context) -> ProxyType
+}
 
-#if os(iOS) || os(tvOS)
-@available(iOS 9.0, tvOS 9.0, *)
-extension UILayoutGuide: LayoutItem {}
-#endif
+extension LayoutItem {
+    public func asProxy() -> ProxyType {
+        return asProxy(context: Context())
+    }
+}
