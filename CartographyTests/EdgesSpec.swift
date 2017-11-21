@@ -61,6 +61,26 @@ class EdgesSpec: QuickSpec {
                 expect(view.frame).to(equal(CGRect(x: 20, y: 30, width: 360, height: 340)))
             }
 
+            it("should inset the horizontal edges") {
+                constrain(view) { view in
+                    view.edges == inset(view.superview!.edges, horizontally: 20)
+                }
+
+                window.layoutIfNeeded()
+
+                expect(view.frame).to(equal(CGRect(x: 20, y: 0, width: 360, height: 400)))
+            }
+
+            it("should inset the vertical edges") {
+                constrain(view) { view in
+                    view.edges == inset(view.superview!.edges, vertically: 30)
+                }
+
+                window.layoutIfNeeded()
+
+                expect(view.frame).to(equal(CGRect(x: 0, y: 30, width: 400, height: 340)))
+            }
+
             it("should inset all edges individually") {
                 constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 10, 20, 30, 40)
