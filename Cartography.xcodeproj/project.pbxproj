@@ -139,8 +139,8 @@
 		97D17CAC1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17CA91F8E779300C57CE1 /* LayoutGuideProxy.swift */; };
 		97E7F0A91F8D598A004857CE /* ViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7F0A81F8D598A004857CE /* ViewProxy.swift */; };
 		97F50E521F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
-		97F50E541F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
-		97F50E551F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */; };
+		97F50E541F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */; };
+		97F50E551F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */; };
 		97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
@@ -268,7 +268,7 @@
 		97D17CA91F8E779300C57CE1 /* LayoutGuideProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuideProxy.swift; sourceTree = "<group>"; };
 		97E7F0A81F8D598A004857CE /* ViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProxy.swift; sourceTree = "<group>"; };
 		97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutProxy+TypeErasure.swift"; sourceTree = "<group>"; };
-		97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaLayoutGuideSpec.swift; sourceTree = "<group>"; };
+		97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutGuideSpec.swift; sourceTree = "<group>"; };
 		EE85314F1F9363DC003EC021 /* LayoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItem.swift; sourceTree = "<group>"; };
 		EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -472,7 +472,7 @@
 				97D17CA51F8E774700C57CE1 /* MemoryLeakSpec.swift */,
 				97D17CA61F8E774700C57CE1 /* ConstraintGroupSpec.swift */,
 				97D17CA81F8E774700C57CE1 /* SizeSpec.swift */,
-				97F50E531F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift */,
+				97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */,
 			);
 			path = CartographyTests;
 			sourceTree = SOURCE_ROOT;
@@ -934,7 +934,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				979558F61F97017D0096BBEA /* LayoutSupportSpec.swift in Sources */,
-				97F50E541F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */,
+				97F50E541F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift in Sources */,
 				9795590B1F9701CD0096BBEA /* ConstraintGroupSpec.swift in Sources */,
 				979559081F9701C90096BBEA /* MemoryLeakSpec.swift in Sources */,
 				979558FC1F97019E0096BBEA /* Matchers.swift in Sources */,
@@ -1045,7 +1045,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				979558F71F97017F0096BBEA /* LayoutSupportSpec.swift in Sources */,
-				97F50E551F9633AA00C6DCF5 /* SafeAreaLayoutGuideSpec.swift in Sources */,
+				97F50E551F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift in Sources */,
 				9795590D1F9701CF0096BBEA /* ConstraintGroupSpec.swift in Sources */,
 				9795590A1F9701CA0096BBEA /* MemoryLeakSpec.swift in Sources */,
 				979558FD1F9701A10096BBEA /* Matchers.swift in Sources */,
