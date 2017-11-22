@@ -8,23 +8,22 @@
 
 import Quick
 import Nimble
-import UIKit
 @testable import Cartography
 
 @available(iOS, introduced: 9.0)
+@available(tvOS, introduced: 9.0)
+@available(OSX, introduced: 10.11)
 final class LayoutGuideSpec: QuickSpec {
     override func spec() {
-        var view: UIView!
-        var layoutGuide: UILayoutGuide!
+        var view: View!
+        var layoutGuide: LayoutGuide!
 
         beforeEach {
-            view = TestView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
-            layoutGuide = UILayoutGuide()
-
-            constrain(view) { view in
-                view.width == 400.0
-                view.height == 400.0
-            }
+            view = View(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+            #if os(OSX)
+                view.autoresizingMask = .none
+            #endif
+            layoutGuide = LayoutGuide()
 
             view.addLayoutGuide(layoutGuide)
         }
@@ -35,12 +34,22 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.edges == layoutGuide.owningView!.edges
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.origin.x) == 0
-                expect(layoutGuide.layoutFrame.origin.y) == 0
-                expect(layoutGuide.layoutFrame.width) == 400
-                expect(layoutGuide.layoutFrame.height) == 400
+                    expect(layoutGuide.layoutFrame.origin.x) == 0
+                    expect(layoutGuide.layoutFrame.origin.y) == 0
+                    expect(layoutGuide.layoutFrame.width) == 400
+                    expect(layoutGuide.layoutFrame.height) == 400
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.origin.x) == 0
+                    expect(layoutGuide.frame.origin.y) == 0
+                    expect(layoutGuide.frame.width) == 400
+                    expect(layoutGuide.frame.height) == 400
+                #endif
             }
 
             it("should support inequalities") {
@@ -49,18 +58,30 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.bottom <= layoutGuide.owningView!.bottom
 
                     layoutGuide.left >= layoutGuide.owningView!.left
-                    layoutGuide.left <= layoutGuide.owningView!.left
+                    layoutGuide.right <= layoutGuide.owningView!.right
+
+                    layoutGuide.center == layoutGuide.owningView!.center ~ .defaultLow
 
                     layoutGuide.width == 200
                     layoutGuide.height == 200
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.origin.x) == 0
-                expect(layoutGuide.layoutFrame.origin.y) == 0
-                expect(layoutGuide.layoutFrame.width) == 200
-                expect(layoutGuide.layoutFrame.height) == 200
+                    expect(layoutGuide.layoutFrame.midX) == 200
+                    expect(layoutGuide.layoutFrame.midY) == 200
+                    expect(layoutGuide.layoutFrame.width) == 200
+                    expect(layoutGuide.layoutFrame.height) == 200
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.midX) == 200
+                    expect(layoutGuide.frame.midY) == 200
+                    expect(layoutGuide.frame.width) == 200
+                    expect(layoutGuide.frame.height) == 200
+                #endif
             }
 
             it("should support addition") {
@@ -68,9 +89,16 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.leading == layoutGuide.owningView!.leading + 10
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.minX) == 10
+                    expect(layoutGuide.layoutFrame.minX) == 10
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.minX) == 10
+                #endif
             }
 
             it("should support subtraction") {
@@ -78,9 +106,16 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.trailing == layoutGuide.owningView!.trailing - 10
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.maxX) == 390
+                    expect(layoutGuide.layoutFrame.maxX) == 390
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.maxX) == 390
+                #endif
             }
 
             it("should support multiplication") {
@@ -88,9 +123,16 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.width == 0.5 * layoutGuide.owningView!.width
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.width) == 0.5 * view.frame.width
+                    expect(layoutGuide.layoutFrame.width) == 0.5 * view.frame.width
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.width) == 0.5 * view.frame.width
+                #endif
             }
 
             it("should support division") {
@@ -98,9 +140,16 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.width == layoutGuide.owningView!.width / 2
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.width) == view.frame.width / 2
+                    expect(layoutGuide.layoutFrame.width) == view.frame.width / 2
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.width) == view.frame.width / 2
+                #endif
             }
 
             it("should support centering") {
@@ -108,10 +157,18 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.center == layoutGuide.owningView!.center
                 }
 
-                view.layoutIfNeeded()
+                #if os(iOS) || os(tvOS)
+                    view.layoutIfNeeded()
 
-                expect(layoutGuide.layoutFrame.midX) == 200
-                expect(layoutGuide.layoutFrame.midY) == 200
+                    expect(layoutGuide.layoutFrame.midX) == 200
+                    expect(layoutGuide.layoutFrame.midY) == 200
+                #elseif os(OSX)
+                    view.needsLayout = true
+                    view.layoutSubtreeIfNeeded()
+
+                    expect(layoutGuide.frame.midX) == 200
+                    expect(layoutGuide.frame.midY) == 200
+                #endif
             }
         }
     }

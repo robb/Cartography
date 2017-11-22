@@ -38,5 +38,17 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
     public var safeAreaLayoutGuide: LayoutGuideProxy {
         return view.safeAreaLayoutGuide.asProxy(context: context)
     }
+
+    @available(iOS, introduced: 9.0)
+    @available(tvOS, introduced: 9.0)
+    public var layoutMarginsGuide: LayoutGuideProxy {
+        return view.layoutMarginsGuide.asProxy(context: context)
+    }
+
+    @available(iOS, introduced: 9.0)
+    @available(tvOS, introduced: 9.0)
+    public var readableContentGuide: LayoutGuideProxy {
+        return view.readableContentGuide.asProxy(context: context)
+    }
     #endif
 }
