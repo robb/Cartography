@@ -89,6 +89,7 @@
 		977C36821F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
 		977C36831F9FC2900057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
 		977C36841F9FC2910057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C36811F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift */; };
+		97885B1E1FC4F7C800BB4E51 /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		979558E41F9700B40096BBEA /* LayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979F29C91F94DC6B00257363 /* LayoutGuideSpec.swift */; };
 		979558EC1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
 		979558ED1F97015E0096BBEA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D17C9E1F8E774700C57CE1 /* TestView.swift */; };
@@ -998,6 +999,7 @@
 				9795590C1F9701CE0096BBEA /* ConstraintGroupSpec.swift in Sources */,
 				979559061F9701BC0096BBEA /* ViewHierarchySpec.swift in Sources */,
 				979558F91F9701860096BBEA /* PrioritySpec.swift in Sources */,
+				97885B1E1FC4F7C800BB4E51 /* LayoutGuideSpec.swift in Sources */,
 				979558F21F97016C0096BBEA /* EdgesSpec.swift in Sources */,
 				979558ED1F97015E0096BBEA /* TestView.swift in Sources */,
 				979559091F9701C90096BBEA /* MemoryLeakSpec.swift in Sources */,
