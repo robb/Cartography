@@ -98,7 +98,7 @@ constrain(view, replace: group) { view in
     view.right  == view.superview!.right
 }
 
-UIView.animateWithDuration(0.5, animations: view.layoutIfNeeded)
+UIView.animate(withDuration: 0.5, animations: view.layoutIfNeeded)
 ```
 
 For convenience, the `constrain` functions also returns `ConstraintGroup`
