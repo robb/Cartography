@@ -10,6 +10,8 @@ class DistributeSpec: QuickSpec {
         var viewB: TestView!
         var viewC: TestView!
 
+        let constraintsGroup = ConstraintGroup()
+
         beforeEach {
             window = TestWindow(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
 
@@ -22,7 +24,7 @@ class DistributeSpec: QuickSpec {
             viewC = TestView(frame: CGRect.zero)
             window.addSubview(viewC)
 
-            constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
+            constrain(viewA, viewB, viewC, replace: constraintsGroup) { viewA, viewB, viewC in
                 viewA.width  == 100
                 viewA.height == 100
 
@@ -92,6 +94,46 @@ class DistributeSpec: QuickSpec {
             it("should have no constraints for no view") {
                 let constraints = distribute(horizontally: [])
                 expect(constraints.count).to(equal(0))
+            }
+        }
+
+        describe("When distributing width") {
+            beforeEach {
+                constrain(viewA, viewB, viewC, replace: constraintsGroup) {
+                    viewA, viewB, viewC in
+
+                    viewA.width == 50
+
+                    distribute(equalWidth: [viewA, viewB, viewC])
+                }
+
+                window.layoutIfNeeded()
+            }
+
+            it("should distribute the same width through all the views") {
+                expect(viewA.frame.width).to(equal(50))
+                expect(viewB.frame.width).to(equal(viewA.frame.width))
+                expect(viewC.frame.width).to(equal(viewB.frame.width))
+            }
+        }
+
+        describe("When distributing height") {
+            beforeEach {
+                constrain(viewA, viewB, viewC, replace: constraintsGroup) {
+                    viewA, viewB, viewC in
+
+                    viewA.height == 50
+
+                    distribute(equalHeight: [viewA, viewB, viewC])
+                }
+
+                window.layoutIfNeeded()
+            }
+
+            it("should distribute the same height through all the views") {
+                expect(viewA.frame.height).to(equal(50))
+                expect(viewB.frame.height).to(equal(viewA.frame.height))
+                expect(viewC.frame.height).to(equal(viewB.frame.height))
             }
         }
     }

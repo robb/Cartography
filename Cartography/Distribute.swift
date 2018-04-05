@@ -120,3 +120,55 @@
 @discardableResult public func distribute(by amount: CGFloat = 0.0, vertically first: SupportsTopLayoutProxy & SupportsBottomLayoutProxy, _ rest: (SupportsTopLayoutProxy & SupportsBottomLayoutProxy)...) -> [NSLayoutConstraint] {
     return distribute(by: amount, vertically: [first] + rest)
 }
+
+/// Distributes width for all the items.
+///
+/// All items passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - Parameter items: The items to distribute
+///
+/// - Returns: An array of `NSLayoutConstraint` instances
+///
+@discardableResult public func distribute(equalWidth items: [SupportsWidthLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(items.map(AnyWidthLayoutProxy.init)) { $0.width == $1.width }
+}
+
+/// Distributes width for all the items.
+///
+/// All items passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - Parameter items: The items to distribute
+///
+/// - Returns: An array of `NSLayoutConstraint` instances
+///
+@discardableResult public func distribute(equalWidth first: SupportsWidthLayoutProxy, _ rest: (SupportsWidthLayoutProxy)...) -> [NSLayoutConstraint] {
+    return distribute(equalWidth: [first] + rest)
+}
+
+/// Distributes height for all the items.
+///
+/// All items passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - Parameter items: The items to distribute
+///
+/// - Returns: An array of `NSLayoutConstraint` instances
+///
+@discardableResult public func distribute(equalHeight items: [SupportsHeightLayoutProxy]) -> [NSLayoutConstraint] {
+    return reduce(items.map(AnyHeightLayoutProxy.init)) { $0.height == $1.height }
+}
+
+/// Distributes height for all the items.
+///
+/// All items passed to this function will have
+/// their `translatesAutoresizingMaskIntoConstraints` properties set to `false`.
+///
+/// - Parameter items: The items to distribute
+///
+/// - Returns: An array of `NSLayoutConstraint` instances
+///
+@discardableResult public func distribute(equalHeight first: SupportsHeightLayoutProxy, _ rest: (SupportsHeightLayoutProxy)...) -> [NSLayoutConstraint] {
+    return distribute(equalHeight: [first] + rest)
+}
