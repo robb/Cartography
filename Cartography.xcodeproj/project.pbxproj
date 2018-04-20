@@ -144,6 +144,7 @@
 		97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
+		D63BD7B82089B6FA00061239 /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85314F1F9363DC003EC021 /* LayoutItem.swift */; };
 		EE8531501F936462003EC021 /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85314F1F9363DC003EC021 /* LayoutItem.swift */; };
 		EE8531531F94131B003EC021 /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85314F1F9363DC003EC021 /* LayoutItem.swift */; };
 /* End PBXBuildFile section */
@@ -1024,6 +1025,7 @@
 				97D17C981F8E774400C57CE1 /* LayoutGuide.swift in Sources */,
 				632F093B1BF1F127002431A3 /* Context.swift in Sources */,
 				97D17CAC1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */,
+				D63BD7B82089B6FA00061239 /* LayoutItem.swift in Sources */,
 				632F093C1BF1F127002431A3 /* Dimension.swift in Sources */,
 				632F093D1BF1F127002431A3 /* Distribute.swift in Sources */,
 				632F093E1BF1F127002431A3 /* Edge.swift in Sources */,
