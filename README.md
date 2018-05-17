@@ -38,6 +38,24 @@ If you end up using Cartography in production, I'd love to hear from you. You ca
 
 If you need Swift 2.x support, then please use `0.7.0` and below.
 
+## Installation
+
+### CocoaPods
+
+To integrate Cartography into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+target '<Your Target Name>' do
+  pod 'Cartography', '~> 3.0'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
 ## Usage
 
 Call the `constrain` function with your `UIView` or `NSView` instances as well
