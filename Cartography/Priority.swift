@@ -24,6 +24,8 @@ precedencegroup CarthographyPriorityPrecedence {
 infix operator  ~: CarthographyPriorityPrecedence
 
 infix operator ~==: AssignmentPrecedence
+infix operator ~<=: AssignmentPrecedence
+infix operator ~>=: AssignmentPrecedence
 infix operator ~+: AdditionPrecedence
 infix operator ~-: AdditionPrecedence
 infix operator ~*: MultiplicationPrecedence
