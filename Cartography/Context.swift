@@ -9,7 +9,7 @@
 #if os(iOS) || os(tvOS)
 import UIKit
 
-public typealias LayoutRelation = NSLayoutRelation
+public typealias LayoutRelation = NSLayoutConstraint.Relation
 #else
 import AppKit
 
