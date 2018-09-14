@@ -253,6 +253,8 @@ For *Swift 3.x*: Versions <= 1.1.0
 
 For *Swift 4.x*: Versions >= 2.0.0
 
+For *Swift 4.2.*: Versions >= 2.1.0
+
 ## Support
 
 Please, don't hesitate to [file an
