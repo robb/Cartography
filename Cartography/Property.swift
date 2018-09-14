@@ -9,7 +9,7 @@
 #if os(iOS) || os(tvOS)
 import UIKit
 
-public typealias LayoutAttribute = NSLayoutAttribute
+public typealias LayoutAttribute = NSLayoutConstraint.Attribute
 #else
 import AppKit
 

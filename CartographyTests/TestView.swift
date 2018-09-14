@@ -33,6 +33,7 @@ class TestView: View {
 #if os(iOS) || os(tvOS)
 class TestWindow: UIWindow {
 
+    override var safeAreaInsets: UIEdgeInsets { return .zero }
 }
 #else
 class TestWindow: TestView {
