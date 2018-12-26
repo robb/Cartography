@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Cartography"
-  s.version      = "3.0.2"
+  s.version      = "3.0.3"
   s.summary      = "Declarative Auto Layout in Swift"
 
   s.description  = <<-DESC
@@ -11,6 +11,8 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/robb/Cartography"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Robert Böhnke" => "robb@robb.is" }
+
+  s.swift_version = "4.2"
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
