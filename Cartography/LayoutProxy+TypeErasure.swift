@@ -199,3 +199,35 @@ final class AnyVerticalDistributionLayoutProxy: SupportsTopLayoutProxy, Supports
         self.proxy = proxy
     }
 }
+
+final class AnyWidthLayoutProxy: SupportsWidthLayoutProxy {
+    let proxy: SupportsWidthLayoutProxy
+
+    var context: Context {
+        return proxy.context
+    }
+
+    var item: AnyObject {
+        return proxy.item
+    }
+
+    init(_ proxy: SupportsWidthLayoutProxy) {
+        self.proxy = proxy
+    }
+}
+
+final class AnyHeightLayoutProxy: SupportsHeightLayoutProxy {
+    let proxy: SupportsHeightLayoutProxy
+
+    var context: Context {
+        return proxy.context
+    }
+
+    var item: AnyObject {
+        return proxy.item
+    }
+
+    init(_ proxy: SupportsHeightLayoutProxy) {
+        self.proxy = proxy
+    }
+}
