@@ -12,7 +12,6 @@ import Nimble
 @testable import Cartography
 
 @available(iOS, introduced: 9.0)
-@available(iOS, introduced: 9.0)
 final class ViewLayoutGuideSpec: QuickSpec {
     override func spec() {
         describe("Layout margin guide") {
