@@ -36,8 +36,6 @@ constrain(button1, button2) { button1, button2 in
 
 If you end up using Cartography in production, I'd love to hear from you. You can reach me through [Twitter] or [email].
 
-If you need Swift 2.x support, then please use `0.7.0` and below.
-
 ## Installation
 
 ### CocoaPods
