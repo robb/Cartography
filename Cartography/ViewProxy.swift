@@ -59,7 +59,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
 @available(tvOS, deprecated: 11.0, message: "The safe area is available on tvOS 11+ via 'safeAreaLayoutGuide'!")
 extension ViewProxy {
     #if os(iOS) || os(tvOS)
-    var safeArea: LayoutGuideProxy {
+    public var safeArea: LayoutGuideProxy {
         if #available(iOS 11, *), #available(tvOS 11, *) {
             return safeAreaLayoutGuide
         } else {
