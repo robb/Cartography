@@ -24,7 +24,7 @@ class DistributeSpec: QuickSpec {
             viewC = TestView(frame: CGRect.zero)
             window.addSubview(viewC)
 
-            constrain(viewA, viewB, viewC, replace: constraintsGroup) { viewA, viewB, viewC in
+            cg_constrain(viewA, viewB, viewC, replace: constraintsGroup) { viewA, viewB, viewC in
                 viewA.width  == 100
                 viewA.height == 100
 
@@ -38,7 +38,7 @@ class DistributeSpec: QuickSpec {
 
         describe("from left to right") {
             beforeEach {
-                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
+                cg_constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerY: viewA, viewB, viewC)
                     distribute(by: 10, leftToRight: viewA, viewB, viewC)
                 }
@@ -61,7 +61,7 @@ class DistributeSpec: QuickSpec {
 
         describe("vertically") {
             beforeEach {
-                constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
+                cg_constrain(viewA, viewB, viewC) { viewA, viewB, viewC in
                     align(centerX: viewA, viewB, viewC)
                     distribute(by: 10, vertically: viewA, viewB, viewC)
                 }
@@ -84,7 +84,7 @@ class DistributeSpec: QuickSpec {
         
         describe("no constraints") {
             it("should have no constraints for a single view distribution") {
-                constrain(viewA) { viewA in
+                cg_constrain(viewA) { viewA in
                     let constraints = distribute(horizontally: [viewA])
                     
                     expect(constraints.count).to(equal(0))
@@ -99,7 +99,7 @@ class DistributeSpec: QuickSpec {
 
         describe("When distributing width") {
             beforeEach {
-                constrain(viewA, viewB, viewC, replace: constraintsGroup) {
+                cg_constrain(viewA, viewB, viewC, replace: constraintsGroup) {
                     viewA, viewB, viewC in
 
                     viewA.width == 50
@@ -119,7 +119,7 @@ class DistributeSpec: QuickSpec {
 
         describe("When distributing height") {
             beforeEach {
-                constrain(viewA, viewB, viewC, replace: constraintsGroup) {
+                cg_constrain(viewA, viewB, viewC, replace: constraintsGroup) {
                     viewA, viewB, viewC in
 
                     viewA.height == 50
