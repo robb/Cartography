@@ -56,7 +56,7 @@ $ pod install
 
 ## Usage
 
-Call the `constrain` function with your `UIView` or `NSView` instances as well
+Call the `constrain`_*_ function with your `UIView` or `NSView` instances as well
 as a closure in which you declare the constraints between the different
 attributes of your views:
 
@@ -244,6 +244,13 @@ constrain(view) { view in
 ## Documentation
 
 Read the documentation [here](http://robb.github.io/Cartography/). For more information, see the [gh-pages](https://github.com/robb/Cartography/tree/gh-pages) branch.
+
+
+\* Since Xcode 11 and swift 5.1 the keyword `constrain` conflicts with the ones used by the **CommonUISDK**... so, Calling the function with the module name is necessary to make it work properly
+
+e.g.: `Cartography.constrain`
+
+If you're using it with Xcode 10.3 or earlier, you can still use it as it is, without the module name alongside the function.
 
 ## Versioning
 
