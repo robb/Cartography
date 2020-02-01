@@ -6,10 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-import Foundation
-#if os(iOS)
-    import UIKit
-#endif
+import CoreGraphics
 
 public struct Coefficients {
     var multiplier: CGFloat = 1
