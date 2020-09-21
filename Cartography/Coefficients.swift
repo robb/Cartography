@@ -7,8 +7,10 @@
 //
 
 import Foundation
-#if os(iOS)
-    import UIKit
+#if canImport(UIKit)
+import UIKit
+#elseif os(OSX)
+import AppKit
 #endif
 
 public struct Coefficients {
