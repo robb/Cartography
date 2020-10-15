@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS)
     import UIKit
-#else
+    #else
     import AppKit
 #endif
 
