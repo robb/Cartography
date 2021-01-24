@@ -30,7 +30,7 @@ final class LayoutGuideSpec: QuickSpec {
 
         describe("LayoutGuideProxy") {
             it("should support relative equalities") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.edges == layoutGuide.owningView!.edges
                 }
 
@@ -53,7 +53,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support inequalities") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.top >= layoutGuide.owningView!.top
                     layoutGuide.bottom <= layoutGuide.owningView!.bottom
 
@@ -85,7 +85,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support addition") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.leading == layoutGuide.owningView!.leading + 10
                 }
 
@@ -102,7 +102,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support subtraction") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.trailing == layoutGuide.owningView!.trailing - 10
                 }
 
@@ -119,7 +119,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support multiplication") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.width == 0.5 * layoutGuide.owningView!.width
                 }
 
@@ -136,7 +136,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support division") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.width == layoutGuide.owningView!.width / 2
                 }
 
@@ -153,7 +153,7 @@ final class LayoutGuideSpec: QuickSpec {
             }
 
             it("should support centering") {
-                constrain(layoutGuide) { layoutGuide in
+                cg_constrain(layoutGuide) { layoutGuide in
                     layoutGuide.center == layoutGuide.owningView!.center
                 }
 

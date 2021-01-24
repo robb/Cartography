@@ -26,7 +26,7 @@ final class ViewLayoutGuideSpec: QuickSpec {
             }
 
             it("Views should align to edges within margins") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == view.superview!.layoutMarginsGuide.edges
                 }
 
@@ -39,7 +39,7 @@ final class ViewLayoutGuideSpec: QuickSpec {
             }
 
             it("Views should center within margins") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.center == view.superview!.layoutMarginsGuide.center
 
                     view.width == 200
@@ -67,7 +67,7 @@ final class ViewLayoutGuideSpec: QuickSpec {
             }
 
             it("Views should align to edges within readable margins") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == view.superview!.readableContentGuide.edges
                 }
 
@@ -80,7 +80,7 @@ final class ViewLayoutGuideSpec: QuickSpec {
             }
 
             it("Views should center within readable margins") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.center == view.superview!.readableContentGuide.center
 
                     view.width == 200
@@ -114,7 +114,7 @@ final class SafeAreaLayoutGuideSpec: QuickSpec {
             }
 
             it("Views should align to safe area edges") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == view.superview!.safeAreaLayoutGuide.edges
                 }
 
@@ -127,7 +127,7 @@ final class SafeAreaLayoutGuideSpec: QuickSpec {
             }
 
             it("View should center in safe area") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.center == view.superview!.safeAreaLayoutGuide.center
                     view.width == 200
                     view.height == 200

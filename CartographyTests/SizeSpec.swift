@@ -17,7 +17,7 @@ class SizeSpec: QuickSpec {
 
         describe("LayoutProxy.size") {
             it("should support relative equalities") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.size == view.superview!.size
                 }
 
@@ -27,7 +27,7 @@ class SizeSpec: QuickSpec {
             }
 
             it("should support relative inequalities") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.size <= view.superview!.size
                     view.size >= view.superview!.size
                 }
@@ -38,7 +38,7 @@ class SizeSpec: QuickSpec {
             }
 
             it("should support multiplication") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.size == view.superview!.size * 2
                 }
 
@@ -48,7 +48,7 @@ class SizeSpec: QuickSpec {
             }
 
             it("should support division") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.size == view.superview!.size / 2
                 }
 
