@@ -222,3 +222,109 @@ public func / <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expressio
 public func / <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
     return lhs * (1 / rhs)
 }
+
+// MARK: - Aliases
+
+@discardableResult public func ~== (lhs: NumericalEquality, rhs: CGFloat) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs))
+}
+
+@discardableResult public func ~== <P: RelativeEquality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0])
+}
+
+@discardableResult public func ~== <P: RelativeEquality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs)
+}
+
+public func ~+ <P: Addition>(c: CGFloat, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, c) ])
+}
+
+public func ~+ <P: Addition>(lhs: P, rhs: CGFloat) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func ~+ <P: Addition>(c: CGFloat, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 + c })
+}
+
+public func ~+ <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
+    return rhs + lhs
+}
+
+public func ~- <P: Addition>(c: CGFloat, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(1, -c) ])
+}
+
+public func ~- <P: Addition>(lhs: P, rhs: CGFloat) -> Expression<P> {
+    return rhs - lhs
+}
+
+public func ~- <P: Addition>(c: CGFloat, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 - c})
+}
+
+public func ~- <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
+    return rhs - lhs
+}
+
+#if os(iOS) || os(tvOS)
+
+public func ~+ (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+    return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
+}
+
+public func ~- (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
+    return lhs + (-c)
+}
+
+#endif
+
+public func ~* <P: Multiplication>(m: CGFloat, rhs: Expression<P>) -> Expression<P> {
+    return Expression(rhs.value, rhs.coefficients.map { $0 * m })
+}
+
+public func ~* <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func ~* <P: Multiplication>(m: CGFloat, rhs: P) -> Expression<P> {
+    return Expression(rhs, [ Coefficients(m, 0) ])
+}
+
+public func ~* <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
+    return rhs * lhs
+}
+
+public func ~/ <P: Multiplication>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
+    return lhs * (1 / rhs)
+}
+
+public func ~/ <P: Multiplication>(lhs: P, rhs: CGFloat) -> Expression<P> {
+    return lhs * (1 / rhs)
+}
+
+@discardableResult public func ~<= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: .lessThanOrEqual)
+}
+
+@discardableResult public func ~>= (lhs: NumericalInequality, rhs: CGFloat) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, coefficients: Coefficients(1, rhs), relation: .greaterThanOrEqual)
+}
+
+@discardableResult public func ~<= <P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: .lessThanOrEqual)
+}
+
+@discardableResult public func ~>= <P: RelativeInequality>(lhs: P, rhs: P) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs, relation: .greaterThanOrEqual)
+}
+
+@discardableResult public func ~<= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .lessThanOrEqual)
+}
+
+@discardableResult public func ~>= <P: RelativeInequality>(lhs: P, rhs: Expression<P>) -> NSLayoutConstraint {
+    return lhs.context.addConstraint(lhs, to: rhs.value, coefficients: rhs.coefficients[0], relation: .greaterThanOrEqual)
+}
