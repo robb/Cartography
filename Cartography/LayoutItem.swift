@@ -6,7 +6,7 @@
 //  Copyright © 2017 Robert Böhnke. All rights reserved.
 //
 
-public protocol LayoutItem: class {
+public protocol LayoutItem: AnyObject {
     associatedtype ProxyType: LayoutProxy
 
     func asProxy(context: Context) -> ProxyType

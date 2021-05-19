@@ -14,7 +14,7 @@ import UIKit
 import AppKit
 #endif
 
-public protocol LayoutProxy: class {
+public protocol LayoutProxy: AnyObject {
     var context: Context { get }
     var item: AnyObject { get } //type-erased Layoutitem
 }
