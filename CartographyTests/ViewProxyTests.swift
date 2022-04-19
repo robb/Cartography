@@ -20,7 +20,7 @@ final class ViewProxyTestsSpec: QuickSpec {
 
             let view: UIView = UIView(frame: .zero)
 
-            constrain(view) { testingView in
+            cg_constrain(view) { testingView in
                 if #available(iOS 11, *), #available(tvOS 11, *) {
                     context("When running on iOS 11+ devices") {
                         it("safeArea should be SafeAreaLayoutGuide") {
