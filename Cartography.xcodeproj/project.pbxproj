@@ -515,9 +515,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54C96A27195063CD000CDD27 /* Build configuration list for PBXNativeTarget "Cartography-iOS" */;
 			buildPhases = (
+				54C96A0E195063CD000CDD27 /* Headers */,
 				54C96A0C195063CD000CDD27 /* Sources */,
 				54C96A0D195063CD000CDD27 /* Frameworks */,
-				54C96A0E195063CD000CDD27 /* Headers */,
 				54C96A0F195063CD000CDD27 /* Resources */,
 			);
 			buildRules = (
@@ -555,9 +555,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54F6A84B195C20C200313D24 /* Build configuration list for PBXNativeTarget "Cartography-Mac" */;
 			buildPhases = (
+				54F6A835195C20C100313D24 /* Headers */,
 				54F6A833195C20C100313D24 /* Sources */,
 				54F6A834195C20C100313D24 /* Frameworks */,
-				54F6A835195C20C100313D24 /* Headers */,
 				54F6A836195C20C100313D24 /* Resources */,
 			);
 			buildRules = (
@@ -594,9 +594,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 632F090F1BF1E7AA002431A3 /* Build configuration list for PBXNativeTarget "Cartography-tvOS" */;
 			buildPhases = (
+				632F09071BF1E7AA002431A3 /* Headers */,
 				632F09051BF1E7AA002431A3 /* Sources */,
 				632F09061BF1E7AA002431A3 /* Frameworks */,
-				632F09071BF1E7AA002431A3 /* Headers */,
 				632F09081BF1E7AA002431A3 /* Resources */,
 			);
 			buildRules = (
