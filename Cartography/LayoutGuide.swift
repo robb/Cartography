@@ -15,7 +15,7 @@ public typealias LayoutGuide = UILayoutGuide
 
 @available(iOS, introduced: 9.0)
 @available(tvOS, introduced: 9.0)
-extension UILayoutGuide: LayoutItem {
+extension UILayoutGuide: LayoutItem, SupportsPositioningAnchors {
 
     @available(iOS, introduced: 9.0)
     @available(tvOS, introduced: 9.0)
@@ -30,7 +30,7 @@ import AppKit
 public typealias LayoutGuide = NSLayoutGuide
 
 @available(OSX, introduced: 10.11)
-extension NSLayoutGuide: LayoutItem {
+extension NSLayoutGuide: LayoutItem, SupportsPositioningAnchors {
 
     @available(OSX, introduced: 10.11)
     public func asProxy(context: Context) -> LayoutGuideProxy {

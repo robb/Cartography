@@ -144,6 +144,12 @@
 		97F50E551F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */; };
 		97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
 		97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */; };
+		9AE90A0429FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0329FAF2D700944F10 /* Edge+OffsetOperator.swift */; };
+		9AE90A0529FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0329FAF2D700944F10 /* Edge+OffsetOperator.swift */; };
+		9AE90A0629FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0329FAF2D700944F10 /* Edge+OffsetOperator.swift */; };
+		9AE90A0829FAF36E00944F10 /* AnchorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0729FAF36E00944F10 /* AnchorSupport.swift */; };
+		9AE90A0929FAF36E00944F10 /* AnchorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0729FAF36E00944F10 /* AnchorSupport.swift */; };
+		9AE90A0A29FAF36E00944F10 /* AnchorSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE90A0729FAF36E00944F10 /* AnchorSupport.swift */; };
 		A75B6143FF12C54FF3223B47 /* Pods_TestPods_Cartography_tvOS_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0827A83361EACF1E6062607E /* Pods_TestPods_Cartography_tvOS_tests.framework */; };
 		D63BD7B82089B6FA00061239 /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85314F1F9363DC003EC021 /* LayoutItem.swift */; };
 		EE8531501F936462003EC021 /* LayoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE85314F1F9363DC003EC021 /* LayoutItem.swift */; };
@@ -272,6 +278,8 @@
 		97E7F0A81F8D598A004857CE /* ViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProxy.swift; sourceTree = "<group>"; };
 		97F50E511F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LayoutProxy+TypeErasure.swift"; sourceTree = "<group>"; };
 		97F50E531F9633AA00C6DCF5 /* ViewLayoutGuideSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayoutGuideSpec.swift; sourceTree = "<group>"; };
+		9AE90A0329FAF2D700944F10 /* Edge+OffsetOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edge+OffsetOperator.swift"; sourceTree = "<group>"; };
+		9AE90A0729FAF36E00944F10 /* AnchorSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorSupport.swift; sourceTree = "<group>"; };
 		EE85314F1F9363DC003EC021 /* LayoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutItem.swift; sourceTree = "<group>"; };
 		EEDD4098FF7503B1F9188F10 /* Pods_Cartography_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cartography_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -418,6 +426,7 @@
 				546E9E8C1950A31100B16707 /* Dimension.swift */,
 				5467916E1A93962000DC9BF7 /* Distribute.swift */,
 				546E9E901950A76C00B16707 /* Edge.swift */,
+				9AE90A0329FAF2D700944F10 /* Edge+OffsetOperator.swift */,
 				545F858C195322EA00791F75 /* Edges.swift */,
 				546E9E941950A97F00B16707 /* Expression.swift */,
 				54B093961A7165F2008A1102 /* Extensions.swift */,
@@ -437,6 +446,7 @@
 				97D17CA91F8E779300C57CE1 /* LayoutGuideProxy.swift */,
 				97D17C991F8E774700C57CE1 /* CartographyTests */,
 				54C96A14195063CD000CDD27 /* Supporting Files */,
+				9AE90A0729FAF36E00944F10 /* AnchorSupport.swift */,
 			);
 			path = Cartography;
 			sourceTree = "<group>";
@@ -863,6 +873,7 @@
 				97D17C961F8E774400C57CE1 /* LayoutGuide.swift in Sources */,
 				547BC85719E2EB9B007BEE9E /* Constraint.swift in Sources */,
 				547BC85519E2DD06007BEE9E /* Context.swift in Sources */,
+				9AE90A0429FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */,
 				97F50E521F962CF300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				EE8531501F936462003EC021 /* LayoutItem.swift in Sources */,
 				977C36821F9FAC890057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */,
@@ -883,6 +894,7 @@
 				54BF29B01A9348B30066ED10 /* Align.swift in Sources */,
 				546E9E951950A97F00B16707 /* Expression.swift in Sources */,
 				97D17CAA1F8E779300C57CE1 /* LayoutGuideProxy.swift in Sources */,
+				9AE90A0829FAF36E00944F10 /* AnchorSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,6 +933,7 @@
 				54F6A856195C213A00313D24 /* Edges.swift in Sources */,
 				54F6A858195C213A00313D24 /* LayoutProxy.swift in Sources */,
 				54BF29B51A9350170066ED10 /* Align.swift in Sources */,
+				9AE90A0529FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */,
 				97F50E561F96401200C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
 				9722953C1F950A1E00FA4AF9 /* ViewProxy.swift in Sources */,
 				977C36831F9FC2900057A057 /* AutoresizingMaskLayoutProxy.swift in Sources */,
@@ -941,6 +954,7 @@
 				549B47B61A58198B002498C7 /* Context.swift in Sources */,
 				54F6A854195C213A00313D24 /* Dimension.swift in Sources */,
 				54F6A857195C213A00313D24 /* Expression.swift in Sources */,
+				9AE90A0929FAF36E00944F10 /* AnchorSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +990,7 @@
 				632F09371BF1F127002431A3 /* Compound.swift in Sources */,
 				632F09381BF1F127002431A3 /* Constrain.swift in Sources */,
 				632F09391BF1F127002431A3 /* Constraint.swift in Sources */,
+				9AE90A0629FAF2D700944F10 /* Edge+OffsetOperator.swift in Sources */,
 				632F093A1BF1F127002431A3 /* ConstraintGroup.swift in Sources */,
 				97D17C921F8E740B00C57CE1 /* LayoutSupportProxy.swift in Sources */,
 				97F50E571F96401300C6DCF5 /* LayoutProxy+TypeErasure.swift in Sources */,
@@ -996,6 +1011,7 @@
 				632F09461BF1F127002431A3 /* Size.swift in Sources */,
 				4A3756C91D67445F0036190E /* LayoutSupport.swift in Sources */,
 				632F09471BF1F127002431A3 /* View.swift in Sources */,
+				9AE90A0A29FAF36E00944F10 /* AnchorSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

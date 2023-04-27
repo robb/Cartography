@@ -11,7 +11,7 @@ import Foundation
 #if os(iOS) || os(tvOS)
     import UIKit
 
-    public final class LayoutSupport: LayoutItem {
+    public final class LayoutSupport: LayoutItem, SupportsHeightAnchor, SupportsTopAnchor, SupportsBottomAnchor {
         let layoutGuide : UILayoutSupport
 
         init(layoutGuide: UILayoutSupport) {
@@ -20,6 +20,21 @@ import Foundation
 
         public func asProxy(context: Context) -> LayoutSupportProxy {
             return LayoutSupportProxy(context: context, item: self)
+        }
+    }
+
+    @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+    extension LayoutSupport {
+        public var heightAnchor: NSLayoutDimension {
+            self.layoutGuide.heightAnchor
+        }
+        
+        public var topAnchor: NSLayoutYAxisAnchor {
+            self.layoutGuide.topAnchor
+        }
+        
+        public var bottomAnchor: NSLayoutYAxisAnchor {
+            self.layoutGuide.bottomAnchor
         }
     }
 
