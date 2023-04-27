@@ -12,7 +12,7 @@ import Foundation
     import UIKit
     public typealias View = UIView
 
-    extension UIView: LayoutItem {
+    extension UIView: LayoutItem, SupportsPositioningAnchors, SupportsBaselineAnchors {
         public func asProxy(context: Context) -> ViewProxy {
             return ViewProxy(context: context, view: self)
         }
@@ -21,7 +21,7 @@ import Foundation
     import AppKit
     public typealias View = NSView
 
-    extension NSView: LayoutItem {
+    extension NSView: LayoutItem, SupportsPositioningAnchors, SupportsBaselineAnchors {
         public func asProxy(context: Context) -> ViewProxy {
             return ViewProxy(context: context, view: self)
         }
