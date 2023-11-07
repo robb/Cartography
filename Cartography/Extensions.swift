@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #else
 import AppKit

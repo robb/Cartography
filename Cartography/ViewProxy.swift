@@ -32,7 +32,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
         return view.superview?.asProxy(context: context)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     @available(iOS, introduced: 11.0)
     @available(tvOS, introduced: 11.0)
     public var safeAreaLayoutGuide: LayoutGuideProxy {
@@ -58,7 +58,7 @@ public final class ViewProxy: SupportsPositioningLayoutProxy, SupportsBaselineLa
 @available(iOS, deprecated: 11.0, message: "The safe area is available on iOS 11+ via 'safeAreaLayoutGuide'!")
 @available(tvOS, deprecated: 11.0, message: "The safe area is available on tvOS 11+ via 'safeAreaLayoutGuide'!")
 extension ViewProxy {
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     public var safeArea: LayoutGuideProxy {
         if #available(iOS 11, *), #available(tvOS 11, *) {
             return safeAreaLayoutGuide

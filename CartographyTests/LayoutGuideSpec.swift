@@ -34,7 +34,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.edges == layoutGuide.owningView!.edges
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.origin.x) == 0
@@ -66,7 +66,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.height == 200
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.midX) == 200
@@ -89,7 +89,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.leading == layoutGuide.owningView!.leading + 10
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.minX) == 10
@@ -106,7 +106,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.trailing == layoutGuide.owningView!.trailing - 10
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.maxX) == 390
@@ -123,7 +123,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.width == 0.5 * layoutGuide.owningView!.width
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.width) == 0.5 * view.frame.width
@@ -140,7 +140,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.width == layoutGuide.owningView!.width / 2
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.width) == view.frame.width / 2
@@ -157,7 +157,7 @@ final class LayoutGuideSpec: QuickSpec {
                     layoutGuide.center == layoutGuide.owningView!.center
                 }
 
-                #if os(iOS) || os(tvOS)
+                #if os(iOS) || os(tvOS) || os(visionOS)
                     view.layoutIfNeeded()
 
                     expect(layoutGuide.layoutFrame.midX) == 200

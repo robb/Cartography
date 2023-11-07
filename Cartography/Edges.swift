@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #else
 import AppKit
@@ -101,7 +101,7 @@ public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequal
         )
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// Insets all edges individually using an existing UIEdgeInsets.
     ///
     /// - parameter by: The UIEdgeInsets to use as a base value.
@@ -182,7 +182,7 @@ public func inset(_ edges: Edges, _ top: CGFloat, _ leading: CGFloat, _ bottom: 
     return edges.inseted(top: top, leading: leading, bottom: bottom, trailing: trailing)
 }
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 /// Insets edges individually with UIEdgeInset.
 ///
 /// - parameter edges:    The edges to inset.

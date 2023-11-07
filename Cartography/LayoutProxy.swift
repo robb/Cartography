@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 #elseif os(OSX)
 import AppKit
@@ -20,7 +20,7 @@ public protocol LayoutProxy: class {
 }
 
 extension LayoutProxy {
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     internal func dimension(with attribute: NSLayoutConstraint.Attribute) -> Dimension {
         return Dimension(context, item, attribute)
     }
@@ -58,7 +58,7 @@ extension SupportsTopLayoutProxy {
         return edge(with: .top)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The top margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var topMargin: Edge {
@@ -74,7 +74,7 @@ extension SupportsBottomLayoutProxy {
         return edge(with: .bottom)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The bottom margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var bottomMargin: Edge {
@@ -90,7 +90,7 @@ extension SupportsRightLayoutProxy {
         return edge(with: .right)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The right margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var rightMargin: Edge {
@@ -106,7 +106,7 @@ extension SupportsLeftLayoutProxy {
         return edge(with: .left)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The left margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var leftMargin: Edge {
@@ -122,7 +122,7 @@ extension SupportsLeadingLayoutProxy {
         return edge(with: .leading)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The leading margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var leadingMargin: Edge {
@@ -138,7 +138,7 @@ extension SupportsTrailingLayoutProxy {
         return edge(with: .trailing)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The trailing margin of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var trailingMargin: Edge {
@@ -155,7 +155,7 @@ extension SupportsEdgesLayoutProxy {
         return edges(for: top, leading, bottom, trailing)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// All edges of the item with their respective margins. This property
     /// affects `topMargin`, `bottomMargin`, `leadingMargin` and
     /// `trailingMargin`.
@@ -173,7 +173,7 @@ extension SupportsCenterXLayoutProxy {
         return edge(with: .centerX)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The horizontal center within the margins of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerXWithinMargins: Edge {
@@ -189,7 +189,7 @@ extension SupportsCenterYLayoutProxy {
         return edge(with: .centerY)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The vertical center within the margins of the item. iOS exclusive.
     @available(iOS, introduced: 8.0)
     public var centerYWithinMargins: Edge {
@@ -206,7 +206,7 @@ extension SupportsCenteringLayoutProxy {
         return point(for: centerX, centerY)
     }
 
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     /// The center point within the margins of the item. This property affects
     /// `centerXWithinMargins` and `centerYWithinMargins`. iOS exclusive.
     @available(iOS, introduced: 8.0)

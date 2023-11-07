@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 
 public typealias LayoutAttribute = NSLayoutConstraint.Attribute
@@ -184,7 +184,7 @@ public func - <P: Addition>(lhs: Expression<P>, rhs: CGFloat) -> Expression<P> {
     return rhs - lhs
 }
 
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 
     public func + (lhs: LayoutSupport, c : CGFloat) -> Expression<LayoutSupport> {
         return Expression<LayoutSupport>(lhs, [Coefficients(1, c)])
