@@ -12,7 +12,19 @@ import UIKit
 import AppKit
 #endif
 
-public struct Edge : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
+public struct EdgeXAxis : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
+    public let attribute: LayoutAttribute
+    public let context: Context
+    public let item: AnyObject
+
+    internal init(_ context: Context, _ item: AnyObject, _ attribute: LayoutAttribute) {
+        self.attribute = attribute
+        self.context = context
+        self.item = item
+    }
+}
+
+public struct EdgeYAxis : Property, RelativeEquality, RelativeInequality, Addition, Multiplication {
     public let attribute: LayoutAttribute
     public let context: Context
     public let item: AnyObject
