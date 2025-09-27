@@ -24,7 +24,32 @@ public class Context {
             fromItem.translatesAutoresizingMaskIntoConstraints = false
         }
 
-        let layoutConstraint = NSLayoutConstraint(item: from.item,
+        func constrainDimensionAnchors() -> NSLayoutConstraint? {
+            guard #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) else {
+                return nil
+            }
+            
+            guard from.attribute == .notAnAttribute || to?.attribute == .notAnAttribute else {
+                return nil
+            }
+            
+            guard let fromAnchor = (from as? Dimension)?.anchor else {
+                return nil
+            }
+            
+            if let to = to {
+                guard let toAnchor = (to as? Dimension)?.anchor else {
+                    return nil
+                }
+                
+                return addConstraint(from: fromAnchor, to: toAnchor, coefficients: coefficients, relation: relation)
+            } else {
+                return addConstraint(from: fromAnchor, to: coefficients.constant, relation: relation)
+            }
+        }
+        
+        let layoutConstraint = constrainDimensionAnchors()
+                            ?? NSLayoutConstraint(item: from.item,
                                                   attribute: from.attribute,
                                                   relatedBy: relation,
                                                   toItem: to?.item,
@@ -47,5 +72,25 @@ public class Context {
         }
 
         return results
+    }
+    
+    @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+    private func addConstraint(from dimension: NSLayoutDimension, to constant: CGFloat, relation: LayoutRelation) -> NSLayoutConstraint {
+        switch relation {
+        case .lessThanOrEqual:   return dimension.constraint(lessThanOrEqualToConstant: constant)
+        case.greaterThanOrEqual: return dimension.constraint(greaterThanOrEqualToConstant: constant)
+        case .equal:             return dimension.constraint(equalToConstant: constant)
+        @unknown default:        fatalError("Unknown relation \(relation)")
+        }
+    }
+    
+    @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
+    private func addConstraint(from dimension: NSLayoutDimension, to other: NSLayoutDimension, coefficients: Coefficients, relation: LayoutRelation) -> NSLayoutConstraint {
+        switch relation {
+        case .lessThanOrEqual:   return dimension.constraint(lessThanOrEqualTo: other, multiplier: coefficients.multiplier, constant: coefficients.constant)
+        case.greaterThanOrEqual: return dimension.constraint(greaterThanOrEqualTo: other, multiplier: coefficients.multiplier, constant: coefficients.constant)
+        case .equal:             return dimension.constraint(equalTo: other, multiplier: coefficients.multiplier, constant: coefficients.constant)
+        @unknown default:        fatalError("Unknown relation \(relation)")
+        }
     }
 }
