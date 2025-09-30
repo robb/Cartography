@@ -11,7 +11,7 @@ class ViewHierarchySpec: QuickSpec {
                 let viewB = TestView()
 
                 expect({
-                    constrain(viewA, viewB) { viewA, viewB in
+                    cg_constrain(viewA, viewB) { viewA, viewB in
                         viewA.width == viewB.width
                     }
                 }()).to(raiseException())
@@ -20,7 +20,7 @@ class ViewHierarchySpec: QuickSpec {
             it("should consider a view its own closest common ancestor") {
                 let view = TestView()
 
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.width  == 200
                 }
 
@@ -33,7 +33,7 @@ class ViewHierarchySpec: QuickSpec {
 
                 parent.addSubview(child)
 
-                constrain(parent, child) { parent, child in
+                cg_constrain(parent, child) { parent, child in
                     parent.width == child.width
                 }
 
@@ -48,7 +48,7 @@ class ViewHierarchySpec: QuickSpec {
                 grandparent.addSubview(parent)
                 parent.addSubview(child)
 
-                constrain(grandparent, child) { grandparent, child in
+                cg_constrain(grandparent, child) { grandparent, child in
                     grandparent.width == child.width
                 }
 
@@ -63,7 +63,7 @@ class ViewHierarchySpec: QuickSpec {
                 parent.addSubview(childA)
                 parent.addSubview(childB)
 
-                constrain(childA, childB) { childA, childB in
+                cg_constrain(childA, childB) { childA, childB in
                     childA.width == childB.width
                 }
 
@@ -82,7 +82,7 @@ class ViewHierarchySpec: QuickSpec {
                 parentA.addSubview(childA)
                 parentB.addSubview(childB)
 
-                constrain(childA, childB) { childA, childB in
+                cg_constrain(childA, childB) { childA, childB in
                     childA.width == childB.width
                 }
 
@@ -99,7 +99,7 @@ class ViewHierarchySpec: QuickSpec {
                 grandparent.addSubview(parentB)
                 parentA.addSubview(childA)
 
-                constrain(childA, parentB) { childA, parentB in
+                cg_constrain(childA, parentB) { childA, parentB in
                     childA.width == parentB.width
                 }
 

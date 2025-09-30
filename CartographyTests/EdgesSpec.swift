@@ -17,7 +17,7 @@ class EdgesSpec: QuickSpec {
 
         describe("LayoutProxy.edges") {
             it("should support relative equalities") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == view.superview!.edges
                 }
 
@@ -29,7 +29,7 @@ class EdgesSpec: QuickSpec {
 
         describe("LayoutProxy.edges") {
             it("should support relative inequalities") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges <= view.superview!.edges
                     view.edges >= view.superview!.edges
                 }
@@ -42,7 +42,7 @@ class EdgesSpec: QuickSpec {
 
         describe("inset") {
             it("should inset all edges with the same amount") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 20)
                 }
 
@@ -52,7 +52,7 @@ class EdgesSpec: QuickSpec {
             }
 
             it("should inset the horizontal and vertical edge individually") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 20, 30)
                 }
 
@@ -62,7 +62,7 @@ class EdgesSpec: QuickSpec {
             }
 
             it("should inset the horizontal edges") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == inset(view.superview!.edges, horizontally: 20)
                 }
 
@@ -72,7 +72,7 @@ class EdgesSpec: QuickSpec {
             }
 
             it("should inset the vertical edges") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == inset(view.superview!.edges, vertically: 30)
                 }
 
@@ -82,7 +82,7 @@ class EdgesSpec: QuickSpec {
             }
 
             it("should inset all edges individually") {
-                constrain(view) { view in
+                cg_constrain(view) { view in
                     view.edges == inset(view.superview!.edges, 10, 20, 30, 40)
                 }
 
@@ -100,7 +100,7 @@ class EdgesSpec: QuickSpec {
 
             describe("LayoutProxy.edgesWithinMargins") {
                 it("should support relative equalities") {
-                    constrain(view) { view in
+                    cg_constrain(view) { view in
                         view.edges == view.superview!.edgesWithinMargins
                     }
 
